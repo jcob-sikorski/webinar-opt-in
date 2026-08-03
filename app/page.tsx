@@ -5,7 +5,8 @@ import { TransformationSection } from "@/components/trasnformation-section";
 import { TeachingBioSection } from "@/components/teaching-bio-section";
 import { ProofSection } from "@/components/proof-section";
 import { IsThisForYouSection } from "@/components/is-this-for-you-section";
-import { TestimonialsSection } from "@/components/testimonials-section";
+import { ConfirmationBonusSection } from "@/components/confirmation-bonus-section";
+import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
 import { OfferStackSection } from "@/components/offer-stack-section";
 import { FaqSection } from "@/components/faq-section";
 import { FinalCtaSection } from "@/components/final-cta-section";
@@ -30,7 +31,8 @@ export default function Home() {
       <TeachingBioSection />
       <ProofSection />
       <IsThisForYouSection />
-      <TestimonialsSection />
+      <ConfirmationBonusSection />
+      <ConfirmationProofSection />
       <OfferStackSection />
       <FaqSection />
       <FinalCtaSection />

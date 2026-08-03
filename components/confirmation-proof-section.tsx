@@ -58,7 +58,8 @@ const PROOF: ProofPerson[] = [
     name: "Klaudia Ostrowska",
     highlight: "Zespół 4 trenerów",
     caption: "Od bycia najlepszym i jedynym trenerem w studio do poukładanej machiny.",
-    // No photo supplied yet for Klaudia — falls back to PhotoPlaceholder below.
+    photo:
+      "https://ucarecdn.com/95c866bb-4d43-4384-b89a-b7940719392c/Screenshot20260803at93802PM.png"
   },
   {
     name: "Piotr Smulczyk",
