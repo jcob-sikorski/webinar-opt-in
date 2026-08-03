@@ -9,7 +9,7 @@ interface Highlight {
 
 const STATS = [
   { value: "+38M zł", label: "Wygenerowane z klientami" },
-  { value: "80 tys. zł", label: "Rekord w placówce 80 m²" },
+  { value: "80 tys. zł", label: "Miesięczny rekord w placówce 80 m²" },
   { value: "40 instalacji", label: "Systemu w rok" },
 ];
 
