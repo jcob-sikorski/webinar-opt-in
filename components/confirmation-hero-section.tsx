@@ -1,24 +1,27 @@
 "use client";
 
-import { CalendarPlus, Check, Mail } from "lucide-react";
-
-import { Button } from "@/components/ui/button";
+import { Check, Mail } from "lucide-react";
 import { CheckItem } from "@/components/ui/check-item";
-import { CountdownTimer } from "@/components/countdown-timer";
 
-// Keep this in sync with the target used on the main page's hero/countdown.
-const WORKSHOP_START = "2026-08-14T19:00:00+02:00";
 const WORKSHOP_DATE_LABEL = "Piątek, 14 Sierpnia @ 19:00";
 
-// Google Calendar deep link. Swap in the real Zoom/Meet join URL under
-// `details` once it exists — for now we just point people back to their inbox.
-const CALENDAR_URL =
-  "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" +
-  encodeURIComponent("Warsztat: Złoty Model Biznesowy") +
-  "&dates=20260814T170000Z/20260814T190000Z&details=" +
-  encodeURIComponent(
-    "Link do warsztatu wyślemy na Twój adres e-mail przed startem. Sprawdź skrzynkę (i SPAM)."
-  );
+// Konfiguracja wydarzenia do wygenerowania bezpośrednich linków (zaktualizowana dla 6 opcji)
+const EVENT_TITLE = "Warsztat: Złoty Model Biznesowy";
+const EVENT_DETAILS = "Link do warsztatu wyślemy na Twój adres e-mail przed startem. Sprawdź skrzynkę (i SPAM).";
+const START_UTC = "20260814T170000Z";
+const END_UTC = "20260814T190000Z";
+const START_ISO = "2026-08-14T19:00:00+02:00";
+const END_ISO = "2026-08-14T21:00:00+02:00";
+
+// Wygenerowane bezpośrednie linki do kalendarzy
+const CALENDAR_LINKS = {
+  apple: `data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0ABEGIN%3AVEEVENT%0ADTSTART%3A${START_UTC}%0ADTEND%3A${END_UTC}%0ASUMMARY%3A${encodeURIComponent(EVENT_TITLE)}%0ADESCRIPTION%3A${encodeURIComponent(EVENT_DETAILS)}%0AEND%3AVEEVENT%0AEND%3AVCALENDAR`,
+  google: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(EVENT_TITLE)}&dates=${START_UTC}/${END_UTC}&details=${encodeURIComponent(EVENT_DETAILS)}`,
+  office365: `https://outlook.office.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(EVENT_TITLE)}&startdt=${START_ISO}&enddt=${END_ISO}&body=${encodeURIComponent(EVENT_DETAILS)}`,
+  outlook: `https://outlook.office.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(EVENT_TITLE)}&startdt=${START_ISO}&enddt=${END_ISO}&body=${encodeURIComponent(EVENT_DETAILS)}`, // Mapujemy to współczesnego Outlooka dla firm
+  outlookcom: `https://outlook.live.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(EVENT_TITLE)}&startdt=${START_ISO}&enddt=${END_ISO}&body=${encodeURIComponent(EVENT_DETAILS)}`, // Mapujemy do starszego Outlook.com
+  yahoo: `https://calendar.yahoo.com/?v=60&title=${encodeURIComponent(EVENT_TITLE)}&st=${START_UTC}&et=${END_UTC}&desc=${encodeURIComponent(EVENT_DETAILS)}`,
+};
 
 export function ConfirmationHeroSection() {
   return (
@@ -36,15 +39,24 @@ export function ConfirmationHeroSection() {
             Gratulacje! <span className="text-coral">Zarezerwowaliśmy Tobie Miejsce!</span>
           </h1>
 
+          {/* Sekcja ikon kalendarzy */}
           <div className="mt-8 w-full max-w-md">
-            <Button
-              size="lg"
-              className="w-full border-orange-500 bg-orange-500 text-base text-white hover:border-orange-600 hover:bg-orange-600 active:bg-orange-700 sm:text-lg"
-              onClick={() => window.open(CALENDAR_URL, "_blank")}
-            >
-              <CalendarPlus className="h-5 w-5" />
-              Dodaj do kalendarza
-            </Button>
+            <h2 className="mb-6 font-display text-2xl font-bold text-black text-center">DODAJ DO KALENDARZA</h2>
+            
+            <div className="flex flex-wrap items-center justify-center gap-6 p-4">
+              <a href={CALENDAR_LINKS.apple} target="_blank" rel="noreferrer" title="Apple Calendar" className="transition-transform hover:scale-105">
+                <img src="/icons/apple.svg" alt="Apple Calendar" className="h-20 w-20" />
+              </a>
+              <a href={CALENDAR_LINKS.google} target="_blank" rel="noreferrer" title="Google Calendar" className="transition-transform hover:scale-105">
+                <img src="/icons/google.svg" alt="Google Calendar" className="h-20 w-20" />
+              </a>
+              <a href={CALENDAR_LINKS.outlookcom} target="_blank" rel="noreferrer" title="Outlook.com (Personal)" className="transition-transform hover:scale-105">
+                <img src="/icons/outlook.svg" alt="Outlook.com (Personal)" className="h-20 w-20" />
+              </a>
+              <a href={CALENDAR_LINKS.yahoo} target="_blank" rel="noreferrer" title="Yahoo Calendar" className="transition-transform hover:scale-105">
+                <img src="/icons/yahoo.svg" alt="Yahoo Calendar" className="h-20 w-20" />
+              </a>
+            </div>
           </div>
 
           <ul className="mt-10 w-full max-w-md divide-y divide-line text-left">
