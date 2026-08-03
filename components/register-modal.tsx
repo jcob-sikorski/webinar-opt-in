@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // 1. Dodany import routera (Next.js App Router)
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,8 @@ interface RegisterModalProps {
 }
 
 export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
+  const router = useRouter(); // 2. Inicjalizacja routera
+
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -39,7 +42,7 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
     if (capital === "below_35k") clientCategory = "Do weryfikacji";
     if (capital === "35k_plus") clientCategory = "Idealny ICP";
 
-    // TODO: endpoint / integracja z CRM
+    // TODO: Tutaj uderzasz do swojego API (np. do webhooka Make.com lub bezpośrednio do CRM)
     console.log({
       firstName,
       email,
@@ -47,6 +50,15 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
       capitalSelected: capital,
       clientCategory,
     });
+
+    // 1. ZAMKNIĘCIE POPUPA
+    onOpenChange(false);
+
+    // 2. Przekierowanie na stronę Thank You
+    router.push("/thank-you"); 
+    
+    // Opcja B: Czysty JavaScript
+    // window.location.href = "/thank-you";
   }
 
   return (
