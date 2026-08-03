@@ -1,4 +1,4 @@
-import React, { type ReactNode, Suspense } from "react"; // <-- 1. Import Suspense
+import React, { type ReactNode, Suspense } from "react";
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   title: "Jak Zbudowa  Studio Treningu Personalnego Generuj ce 600 000 z  Rocznie",
   description:
     "A 2-hour workshop on the Agreement Engineering webinar framework.",
+  // Add the icons property here
+  icons: {
+    icon: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6a3689380a683b64fe2824bd.png",
+  },
 };
 
 export default function RootLayout({
@@ -35,7 +39,6 @@ export default function RootLayout({
     <html lang="pl" className={`${body.variable} ${display.variable}`}>
       <body className="font-sans text-body">
         
-        {/* 2. Wrap the Facebook Pixel in a Suspense boundary */}
         <Suspense fallback={null}>
           <FacebookPixel />
         </Suspense>
