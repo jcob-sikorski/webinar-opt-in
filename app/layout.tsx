@@ -20,13 +20,65 @@ const display = Poppins({
   variable: "--font-display",
 });
 
+// Full SEO & Social Sharing Metadata
 export const metadata: Metadata = {
-  title: "Jak Zbudowa  Studio Treningu Personalnego Generuj ce 600 000 z  Rocznie",
-  description:
-    "A 2-hour workshop on the Agreement Engineering webinar framework.",
-  // Add the icons property here
+  title: "Jak Zbudować Studio Treningu Personalnego Generujące 600 000 zł Rocznie",
+  description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia, przestań zamieniać swój czas na pieniądze i zbuduj biznes bez franczyzy.",
+  keywords: [
+    "studio treningu personalnego", 
+    "biznes fitness", 
+    "trener personalny", 
+    "jak otworzyć siłownię", 
+    "Bartek Sikorski", 
+    "Dochodowe Studio", 
+    "Złoty Model Biznesowy",
+    "własne studio treningowe"
+  ],
+  authors: [{ name: "Bartek Sikorski" }],
+  creator: "Sportowe Przedmieście sp. z o.o.",
+  publisher: "Sportowe Przedmieście sp. z o.o.",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6a3689380a683b64fe2824bd.png",
+    shortcut: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6a3689380a683b64fe2824bd.png",
+    apple: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6a3689380a683b64fe2824bd.png",
+  },
+  openGraph: {
+    title: "Jak Zbudować Studio Treningu Personalnego Generujące 600 000 zł Rocznie",
+    description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
+    url: "https://dochodowestudio.com", 
+    siteName: "Dochodowe Studio",
+    locale: "pl_PL",
+    type: "website",
+    images: [
+      {
+        url: "https://ucarecdn.com/2fb844e9-c929-46c4-853d-057ef2ecad41/unnamed1.webp",
+        width: 1200,
+        height: 630,
+        alt: "Złoty Model Biznesowy - Dochodowe Studio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Jak Zbudować Studio Treningu Personalnego Generujące 600 000 zł Rocznie",
+    description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia.",
+    images: ["https://ucarecdn.com/2fb844e9-c929-46c4-853d-057ef2ecad41/unnamed1.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
