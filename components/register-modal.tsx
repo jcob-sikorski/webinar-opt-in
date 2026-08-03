@@ -1,10 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation"; // 1. Dodany import routera (Next.js App Router)
+import { useRouter } from "next/navigation"; 
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { sendToMetaCAPI } from "@/app/actions"; // 1. Import the Server Action
+
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
 
 interface RegisterModalProps {
   open: boolean;
@@ -12,9 +19,10 @@ interface RegisterModalProps {
 }
 
 export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
-  const router = useRouter(); // 2. Inicjalizacja routera
+  const router = useRouter(); 
 
   const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState(""); 
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [capital, setCapital] = useState("");
@@ -34,7 +42,7 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
     },
   ];
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
     let clientCategory = "";
@@ -42,23 +50,45 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
     if (capital === "below_35k") clientCategory = "Do weryfikacji";
     if (capital === "35k_plus") clientCategory = "Idealny ICP";
 
-    // TODO: Tutaj uderzasz do swojego API (np. do webhooka Make.com lub bezpośrednio do CRM)
-    console.log({
-      firstName,
-      email,
-      phone,
-      capitalSelected: capital,
-      clientCategory,
-    });
+    // Only fire Schedule if it's the highest quality lead
+    if (capital === "35k_plus") {
+      // Create a unique ID for deduplication
+      const eventId = `evt_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+      
+      // 1. Client-Side Browser Pixel
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("init", "965293539900334", {
+          em: email.toLowerCase().trim(),
+          ph: phone.replace(/\D/g, ""), 
+          fn: firstName.toLowerCase().trim(),
+          ln: lastName.toLowerCase().trim(),
+          country: "pl", 
+          external_id: email.toLowerCase().trim(), 
+        });
+        
+        // Notice the { eventID } object passed as the 4th parameter
+        window.fbq("track", "Lead", {
+          content_name: "Warsztat: Zloty Model Biznesowy",
+          content_category: clientCategory,
+        }, { eventID: eventId });
+      }
 
-    // 1. ZAMKNIĘCIE POPUPA
+      // 2. Server-Side CAPI Request (AWAIT THIS)
+      // Awaiting ensures the network request fires before the page unloads
+      await sendToMetaCAPI({
+        email,
+        phone,
+        firstName,
+        lastName,
+        clientCategory,
+        sourceUrl: window.location.href,
+        eventId, // Pass the same ID to the server
+      });
+    }
+
+    // 3. ZAMKNIĘCIE POPUPA & REDIRECT
     onOpenChange(false);
-
-    // 2. Przekierowanie na stronę Thank You
     router.push("/thank-you"); 
-    
-    // Opcja B: Czysty JavaScript
-    // window.location.href = "/thank-you";
   }
 
   return (
@@ -82,7 +112,6 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
           </div>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-            {/* Dane kontaktowe */}
             <div className="flex flex-col gap-3">
               <div className="relative">
                 <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
@@ -96,6 +125,22 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
                   placeholder="Twoje imię"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
+                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10"
+                />
+              </div>
+
+              <div className="relative">
+                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
+                  <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <input
+                  required
+                  type="text"
+                  placeholder="Twoje nazwisko"
+                  value={lastName}
+                  onChange={(e) => setLastName(e.target.value)}
                   className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10"
                 />
               </div>
@@ -135,7 +180,6 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
 
             <div className="my-2 h-px w-full bg-gray-100"></div>
 
-            {/* Kwalifikacja */}
             <div className="text-left">
               <label className="mb-4 block text-[15px] font-bold leading-snug text-ink">
                 Zbudowanie dochodowego studia wymaga inwestycji. Jakim kapitałem na rozwój biznesu dysponujesz w tym momencie?
@@ -178,7 +222,6 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
               </div>
             </div>
 
-            {/* CTA */}
             <div className="mt-2 flex flex-col gap-4 pb-2">
               <Button
                 type="submit"
