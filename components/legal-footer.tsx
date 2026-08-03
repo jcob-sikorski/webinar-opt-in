@@ -10,6 +10,13 @@ export function LegalFooter() {
           |{" "}
           <a href="#" className="rounded underline-offset-4 hover:underline">
             Terms &amp; Conditions
+          </a>{" "}
+          |{" "}
+          <a
+            href="/privacy-policy"
+            className="rounded underline-offset-4 hover:underline"
+          >
+            Polityka Prywatności
           </a>
         </p>
 
@@ -20,8 +27,14 @@ export function LegalFooter() {
 
           <p>
             Strona jest prowadzona i utrzymywana przez Sportowe Przedmieście
-            sp. z o.o. Korzystanie ze strony podlega Warunkom Korzystania oraz
-            Polityce Prywatności.
+            sp. z o.o. Korzystanie ze strony podlega Warunkom Korzystania oraz{" "}
+            <a
+              href="/privacy-policy"
+              className="underline-offset-4 hover:underline"
+            >
+              Polityce Prywatności
+            </a>
+            .
           </p>
 
           <p>
@@ -75,8 +88,14 @@ export function LegalFooter() {
           <p>
             Strona wykorzystuje pliki cookies w celach analitycznych,
             reklamowych i funkcjonalnych. Kontynuując korzystanie ze strony,
-            użytkownik wyraża zgodę na ich użycie zgodnie z Polityką
-            Prywatności.
+            użytkownik wyraża zgodę na ich użycie zgodnie z{" "}
+            <a
+              href="/privacy-policy"
+              className="underline-offset-4 hover:underline"
+            >
+              Polityką Prywatności
+            </a>
+            .
           </p>
 
           <p>
