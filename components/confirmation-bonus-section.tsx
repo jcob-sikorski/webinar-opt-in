@@ -1,37 +1,70 @@
 import { PlayCircle } from "lucide-react";
 
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Section } from "@/components/ui/section";
 
-interface BonusItem {
+interface CaseStudyVideo {
   title: string;
   description: string;
-  href: string;
-  duration: string;
+  youtubeId: string;
 }
 
-// Swap `href` for real YouTube/Vimeo links once the clips are cut.
-const BONUS_ITEMS: BonusItem[] = [
+// Real interviews from the DochodoweStudio YouTube channel. Thumbnails are
+// pulled live from YouTube's public thumbnail CDN (no API key needed) —
+// swap `youtubeId` here if a video gets replaced or unlisted.
+const CASE_STUDY_VIDEOS: CaseStudyVideo[] = [
   {
-    title: "Jak policzyć, ilu klientów naprawdę potrzebujesz",
+    title: "Miała piękne studio i prawie je zamknęła",
     description:
-      "Krótki rozkład liczb z małego, butikowego studia — żebyś przestał/a strzelać w ciemno.",
-    href: "#",
-    duration: "6 min",
+      "Właścicielka studia pod Krakowem o tym, co naprawdę uratowało jej biznes, gdy sam ładny lokal przestał wystarczać.",
+    youtubeId: "Faf0TBg_DpQ",
   },
   {
-    title: "Pierwszy tydzień po otwarciu drzwi",
+    title: "Studio zarabia, gdy właściciel jest w Tajlandii",
     description:
-      "Co robię krok po kroku w pierwszych siedmiu dniach nowej placówki.",
-    href: "#",
-    duration: "9 min",
+      "Adrian, pół roku po otwarciu — o systemie i zespole, dzięki którym studio działa bez niego na miejscu.",
+    youtubeId: "PuLUm907meI",
   },
   {
-    title: "Środek Protokołu Dochodowego Studia",
+    title: "Otworzył własne studio dla kobiet",
     description:
-      "Podgląd jednego elementu modelu, zanim zobaczysz go w całości na warsztacie.",
-    href: "#",
-    duration: "5 min",
+      "Dlaczego na sieciówce nie da się dać tej samej jakości — i jak wyglądało przejście z trenera w przedsiębiorcę.",
+    youtubeId: "WNcbyFyhPyQ",
+  },
+  {
+    title: "W miesiąc otworzyła własne studio treningowe",
+    description:
+      "Od trenerki mobilnej bez czasu dla siebie do właścicielki Studio Balans, z zespołem i poukładanym procesem.",
+    youtubeId: "bHBhj0a1S0U",
+  },
+  {
+    title: "Dziś sprzedaje pakiety za 6900 zł",
+    description:
+      "Rok wcześniej sam by w to nie uwierzył. Jak model semipersonalny zmienił zasady gry w jego studiu.",
+    youtubeId: "c9JNecprL68",
+  },
+  {
+    title: "Otworzył studio i zbudował zespół",
+    description:
+      "Dawid, w dniu otwarcia — o decyzjach, ofercie i mastermindach, które poukładały biznes od środka.",
+    youtubeId: "u7rk1lC03cM",
+  },
+  {
+    title: "Sprzedał pierwsze pakiety już na otwarciu",
+    description:
+      "Case study Progress Fight Sulejów — przygotowania zaczęte dwa miesiące przed otwarciem drzwi.",
+    youtubeId: "YMngMQTJQW4",
+  },
+  {
+    title: "Z 3 etatów do własnego studia",
+    description:
+      "Jak trenerka, która czekała miesiącami na wolny termin, postawiła granice i zbudowała system zamiast chaosu.",
+    youtubeId: "_qTuIWqnVIY",
+  },
+  {
+    title: "Brał 50 zł za trening. Dziś ma klub z 7 trenerami",
+    description:
+      "Krzysztof Mariańczyk o drodze od pojedynczych treningów z polecenia do klubu z zespołem i podniesionymi stawkami.",
+    youtubeId: "JmSl_mpfoQA",
   },
 ];
 
@@ -41,42 +74,51 @@ export function ConfirmationBonusSection() {
       <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
         W międzyczasie
       </p>
-      <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Trzy Krótkie Nagrania Na Czas Oczekiwania
+      <h2 className="mx-auto mt-5 max-w-[26ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
+        Poznaj Ludzi, Którzy{" "}
+        <span className="text-coral">Już To Zrobili</span>
       </h2>
-      <p className="mx-auto mt-5 max-w-[46ch] text-center text-body-lg text-ink-muted">
-        Nie musisz czekać do 14 sierpnia, żeby dostać wartość. Zacznij od
-        tych trzech.
+      <p className="mx-auto mt-5 max-w-[50ch] text-center text-body-lg text-ink-muted">
+        Nie musisz czekać do 14 sierpnia, żeby zobaczyć, jak to wygląda w
+        praktyce. Oto prawdziwe rozmowy z właścicielami studiów, którzy
+        przeszli tę drogę.
       </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-3">
-        {BONUS_ITEMS.map((item) => (
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {CASE_STUDY_VIDEOS.map((video) => (
           <a
-            key={item.title}
-            href={item.href}
+            key={video.youtubeId}
+            href={`https://youtu.be/${video.youtubeId}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex flex-col overflow-hidden rounded-lg border border-line bg-background transition-colors hover:border-coral-bright"
           >
-            <div className="relative">
-              <PhotoPlaceholder
-                aspect="aspect-video"
-                label="Podgląd"
-                rounded="rounded-none"
+            <div className="relative aspect-video overflow-hidden bg-ink">
+              <img
+                src={`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                alt={video.title}
+                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
               />
               <span
                 aria-hidden
-                className="absolute bottom-2.5 right-2.5 rounded bg-ink/80 px-1.5 py-0.5 text-[0.6875rem] font-semibold text-white"
+                className="absolute inset-0 flex items-center justify-center bg-ink/10 transition-colors group-hover:bg-ink/20"
               >
-                {item.duration}
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink/80">
+                  <PlayCircle className="h-6 w-6 text-white" strokeWidth={1.75} />
+                </span>
               </span>
             </div>
             <div className="flex flex-1 flex-col p-5">
-              <p className="text-body font-semibold text-ink">{item.title}</p>
+              <p className="text-body font-semibold text-ink">
+                {video.title}
+              </p>
               <p className="mt-2 flex-1 text-sm text-ink-muted">
-                {item.description}
+                {video.description}
               </p>
               <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">
                 <PlayCircle className="h-4 w-4" />
-                Obejrzyj teraz
+                Obejrzyj rozmowę
               </span>
             </div>
           </a>

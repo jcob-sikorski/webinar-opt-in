@@ -36,10 +36,10 @@ export function ConfirmationHeroSection() {
             Gratulacje! <span className="text-coral">Zarezerwowaliśmy Tobie Miejsce!</span>
           </h1>
 
-                    <div className="mt-8 w-full max-w-md">
+          <div className="mt-8 w-full max-w-md">
             <Button
               size="lg"
-              className="w-full bg-orange-500 hover:bg-orange-600 active:bg-orange-700 border-orange-500 hover:border-orange-600 text-white text-base sm:text-lg"
+              className="w-full border-orange-500 bg-orange-500 text-base text-white hover:border-orange-600 hover:bg-orange-600 active:bg-orange-700 sm:text-lg"
               onClick={() => window.open(CALENDAR_URL, "_blank")}
             >
               <CalendarPlus className="h-5 w-5" />
@@ -53,8 +53,8 @@ export function ConfirmationHeroSection() {
                 <strong className="font-semibold text-ink">
                   Sprawdź skrzynkę e-mail
                 </strong>{" "}
-                (i folder SPAM lub Oferty) — wysłaliśmy tam wiadomość z linkiem do
-                warsztatu i danymi dostępu.
+                (i folder SPAM lub Oferty) — wysłaliśmy tam wiadomość z
+                linkiem do warsztatu i danymi dostępu.
               </p>
             </CheckItem>
             <CheckItem shape="square" className="py-4">
@@ -78,10 +78,10 @@ export function ConfirmationHeroSection() {
             <strong className="font-semibold text-gray-900">
               {WORKSHOP_DATE_LABEL}
             </strong>{" "}
-            na warsztacie &bdquo;Złoty Model Biznesowy&rdquo;. Zanim wyjdziesz z
-            tej strony — zrób dwie rzeczy poniżej, żeby na pewno się pojawić.
+            na warsztacie &bdquo;Złoty Model Biznesowy&rdquo;. Zanim
+            wyjdziesz z tej strony — zrób dwie rzeczy poniżej, żeby na pewno
+            się pojawić.
           </p>
-
         </div>
       </section>
     </div>
