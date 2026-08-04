@@ -126,7 +126,7 @@ async function upsertGhlContact({
   );
   if (existing) existingTags = existing.tags ?? [];
 
-  const tags = Array.from(new Set([...existingTags, "webinar-21sie", clientCategory].filter(Boolean)));
+  const tags = Array.from(new Set([...existingTags, "webinar-24sie", clientCategory].filter(Boolean)));
 
   const upsertRes = await fetch("https://services.leadconnectorhq.com/contacts/upsert", {
     method: "POST",
