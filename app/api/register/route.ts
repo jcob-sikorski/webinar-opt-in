@@ -35,13 +35,11 @@ export async function POST(request: Request) {
     const uniqueJoinLink = wjData.user.live_room_url;
 
     // ============================================================================
-    // 2. FAN OUT: Send data to GoHighLevel and MailerLite concurrently
+    // 2. FAN OUT: Send data to GoHighLevel, MailerLite, and SMSAPI concurrently
     // ============================================================================
     const results = await Promise.allSettled([
       // --- A. GOHIGHLEVEL ---
-      // CALL YOUR NEW FUNCTION HERE INSTEAD OF THE RAW FETCH
       upsertGhlContact({
-        
         firstName,
         lastName,
         email,
@@ -65,6 +63,9 @@ export async function POST(request: Request) {
           groups: [process.env.MAILERLITE_GROUP_ID],
         }),
       }),
+
+      // --- C. SMSAPI ---
+      sendSmsApiNotification(phone, firstName),
     ]);
 
     // Log any silent failures from the fan-out instead of swallowing them
@@ -88,6 +89,7 @@ export async function POST(request: Request) {
 // ============================================================================
 // HELPER FUNCTIONS
 // ============================================================================
+
 async function upsertGhlContact({
   firstName,
   lastName,
@@ -150,4 +152,35 @@ async function upsertGhlContact({
   }
 
   return upsertData.contact;
+}
+
+async function sendSmsApiNotification(phone: string | undefined, firstName: string) {
+  if (!phone) return;
+
+  // Clean the phone number to ensure compatibility (optional, adjust based on your front-end input)
+  const cleanPhone = phone.replace(/\D/g, "");
+
+  const message = `Hej ${firstName}! "Dochodowe Studio" już niedługo. Zapisz: 24 Sierpnia, Poniedziałek 20:00. Pokażę Ci, jak wyjść z sali bez tracenia przychodu. Do zobaczenia – Bartek`;
+
+  const params = new URLSearchParams({
+    to: cleanPhone,
+    message: message,
+    format: "json", // Ensures SMSAPI responds with JSON
+  });
+
+  const res = await fetch("https://api.smsapi.pl/sms.do", {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${process.env.SMSAPI_TOKEN}`,
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: params.toString(),
+  });
+
+  if (!res.ok) {
+    const errorData = await res.text();
+    throw new Error(`SMSAPI failed: ${errorData}`);
+  }
+
+  return res.json();
 }
