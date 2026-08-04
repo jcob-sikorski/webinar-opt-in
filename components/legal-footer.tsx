@@ -8,7 +8,7 @@ export function LegalFooter() {
             DochodoweStudio.com
           </a>{" "}
           |{" "}
-          <a href="#" className="rounded underline-offset-4 hover:underline">
+          <a href="/terms-conditions" className="rounded underline-offset-4 hover:underline">
             Terms &amp; Conditions
           </a>{" "}
           |{" "}
