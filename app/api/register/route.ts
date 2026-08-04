@@ -7,7 +7,6 @@ export async function POST(request: Request) {
 
     // ============================================================================
     // 1. WEBINARJAM: Register user and get the unique join link
-    //    NOTE: this API is form-encoded, not JSON — and requires `schedule`.
     // ============================================================================
     const wjParams = new URLSearchParams({
       api_key: process.env.WEBINARJAM_API_KEY!,
@@ -40,25 +39,16 @@ export async function POST(request: Request) {
     // ============================================================================
     const results = await Promise.allSettled([
       // --- A. GOHIGHLEVEL ---
-      fetch("https://services.leadconnectorhq.com/contacts/upsert", {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${process.env.GHL_API_KEY}`,
-          "Version": "2021-07-28",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          locationId: process.env.GHL_LOCATION_ID,
-          firstName,
-          lastName,
-          email,
-          phone,
-          tags: ["webinar-14sie", clientCategory],
-          customFields: [
-            { id: process.env.GHL_CAPITAL_FIELD_ID, key: "capital_available", field_value: capitalSelected },
-            { id: process.env.GHL_WJ_LINK_FIELD_ID, key: "webinar_join_link", field_value: uniqueJoinLink },
-          ],
-        }),
+      // CALL YOUR NEW FUNCTION HERE INSTEAD OF THE RAW FETCH
+      upsertGhlContact({
+        
+        firstName,
+        lastName,
+        email,
+        phone,
+        joinLink: uniqueJoinLink,
+        capitalSelected,
+        clientCategory,
       }),
 
       // --- B. MAILERLITE ---
@@ -86,7 +76,6 @@ export async function POST(request: Request) {
     // 3. RESPOND TO CLIENT
     // ============================================================================
     return NextResponse.json({ success: true, joinLink: uniqueJoinLink });
-
   } catch (error) {
     console.error("Orchestrator Error:", error);
     return NextResponse.json(
@@ -94,4 +83,71 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
+}
+
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+async function upsertGhlContact({
+  firstName,
+  lastName,
+  email,
+  phone,
+  joinLink,
+  capitalSelected,
+  clientCategory,
+}: {
+  firstName: string;
+  lastName?: string;
+  email: string;
+  phone?: string;
+  joinLink: string;
+  capitalSelected?: string;
+  clientCategory?: string;
+}) {
+  const headers = {
+    "Authorization": `Bearer ${process.env.GHL_API_KEY}`,
+    "Version": "2021-07-28",
+    "Content-Type": "application/json",
+  };
+
+  // Upsert REPLACES tags rather than merging them, so look the contact
+  // up first and preserve whatever tags they already have.
+  let existingTags: string[] = [];
+  const searchRes = await fetch(
+    `https://services.leadconnectorhq.com/contacts/search?locationId=${process.env.GHL_LOCATION_ID}&query=${encodeURIComponent(email)}`,
+    { headers }
+  );
+  const searchData = await searchRes.json();
+  const existing = searchData?.contacts?.find(
+    (c: any) => c.email?.toLowerCase() === email.toLowerCase()
+  );
+  if (existing) existingTags = existing.tags ?? [];
+
+  const tags = Array.from(new Set([...existingTags, "webinar-21sie", clientCategory].filter(Boolean)));
+
+  const upsertRes = await fetch("https://services.leadconnectorhq.com/contacts/upsert", {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      locationId: process.env.GHL_LOCATION_ID,
+      firstName,
+      lastName,
+      email,
+      phone,
+      tags,
+      customFields: [
+        { id: process.env.GHL_CAPITAL_FIELD_ID, field_value: capitalSelected },
+        { id: process.env.GHL_WJ_LINK_FIELD_ID, field_value: joinLink },
+      ],
+    }),
+  });
+
+  const upsertData = await upsertRes.json();
+  if (!upsertRes.ok) {
+    console.error("GHL upsert failed:", upsertData);
+    throw new Error("GHL contact upsert failed.");
+  }
+
+  return upsertData.contact;
 }
