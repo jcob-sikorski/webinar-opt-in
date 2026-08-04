@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { sendToMetaCAPI } from "@/app/actions"; // 1. Import the Server Action
+import { sendToMetaCAPI } from "@/app/actions"; 
 
 declare global {
   interface Window {
@@ -26,6 +26,9 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [capital, setCapital] = useState("");
+  
+  // NEW: Loading state to prevent double-submissions
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const capitalOptions = [
     {
@@ -44,18 +47,17 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setIsSubmitting(true); // Disable button immediately
 
     let clientCategory = "";
     if (capital === "none") clientCategory = "Brokie - Odcięcie";
     if (capital === "below_35k") clientCategory = "Do weryfikacji";
     if (capital === "35k_plus") clientCategory = "Idealny ICP";
 
-    // Only fire Schedule if it's the highest quality lead
+    // 1. Meta Pixel & CAPI Logic
     if (capital === "35k_plus") {
-      // Create a unique ID for deduplication
       const eventId = `evt_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
       
-      // 1. Client-Side Browser Pixel
       if (typeof window !== "undefined" && window.fbq) {
         window.fbq("init", "965293539900334", {
           em: email.toLowerCase().trim(),
@@ -66,29 +68,55 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
           external_id: email.toLowerCase().trim(), 
         });
         
-        // Notice the { eventID } object passed as the 4th parameter
-        window.fbq("track", "Lead", {
+        window.fbq("track", "Schedule", {
           content_name: "Warsztat: Zloty Model Biznesowy",
           content_category: clientCategory,
         }, { eventID: eventId });
       }
 
-      // 2. Server-Side CAPI Request (AWAIT THIS)
-      // Awaiting ensures the network request fires before the page unloads
-      await sendToMetaCAPI({
+      // Fire and forget CAPI
+      sendToMetaCAPI({
         email,
         phone,
         firstName,
         lastName,
         clientCategory,
         sourceUrl: window.location.href,
-        eventId, // Pass the same ID to the server
+        eventId,
       });
     }
 
-    // 3. ZAMKNIĘCIE POPUPA & REDIRECT
-    onOpenChange(false);
-    router.push("/thank-you"); 
+    try {
+      // 2. CALL THE ORCHESTRATOR API
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone,
+          capitalSelected: capital,
+          clientCategory
+        }),
+      });
+
+      if (!res.ok) throw new Error("API Route Failed");
+      
+      // Optional: You can extract the WJ link here if you want to pass it to the Thank You page
+      // const data = await res.json(); 
+      // const joinLink = data.joinLink;
+
+      // 3. CLOSE MODAL & REDIRECT
+      onOpenChange(false);
+      router.push("/thank-you"); 
+
+    } catch (error) {
+      console.error("Registration Error:", error);
+      alert("Coś poszło nie tak. Spróbuj ponownie.");
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -125,7 +153,8 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
                   placeholder="Twoje imię"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10"
+                  disabled={isSubmitting}
+                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10 disabled:opacity-50"
                 />
               </div>
 
@@ -141,7 +170,8 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
                   placeholder="Twoje nazwisko"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
-                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10"
+                  disabled={isSubmitting}
+                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10 disabled:opacity-50"
                 />
               </div>
 
@@ -157,7 +187,8 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
                   placeholder="Najlepszy adres e-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10"
+                  disabled={isSubmitting}
+                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10 disabled:opacity-50"
                 />
               </div>
 
@@ -173,7 +204,8 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
                   placeholder="Numer telefonu"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10"
+                  disabled={isSubmitting}
+                  className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed]/50 py-3.5 pl-11 pr-4 text-sm text-ink transition-all placeholder:text-gray-500 hover:bg-[#f4f3ed] focus:border-coral focus:bg-white focus:outline-none focus:ring-4 focus:ring-coral/10 disabled:opacity-50"
                 />
               </div>
             </div>
@@ -191,12 +223,13 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
                     <button
                       key={option.id}
                       type="button"
+                      disabled={isSubmitting}
                       onClick={() => setCapital(option.id)}
                       className={`group relative flex w-full items-center gap-4 rounded-xl border p-4 text-left transition-all duration-200 ease-in-out ${
                         isSelected
                           ? "border-coral bg-coral/5 shadow-[0_0_0_2px_rgba(255,127,80,0.2)]"
                           : "border-[#d6d6d6] bg-white hover:border-coral/50 hover:bg-[#f4f3ed]/50"
-                      }`}
+                      } disabled:opacity-50`}
                     >
                       <div
                         className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border transition-colors ${
@@ -226,10 +259,10 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
               <Button
                 type="submit"
                 size="lg"
-                disabled={!capital}
+                disabled={!capital || isSubmitting}
                 className="w-full whitespace-normal text-balance rounded-md border border-coral bg-coral-bright px-4 py-3 text-sm font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark disabled:cursor-not-allowed disabled:opacity-50"
               >
-                Zapisz się
+                {isSubmitting ? "Zapisywanie..." : "Zapisz się"}
               </Button>
 
               <div className="flex items-center justify-center gap-2 text-xs font-medium text-gray-400">
