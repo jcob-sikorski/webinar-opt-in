@@ -79,7 +79,7 @@ export function ConfirmationBonusSection() {
         <span className="text-coral">Już To Zrobili</span>
       </h2>
       <p className="mx-auto mt-5 max-w-[50ch] text-center text-body-lg text-ink-muted">
-        Nie musisz czekać do 14 sierpnia, żeby zobaczyć, jak to wygląda w
+        Nie musisz czekać do 24 sierpnia, żeby zobaczyć, jak to wygląda w
         praktyce. Oto prawdziwe rozmowy z właścicielami studiów, którzy
         przeszli tę drogę.
       </p>

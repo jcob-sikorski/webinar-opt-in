@@ -19,13 +19,16 @@ function pad(n: number) {
 
 interface CountdownTimerProps {
   /** ISO date string the countdown counts down to. */
-  target: string;
+  target?: string;
   variant: "topbar" | "boxes";
 }
 
 const ZERO_PARTS = { dni: 0, godzin: 0, minut: 0, sekund: 0 };
 
-export function CountdownTimer({ target, variant }: CountdownTimerProps) {
+export function CountdownTimer({ 
+  target = "2026-08-24T20:00:00+02:00", // Default set to Aug 24, 20:00 CEST
+  variant 
+}: CountdownTimerProps) {
   // Start from a fixed, server-safe value. Deriving this from Date.now()
   // during render would make the server markup and the client's first render
   // disagree by however many seconds elapsed between them — a hydration

@@ -50,7 +50,7 @@ export function ConfirmationVideoSection({
         <p>
           Jedna rzecz, o którą proszę już teraz:{" "}
           <strong className="font-semibold text-ink">
-            zablokuj sobie 14 sierpnia, 19:00
+            zablokuj sobie 20 sierpnia, 20:00
           </strong>{" "}
           na żywo, a nie na &bdquo;obejrzę nagranie później&rdquo;. Samo
           nagranie zostaje z Tobą na lata —{" "}

@@ -142,7 +142,7 @@ export function ConfirmationProofSection() {
           </em>
           . Zablokuj kalendarz na{" "}
           <strong className="font-semibold text-ink">
-            14 sierpnia, 19:00
+            24 sierpnia, 20:00
           </strong>{" "}
           — nie na &bdquo;obejrzę później&rdquo;.
         </p>

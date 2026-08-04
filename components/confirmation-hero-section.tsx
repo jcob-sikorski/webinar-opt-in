@@ -3,7 +3,7 @@
 import { Check, Mail } from "lucide-react";
 import { CheckItem } from "@/components/ui/check-item";
 
-const WORKSHOP_DATE_LABEL = "Piątek, 14 Sierpnia @ 19:00";
+const WORKSHOP_DATE_LABEL = "Piątek, 24 Sierpnia @ 20:00";
 
 // Konfiguracja wydarzenia do wygenerowania bezpośrednich linków (zaktualizowana dla 6 opcji)
 const EVENT_TITLE = "Warsztat: Złoty Model Biznesowy";

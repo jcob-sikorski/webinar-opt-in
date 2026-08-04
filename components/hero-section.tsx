@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { useRegisterModal } from "@/components/register-modal-provider";
 
-const WORKSHOP_START = "2026-08-02T11:00:00-04:00";
+// 1. Updated the target time to August 24, 20:00 CEST (+02:00 timezone)
+const WORKSHOP_START = "2026-08-24T20:00:00+02:00";
 
 const BACKGROUND_IMAGES = [
   "https://ucarecdn.com/2fb844e9-c929-46c4-853d-057ef2ecad41/unnamed1.webp",
@@ -66,7 +67,8 @@ export function HeroSection() {
               <span className="font-semibold uppercase tracking-[0.06em] text-coral-bright">
                 Data warsztatu:
               </span>{" "}
-              Piątek, 14 Sierpnia @ 19:00
+              {/* 2. Updated the display text to match the new date */}
+              Poniedziałek, 24 Sierpnia @ 20:00
             </span>
           </span>
           <span aria-hidden className="hidden text-white/25 sm:inline">
