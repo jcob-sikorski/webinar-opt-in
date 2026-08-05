@@ -32,7 +32,7 @@ export function ScriptIsTheBusinessSection() {
     },
     {
       name: "Włodek Troszyn",
-      figure: "100 000 zł / msc.",
+      figure: "19 000 zł / msc.",
       photo: (
         <img
           src="https://ucarecdn.com/2ebc4530-7f86-427f-9a45-1b3529facbf9/Screenshot20260803at12420AM.png"
