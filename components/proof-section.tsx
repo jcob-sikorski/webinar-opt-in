@@ -25,18 +25,22 @@ export function ProofSection({
       <figure className="rounded-xl border border-line p-6 sm:p-8">
         <div className="overflow-hidden rounded-lg">
           {proofScreenshot ?? (
-            <PhotoPlaceholder aspect="aspect-[5/3]" label="Screenshot" />
+            <img 
+              src="https://ucarecdn.com/1ab0d8d1-e42b-4afc-a31e-65296b1876c5/Screenshot20260806at13838AM.png" 
+              alt="Wyniki Sportowe Przedmieście" 
+              className="w-full h-auto object-cover"
+            />
           )}
         </div>
 
         <figcaption className="mt-7">
           <p className="text-center text-xl font-bold italic text-coral sm:text-2xl">
-            ★ Prawdziwy dowód ★
+            ★ 4 Placówki Sportowe Przedmieście ★
           </p>
           <p className="mx-auto mt-4 max-w-md text-center text-body italic text-ink-muted">
-            Tak, to jest prawdziwe. Tak, to zrzut ekranu
-            z platformy — to nie są całkowite wyniki wszech czasów.
-            Jedno studio, 70,000 zł w sprzedaży.
+            Moje placówki pod marką „Sportowe Przedmieście” w miastach takich jak Poddębice, Łódź, Aleksandrów Łódzki czy Uniejów w najlepszym okresie generowały prawie 200 tys. zł dochodu miesięcznie. Biznes szedł tak dobrze, że – mówiąc szczerze – zaczął być wręcz przewidywalny. Wtedy narodził się pomysł, by dzielić się wiedzą i pomagać innym.
+                    
+            Jeśli prowadzisz już własne studio lub dopiero planujesz otwarcie i chcesz zejść z sali jako trener, budując placówkę generującą 20–50 tys. zł miesięcznie – zapraszam do kontaktu!
           </p>
         </figcaption>
       </figure>
