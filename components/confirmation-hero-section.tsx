@@ -10,8 +10,8 @@ const EVENT_TITLE = "Warsztat: Złoty Model Biznesowy";
 const EVENT_DETAILS = "Link do warsztatu wyślemy na Twój adres e-mail przed startem. Sprawdź skrzynkę (i SPAM).";
 const START_UTC = "20260814T170000Z";
 const END_UTC = "20260814T190000Z";
-const START_ISO = "2026-08-14T19:00:00+02:00";
-const END_ISO = "2026-08-14T21:00:00+02:00";
+const START_ISO = "2026-08-24T20:00:00+02:00";
+const END_ISO = "2026-08-24T22:00:00+02:00";
 
 // Wygenerowane bezpośrednie linki do kalendarzy
 const CALENDAR_LINKS = {
