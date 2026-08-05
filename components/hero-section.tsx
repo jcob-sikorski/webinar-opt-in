@@ -90,10 +90,9 @@ export function HeroSection() {
             Dla trenerów, którzy chcą skończyć ze sprzedawaniem godzin i przebić sufit oraz właścicieli, których studio zamieniło ich życie w chaos
           </p>
 
-          <h1 className="mx-auto mt-7 max-w-[22ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[20ch]">
-            Jak <span className="text-coral">Zbudować Studio</span> Generujące{" "}
-            <span className="whitespace-nowrap">600 000&nbsp;tys. zł</span>
-            — Bez Franczyzy i Milionowego Kredytu
+          <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]">
+            Przestań Trenować Klientów Godzina po Godzinie. <span className="text-coral">Naucz Się Zbudować Studio</span>, Które Zarabia{" "}
+            <span className="whitespace-nowrap">200–600&nbsp;tys. zł</span> Rocznie Bez Ciebie na Sali
           </h1>
 
           <p className="mx-auto mt-7 max-w-[38rem] font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 text-pretty sm:text-lg">

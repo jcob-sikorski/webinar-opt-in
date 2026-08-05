@@ -9,7 +9,7 @@ export default function ConfirmationPage() {
   return (
     <main>
       <ConfirmationHeroSection />
-      <ConfirmationSurveySection />
+      {/* <ConfirmationSurveySection /> */}
       <ConfirmationVideoSection />
       <ConfirmationBonusSection />
       <ConfirmationProofSection />

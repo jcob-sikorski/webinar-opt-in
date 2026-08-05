@@ -49,19 +49,19 @@ export function ScriptIsTheBusinessSection() {
     <Section>
       <div className="mx-auto max-w-3xl text-center">
         <p className="mx-auto max-w-[34ch] text-body-lg leading-[1.55] text-ink-subtle text-balance">
-          Większość ludzi myśli, że duże koszty i duży metraż to przepustka do wolności.
+          Większość ludzi myśli, że wielki metraż i ogromne koszty stałe to przepustka do wolności.
         </p>
 
         <p className="mt-5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-          Ja wierzę w przeciwieństwo
+          Ja wiem, że jest zupełnie odwrotnie
         </p>
 
-        <h2 className="mx-auto mt-5 max-w-[16ch] font-display text-[clamp(2rem,5vw,3.5rem)] font-bold italic leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-          Jakość<span className="text-coral"> Ściezki Klienta</span> i Zespół to Biznes.
+        <h2 className="mx-auto mt-5 max-w-[18ch] font-display text-[clamp(2rem,5vw,3.5rem)] font-bold italic leading-[1.05] tracking-[-0.02em] text-ink text-balance">
+          Jakość<span className="text-coral"> Ścieżki Klienta</span> i Zespół to Twój Biznes.
         </h2>
 
         <p className="mx-auto mt-7 max-w-[42ch] text-body-lg leading-[1.6] text-ink-muted text-pretty">
-          Studio to przestrzeń, w której klienci osiągają prawdziwą transformację.
+          Studio to przestrzeń, w której klienci osiągają prawdziwą transformację, a Ty budujesz zyskowną firmę, która pracuje na Ciebie.
         </p>
       </div>
 
@@ -69,7 +69,7 @@ export function ScriptIsTheBusinessSection() {
         <div className="mx-auto flex max-w-3xl items-center gap-5">
           <span aria-hidden className="h-px flex-1 bg-ink/10" />
           <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-ink-subtle">
-            Aktywo jest budowane za pomocą modelu
+            Prawdziwe aktywo buduje się w oparciu o sprawdzony system
           </span>
           <span aria-hidden className="h-px flex-1 bg-ink/10" />
         </div>
@@ -89,14 +89,14 @@ export function ScriptIsTheBusinessSection() {
           spadku jakości.
         </p>
         <p className="font-display text-[1.15em] italic leading-[1.55] text-ink">
-          To szkolenie jest o tym, jak ten system wdrozyć u siebie — czy sprzedajesz treningi personalne za 150 zł, semi-personal, czy trzymiesięczny program transformacyjny za kilka tysięcy.
+          To szkolenie jest o tym, jak ten system wdrożyć u siebie — czy sprzedajesz treningi personalne za 150 zł, semi-personal, czy trzymiesięczny program transformacyjny za kilka tysięcy.
         </p>
       </div>
 
       <div className="mt-14 flex flex-col items-center">
         <RegisterCtaButton size="lg">Chcę wziąć udział — 0 zł</RegisterCtaButton>
         <p className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-ink-subtle">
-          <span>30-day guarantee</span>
+          <span>Dostęp natychmiastowy</span>
           <span aria-hidden className="h-1 w-1 rounded-full bg-coral" />
           <span>Nagranie na lata</span>
         </p>
