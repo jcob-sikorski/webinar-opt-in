@@ -40,7 +40,7 @@ export function ProofSection({
           <p className="mx-auto mt-4 max-w-md text-center text-body italic text-ink-muted">
             Moje placówki pod marką „Sportowe Przedmieście” w miastach takich jak Poddębice, Łódź, Aleksandrów Łódzki czy Uniejów w najlepszym okresie generowały prawie 200 tys. zł dochodu miesięcznie. Biznes szedł tak dobrze, że – mówiąc szczerze – zaczął być wręcz przewidywalny. Wtedy narodził się pomysł, by dzielić się wiedzą i pomagać innym.
                     
-            Jeśli prowadzisz już własne studio lub dopiero planujesz otwarcie i chcesz zejść z sali jako trener, budując placówkę generującą 20–50 tys. zł miesięcznie – zapraszam do kontaktu!
+            Jeśli prowadzisz już własne studio lub dopiero planujesz otwarcie i chcesz zejść z sali jako trener, budując placówkę generującą 20–50 tys. zł miesięcznie – zapraszam Cię na ten warsztat!
           </p>
         </figcaption>
       </figure>
