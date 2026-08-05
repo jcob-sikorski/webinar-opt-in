@@ -1,4 +1,4 @@
-import { CreditCard, Lock, Users } from "lucide-react";
+import { CreditCard, Lock, Users, CalendarCheck } from "lucide-react";
 
 import { Section } from "@/components/ui/section";
 
@@ -22,7 +22,7 @@ export function BookingPriceSection() {
         Inwestycja
       </p>
       <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Ile To Kosztuje — <span className="text-coral">Bez Owijania</span>
+        Ile <span className="text-coral">Ta Inwestycja w Siebie</span> Kosztuje?
       </h2>
 
       <p className="mx-auto mt-7 max-w-[52ch] text-center text-body-lg text-ink-muted">
@@ -37,7 +37,7 @@ export function BookingPriceSection() {
 
       <div className="mt-10 rounded-xl border border-line border-t-[3px] border-t-coral-bright p-8 text-center sm:p-10">
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-subtle">
-          Program Dochodowe Studio — 6 miesięcy
+          Ta cena to nic w porównaniu z alternatywną ścieżką wymyślania wszystkiego od zera...
         </p>
         <p className="mt-4 font-display text-[clamp(2.25rem,7vw,3.5rem)] font-bold leading-none text-ink">
           21 000 zł{" "}
@@ -62,13 +62,23 @@ export function BookingPriceSection() {
           </strong>
           . Program kosztuje 21 000 zł.{" "}
           <em className="italic">
-            Nie musisz zdobyć stu klientów, żeby to się spięło — musisz zdobyć
+            Nie musisz zdobyć stu klientów, żeby inwestycja Ci się zwróciła — musisz zdobyć
             jednego, który zostanie dłużej niż dwa miesiące.
           </em>
         </p>
       </div>
 
-      <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div className="mt-10 flex justify-center">
+        <a
+          href="#kalendarz"
+          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
+        >
+          <CalendarCheck className="h-6 w-6 shrink-0" />
+          Wybierz termin rozmowy
+        </a>
+      </div>
+
+      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
         {PAYMENT.map((item) => {
           const Icon = item.icon;
           return (
@@ -96,8 +106,8 @@ export function BookingPriceSection() {
             <strong className="font-semibold text-ink">
               Cena jest zamrożona na pół roku.
             </strong>{" "}
-            To nie sztuczka sprzedażowa — to konsekwencja tego, że koszty
-            prowadzenia programu rosną: mój czas, czas Kornelii, liczba osób,
+            To konsekwencja tego, że koszty
+            prowadzenia programu rosną: wartość jaką daję uczestnikom, mój czas, czas managerki moich studio Kornelii, liczba osób,
             którą realnie mogę objąć uwagą na środowych sesjach.
           </p>
           <p>

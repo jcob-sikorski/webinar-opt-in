@@ -23,6 +23,7 @@ export default function BookingPage() {
   return (
     <main>
       <BookingHeroSection />
+      <BookingCalendarSection />
       <BookingCallAgendaSection />
       <BookingOfferSection />
       {/* Fladlien: cena idzie przed bonusami, żeby Moduły wracały do wartości. */}
@@ -33,7 +34,6 @@ export default function BookingPage() {
       <BookingBioSection />
       <BookingCoachingPhotoSection />
       <BookingObjectionsSection />
-      <BookingCalendarSection />
       <LegalFooter />
     </main>
   );

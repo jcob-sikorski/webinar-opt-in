@@ -13,7 +13,7 @@ export function BookingCalendarSection() {
     <div id="kalendarz" className="scroll-mt-8">
       <Section width="wide" className="bg-panel">
         <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-          Ostatni krok
+          Zrób pierwszy krok
         </p>
         <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
           Wybierz Termin <span className="text-coral">Rozmowy</span>

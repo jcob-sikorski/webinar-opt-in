@@ -1,4 +1,4 @@
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, CalendarCheck } from "lucide-react";
 
 import { Section } from "@/components/ui/section";
 
@@ -43,7 +43,7 @@ export function BookingGuaranteeSection() {
             Gwarancja
           </p>
           <h2 className="mt-4 max-w-[24ch] text-[1.75rem] font-bold leading-tight sm:text-[2.125rem]">
-            Program Stoi Na <span className="text-coral">Karcie Prawdy</span>
+            Gwarancja <span className="text-coral">Twojego Sukcesu</span>
           </h2>
         </div>
 
@@ -51,23 +51,18 @@ export function BookingGuaranteeSection() {
           <p>
             Wiem, że część osób myśli:{" "}
             <em className="italic">
-              „a co, jeśli zapłacę, przejdę przez to i nie zadziała?”
+              „A co, jeśli zapłacę, przejdę przez to i nie zadziała?”
             </em>{" "}
-            To uczciwe pytanie i zasługuje na uczciwą odpowiedź, nie na
-            marketingowe zaklęcie.
+            To uczciwe pytanie i zasługuje na uczciwą odpowiedź.
           </p>
 
           <p>
-            Dlatego cały program stoi na{" "}
+            Nazywam to Kartą Prawdy:
             <strong className="font-semibold text-ink">Karcie Prawdy</strong>.
-            To nie ozdobnik. To narzędzie, w którym punkt po punkcie
-            odhaczasz, co faktycznie wdrożyłeś —{" "}
+            punkt po punkcie odhaczasz w niej, co faktycznie wdrożyłeś
             <em className="italic">
-              nie co obejrzałeś, tylko co zrobiłeś
+              i co rozumiesz.
             </em>
-            . Pokazuje też, ile realnie kosztuje Cię niewykorzystany
-            potencjał: ile godzin sali stoi pustych, ile leadów ginie w
-            wiadomościach, ilu klientów odchodzi bez próby kontaktu.
           </p>
 
           {TERMS_CONFIRMED ? (
@@ -85,7 +80,6 @@ export function BookingGuaranteeSection() {
           )}
 
           <p>
-            I powiem wprost, dlaczego to robię, żebyś nie szukał haczyka.
             Robię to, bo z doświadczenia — swojego i ponad osiemdziesięciu
             przedsiębiorców, z którymi pracowałem — wiem, że ludzie, którzy
             faktycznie odhaczają Kartę Prawdy punkt po punkcie, prawie zawsze
@@ -95,9 +89,19 @@ export function BookingGuaranteeSection() {
               dla tych, którzy pracują.
             </strong>{" "}
             Nie zadziała dla kogoś, kto kupi i nic nie zrobi — ale wtedy
-            problemem nie jest program.
+            problemem nie jest ten program.
           </p>
         </div>
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <a
+          href="#kalendarz"
+          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
+        >
+          <CalendarCheck className="h-6 w-6 shrink-0" />
+          Wybierz termin rozmowy
+        </a>
       </div>
     </Section>
   );

@@ -1,6 +1,4 @@
-import { Check, X } from "lucide-react";
-
-import { CheckItem } from "@/components/ui/check-item";
+import { Check, X, CalendarCheck } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 const AGENDA = [
@@ -23,16 +21,14 @@ const AGENDA = [
 ];
 
 const FOR_YOU = [
-  "Masz pełny grafik i wiesz, że Twój dochód ma sufit wyznaczony liczbą godzin w dobie.",
-  "Masz już studio, ale bez Ciebie ono się zatrzymuje — Ty trenujesz, Ty odpisujesz, Ty zamykasz każdą sprzedaż.",
-  "Planujesz otworzyć studio i masz kapitał lub dostęp do finansowania (35–100 tys. zł na lokal i wyposażenie).",
-  "Jesteś gotów wdrażać, a nie tylko oglądać materiały. Robimy to z Tobą, nie za Ciebie.",
+  "Masz pełny grafik i Twój dochód ma sufit.",
+  "Masz już studio, ale bez Ciebie ono się zatrzymuje.",
+  "Masz kapitał lub dostęp do finansowania (35–100 tys. zł na lokal i wyposażenie).",
+  "Jesteś gotów wdrażać, a nie tylko oglądać materiały.",
 ];
 
 const NOT_FOR_YOU = [
-  "Nie masz jeszcze żadnych klientów i dopiero zastanawiasz się, czy chcesz być trenerem. Studio nie rozwiązuje braku klientów — zwiększa konsekwencje ich braku.",
-  "Szukasz agencji albo kogoś, kto poprowadzi firmę za Ciebie. To mentoring, nie usługa, od której będziesz uzależniony.",
-  "Chcesz kupić dostęp do nagrań i wrócić do nich „kiedyś”. Sam dostęp do wiedzy nie jest aktywem — aktywem staje się wdrożony system.",
+  "Szukasz agencji albo kogoś, kto poprowadzi firmę za Ciebie.",
   "Nie masz dziś przestrzeni na 2–3 godziny tygodniowo na materiały, spotkania i wdrożenie.",
 ];
 
@@ -43,12 +39,10 @@ export function BookingCallAgendaSection() {
         Zanim zarezerwujesz
       </p>
       <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Jak Wygląda Ta Rozmowa
+        Jak Wygląda Rozmowa?
       </h2>
       <p className="mx-auto mt-5 max-w-[52ch] text-center text-body-lg text-ink-muted">
-        To nie jest prezentacja handlowa w przebraniu. To cztery pytania,
-        które muszę zadać, żeby wiedzieć, czy w ogóle powinienem Ci cokolwiek
-        proponować.
+        Mój konsultant przebada 4 filary zanim cokolwiek Ci zaproponuje:
       </p>
 
       <ol className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
@@ -69,11 +63,12 @@ export function BookingCallAgendaSection() {
       </ol>
 
       <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-        <div className="rounded-xl border border-line border-t-[3px] border-t-coral-bright p-6 sm:p-7">
+        {/* DO IT IF - GREEN */}
+        <div className="rounded-xl border border-line border-t-[3px] border-t-green-500 p-6 sm:p-7">
           <h3 className="flex items-center gap-2.5 text-lg font-bold text-ink">
             <span
               aria-hidden
-              className="flex h-6 w-6 items-center justify-center rounded-full bg-coral-bright"
+              className="flex h-6 w-6 items-center justify-center rounded-full bg-green-500"
             >
               <Check className="h-3.5 w-3.5 text-white" strokeWidth={3.5} />
             </span>
@@ -81,18 +76,27 @@ export function BookingCallAgendaSection() {
           </h3>
           <ul className="mt-5 divide-y divide-line">
             {FOR_YOU.map((item) => (
-              <CheckItem key={item} className="py-3.5">
-                <p className="text-body text-ink-muted">{item}</p>
-              </CheckItem>
+              <li key={item} className="flex gap-3.5 py-3.5 sm:gap-4">
+                <span
+                  aria-hidden
+                  className="mt-[0.3rem] flex h-[1.15rem] w-[1.15rem] shrink-0 items-center justify-center rounded-full bg-green-500"
+                >
+                  <Check className="h-3 w-3 text-white" strokeWidth={3.5} />
+                </span>
+                <p className="min-w-0 flex-1 text-body text-ink-muted">
+                  {item}
+                </p>
+              </li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-xl border border-line border-t-[3px] border-t-ink/30 p-6 sm:p-7">
+        {/* DON'T DO IT IF - RED */}
+        <div className="rounded-xl border border-line border-t-[3px] border-t-red-500 p-6 sm:p-7">
           <h3 className="flex items-center gap-2.5 text-lg font-bold text-ink">
             <span
               aria-hidden
-              className="flex h-6 w-6 items-center justify-center rounded-full bg-ink/70"
+              className="flex h-6 w-6 items-center justify-center rounded-full bg-red-500"
             >
               <X className="h-3.5 w-3.5 text-white" strokeWidth={3.5} />
             </span>
@@ -103,7 +107,7 @@ export function BookingCallAgendaSection() {
               <li key={item} className="flex gap-3.5 py-3.5 sm:gap-4">
                 <span
                   aria-hidden
-                  className="mt-[0.3rem] flex h-[1.15rem] w-[1.15rem] shrink-0 items-center justify-center rounded-full bg-ink/25"
+                  className="mt-[0.3rem] flex h-[1.15rem] w-[1.15rem] shrink-0 items-center justify-center rounded-full bg-red-500"
                 >
                   <X className="h-3 w-3 text-white" strokeWidth={3.5} />
                 </span>
@@ -114,6 +118,16 @@ export function BookingCallAgendaSection() {
             ))}
           </ul>
         </div>
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <a
+          href="#kalendarz"
+          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
+        >
+          <CalendarCheck className="h-6 w-6 shrink-0" />
+          Wybierz termin rozmowy
+        </a>
       </div>
     </Section>
   );

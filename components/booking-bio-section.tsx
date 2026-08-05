@@ -1,3 +1,4 @@
+import { CalendarCheck } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 const CREDENTIALS = [
@@ -14,7 +15,7 @@ export function BookingBioSection() {
         Kto to prowadzi
       </p>
       <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Z Kim Będziesz <span className="text-coral">Rozmawiać</span>
+        Moja <span className="text-coral">Historia</span>
       </h2>
 
       <div className="mt-10 grid grid-cols-1 gap-9 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-11">
@@ -32,7 +33,7 @@ export function BookingBioSection() {
           </h3>
           <div className="mt-5 space-y-4 text-body leading-[1.7] text-ink-muted">
             <p>
-              Nie zacząłem od sukcesu. Zacząłem od{" "}
+              Zacząłem od{" "}
               <strong className="font-semibold text-ink">
                 dwóch bankructw i pracy w magazynie DHL-u
               </strong>
@@ -51,19 +52,15 @@ export function BookingBioSection() {
               i które pozwalają mi wyjeżdżać dziesięć razy w roku.
             </p>
             <p>
-              Mój przełom nie polegał na znalezieniu lepszej reklamy ani
-              tańszego sprzętu. Polegał na przejściu z{" "}
+              Mój przełom nie polegał na przejściu z{" "}
               <strong className="font-semibold text-ink">Rzemieślnika</strong>{" "}
               na <strong className="font-semibold text-ink">Architekta</strong>
-              . Rzemieślnik <em>jest</em> systemem — jego dochód ma sufit, bo
-              sufit ma liczba godzin w dobie. Architekt projektuje system,
-              który zarabia także wtedy, gdy on śpi.
+              . Dochód Rzemieślnika ma sufit ustalony przez liczbę godzin w dobie. Architekt projektuje system,
+              który zarabia także wtedy, gdy on jest na wakacjach.
             </p>
             <p>
-              Uczę tego, czego sam musiałem nauczyć się przez pięć lat metodą
-              prób i błędów. Nie dlatego, że jestem najlepszym trenerem w
-              Polsce — tylko dlatego, że przeszedłem tę konkretną drogę i
-              wiem, gdzie są dziury.
+              Uczę w tym programie tego, czego sam musiałem nauczyć się przez kilka lat metodą
+              prób i błędów.
             </p>
           </div>
 
@@ -80,10 +77,20 @@ export function BookingBioSection() {
 
           <p className="mt-6 text-body text-ink-muted">
             Na czwartkowych sesjach marketingowych pracuje z Tobą{" "}
-            <strong className="font-semibold text-ink">Kornelia</strong> —
-            klikacie kampanie na żywo, w Twoim koncie i na Twoim budżecie.
+            <strong className="font-semibold text-ink">Kornelia</strong> czyli
+            managerka kilku studio Sportowe Przedmieście — klikacie kampanie na żywo, w Twoim koncie i na Twoim budżecie.
           </p>
         </div>
+      </div>
+
+      <div className="mt-12 flex justify-center">
+        <a
+          href="#kalendarz"
+          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
+        >
+          <CalendarCheck className="h-6 w-6 shrink-0" />
+          Wybierz termin rozmowy
+        </a>
       </div>
     </Section>
   );

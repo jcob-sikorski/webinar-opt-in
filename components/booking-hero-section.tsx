@@ -62,7 +62,7 @@ export function BookingHeroSection() {
           </p>
 
           <h1 className="mx-auto mt-7 max-w-[20ch] font-display text-[clamp(2rem,5.2vw,3.75rem)] font-bold italic leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-            Zobaczmy, Czy{" "}
+            Sprawdź, Czy{" "}
             <span className="text-coral">Dochodowe Studio</span> Jest Dla
             Ciebie
           </h1>

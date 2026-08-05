@@ -1,3 +1,4 @@
+import { CalendarCheck } from "lucide-react";
 import { CheckItem } from "@/components/ui/check-item";
 import { Section } from "@/components/ui/section";
 
@@ -41,7 +42,7 @@ export function BookingOfferSection() {
         Rdzeń programu
       </p>
       <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Czym Jest <span className="text-coral">Dochodowe Studio</span>
+        Przedstawiam Ci z Ogromną Przyjemnością <span className="text-coral">Dochodowe Studio</span>
       </h2>
 
       <p className="mx-auto mt-7 max-w-[52ch] text-center text-body-lg text-ink-muted">
@@ -85,6 +86,16 @@ export function BookingOfferSection() {
           — masz sam potrafić znaleźć problem, policzyć go, wdrożyć
           rozwiązanie i zarządzić ludźmi.
         </p>
+      </div>
+      
+      <div className="mt-12 flex justify-center">
+        <a
+          href="#kalendarz"
+          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
+        >
+          <CalendarCheck className="h-6 w-6 shrink-0" />
+          Wybierz termin rozmowy
+        </a>
       </div>
     </Section>
   );

@@ -123,8 +123,7 @@ export function BookingVaultsSection() {
         Co dostajesz dodatkowo
       </p>
       <h2 className="mx-auto mt-5 max-w-[26ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Sześć <span className="text-coral">Modułów</span> — Ponad 50 Gotowych
-        Narzędzi
+        Nie Wymyślaj Koła na Nowo
       </h2>
       <p className="mx-auto mt-5 max-w-[54ch] text-center text-body-lg text-ink-muted">
         Przez sześć lat budowałem te procesy i dokumenty w czterech własnych
