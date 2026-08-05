@@ -166,6 +166,7 @@ async function sendSmsApiNotification(phone: string | undefined, firstName: stri
     to: cleanPhone,
     message: message,
     format: "json", // Ensures SMSAPI responds with JSON
+    encoding: "utf-8", // Tells SMSAPI to interpret the text as UTF-8
   });
 
   const res = await fetch("https://api.smsapi.pl/sms.do", {

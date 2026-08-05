@@ -1,12 +1,12 @@
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Section } from "@/components/ui/section";
 
-const GALLERY = [
-  "Writing a stage pitch for Dan Kennedy",
-  "Doubling sales for a Russell Brunson event",
-  "Consistent Webinar Results For Over A Decade (Look How Young I Was!)",
-  "WSJ Bestseller plaque",
-];
+// const GALLERY = [
+//   "Writing a stage pitch for Dan Kennedy",
+//   "Doubling sales for a Russell Brunson event",
+//   "Consistent Webinar Results For Over A Decade (Look How Young I Was!)",
+//   "WSJ Bestseller plaque",
+// ];
 
 interface ProofSectionProps {
   /** Pass a real dashboard screenshot to replace the top placeholder. */
@@ -41,7 +41,7 @@ export function ProofSection({
         </figcaption>
       </figure>
 
-      {/* Photo gallery */}
+      {/* Photo gallery
       <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-9 sm:grid-cols-2">
         {GALLERY.map((caption, i) => (
           <figure key={caption}>
@@ -53,7 +53,7 @@ export function ProofSection({
             </figcaption>
           </figure>
         ))}
-      </div>
+      </div> */}
     </Section>
   );
 }
