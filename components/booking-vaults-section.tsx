@@ -144,7 +144,7 @@ export function BookingVaultsSection() {
           >
             <div className="flex items-baseline gap-3">
               <span className="font-display text-sm font-bold text-coral">
-                VAULT {vault.number}
+                MODUŁ {vault.number}
               </span>
             </div>
             <h3 className="mt-2 font-display text-xl font-bold text-ink sm:text-2xl">
