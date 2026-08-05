@@ -14,57 +14,53 @@ interface CaseStudyVideo {
 const CASE_STUDY_VIDEOS: CaseStudyVideo[] = [
   {
     title: "Miała piękne studio i prawie je zamknęła",
-    description:
-      "Właścicielka studia pod Krakowem o tym, co naprawdę uratowało jej biznes, gdy sam ładny lokal przestał wystarczać.",
+    description: "Właścicielka studia pod Krakowem o tym, co naprawdę uratowało jej biznes, gdy sam ładny lokal przestał wystarczać.",
     youtubeId: "Faf0TBg_DpQ",
   },
   {
     title: "Studio zarabia, gdy właściciel jest w Tajlandii",
-    description:
-      "Adrian, pół roku po otwarciu — o systemie i zespole, dzięki którym studio działa bez niego na miejscu.",
+    description: "Adrian, pół roku po otwarciu — o systemie i zespole, dzięki którym studio działa bez niego na miejscu.",
     youtubeId: "PuLUm907meI",
   },
   {
     title: "Otworzył własne studio dla kobiet",
-    description:
-      "Dlaczego na sieciówce nie da się dać tej samej jakości — i jak wyglądało przejście z trenera w przedsiębiorcę.",
+    description: "Dlaczego na sieciówce nie da się dać tej samej jakości — i jak wyglądało przejście z trenera w przedsiębiorcę.",
     youtubeId: "WNcbyFyhPyQ",
   },
   {
     title: "W miesiąc otworzyła własne studio treningowe",
-    description:
-      "Od trenerki mobilnej bez czasu dla siebie do właścicielki Studio Balans, z zespołem i poukładanym procesem.",
+    description: "Od trenerki mobilnej bez czasu dla siebie do właścicielki Studio Balans, z zespołem i poukładanym procesem.",
     youtubeId: "bHBhj0a1S0U",
   },
   {
     title: "Dziś sprzedaje pakiety za 6900 zł",
-    description:
-      "Rok wcześniej sam by w to nie uwierzył. Jak model semipersonalny zmienił zasady gry w jego studiu.",
+    description: "Rok wcześniej sam by w to nie uwierzył. Jak model semipersonalny zmienił zasady gry w jego studiu.",
     youtubeId: "c9JNecprL68",
   },
   {
     title: "Otworzył studio i zbudował zespół",
-    description:
-      "Dawid, w dniu otwarcia — o decyzjach, ofercie i mastermindach, które poukładały biznes od środka.",
+    description: "Dawid, w dniu otwarcia — o decyzjach, ofercie i mastermindach, które poukładały biznes od środka.",
     youtubeId: "u7rk1lC03cM",
   },
   {
-    title: "Sprzedał pierwsze pakiety już na otwarciu",
-    description:
-      "Case study Progress Fight Sulejów — przygotowania zaczęte dwa miesiące przed otwarciem drzwi.",
-    youtubeId: "YMngMQTJQW4",
-  },
-  {
     title: "Z 3 etatów do własnego studia",
-    description:
-      "Jak trenerka, która czekała miesiącami na wolny termin, postawiła granice i zbudowała system zamiast chaosu.",
+    description: "Jak trenerka, która czekała miesiącami na wolny termin, postawiła granice i zbudowała system zamiast chaosu.",
     youtubeId: "_qTuIWqnVIY",
   },
   {
     title: "Brał 50 zł za trening. Dziś ma klub z 7 trenerami",
-    description:
-      "Krzysztof Mariańczyk o drodze od pojedynczych treningów z polecenia do klubu z zespołem i podniesionymi stawkami.",
+    description: "Krzysztof Mariańczyk o drodze od pojedynczych treningów z polecenia do klubu z zespołem i podniesionymi stawkami.",
     youtubeId: "JmSl_mpfoQA",
+  },
+  {
+    title: "Zmniejszył koszty trzykrotnie przed otwarciem",
+    description: "Dlaczego zaczął planować 4 miesiące wcześniej, uniknął zakupu drogiego sprzętu premium i zmienił decyzję o lokalu aż trzy razy.",
+    youtubeId: "oy-C_Nn6aW0",
+  },
+  {
+    title: "Z etatu na kopalni do dwóch własnych studiów",
+    description: "Historia o tym, jak po wypadku w pracy zbudował zespół trenerów, rzucił etat i odzyskał czas, otwierając kolejne studio w Żorach.",
+    youtubeId: "eLsnc0_OZFY",
   },
 ];
 
