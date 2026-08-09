@@ -32,16 +32,12 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
 
   const capitalOptions = [
     {
-      id: "none",
-      text: "Nie mam kapitału, szukam darmowej wiedzy / dopiero zaczynam od zera.",
+      id: "Nie",
+      text: "Nie",
     },
     {
-      id: "below_35k",
-      text: "Poniżej 35 000 zł, ale jestem w stanie zorganizować finansowanie.",
-    },
-    {
-      id: "35k_plus",
-      text: "35 000 – 100 000 zł (lub więcej) – mam kapitał i jestem gotowy zainwestować.",
+      id: "Tak",
+      text: "Tak",
     },
   ];
 
@@ -50,12 +46,11 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
     setIsSubmitting(true); // Disable button immediately
 
     let clientCategory = "";
-    if (capital === "none") clientCategory = "Brokie - Odcięcie";
-    if (capital === "below_35k") clientCategory = "Do weryfikacji";
-    if (capital === "35k_plus") clientCategory = "Idealny ICP";
+    if (capital === "Nie") clientCategory = "Brokie - Odcięcie";
+    if (capital === "Tak") clientCategory = "Idealny ICP";
 
     // 1. Meta Pixel & CAPI Logic
-    if (capital === "35k_plus") {
+    if (capital === "Tak") {
       const eventId = `evt_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
       
       if (typeof window !== "undefined" && window.fbq) {
@@ -214,7 +209,7 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
 
             <div className="text-left">
               <label className="mb-4 block text-[15px] font-bold leading-snug text-ink">
-                Zbudowanie dochodowego studia wymaga inwestycji. Jakim kapitałem na rozwój biznesu dysponujesz w tym momencie?
+                Na dzisiejszym warsztacie pokażę ofertę współpracy, w którą inwestycja to kilkanaście tysięcy zł. Czy jesteś otwarty na taką inwestycję, jeśli program będzie miał sens dla Twojej sytuacji?
               </label>
               <div className="flex flex-col gap-2.5">
                 {capitalOptions.map((option) => {
