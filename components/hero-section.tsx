@@ -91,7 +91,7 @@ export function HeroSection() {
           </p>
 
           <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]">
-            Przestań Trenować Klientów Godzina po Godzinie. <span className="text-coral">Naucz Się Zbudować Studio</span>, Które Zarabia{" "}
+            <span className="text-coral">Naucz Się Zbudować Studio</span>, Które Zarabia{" "}
             <span className="whitespace-nowrap">200–600&nbsp;tys. zł</span> Rocznie Bez Ciebie na Sali
           </h1>
 

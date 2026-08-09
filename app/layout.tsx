@@ -22,7 +22,7 @@ const display = Poppins({
 
 // Full SEO & Social Sharing Metadata
 export const metadata: Metadata = {
-  title: "Przestań Trenować Klientów Godzina po Godzinie. Otwórz Studio, Które Zarabia 200–600 tys. zł Rocznie Bez Ciebie na Sali",
+  title: "Otwórz Studio, Które Zarabia 200–600 tys. zł Rocznie Bez Ciebie na Sali",
   description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
   keywords: [
     "studio treningu personalnego", 
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     apple: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6a3689380a683b64fe2824bd.png",
   },
   openGraph: {
-    title: "Przestań Trenować Klientów Godzina po Godzinie. Otwórz Studio, Które Zarabia 200–600 tys. zł Rocznie Bez Ciebie na Sali",
+    title: "Otwórz Studio, Które Zarabia 200–600 tys. zł Rocznie Bez Ciebie na Sali",
     description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
     url: "https://dochodowestudio.com", 
     siteName: "Dochodowe Studio",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Przestań Trenować Klientów Godzina po Godzinie. Otwórz Studio, Które Zarabia 200–600 tys. zł Rocznie Bez Ciebie na Sali",
+    title: "Otwórz Studio, Które Zarabia 200–600 tys. zł Rocznie Bez Ciebie na Sali",
     description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
     images: ["https://ucarecdn.com/2fb844e9-c929-46c4-853d-057ef2ecad41/unnamed1.webp"],
   },
