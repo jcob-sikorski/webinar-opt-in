@@ -108,7 +108,12 @@ export function IsThisForYouSection() {
       </p>
 
       <div className="mt-9 text-center">
-        <RegisterCtaButton size="lg">Zajmij swoje miejsce — 0 zł</RegisterCtaButton>
+        <RegisterCtaButton
+          size="lg"
+          className="w-full max-w-xs whitespace-normal text-center sm:w-auto sm:max-w-none sm:whitespace-nowrap"
+        >
+          Zajmij swoje miejsce — 0 zł
+        </RegisterCtaButton>
         <p className="mt-3.5 text-sm text-ink-subtle">
           Warsztat na żywo. Protokół Dochodowego Studia dla tych, którzy
           zostaną do końca.

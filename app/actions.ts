@@ -5,7 +5,7 @@ import { headers } from "next/headers";
 
 const ACCESS_TOKEN = "EAAGRCzL2wVMBSJcUQUUzyAx5qVizebZCaMoK8a94D373AYZBBqsYkmtaMLomcZA1Bqf1A2POx34HsqLZBQbyc7ZAUOMplR8upbqjZBBw53m4RlZCesFNxjidlMdJjQCA5ZBba2bnGXPx1D7jfyXdKJMUkZB5OoByDyJfE17JIa3gfPu8nXEXoRYwC7nRjit6zn3KtZCgZDZD";
 const PIXEL_ID = "965293539900334";
-const TEST_CODE = "TEST8246";
+const TEST_CODE = "TEST18447";
 
 function hashData(data: string) {
   if (!data) return "";

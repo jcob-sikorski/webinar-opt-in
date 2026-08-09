@@ -122,7 +122,12 @@ export function TransformationSection() {
       </div>
 
       <div className="mt-9 text-center">
-        <RegisterCtaButton size="lg">Zarezerwuj swoje miejsce</RegisterCtaButton>
+        <RegisterCtaButton
+          size="lg"
+          className="w-full max-w-xs whitespace-normal text-center sm:w-auto sm:max-w-none sm:whitespace-nowrap"
+        >
+          Zarezerwuj swoje miejsce
+        </RegisterCtaButton>
         <p className="mt-3.5 text-sm text-ink-subtle">
           Poznaj na tym bezpłatnym warsztacie sprawdzony plan osiągnięcia rentowności.
         </p>

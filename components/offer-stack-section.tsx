@@ -52,7 +52,10 @@ export function OfferStackSection() {
         </p>
 
         <div className="mt-6">
-          <RegisterCtaButton size="lg" className="w-full">
+          <RegisterCtaButton
+            size="lg"
+            className="w-full whitespace-normal text-center text-base sm:text-lg"
+          >
             Zarezerwuj swoje miejsce
           </RegisterCtaButton>
           <p className="mt-3.5 text-center text-sm italic text-ink-subtle">
