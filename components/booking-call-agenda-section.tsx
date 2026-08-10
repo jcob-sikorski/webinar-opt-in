@@ -22,7 +22,7 @@ const AGENDA = [
 
 const FOR_YOU = [
   "Masz pełny grafik i Twój dochód ma sufit.",
-  "Masz już studio, ale bez Ciebie ono się zatrzymuje.",
+  "Masz już studio, ale bez Ciebie nic nie działa.",
   "Masz kapitał lub dostęp do finansowania (35–100 tys. zł na lokal i wyposażenie).",
   "Jesteś gotów wdrażać, a nie tylko oglądać materiały.",
 ];

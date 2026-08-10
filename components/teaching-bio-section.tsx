@@ -42,7 +42,7 @@ const HIGHLIGHTS: Highlight[] = [
   {
     title: "Od zera do dwóch placówek i dziesięcioosobowego zespołu",
     description:
-      "rozwijam ludzi od pełnego grafiku trenera-solo aż do tego etapu — konsekwentnie, nie jednorazowo.",
+      "rozwijam ludzi od pełnego grafiku trenera-solo aż do tego etapu.",
   },
 ];
 
@@ -93,7 +93,7 @@ export function TeachingBioSection({ photo }: TeachingBioSectionProps) {
 
       <p className="mt-9 text-body-lg text-ink-muted">
         Jestem <strong className="font-semibold text-ink">Bartek Sikorski.</strong>{" "}
-        Ostatnie <strong className="font-semibold text-ink">pięć lat</strong> spędziłem,
+        Ostatnie <strong className="font-semibold text-ink">pięć lat</strong> spędziłem
         robiąc jedną rzecz: budując studia treningu personalnego,{" "}
         <em className="italic">które zarabiają, kiedy mnie tam nie ma</em>. Jako
         trener-solo, jako właściciel jednego studia, dziś jako inwestor budujący{" "}
@@ -111,7 +111,7 @@ export function TeachingBioSection({ photo }: TeachingBioSectionProps) {
       </p>
 
       <p className="mt-5 text-body-lg text-ink-muted">
-        Kilka konkretów, gdybyśmy się jeszcze nie poznali:
+        Kilka faktów, jeśli jeszcze mnie nie znasz:
       </p>
 
       <ul className="mt-5 divide-y divide-line">

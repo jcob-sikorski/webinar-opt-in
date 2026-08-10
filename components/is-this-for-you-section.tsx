@@ -14,7 +14,7 @@ const PERSONAS: Persona[] = [
     body: (
       <>
         Pracujesz od rana do wieczora. Klienci przychodzą, płacą, wracają — ale
-        kalendarz nie ma już miejsca na kolejną osobę.{" "}
+        Twój grafik nie ma już miejsca na kolejną osobę.{" "}
         <strong className="font-semibold text-ink">
           Każda dodatkowa złotówka oznacza kolejną godzinę na sali.
         </strong>{" "}
@@ -29,7 +29,7 @@ const PERSONAS: Persona[] = [
   },
   {
     label: "02 — Właściciel, który nadal stoi na sali",
-    lead: "Masz już studio — ale bez Ciebie ono się zatrzymuje, a liczby i tak się nie spinają.",
+    lead: "Masz już studio — a bez Ciebie nic nie działa.",
     body: (
       <>
         Masz lokal, może nawet zespół. Ale{" "}
@@ -38,10 +38,10 @@ const PERSONAS: Persona[] = [
           zamykasz każdą sprzedaż.
         </strong>{" "}
         Kiedy wyjeżdżasz,{" "}
-        <em className="italic">przychód nie czeka — on spada</em>. Z zewnątrz
-        wygląda to jak biznes: jest logo, jest lokal, są treningi.{" "}
+        <em className="italic">przychód leci w dół</em>. Z zewnątrz
+        to co masz wygląda jak biznes: masz to logo, lokal jest, są profesjonalne treningi.{" "}
         <em className="italic">
-          W środku wiesz, że utknąłeś na tych samych kilkudziesięciu tysiącach
+          A w środku wiesz, że utknąłeś na tych samych kilkudziesięciu tysiącach
           przychodu miesiąc w miesiąc
         </em>
         , marża jest cienka, a trenerzy robią wszystko po swojemu.{" "}
@@ -98,10 +98,10 @@ export function IsThisForYouSection() {
 
       <p className="mx-auto mt-6 max-w-prose text-center text-body italic text-ink-muted">
         Jeśli nie masz jeszcze żadnych klientów i dopiero zastanawiasz się, czy
-        chcesz być trenerem — ten warsztat pójdzie ponad Twoją głowę.{" "}
+        chcesz być trenerem — ten warsztat te jest dla Ciebie.{" "}
         <strong className="font-semibold not-italic text-ink">
-          Studio nie rozwiązuje braku klientów, tylko zwiększa konsekwencje ich
-          braku.
+          Studio nie rozwiązuje problemów jakie masz obecnie, tylko je
+          powiększa jeśli nie wiesz jak je rozwiązać.
         </strong>{" "}
         Zbuduj najpierw pierwszą bazę i wróć, gdy Twój własny grafik zacznie
         być sufitem, a nie szansą.

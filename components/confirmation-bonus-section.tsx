@@ -72,7 +72,7 @@ export function ConfirmationBonusSection() {
       </p>
       <h2 className="mx-auto mt-5 max-w-[26ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
         Poznaj Ludzi, Którzy{" "}
-        <span className="text-coral">Już To Zrobili</span>
+        <span className="text-coral">Otworzyli z Nami Studio</span>
       </h2>
       <p className="mx-auto mt-5 max-w-[50ch] text-center text-body-lg text-ink-muted">
         Nie musisz czekać do 24 sierpnia, żeby zobaczyć, jak to wygląda w

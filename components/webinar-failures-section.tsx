@@ -79,7 +79,7 @@ export function WebinarFailuresSection() {
       </ul>
 
       <p className="mx-auto mt-9 max-w-prose text-center text-body-lg font-semibold italic text-ink">
-        To nie jest teoria. To pięć filarów, które sprawdzam jako pierwsze,
+        To jest pięć filarów, które sprawdzam jako pierwsze,
         kiedy ktoś prosi mnie o audyt swojego studia.
       </p>
     </Section>

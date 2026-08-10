@@ -92,7 +92,6 @@ export function OfferStackSection() {
             <strong className="font-semibold text-ink">
               to on przynosi mi klientów
             </strong>
-            . Mówię to wprost.{" "}
             <em className="italic">
               Jeśli wolisz wdrożyć to sam, bez mojej pomocy — również w
               porządku.

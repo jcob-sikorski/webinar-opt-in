@@ -115,7 +115,7 @@ export function TransformationSection() {
               87%
             </dt>
             <dd className="font-display text-[1.4rem] font-bold italic leading-[1.25] text-ink sm:text-[1.6rem]">
-              tylu z programu otwiera kolejną lokalizację.
+              osób z 1 placówką otwiera kolejne.
             </dd>
           </div>
         </dl>

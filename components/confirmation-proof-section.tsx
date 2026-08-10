@@ -100,8 +100,8 @@ export function ConfirmationProofSection() {
   return (
     <Section width="wide">
       <h2 className="text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Osoby, Które Były{" "}
-        <span className="text-coral">Dokładnie Tam, Gdzie Ty Teraz</span>
+        Jeszcze Więcej Historii Osób{" "}
+        <span className="text-coral">Które Nic Nie Wiedziały o Studio</span>
       </h2>
 
       <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
@@ -131,7 +131,7 @@ export function ConfirmationProofSection() {
 
       <div className="mx-auto mt-12 max-w-lg rounded-xl border border-line border-t-[3px] border-t-coral-bright p-7 text-center">
         <p className="text-body-lg font-semibold text-ink">
-          Jedno przypomnienie, zanim zamkniesz tę stronę:
+          Uwaga!
         </p>
         <p className="mt-3 text-body text-ink-muted">
           Nagranie zostaje z Tobą{" "}
@@ -144,7 +144,6 @@ export function ConfirmationProofSection() {
           <strong className="font-semibold text-ink">
             24 sierpnia, 20:00
           </strong>{" "}
-          — nie na &bdquo;obejrzę później&rdquo;.
         </p>
       </div>
     </Section>

@@ -20,7 +20,7 @@ const FAQS: FaqItem[] = [
         zastrzeżenie: <M>Protokół Dochodowego Studia</M> trafia tylko do osób,
         które zostaną z nami do samego końca warsztatu na żywo — to jedna z
         trzech rzeczy, o które proszę na starcie. Bycie na żywo daje Ci też
-        możliwość zadawania pytań na czacie, na które odpowiadam wprost.
+        możliwość zadawania pytań na czacie.
       </>
     ),
   },
@@ -28,7 +28,6 @@ const FAQS: FaqItem[] = [
     question: "Czym dokładnie jest Protokół Dochodowego Studia?",
     answer: (
       <>
-        To nie jest kolejne nagranie do obejrzenia raz i odłożenia na półkę.
         To <M>cały model Dochodowego Studia od A do Z</M>, zbudowany na
         podstawie pracy z ponad 40 placówkami, które już go wdrożyły — każdy
         etap, każdy typowy błąd i jego rozwiązanie, w formie, do której
@@ -41,11 +40,9 @@ const FAQS: FaqItem[] = [
     answer: (
       <>
         Tak — <M>jeśli masz kapitał lub dostęp do finansowania</M> i realnie
-        myślisz o otwarciu własnego butikowego studia, a nie tylko ciekawi Cię
-        temat. Jeśli dziś nie masz jeszcze żadnych klientów jako trener i
+        myślisz o otwarciu własnego butikowego studia. Jeśli dziś nie masz jeszcze żadnych klientów jako trener i
         dopiero zastanawiasz się, czy w ogóle chcesz pracować z ludźmi — ten
-        warsztat przebije Twoje oczekiwania. Studio nie rozwiązuje braku
-        klientów, tylko zwiększa konsekwencje ich braku.
+        warsztat TE jest dla Ciebie.
       </>
     ),
   },

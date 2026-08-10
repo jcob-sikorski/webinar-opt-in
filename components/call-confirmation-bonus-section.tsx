@@ -68,7 +68,7 @@ export function CallConfirmationBonusSection() {
       </p>
       <h2 className="mx-auto mt-5 max-w-[26ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
         Poznaj Ludzi, Którzy{" "}
-        <span className="text-coral">Już To Zrobili</span>
+        <span className="text-coral">Otworzyli z Nami Studio</span>
       </h2>
       <p className="mx-auto mt-5 max-w-[50ch] text-center text-body-lg text-ink-muted">
         Zanim spotkamy się na rozmowie, zobacz jak to wygląda w

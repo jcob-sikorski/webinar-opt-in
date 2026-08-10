@@ -15,12 +15,12 @@ export function FinalCtaSection() {
 
       <div className="mx-auto mt-10 max-w-[60ch] space-y-6 text-body-lg leading-[1.65] text-ink-muted text-pretty">
         <p>
-          Jesteś <strong className="font-semibold text-ink">jedną decyzją</strong>{" "}
-          od zupełnie innego biznesu. Ten sam trening, ta sama sala, ci sami
+          <strong className="font-semibold text-ink">Jedna decyzja</strong>{" "}
+          dzieli Cię od zupełnie innego biznesu. Ten sam trening, ta sama sala, ci sami
           klienci —{" "}
           <em className="italic">
-            różnica polega na tym, czy sprzedajesz swój czas, czy system,
-            który działa bez Ciebie
+            różnica polega na tym czy sprzedajesz swój czas, czy masz system,
+            który działa bez Ciebie.
           </em>
           .
         </p>
@@ -59,7 +59,7 @@ export function FinalCtaSection() {
       </div>
 
       <p className="mx-auto mt-12 max-w-[30ch] text-center font-display text-[1.4rem] italic leading-[1.35] text-ink text-balance sm:text-[1.7rem]">
-        Jedna bezpłatna godzina, która pokazuje Ci, jak z pojedynczych
+        Bezpłatny warsztat, który pokaże Ci, jak z pojedynczych
         klientów zbudować{" "}
         <strong className="font-semibold not-italic">
           przychód rzędu 200–600 tys. zł rocznie
