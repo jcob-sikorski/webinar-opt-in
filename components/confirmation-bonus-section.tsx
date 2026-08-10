@@ -76,7 +76,7 @@ export function ConfirmationBonusSection() {
       </h2>
       <p className="mx-auto mt-5 max-w-[50ch] text-center text-body-lg text-ink-muted">
         Nie musisz czekać do 24 sierpnia, żeby zobaczyć, jak to wygląda w
-        praktyce. Oto prawdziwe rozmowy z właścicielami studiów, którzy
+        praktyce. Posłuchaj wywiadów z właścicielami studiów, którzy
         przeszli tę drogę.
       </p>
 

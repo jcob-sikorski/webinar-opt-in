@@ -72,7 +72,7 @@ export function CallConfirmationBonusSection() {
       </h2>
       <p className="mx-auto mt-5 max-w-[50ch] text-center text-body-lg text-ink-muted">
         Zanim spotkamy się na rozmowie, zobacz jak to wygląda w
-        praktyce. Oto prawdziwe rozmowy z właścicielami studiów, którzy
+        praktyce. Posłuchaj wywiadów z właścicielami studiów, którzy
         przeszli tę drogę i rozwiązali problemy, z którymi mierzysz się dzisiaj.
       </p>
 

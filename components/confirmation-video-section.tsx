@@ -50,15 +50,13 @@ export function ConfirmationVideoSection({
         <p>
           Jedna rzecz, o którą proszę już teraz:{" "}
           <strong className="font-semibold text-ink">
-            zablokuj sobie 20 sierpnia, 20:00
+            zablokuj sobie 24 sierpnia, 20:00
           </strong>{" "}
-          na żywo, a nie na &bdquo;obejrzę nagranie później&rdquo;. Samo
-          nagranie zostaje z Tobą na lata —{" "}
+          na żywo. Samo nagranie zostaje z Tobą na lata —{" "}
           <em className="italic">
             ale Protokół Dochodowego Studia trafia tylko do osób, które
-            zostaną na żywo do samego końca
+            zostaną na żywo do samego końca!
           </em>
-          . To jedna z trzech rzeczy, o które proszę na starcie warsztatu.
         </p>
       </div>
     </Section>
