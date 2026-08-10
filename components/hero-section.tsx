@@ -92,7 +92,14 @@ export function HeroSection() {
 
           <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]">
             <span className="text-coral">Naucz Się Zbudować Studio</span>, Które Zarabia{" "}
-            <span className="whitespace-nowrap">200–600&nbsp;tys. zł</span> Rocznie Bez Ciebie na Sali
+            <span className="whitespace-nowrap">200–600&nbsp;tys. zł</span> Rocznie{" "}
+            <span className="relative inline-block whitespace-nowrap">
+              <span className="relative z-10">Bez Ciebie na Sali</span>
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 z-0 h-[0.16em] translate-y-full bg-orange-500"
+              />
+            </span>
           </h1>
 
           <p className="mx-auto mt-7 max-w-[38rem] font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 text-pretty sm:text-lg">
