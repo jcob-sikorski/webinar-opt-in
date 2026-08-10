@@ -4,6 +4,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { RegisterModalProvider } from "@/components/register-modal-provider";
 import { FacebookPixel } from "@/components/facebook-pixel";
+import { AttributionCapture } from "@/components/attribution-capture";
 
 const body = Inter({
   subsets: ["latin", "latin-ext"],
@@ -20,7 +21,6 @@ const display = Poppins({
   variable: "--font-display",
 });
 
-// Full SEO & Social Sharing Metadata
 export const metadata: Metadata = {
   title: "Otwórz Studio, Które Zarabia 200–600 tys. zł Rocznie Bez Ciebie na Sali",
   description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
@@ -91,9 +91,15 @@ export default function RootLayout({
     <html lang="pl" className={`${body.variable} ${display.variable}`}>
       <body className="font-sans text-body">
         
+        {/* WRAP THIS IN SUSPENSE TO PREVENT DE-OPTIMIZING THE WHOLE SITE TO SSR */}
+        <Suspense fallback={null}>
+          <AttributionCapture />
+        </Suspense>
+        
         <Suspense fallback={null}>
           <FacebookPixel />
         </Suspense>
+        
         <RegisterModalProvider>{children}</RegisterModalProvider>
       </body>
     </html>

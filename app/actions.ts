@@ -2,17 +2,15 @@
 
 import crypto from "crypto";
 import { headers } from "next/headers";
+import { buildFbcFromClickId } from "@/lib/attribution";
 
-const ACCESS_TOKEN = "EAAGRCzL2wVMBSJcUQUUzyAx5qVizebZCaMoK8a94D373AYZBBqsYkmtaMLomcZA1Bqf1A2POx34HsqLZBQbyc7ZAUOMplR8upbqjZBBw53m4RlZCesFNxjidlMdJjQCA5ZBba2bnGXPx1D7jfyXdKJMUkZB5OoByDyJfE17JIa3gfPu8nXEXoRYwC7nRjit6zn3KtZCgZDZD";
+const ACCESS_TOKEN = process.env.META_CAPI_ACCESS_TOKEN!;
 const PIXEL_ID = "965293539900334";
-const TEST_CODE = "TEST18447";
+const TEST_CODE = process.env.META_CAPI_TEST_EVENT_CODE;
 
 function hashData(data: string) {
   if (!data) return "";
-  return crypto
-    .createHash("sha256")
-    .update(data.toLowerCase().trim())
-    .digest("hex");
+  return crypto.createHash("sha256").update(data.toLowerCase().trim()).digest("hex");
 }
 
 export async function sendToMetaCAPI(formData: {
@@ -22,20 +20,34 @@ export async function sendToMetaCAPI(formData: {
   lastName: string;
   clientCategory: string;
   sourceUrl: string;
-  eventId: string; // <-- ADD THIS
+  eventId: string;
+  attribution?: {
+    utm_source?: string;
+    utm_medium?: string;
+    utm_campaign?: string;
+    utm_content?: string;
+    utm_term?: string;
+    fbclid?: string;
+    captured_at?: string;
+  };
 }) {
   const headersList = headers();
   const clientIp = headersList.get("x-forwarded-for") || headersList.get("x-real-ip") || "";
   const clientUserAgent = headersList.get("user-agent") || "";
 
-  const payload = {
+  const attr = formData.attribution || {};
+
+  // Construct Meta's fbc parameter mathematically if fbclid exists
+  const fbc = attr.fbclid ? buildFbcFromClickId(attr.fbclid, attr.captured_at) : undefined;
+
+  const payload: Record<string, unknown> = {
     data: [
       {
         event_name: "Lead",
         event_time: Math.floor(Date.now() / 1000),
         action_source: "website",
         event_source_url: formData.sourceUrl,
-        event_id: formData.eventId, // <-- ADD THIS FOR DEDUPLICATION
+        event_id: formData.eventId,
         user_data: {
           em: [hashData(formData.email)],
           ph: [hashData(formData.phone.replace(/\D/g, ""))],
@@ -45,15 +57,23 @@ export async function sendToMetaCAPI(formData: {
           external_id: [hashData(formData.email)],
           client_ip_address: clientIp,
           client_user_agent: clientUserAgent,
+          // Inject the constructed click ID directly
+          ...(fbc ? { fbc } : {}),
         },
         custom_data: {
           content_name: "Warsztat: Zloty Model Biznesowy",
           content_category: formData.clientCategory,
+          ...(attr.utm_source ? { utm_source: attr.utm_source } : {}),
+          ...(attr.utm_medium ? { utm_medium: attr.utm_medium } : {}),
+          ...(attr.utm_campaign ? { utm_campaign: attr.utm_campaign } : {}),
+          ...(attr.utm_content ? { utm_content: attr.utm_content } : {}),
+          ...(attr.utm_term ? { utm_term: attr.utm_term } : {}),
         },
       },
     ],
-    test_event_code: TEST_CODE, 
   };
+
+  if (TEST_CODE) payload.test_event_code = TEST_CODE;
 
   try {
     const res = await fetch(
@@ -64,9 +84,9 @@ export async function sendToMetaCAPI(formData: {
         body: JSON.stringify(payload),
       }
     );
-    
+
     const data = await res.json();
-    console.log("CAPI Response:", data); // Check your VS Code terminal for this!
+    console.log("CAPI Response:", data);
     return { success: true, data };
   } catch (error) {
     console.error("CAPI Error:", error);

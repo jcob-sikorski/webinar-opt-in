@@ -3,11 +3,23 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phone, capitalSelected, clientCategory } = body;
+    const { firstName, lastName, email, phone, capitalSelected, clientCategory, attribution } = body;
 
-    // ============================================================================
-    // 1. WEBINARJAM: Register user and get the unique join link
-    // ============================================================================
+    function sanitizeAttrField(val: unknown, maxLen = 255): string | undefined {
+      if (typeof val !== "string") return undefined;
+      const trimmed = val.trim().slice(0, maxLen);
+      return trimmed.length > 0 ? trimmed : undefined;
+    }
+
+    const safeAttribution = {
+      utm_source: sanitizeAttrField(attribution?.utm_source),
+      utm_medium: sanitizeAttrField(attribution?.utm_medium),
+      utm_campaign: sanitizeAttrField(attribution?.utm_campaign),
+      utm_content: sanitizeAttrField(attribution?.utm_content),
+      utm_term: sanitizeAttrField(attribution?.utm_term),
+      fbclid: sanitizeAttrField(attribution?.fbclid, 512),
+    };
+
     const wjParams = new URLSearchParams({
       api_key: process.env.WEBINARJAM_API_KEY!,
       webinar_id: process.env.WEBINARJAM_WEBINAR_ID!,
@@ -47,6 +59,7 @@ export async function POST(request: Request) {
         joinLink: uniqueJoinLink,
         capitalSelected,
         clientCategory,
+        attribution: safeAttribution,
       }),
 
       // --- B. MAILERLITE ---
@@ -98,6 +111,7 @@ async function upsertGhlContact({
   joinLink,
   capitalSelected,
   clientCategory,
+  attribution,
 }: {
   firstName: string;
   lastName?: string;
@@ -106,6 +120,14 @@ async function upsertGhlContact({
   joinLink: string;
   capitalSelected?: string;
   clientCategory?: string;
+  attribution: {
+    utm_source?: string;
+    utm_medium?: string;
+    utm_campaign?: string;
+    utm_content?: string;
+    utm_term?: string;
+    fbclid?: string;
+  };
 }) {
   const headers = {
     "Authorization": `Bearer ${process.env.GHL_API_KEY}`,
@@ -128,6 +150,17 @@ async function upsertGhlContact({
 
   const tags = Array.from(new Set([...existingTags, "webinar-24sie", clientCategory].filter(Boolean)));
 
+  const customFields = [
+    { id: process.env.GHL_CAPITAL_FIELD_ID, field_value: capitalSelected },
+    { id: process.env.GHL_WJ_LINK_FIELD_ID, field_value: joinLink },
+    { id: process.env.GHL_UTM_SOURCE_FIELD_ID, field_value: attribution.utm_source },
+    { id: process.env.GHL_UTM_MEDIUM_FIELD_ID, field_value: attribution.utm_medium },
+    { id: process.env.GHL_UTM_CAMPAIGN_FIELD_ID, field_value: attribution.utm_campaign },
+    { id: process.env.GHL_UTM_CONTENT_FIELD_ID, field_value: attribution.utm_content },
+    { id: process.env.GHL_UTM_TERM_FIELD_ID, field_value: attribution.utm_term },
+    { id: process.env.GHL_FBCLID_FIELD_ID, field_value: attribution.fbclid },
+  ].filter((f) => f.id && f.field_value);
+
   const upsertRes = await fetch("https://services.leadconnectorhq.com/contacts/upsert", {
     method: "POST",
     headers,
@@ -138,10 +171,7 @@ async function upsertGhlContact({
       email,
       phone,
       tags,
-      customFields: [
-        { id: process.env.GHL_CAPITAL_FIELD_ID, field_value: capitalSelected },
-        { id: process.env.GHL_WJ_LINK_FIELD_ID, field_value: joinLink },
-      ],
+      customFields,
     }),
   });
 
@@ -157,16 +187,15 @@ async function upsertGhlContact({
 async function sendSmsApiNotification(phone: string | undefined, firstName: string) {
   if (!phone) return;
 
-  // Clean the phone number to ensure compatibility (optional, adjust based on your front-end input)
+  // Clean the phone number to ensure compatibility
   const cleanPhone = phone.replace(/\D/g, "");
-
   const message = `Hej ${firstName}! "Dochodowe Studio" już niedługo. Zapisz: 24 Sierpnia, Poniedziałek 20:00. Pokażę Ci, jak wyjść z sali bez tracenia przychodu. Do zobaczenia – Bartek`;
 
   const params = new URLSearchParams({
     to: cleanPhone,
     message: message,
-    format: "json", // Ensures SMSAPI responds with JSON
-    encoding: "utf-8", // Tells SMSAPI to interpret the text as UTF-8
+    format: "json",
+    encoding: "utf-8",
   });
 
   const res = await fetch("https://api.smsapi.pl/sms.do", {

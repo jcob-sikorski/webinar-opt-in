@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { sendToMetaCAPI } from "@/app/actions"; 
+import { resolveAttribution } from "@/lib/attribution";
 
 declare global {
   interface Window {
@@ -49,6 +50,8 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
     if (capital === "Nie") clientCategory = "Brokie - Odcięcie";
     if (capital === "Tak") clientCategory = "Idealny ICP";
 
+    const attribution = resolveAttribution();
+
     // 1. Meta Pixel & CAPI Logic
     if (capital === "Tak") {
       const eventId = `evt_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
@@ -78,6 +81,7 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
         clientCategory,
         sourceUrl: window.location.href,
         eventId,
+        attribution,
       });
     }
 
@@ -92,7 +96,8 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
           email,
           phone,
           capitalSelected: capital,
-          clientCategory
+          clientCategory,
+          attribution,
         }),
       });
 
