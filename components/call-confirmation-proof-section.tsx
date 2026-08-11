@@ -135,9 +135,9 @@ export function CallConfirmationProofSection() {
         </p>
         <p className="mt-3 text-body text-ink-muted">
           Nagranie zostaje z Tobą{" "}
-          <strong className="font-semibold text-ink">na zawsze</strong>.{" "}
+          <strong className="font-semibold text-ink">na 5 dni</strong>.{" "}
           <em className="italic">
-            Protokół Dochodowego Studia dostają wyłącznie osoby, które zostają
+            Protokół Dochodowego Studia dostaną wyłącznie osoby, które zostają
             na żywo do samego końca warsztatu
           </em>
           . Zablokuj kalendarz na{" "}

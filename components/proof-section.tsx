@@ -37,11 +37,22 @@ export function ProofSection({
           <p className="text-center text-xl font-bold italic text-coral sm:text-2xl">
             ★ 4 Placówki Sportowe Przedmieście ★
           </p>
-          <p className="mx-auto mt-4 max-w-md text-center text-body italic text-ink-muted">
-            Moje placówki pod marką „Sportowe Przedmieście” w miastach takich jak Poddębice, Łódź, Aleksandrów Łódzki czy Uniejów w najlepszym okresie generowały prawie 200 tys. zł dochodu miesięcznie. Biznes szedł tak dobrze, że – mówiąc szczerze – zaczął być wręcz przewidywalny. Wtedy narodził się pomysł, by dzielić się wiedzą i pomagać innym.
-                    
-            Jeśli prowadzisz już własne studio lub dopiero planujesz otwarcie i chcesz zejść z sali jako trener, budując placówkę generującą 20–50 tys. zł miesięcznie – zapraszam Cię na ten warsztat!
-          </p>
+
+          <div className="mx-auto mt-4 max-w-md space-y-4 text-center text-body italic text-ink-muted">
+            <p>
+              Moje placówki pod marką „Sportowe Przedmieście” w miastach takich jak Poddębice, 
+              Łódź, Aleksandrów Łódzki czy Uniejów w najlepszym okresie generowały prawie 
+              200 tys. zł dochodu miesięcznie. Biznes szedł tak dobrze, że – mówiąc szczerze – 
+              zaczął być zbyt przewidywalny. Teraz robię to co mnie spełnia. Dzielę się wiedzą 
+              i pomagam zrobić to samo innym.
+            </p>
+            
+            <p>
+              Jeśli prowadzisz już własne studio lub dopiero planujesz otwarcie i chcesz zejść 
+              z sali jako trener, budując placówkę generującą 20–50 tys. zł miesięcznie – 
+              zapraszam Cię na ten warsztat!
+            </p>
+          </div>
         </figcaption>
       </figure>
 

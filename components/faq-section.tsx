@@ -13,75 +13,42 @@ const M = ({ children }: { children: ReactNode }) => (
 
 const FAQS: FaqItem[] = [
   {
-    question: "Co jeśli nie mogę być na żywo?",
+    question: "Mój grafik pęka w szwach. Skąd mam wziąć czas na ten webinar?",
     answer: (
       <>
-        Dostaniesz <M>nagranie na lata</M> — bez limitu czasowego. Jest jedno
-        zastrzeżenie: <M>Protokół Dochodowego Studia</M> trafia tylko do osób,
-        które zostaną z nami do samego końca warsztatu na żywo — to jedna z
-        trzech rzeczy, o które proszę na starcie. Bycie na żywo daje Ci też
-        możliwość zadawania pytań na czacie.
+        Jeśli pracujesz od świtu do nocy i nie masz nawet chwili na spokojny obiad, to <M>właśnie dlatego MUSISZ tu być</M>. Ten warsztat to nie jest kolejny film do puszczenia w tle. To brutalnie szczera rozmowa o tym, jak przestać być niewolnikiem własnego biznesu, wyrwać się z chaosu i w końcu <M>odzyskać swój czas i życie prywatne</M>.
       </>
     ),
   },
   {
-    question: "Czym dokładnie jest Protokół Dochodowego Studia?",
+    question: "Boję się, że nie dam rady. Czy własne studio jest w ogóle dla mnie?",
     answer: (
       <>
-        To <M>cały model Dochodowego Studia od A do Z</M>, zbudowany na
-        podstawie pracy z ponad 40 placówkami, które już go wdrożyły — każdy
-        etap, każdy typowy błąd i jego rozwiązanie, w formie, do której
-        wracasz dokładnie wtedy, kiedy jest Ci to potrzebne.
+        Strach przed pierwszym krokiem paraliżuje wielu wybitnych trenerów. Otwarcie własnego, butikowego miejsca to nie jest skok na głęboką wodę bez spadochronu. To świadoma decyzja o tym, że masz dość <M>zarabiania tylko wtedy, gdy fizycznie stoisz na sali</M>. Jeśli marzysz o przestrzeni, w której to Ty ustalasz zasady – pokażę Ci, że masz w sobie wszystko, by to osiągnąć.
       </>
     ),
   },
   {
-    question: "Nie mam jeszcze studia — czy to dla mnie?",
+    question: "Co, jeśli to ryzyko mnie przerośnie i stracę to, co mam teraz?",
     answer: (
       <>
-        Tak — <M>jeśli masz kapitał lub dostęp do finansowania</M> i realnie
-        myślisz o otwarciu własnego butikowego studia. Jeśli dziś nie masz jeszcze żadnych klientów jako trener i
-        dopiero zastanawiasz się, czy w ogóle chcesz pracować z ludźmi — ten
-        warsztat TE jest dla Ciebie.
+        Nikt nie każe Ci palić za sobą mostów z dnia na dzień. Budowanie wolności finansowej wymaga mądrości, a nie brawury. Pokażę Ci historie ludzi, którzy zaczynali, <M>łącząc ten proces z pracą na etacie</M>, a dziś zarządzają własnymi zespołami i podróżują po świecie z czystą głową. Twoja transformacja odbędzie się mądrze i krok po kroku.
       </>
     ),
   },
   {
-    question: "Mam etat i nie mogę go teraz rzucić — czy mogę zacząć równolegle?",
+    question: "Działam w małym mieście. Tu ludzie nie zapłacą stawek premium...",
     answer: (
       <>
-        Tak. To <M>nie jest model, który wymaga</M>, żebyś jutro złożył
-        wypowiedzenie. Pokazuję dokładnie, jak wygląda pierwszy tydzień, kiedy
-        jeszcze pracujesz gdzie indziej, i jak rozłożyć pierwsze kroki, żeby
-        zmieściły się w Twoim obecnym grafiku.
+        To jedno z najbardziej krzywdzących przekonań, które trzyma Cię w miejscu. Twoi klienci <M>nie szukają najtańszego karnetu</M> – szukają transformacji i uwagi, za którą chętnie zapłacą. Udowodnię Ci to na przykładach trenerów z małych miejscowości, którzy przestali konkurować ceną, zbudowali prestiż i dziś cieszą się kolejką chętnych, pracując za godne pieniądze.
       </>
     ),
   },
   {
-    question: "Czy to zadziała w mniejszym mieście?",
+    question: "Nie mam wielkich oszczędności. Czy to w ogóle ma sens?",
     answer: (
       <>
-        Małe studio butikowe <M>nie jest sieciówką</M> — nie potrzebujesz
-        setek klientów. Kilkunastu dobrze obsłużonych, płacących
-        klientów wystarczy, żeby zbudować bardzo sensowny biznes, także w
-        mniejszej miejscowości. Na warsztacie pokazuję dokładnie, jak liczyć,
-        ilu klientów realnie potrzebujesz w Twoim przypadku.
-      </>
-    ),
-  },
-  {
-    question: "Ile kosztuje otwarcie studia?",
-    answer: (
-      <>
-        Nie potrzebujesz inwestora ani <M>450–600 tys. zł</M>. Pierwszy lokal
-        w modelu Dochodowego Studia otwierasz za{" "}
-        <M>35–100 tys. zł brutto</M>, zależnie od standardu — to kwota, która
-        obejmuje już wyposażenie i adaptację lokalu, nie tylko sam sprzęt.
-        Wariant START (35–45 tys. zł) daje studio, które ma działać i
-        zarabiać, nie imponować. Do tego dochodzi indywidualnie kaucja,
-        pierwszy czynsz i podstawowa rezerwa operacyjna — a przy dobrze
-        dobranym lokalu (czynsz w okolicach 10–20% przyszłego przychodu)
-        studio potrafi spłacić się w ciągu dwóch–trzech miesięcy działania.
+        Wielki, przeszklony lokal i maszyny za miliony to ego, a nie biznes. Pokażę Ci, jak na <M>zaledwie kilkudziesięciu metrach</M> stworzyć kameralne, ekskluzywne miejsce, które zacznie zarabiać błyskawicznie. Zobaczysz, że zamiast przepalać oszczędności życia, możesz zbudować wysoce rentowny biznes oparty na relacjach i mądrym modelu, a nie na worku pieniędzy.
       </>
     ),
   },
@@ -92,10 +59,10 @@ export function FaqSection() {
     <Section>
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-          Zanim się zdecydujesz
+          Wahasz się zapisać?
         </p>
         <h2 className="mx-auto mt-5 max-w-[28ch] font-display text-[clamp(1.75rem,3.9vw,2.6rem)] font-bold uppercase leading-[1.1] tracking-wide text-ink text-balance">
-          Szybkie Odpowiedzi, Zanim Zarezerwujesz Miejsce
+          Rozwiejmy Twoje obawy
         </h2>
       </div>
 

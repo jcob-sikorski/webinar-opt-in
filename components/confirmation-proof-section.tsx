@@ -100,8 +100,8 @@ export function ConfirmationProofSection() {
   return (
     <Section width="wide">
       <h2 className="text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Jeszcze Więcej Historii Osób{" "}
-        <span className="text-coral">Które Nic Nie Wiedziały o Studio</span>
+        <span className="text-coral">Oni Też Nic Nie Wiedzieli{" "}</span>
+        o Prowadzeniu Studio
       </h2>
 
       <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
@@ -135,9 +135,9 @@ export function ConfirmationProofSection() {
         </p>
         <p className="mt-3 text-body text-ink-muted">
           Nagranie zostaje z Tobą{" "}
-          <strong className="font-semibold text-ink">na zawsze</strong>.{" "}
+          <strong className="font-semibold text-ink">na 5 dni</strong>.{" "}
           <em className="italic">
-            Protokół Dochodowego Studia dostają wyłącznie osoby, które zostają
+            Protokół Dochodowego Studia dostaną wyłącznie osoby, które zostają
             na żywo do samego końca warsztatu
           </em>
           . Zablokuj kalendarz na{" "}

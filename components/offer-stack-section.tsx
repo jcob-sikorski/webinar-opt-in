@@ -9,7 +9,7 @@ interface OfferItem {
 
 const OFFER_ITEMS: OfferItem[] = [
   {
-    title: "Nagranie na lata",
+    title: "Nagranie Całego Warsztatu",
     description:
       "pełne nagranie całego warsztatu w jakości HD, dostępne dla Ciebie na zawsze — możesz wracać do dowolnego fragmentu, kiedy zechcesz.",
   },

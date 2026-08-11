@@ -1,10 +1,7 @@
-import { Play } from "lucide-react";
-
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Section } from "@/components/ui/section";
 
 interface ConfirmationVideoSectionProps {
-  /** Pass a real embed (<iframe>/<video>) to replace the placeholder frame. */
+  /** Pass a real embed (<iframe>/<video>) to replace the default Mux frame if needed. */
   videoEmbed?: React.ReactNode;
 }
 
@@ -14,27 +11,19 @@ export function ConfirmationVideoSection({
   return (
     <Section>
       <h2 className="text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Zanim Się Rozłączysz —<br />
         <span className="text-coral">Krótka Wiadomość</span> Ode Mnie
       </h2>
       <hr className="mx-auto mt-5 w-40 border-t-2 border-dashed border-coral-bright/60" />
 
-      <div className="relative mx-auto mt-9 overflow-hidden rounded-xl">
+      {/* Added max-w-[260px] for mobile and sm:max-w-xs (320px) for slightly larger screens to keep the 9:16 video from becoming too tall */}
+      <div className="relative mx-auto mt-9 max-w-[260px] overflow-hidden rounded-xl sm:max-w-xs shadow-lg">
         {videoEmbed ?? (
-          <div className="relative">
-            <PhotoPlaceholder
-              aspect="aspect-video"
-              label="Wiadomość wideo — Bartek Sikorski"
-            />
-            <span
-              aria-hidden
-              className="absolute inset-0 flex items-center justify-center"
-            >
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-ink/80">
-                <Play className="ml-0.5 h-6 w-6 text-white" fill="currentColor" />
-              </span>
-            </span>
-          </div>
+          <iframe
+            src="https://player.mux.com/OM1SCoPFsNx86K4fE601c19RFqkHxu5ns38eAXEfTMsE"
+            style={{ width: "100%", border: "none", aspectRatio: "9/16" }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen
+          />
         )}
       </div>
 
@@ -52,7 +41,7 @@ export function ConfirmationVideoSection({
           <strong className="font-semibold text-ink">
             zablokuj sobie 24 sierpnia, 20:00
           </strong>{" "}
-          na żywo. Samo nagranie zostaje z Tobą na lata —{" "}
+          na żywo. Samo nagranie zostaje z Tobą na 5 dni —{" "}
           <em className="italic">
             ale Protokół Dochodowego Studia trafia tylko do osób, które
             zostaną na żywo do samego końca!

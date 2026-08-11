@@ -48,20 +48,20 @@ export function ScriptIsTheBusinessSection() {
   return (
     <Section>
       <div className="mx-auto max-w-3xl text-center">
-        <p className="mx-auto max-w-[34ch] text-body-lg leading-[1.55] text-ink-subtle text-balance">
-          Większość ludzi myśli, że wielki metraż i ogromne koszty stałe to przepustka do wolności.
+        <p className="mx-auto max-w-[40ch] text-balance text-body-lg leading-[1.55] text-ink-subtle">
+          Większość ludzi myśli, że ogromna siłownia w centrum miasta lub masowa trenerka online to jedyna przepustka do wolności.
         </p>
 
         <p className="mt-5 text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-          Ja wiem, że jest zupełnie odwrotnie
+          Znam znacznie lepszą ścieżkę
         </p>
 
-        <h2 className="mx-auto mt-5 max-w-[18ch] font-display text-[clamp(2rem,5vw,3.5rem)] font-bold italic leading-[1.05] tracking-[-0.02em] text-ink text-balance">
-          Jakość<span className="text-coral"> Ścieżki Klienta</span> i Zespół to Twój Biznes.
+        <h2 className="mx-auto mt-5 max-w-[20ch] text-balance font-display text-[clamp(2rem,5vw,3.5rem)] font-bold italic leading-[1.05] tracking-[-0.02em] text-ink">
+          Lokalne studio premium.<span className="text-coral"> Niskie koszty,</span> obroty do 50 tys. zł.
         </h2>
 
-        <p className="mx-auto mt-7 max-w-[42ch] text-body-lg leading-[1.6] text-ink-muted text-pretty">
-          Studio to przestrzeń, w której klienci osiągają prawdziwą transformację, a Ty budujesz zyskowną firmę, która pracuje na Ciebie.
+        <p className="mx-auto mt-7 max-w-[46ch] text-pretty text-body-lg leading-[1.6] text-ink-muted">
+          Zamiast walczyć z gigantycznym czynszem, otwierasz kameralne, butikowe miejsce na obrzeżach. Minimalizujesz koszty stałe, a dzięki jakości premium generujesz zyski, o których sieciówki mogą tylko pomarzyć.
         </p>
       </div>
 
@@ -69,7 +69,7 @@ export function ScriptIsTheBusinessSection() {
         <div className="mx-auto flex max-w-3xl items-center gap-5">
           <span aria-hidden className="h-px flex-1 bg-ink/10" />
           <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-ink-subtle">
-            Prawdziwe aktywo buduje się w oparciu o sprawdzony system
+            Ich życie zmieniło się na lepsze dzięki butikowemu studio
           </span>
           <span aria-hidden className="h-px flex-1 bg-ink/10" />
         </div>
@@ -82,23 +82,36 @@ export function ScriptIsTheBusinessSection() {
       </div>
 
       <div className="mx-auto mt-14 max-w-[46ch] space-y-6 text-body-lg leading-[1.65] text-ink-muted">
+        
         <p>
-          Każde studio, które zarabia bez właściciela na sali, pod spodem{" "}
-          <strong className="font-semibold text-ink">działa na systemie, a nie na jego godzinach</strong>. Oferta, proces sprzedaży i metodyka robią robotę,
-          którą dziś robisz osobiście — powtarzalnie, w cudzych rękach, bez
-          spadku jakości.
+          <strong className="font-semibold text-ink">
+            To jest pokoleniowa szansa, żeby przestać sprzedawać swój czas i zbudować 
+            biznes, który daje Ci wolność.
+          </strong>
         </p>
+
+        <p>
+          Miejsca, które zarabiają bez właściciela, nie opierają się na pracy jednej 
+          osoby. <strong className="font-semibold text-ink">Działają w oparciu o system</strong>, 
+          który robi tę samą robotę, którą dziś 
+          wykonujesz Ty — powtarzalnie, przewidywalnie i w rękach innych ludzi, 
+          przy zachowaniu 100% jakości premium.
+        </p>
+
         <p className="font-display text-[1.15em] italic leading-[1.55] text-ink">
-          To szkolenie jest o tym, jak ten system wdrożyć u siebie — czy sprzedajesz treningi personalne za 150 zł, semi-personal, czy trzymiesięczny program transformacyjny za kilka tysięcy.
+          To szkolenie jest o tym, jak ten system wdrożyć u siebie — czy sprzedajesz 
+          treningi personalne za 150 zł, semi-personal, czy trzymiesięczny program 
+          transformacyjny za kilka tysięcy.
         </p>
+        
       </div>
 
       <div className="mt-14 flex flex-col items-center">
         <RegisterCtaButton size="lg">Chcę wziąć udział — 0 zł</RegisterCtaButton>
         <p className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-ink-subtle">
-          <span>Dostęp natychmiastowy</span>
+          <span>Know-how marki "Sportowe Przedmieście"</span>
           <span aria-hidden className="h-1 w-1 rounded-full bg-coral" />
-          <span>Nagranie na lata</span>
+          <span>43 Otwarte Placówki</span>
         </p>
       </div>
     </Section>

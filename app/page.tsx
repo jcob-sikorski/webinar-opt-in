@@ -7,7 +7,7 @@ import { ProofSection } from "@/components/proof-section";
 import { IsThisForYouSection } from "@/components/is-this-for-you-section";
 import { ConfirmationBonusSection } from "@/components/confirmation-bonus-section";
 import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
-import { OfferStackSection } from "@/components/offer-stack-section";
+// import { OfferStackSection } from "@/components/offer-stack-section";
 import { FaqSection } from "@/components/faq-section";
 import { FinalCtaSection } from "@/components/final-cta-section";
 import { LegalFooter } from "@/components/legal-footer";
@@ -33,7 +33,7 @@ export default function Home() {
       <IsThisForYouSection />
       <ConfirmationBonusSection />
       <ConfirmationProofSection />
-      <OfferStackSection />
+      {/* <OfferStackSection /> */}
       <FaqSection />
       <FinalCtaSection />
       <LegalFooter />
