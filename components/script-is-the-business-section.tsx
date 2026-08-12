@@ -30,19 +30,19 @@ export function ScriptIsTheBusinessSection() {
       description:
         "„Dzięki temu mam własne studio, ogarnięty team trenerski oraz to, co najważniejsze — znacznie więcej czasu dla siebie. Zamieniłem pracę na biznes z głową i ciągłym rozwojem, który pozwala mi pracować mniej, a zarabiać więcej.”",
     },
-    {
-      name: "Włodek Troszyn",
-      figure: "19 000 zł / msc.",
-      photo: (
-        <img
-          src="https://ucarecdn.com/2ebc4530-7f86-427f-9a45-1b3529facbf9/Screenshot20260803at12420AM.png"
-          alt="Włodek Troszyn"
-          className="aspect-[3/4] w-full rounded-md object-cover"
-        />
-      ),
-      description:
-        "„Co do podjętych decyzji — pół roku temu poznałem świetnego gościa, Bartka, który zaraził mnie swoim mindsetem, wizją przyszłości i nastawieniem na rozwój. Uważam, że to była moja najlepsza decyzja w życiu, żeby zainwestować w siebie, podjąć odpowiednie kroki i dołączyć do mentoringu u Bartka.”",
-    },
+    // {
+    //   name: "Włodek Troszyn",
+    //   figure: "19 000 zł / msc.",
+    //   photo: (
+    //     <img
+    //       src="https://ucarecdn.com/2ebc4530-7f86-427f-9a45-1b3529facbf9/Screenshot20260803at12420AM.png"
+    //       alt="Włodek Troszyn"
+    //       className="aspect-[3/4] w-full rounded-md object-cover"
+    //     />
+    //   ),
+    //   description:
+    //     "„Co do podjętych decyzji — pół roku temu poznałem świetnego gościa, Bartka, który zaraził mnie swoim mindsetem, wizją przyszłości i nastawieniem na rozwój. Uważam, że to była moja najlepsza decyzja w życiu, żeby zainwestować w siebie, podjąć odpowiednie kroki i dołączyć do mentoringu u Bartka.”",
+    // },
   ];
 
   return (
