@@ -29,12 +29,11 @@ export function ConfirmationVideoSection({
 
       <div className="mt-8 space-y-5 text-body-lg text-ink-muted">
         <p>
-          Cześć, tu Bartek. Dzięki, że zarezerwowałaś/eś miejsce —{" "}
+          Cześć, tu Bartek. Dzięki, że zarezerwowałeś miejsce —{" "}
           <strong className="font-semibold text-ink">
             naprawdę się cieszę, że tu jesteś
           </strong>
-          . W tym krótkim nagraniu mówię dokładnie, czego się spodziewać na
-          warsztacie i jak się do niego najlepiej przygotować.
+          .
         </p>
         <p>
           Jedna rzecz, o którą proszę już teraz:{" "}

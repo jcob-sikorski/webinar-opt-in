@@ -94,7 +94,7 @@ export function ConfirmationHeroSection() {
             <strong className="font-semibold text-gray-900">
               {WORKSHOP_DATE_LABEL}
             </strong>{" "}
-            na warsztacie &bdquo;Złoty Model Biznesowy&rdquo;.
+            na warsztacie.
           </p>
         </div>
       </section>
