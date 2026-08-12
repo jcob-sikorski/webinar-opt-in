@@ -61,10 +61,10 @@ export function FinalCtaSection() {
       </p>
 
       <div className="mt-10 flex flex-col items-center">
-        <RegisterCtaButton size="lg">Zapisz się na bezpłatny warsztat</RegisterCtaButton>
+        <RegisterCtaButton size="lg">Zapisz się</RegisterCtaButton>
 
         <p className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-ink-subtle">
-          <span>Ograniczony czas nagrania</span>
+          <span>5 dni na obejrzenie nagrania</span>
           <span aria-hidden className="h-1 w-1 rounded-full bg-coral" />
           <span>Ekskluzywne bonusy za obecność</span>
         </p>
