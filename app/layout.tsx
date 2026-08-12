@@ -5,6 +5,7 @@ import "./globals.css";
 import { RegisterModalProvider } from "@/components/register-modal-provider";
 import { FacebookPixel } from "@/components/facebook-pixel";
 import { AttributionCapture } from "@/components/attribution-capture";
+import { Analytics } from "@vercel/analytics/next";
 
 const body = Inter({
   subsets: ["latin", "latin-ext"],
@@ -101,6 +102,9 @@ export default function RootLayout({
         </Suspense>
         
         <RegisterModalProvider>{children}</RegisterModalProvider>
+
+        {/* VERCEL ANALYTICS */}
+        <Analytics />
       </body>
     </html>
   );
