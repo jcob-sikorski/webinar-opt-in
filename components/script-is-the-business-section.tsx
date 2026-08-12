@@ -57,11 +57,11 @@ export function ScriptIsTheBusinessSection() {
         </p>
 
         <h2 className="mx-auto mt-5 max-w-[20ch] text-balance font-display text-[clamp(2rem,5vw,3.5rem)] font-bold italic leading-[1.05] tracking-[-0.02em] text-ink">
-          Lokalne studio premium.<span className="text-coral"> Niskie koszty,</span> obroty do 50 tys. zł.
+          Lokalne studio premium.<span className="text-coral"> Niskie koszty,</span> zysk 20-50 tys. zł.
         </h2>
 
         <p className="mx-auto mt-7 max-w-[46ch] text-pretty text-body-lg leading-[1.6] text-ink-muted">
-          Zamiast walczyć z gigantycznym czynszem, otwierasz kameralne, butikowe miejsce na obrzeżach. Minimalizujesz koszty stałe, a dzięki jakości premium generujesz zyski, o których sieciówki mogą tylko pomarzyć.
+          Zamiast walczyć z gigantycznym czynszem, model opiera się na kameralnym, butikowym miejscu na obrzeżach. Minimalizujesz koszty stałe, a dzięki jakości premium generujesz zyski, o których sieciówki mogą tylko pomarzyć — niezależnie od tego, czy otwierasz za miesiąc, czy za rok.
         </p>
       </div>
 
@@ -99,7 +99,7 @@ export function ScriptIsTheBusinessSection() {
         </p>
 
         <p className="font-display text-[1.15em] italic leading-[1.55] text-ink">
-          To szkolenie jest o tym, jak ten system wdrożyć u siebie — czy sprzedajesz 
+          To szkolenie jest o tym, jak ten system zbudować i mieć gotowy do wdrożenia u siebie w dowolnym momencie — czy sprzedajesz 
           treningi personalne za 150 zł, semi-personal, czy trzymiesięczny program 
           transformacyjny za kilka tysięcy.
         </p>

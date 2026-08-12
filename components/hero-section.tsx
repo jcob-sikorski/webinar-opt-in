@@ -86,58 +86,44 @@ export function HeroSection() {
       <section className="relative px-5 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
 
-          <p className="mx-auto max-w-[46rem] text-[0.7rem] font-bold uppercase leading-[1.7] tracking-[0.14em] text-coral text-balance sm:text-xs">
-            Dla trenerów, którzy mają dość pracy od świtu do nocy, oraz właścicieli, dla których własne studio jest chaosem.
+        <p className="mx-auto max-w-[46rem] text-[0.7rem] font-bold uppercase leading-[1.7] tracking-[0.14em] text-coral text-balance sm:text-xs">
+          Dla trenerów, którzy mają dość pracy od świtu do nocy, oraz właścicieli, dla których własne studio jest chaosem.
+        </p>
+
+        <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]">
+          <span className="text-coral">Poznaj Model</span>, Który Otworzył Już{" "}
+          <span className="whitespace-nowrap">40+ Studiów</span> Zarabiających{" "}
+          <span className="relative inline-block whitespace-nowrap">
+            <span className="relative z-10">Do 600 tys. zł Rocznie</span>
+            <span
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 z-0 h-[0.16em] translate-y-full bg-orange-500"
+            />
+          </span>
+        </h1>
+
+        <div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
+          <p>
+            1-godzinny warsztat od praktyka, który:
+            <span className="mt-2 block">
+              <strong className="font-semibold text-gray-900">
+                wygenerował 38M zł+
+              </strong>{' '}
+              sprzedając treningi personalne
+            </span>
+            <span className="mt-1 block">
+              i otworzył{' '}
+              <strong className="font-semibold text-gray-900">
+                4 placówki Sportowe Przedmieście
+              </strong>.
+            </span>
           </p>
 
-          <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]">
-            <span className="text-coral">Naucz Się Budować Studia</span>, Zarabiające{" "}
-            <span className="whitespace-nowrap">Do 600&nbsp;tys. zł</span> Rocznie{" "}
-            <span className="relative inline-block whitespace-nowrap">
-              <span className="relative z-10">Bez Ciebie na Sali</span>
-              <span
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 z-0 h-[0.16em] translate-y-full bg-orange-500"
-              />
-            </span>
-          </h1>
-
-<div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
-<p>
-    2-godzinny warsztat od praktyka, który:
-    <span className="mt-2 block">
-      <strong className="font-semibold text-gray-900">
-        wygenerował 38M zł+
-      </strong>{' '}
-      sprzedając treningi personalne
-    </span>
-    <span className="mt-1 block">
-      i otworzył{' '}
-      <strong className="font-semibold text-gray-900">
-        4 placówki Sportowe Przedmieście
-      </strong>.
-    </span>
-  </p>
-  
-  <p className="mt-3">
-    Pomógł otworzyć <strong className="font-semibold text-gray-900">ponad 40 placówek</strong> z:
-  </p>
-  
-  <ul className="mt-2 flex flex-col gap-2 not-italic text-gray-900 sm:flex-row sm:gap-4">
-    <li className="flex items-center gap-1.5">
-      <span className="text-blue-600">✓</span>
-      <strong className="font-semibold">40 tys. zł wkładu</strong>
-    </li>
-    <li className="flex items-center gap-1.5">
-      <span className="text-blue-600">✓</span>
-      <strong className="font-semibold">3 miesiącami spłaty</strong>
-    </li>
-    <li className="flex items-center gap-1.5">
-      <span className="text-blue-600">✓</span>
-      <strong className="font-semibold">2-3 trenerami</strong>
-    </li>
-  </ul>
-</div>
+          <p className="mt-4 text-center">
+            Nieważne, czy prowadzisz już studio, otwierasz za 3 miesiące, czy jeszcze nie wiesz kiedy —
+            <strong className="font-semibold text-gray-900"> wychodzisz z gotowym modelem A-Z</strong>, do wdrożenia kiedy Ty zdecydujesz.
+          </p>
+        </div>
 
           <div className="mx-auto mt-12 flex w-full max-w-2xl flex-col items-center rounded-md border border-[#d6d6d6] bg-[#f4f3ed] px-4 py-10">
             <p className="mb-6 text-center text-xl font-bold uppercase tracking-widest text-coral sm:text-2xl md:text-3xl">
@@ -172,31 +158,29 @@ export function HeroSection() {
 
               <div className="mt-6 text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
                 <p>
-                  Na warsztacie dowiesz się, jak zarabiać do 600 tys. zł rocznie z{' '}
+                  Na warsztacie otrzymasz dokładny{' '}
                   <span className="font-sans text-[0.95em] font-bold uppercase not-italic tracking-[0.06em] text-[#0a101d]">
-                    modelem
+                    model
                   </span>
-                  , dzięki któremu:
+                  , który stoi za studiami zarabiającymi do 600 tys. zł rocznie:
                 </p>
-                
-                <ul className="mt-4 flex flex-col gap-2.5">
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#0a101d] font-bold">—</span>
-                    <span>
-                      Twoje studio jest poukładane i działa jak maszyna,
-                    </span>
+
+                <p className="mt-3 text-center">
+                  Model, dzięki któremu studio jest poukładane i działa jak maszyna:
+                </p>
+
+                <ul className="mt-2 flex flex-col items-center justify-center gap-2 text-center not-italic text-gray-900 sm:flex-row sm:gap-4">
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-blue-600">✓</span>
+                    <strong className="font-semibold">Twój zespół dokładnie wie, co ma robić</strong>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#0a101d] font-bold">—</span>
-                    <span>
-                      Twój zespół dokładnie wie, co ma robić,
-                    </span>
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-blue-600">✓</span>
+                    <strong className="font-semibold">Studio działa sprawnie</strong>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-[#0a101d] font-bold">—</span>
-                    <span>
-                      a Twoim jedynym zadaniem jest wypełnianie raportów w weekend.
-                    </span>
+                  <li className="flex items-center gap-1.5">
+                    <span className="text-blue-600">✓</span>
+                    <strong className="font-semibold">Ty wypełniasz raporty w weekend</strong>
                   </li>
                 </ul>
               </div>

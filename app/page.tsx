@@ -27,7 +27,7 @@ export default function Home() {
       />
       <ScriptIsTheBusinessSection />
       <WebinarFailuresSection />
-      <TransformationSection />
+      {/* <TransformationSection /> */}
       <TeachingBioSection />
       <ProofSection />
       <IsThisForYouSection />

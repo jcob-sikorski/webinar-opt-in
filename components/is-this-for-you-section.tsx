@@ -92,7 +92,7 @@ export function IsThisForYouSection() {
             Zajmij swoje miejsce — 0 zł
           </RegisterCtaButton>
           <p className="mt-3.5 text-sm text-ink-subtle">
-            Warsztat na żywo o tym jak wyjść z sali i otwierać kolejne placówki studio treningu personalnego.
+            Warsztat na żywo o tym, jak zbudować studio treningu personalnego, które zarabia bez Ciebie na sali.
           </p>
         </div>
       </div>

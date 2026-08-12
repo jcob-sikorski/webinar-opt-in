@@ -214,7 +214,7 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
 
             <div className="text-left">
               <label className="mb-4 block text-[15px] font-bold leading-snug text-ink">
-                Na dzisiejszym warsztacie pokażę ofertę współpracy, w którą inwestycja to kilkanaście tysięcy zł. Czy jesteś otwarty na taką inwestycję, jeśli program będzie miał sens dla Twojej sytuacji?
+                Czy jesteś otwarty na inwestycję kilkunastu tysięcy złotych?
               </label>
               <div className="flex flex-col gap-2.5">
                 {capitalOptions.map((option) => {

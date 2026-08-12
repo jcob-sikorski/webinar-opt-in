@@ -11,27 +11,27 @@ const FAILURES: Failure[] = [
   {
     title: "Model biznesowy",
     description:
-      "sprzedajesz pojedyncze wejścia lub karnety, a potem nie wiesz co zrobić, żeby taki klient został na 2 lata.",
+      "sprzedawanie pojedynczych wejść lub karnetów bez systemu, który zatrzymuje klienta na 2 lata — to błąd, który wielu popełnia już na starcie, i który potem kosztuje najwięcej, żeby naprawić.",
   },
   {
     title: "Marketing",
     description:
-      "nie masz systemu, który przynosi klientów niezależnie od Twojego nastroju, leady giną w wiadomościach, a profil IG nie mówi w 3 sekundy jaki problem rozwiązujesz.",
+      "brak systemu, który przynosi klientów niezależnie od nastroju czy sezonu, leady giną w wiadomościach, a profil IG nie mówi w 3 sekundy jaki problem rozwiązuje — to jednakowo zabija nowe studia i te już działające.",
   },
   {
     title: "Zespół",
     description:
-      'Twoja obecna rekrutacja to loteria. Trenerzy uciekają lub nie są godni zaufania, a Ty jesteś jedyną osobą, która pilnuje wszystkiego na sali.',
+      "rekrutacja oparta na przypadku zamiast na systemie. Trenerzy uciekają lub nie są godni zaufania, a właściciel zostaje jedyną osobą, która pilnuje wszystkiego na sali — czy to już się dzieje, czy dopiero czeka.",
   },
   {
     title: "Finanse",
     description:
-      "nie masz przejrzystości w liczbach. Nie wiesz ile możesz zainwestować, a ile zostawić dla siebie.",
+      "brak przejrzystości w liczbach — ile można zainwestować, a ile zostawić dla siebie. Bez tego każda decyzja, na każdym etapie, jest zgadywanką.",
   },
   {
     title: "Zarządzanie",
     description:
-      "Twój urlop oznacza stratę, bo wszystko opiera się na Tobie.",
+      "biznes zbudowany tak, że urlop oznacza stratę, bo wszystko opiera się na jednej osobie. To pułapka, w którą łatwo wpaść od pierwszego dnia, jeśli system nie jest ustawiony inaczej od początku.",
   },
 ];
 
@@ -39,7 +39,7 @@ export function WebinarFailuresSection() {
   return (
     <Section>
       <h2 className="text-center text-[1.75rem] font-bold leading-[1.15] sm:text-[2.125rem]">
-        Oto, co robisz nie tak:
+        Oto 5 filarów, które decydują, czy studio zarabia bez Ciebie:
       </h2>
 
       <p className="mt-8 text-body-lg text-ink-muted">
@@ -48,8 +48,9 @@ export function WebinarFailuresSection() {
           dziesiątki studiów treningu personalnego
         </strong>{" "}
         w całej Polsce — jednoosobowe działalności, studia butikowe, sieci
-        wielolokalizacyjne — i{" "}
-        <em className="italic">prawie zawsze widzę te same błędy</em>. Czyli{" "}
+        wielolokalizacyjne, a także osoby, które dopiero planowały otworzyć własne miejsce — i{" "}
+        <em className="italic">prawie zawsze widzę te same 5 błędów</em>, które decydują, czy 
+        studio zarabia bez właściciela, czy staje się jego więzieniem. Czyli{" "}
         <strong className="font-semibold text-ink">
           model, marketing, zespół, liczby i zarządzanie
         </strong>
