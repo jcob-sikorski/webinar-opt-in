@@ -21,6 +21,20 @@ const BACKGROUND_IMAGES = [
   "https://ucarecdn.com/0d98b478-6d75-402d-bf66-65978394d26c/unnamed8.webp",
 ];
 
+const TESTIMONIAL = {
+  name: "Ela Ziółkowska",
+  figure: "47 000 zł / msc.",
+  photo: (
+    <img
+      src="https://ucarecdn.com/5e1654aa-f4af-4f92-9816-565479e06d64/Screenshot20260803at10920AM.png"
+      alt="Ela Ziółkowska"
+      className="aspect-[3/4] w-full rounded-md object-cover shadow-sm"
+    />
+  ),
+  description:
+    "„To jest fajne, nie zostajemy sami przez to pół roku mentoringu. Cały czas jesteśmy zaopiekowani. Gdzieś tam właśnie Bartek i jego zespół, nie mam słów, żeby po prostu to opisać. To są ludzie z prawdziwego zdarzenia i którzy, chcesz czy nie chcesz, oni ci po prostu pomogą. Czy masz te wątpliwości, czy nie masz, prędzej czy później osiągniesz sukces.”",
+};
+
 function BackgroundCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -56,18 +70,17 @@ export function HeroSection() {
       <BackgroundCarousel />
       <div className="absolute inset-0 bg-[#fcfbf9]/85" aria-hidden />
 
-      <div className="relative border-b-2 border-[#ef6b4a] bg-black">
+      <div className="relative border-b-2 border-orange-500 bg-black">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-1 px-5 py-3 text-center text-xs sm:flex-row sm:gap-3 sm:text-sm">
           <span className="flex items-center gap-2 text-white/90">
             <span
               aria-hidden
-              className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#ef6b4a]"
+              className="h-1.5 w-1.5 shrink-0 rounded-full bg-green-500"
             />
             <span>
-              <span className="font-semibold uppercase tracking-[0.06em] text-coral-bright">
+              <span className="font-semibold uppercase tracking-[0.06em] text-orange-400">
                 Data warsztatu:
               </span>{" "}
-              {/* 2. Updated the display text to match the new date */}
               Poniedziałek, 24 Sierpnia @ 20:00
             </span>
           </span>
@@ -83,76 +96,84 @@ export function HeroSection() {
         </div>
       </div>
 
-{/* 1. Zmienione py-14 na pt-4 pb-14 oraz sm:py-20 na sm:pt-6 sm:pb-20 */}
       <section className="relative px-5 pt-4 pb-14 sm:px-6 sm:pt-6 sm:pb-20">
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
 
-        {/* 2. Całkowicie usunięto mt-4, żeby obrazek dotykał samej góry */}
-        <img 
-          src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/09cd3493-7d85-4c2a-8855-e34c95663611.png" 
-          alt="Logo Dochodowe Studio" 
-          className="mx-auto w-full max-w-[14rem] object-contain" 
-        />
+          <img 
+            src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/09cd3493-7d85-4c2a-8855-e34c95663611.png" 
+            alt="Logo Dochodowe Studio" 
+            className="mx-auto w-full max-w-[14rem] object-contain" 
+          />
 
-        {/* 3. Zmieniono mt-7 na mt-2 (lub mt-0, jeśli chcesz jeszcze ciaśniej), żeby nagłówek był bliżej logo */}
-        <h1 className="mx-auto mt-2 max-w-[30ch] font-display text-[clamp(1.68rem,4.48vw,3.4rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]"> 
-          <span className="text-coral">Poznaj Model</span>, Dzięki Któremu{" "}
-          <span className="whitespace-nowrap">40+ Studiów</span> Zarabia{" "}
-          <span className="relative inline-block whitespace-nowrap">
-            <span className="relative z-10">Do 600 Tys. zł Rocznie</span>
-            <span
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 z-0 h-[0.16em] translate-y-full bg-orange-500"
-            />
-          </span>
-        </h1>
-
-        <div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
-          <p>
-            1-godzinny warsztat od praktyka, który:
-            <span className="mt-2 block">
-              <strong className="font-semibold text-gray-900">
-                wygenerował 38M zł+
-              </strong>{' '}
-              sprzedając treningi personalne
+          <h1 className="mx-auto mt-2 max-w-[30ch] font-display text-[clamp(1.68rem,4.48vw,3.4rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]"> 
+            <span className="text-green-600">Poznaj Model</span>, Dzięki Któremu{" "}
+            <span className="whitespace-nowrap">40+ Studiów</span> Zarabia{" "}
+            <span className="relative inline-block whitespace-nowrap">
+              <span className="relative z-10">Do 600 Tys. zł Rocznie</span>
+              <span
+                aria-hidden="true"
+                className="absolute inset-x-0 bottom-0 z-0 h-[0.16em] translate-y-full bg-orange-500"
+              />
             </span>
-            <span className="mt-1 block">
-              i otworzył{' '}
-              <strong className="font-semibold text-gray-900">
-                4 placówki Sportowe Przedmieście
-              </strong>.
-            </span>
-          </p>
+          </h1>
 
-          <p className="mt-4 text-center">
-            Nieważne, czy prowadzisz już studio, otwierasz za 3 miesiące, czy jeszcze nie wiesz kiedy —
-            <strong className="font-semibold text-gray-900"> wychodzisz z gotowym modelem A-Z</strong>, do wdrożenia kiedy Ty zdecydujesz.
-          </p>
-        </div>
-
-          <div className="mx-auto mt-12 flex w-full max-w-2xl flex-col items-center rounded-md border border-[#d6d6d6] bg-[#f4f3ed] px-4 py-10">
-            <p className="mb-6 text-center text-xl font-bold uppercase tracking-widest text-coral sm:text-2xl md:text-3xl">
-              Warsztat zaczyna się za
+          {/* PODTYTUŁ (Subtitle) */}
+          <div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
+            <p>
+              1-godzinny warsztat od praktyka, który:
+              <span className="mt-2 block">
+                <strong className="font-semibold text-gray-900">
+                  wygenerował 38M zł+
+                </strong>{' '}
+                sprzedając treningi personalne
+              </span>
+              <span className="mt-1 block">
+                i otworzył{' '}
+                <strong className="font-semibold text-gray-900">
+                  4 placówki Sportowe Przedmieście
+                </strong>.
+              </span>
             </p>
-            <CountdownTimer target={WORKSHOP_START} variant="boxes" />
+
+            <p className="mt-4 text-center">
+              Nieważne, czy prowadzisz już studio, otwierasz za 3 miesiące, czy jeszcze nie wiesz kiedy —
+              <strong className="font-semibold text-gray-900"> wychodzisz z gotowym modelem A-Z</strong>, do wdrożenia kiedy Ty zdecydujesz.
+            </p>
           </div>
 
-          <div className="mt-12 flex w-full flex-col items-center">
+          {/* PRZYCISK ZAPISU */}
+          <div className="mt-10 flex w-full flex-col items-center">
             <Button
               size="lg"
               onClick={openRegister}
-              className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-coral bg-coral-bright px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark active:border-coral-dark active:bg-coral-dark sm:text-2xl"
+              className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
             >
               ZAREZERWUJ MIEJSCE — 0 zł
             </Button>
 
             <p className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-gray-500">
               <span>Model prowadzenia studio A—Z</span>
-              <span aria-hidden className="h-1 w-1 rounded-full bg-[#ef6b4a]" />
+              <span aria-hidden className="h-1 w-1 rounded-full bg-orange-500" />
               <span>Zbuduj biznes, który pracuje za Ciebie</span>
             </p>
+          </div>
 
-            <div className="mt-14 w-full max-w-xl">
+          {/* ODLICZANIE */}
+          <div className="mx-auto mt-14 flex w-full max-w-2xl flex-col items-center rounded-md border border-[#d6d6d6] bg-[#f4f3ed] px-4 py-10">
+            <p className="mb-6 text-center text-xl font-bold uppercase tracking-widest text-green-600 sm:text-2xl md:text-3xl">
+              Warsztat zaczyna się za
+            </p>
+            
+            <CountdownTimer target={WORKSHOP_START} variant="boxes" />
+            
+            <p className="mt-6 text-sm font-bold uppercase tracking-[0.1em] text-orange-600 sm:text-base">
+              🔥 Tylko 500 miejsc!
+            </p>
+          </div>
+
+          {/* CEL WARSZTATU */}
+          <div className="mt-14 flex w-full flex-col items-center">
+            <div className="w-full max-w-xl">
               <div className="flex items-center gap-5" aria-hidden>
                 <span className="h-px flex-1 bg-[#0a101d]/10" />
                 <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gray-400">
@@ -168,23 +189,51 @@ export function HeroSection() {
 
                 <ul className="mt-2 flex flex-col items-center justify-center gap-2 text-center not-italic text-gray-900 sm:flex-row sm:gap-4">
                   <li className="flex items-center gap-1.5">
-                    <span className="text-blue-600">✓</span>
+                    <span className="text-green-600">✓</span>
                     <strong className="font-semibold">Twój zespół dokładnie wie, co ma robić</strong>
                   </li>
                   <li className="flex items-center gap-1.5">
-                    <span className="text-blue-600">✓</span>
+                    <span className="text-green-600">✓</span>
                     <strong className="font-semibold">Studio działa sprawnie</strong>
                   </li>
                   <li className="flex items-center gap-1.5">
-                    <span className="text-blue-600">✓</span>
+                    <span className="text-green-600">✓</span>
                     <strong className="font-semibold">Ty wypełniasz raporty w weekend</strong>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
+
+          {/* TESTIMONIAL KARTA */}
+          <div className="mx-auto mt-16 w-full max-w-3xl rounded-[2rem] bg-white p-6 shadow-xl sm:p-10">
+            <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8 text-left">
+              <div className="w-32 shrink-0 sm:w-40">
+                {TESTIMONIAL.photo}
+              </div>
+              <div className="flex flex-col justify-center">
+                <p className="text-base italic leading-relaxed text-gray-700 sm:text-lg">
+                  {TESTIMONIAL.description}
+                </p>
+                <div className="mt-6">
+                  <p className="text-lg font-bold text-gray-900">
+                    ~ {TESTIMONIAL.name}
+                  </p>
+                  <p className="mt-1.5 inline-block rounded-md bg-orange-100 px-3 py-1 text-sm font-bold tracking-wide text-orange-700">
+                    Wynik: {TESTIMONIAL.figure}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
+
+      {/* MAŁY ZIELONY PASEK ODZIELAJĄCY SEKCJE */}j 
+      <div className="relative z-10 flex w-full items-center justify-center bg-green-600 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.1em] text-white shadow-sm sm:text-base md:text-lg">
+        Zaufało nam już ponad 40 osób w 2026!
+      </div>
     </div>
   );
 }

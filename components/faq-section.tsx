@@ -1,4 +1,7 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { HelpCircle } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 interface FaqItem {
@@ -8,7 +11,7 @@ interface FaqItem {
 
 // Emphasis helper — keeps the data array readable
 const M = ({ children }: { children: ReactNode }) => (
-  <strong className="font-semibold text-ink">{children}</strong>
+  <strong className="font-bold text-gray-900">{children}</strong>
 );
 
 const FAQS: FaqItem[] = [
@@ -59,28 +62,40 @@ const FAQS: FaqItem[] = [
 
 export function FaqSection() {
   return (
-    <Section>
-      <div className="mx-auto max-w-3xl text-center">
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
+    <Section className="bg-white px-5 py-16 sm:px-6 sm:py-24">
+      {/* Nagłówek sekcji */}
+      <div className="mx-auto max-w-4xl text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
           Wahasz się zapisać?
         </p>
-        <h2 className="mx-auto mt-5 max-w-[28ch] font-display text-[clamp(1.75rem,3.9vw,2.6rem)] font-bold uppercase leading-[1.1] tracking-wide text-ink text-balance">
+        <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-extrabold leading-[1.15] text-gray-900 sm:text-4xl md:text-5xl">
           Rozwiejmy Twoje obawy
         </h2>
       </div>
 
-      <dl className="mx-auto mt-12 max-w-3xl divide-y divide-line border-y border-line">
+      {/* Lista pytań i odpowiedzi (karty) */}
+      <div className="mx-auto mt-14 flex max-w-3xl flex-col gap-6">
         {FAQS.map((faq) => (
-          <div key={faq.question} className="py-8">
-            <dt className="font-display text-[1.1rem] font-bold uppercase leading-[1.3] tracking-wide text-coral sm:text-[1.25rem]">
-              {faq.question}
-            </dt>
-            <dd className="mt-3.5 max-w-[58ch] text-body leading-[1.7] text-ink-muted text-pretty">
-              {faq.answer}
-            </dd>
+          <div
+            key={faq.question}
+            className="relative overflow-hidden rounded-2xl border border-gray-100 bg-[#fcfbf9] p-6 shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-8"
+          >
+            <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-6">
+              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ef6b4a]/10">
+                <HelpCircle className="h-6 w-6 text-[#ef6b4a]" strokeWidth={2} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold leading-snug text-gray-900 sm:text-2xl">
+                  {faq.question}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-gray-700 sm:text-lg">
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
           </div>
         ))}
-      </dl>
+      </div>
     </Section>
   );
 }

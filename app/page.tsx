@@ -1,7 +1,8 @@
 import { HeroSection } from "@/components/hero-section";
-import { ScriptIsTheBusinessSection } from "@/components/script-is-the-business-section";
+// import { ScriptIsTheBusinessSection } from "@/components/script-is-the-business-section";
 import { WebinarFailuresSection } from "@/components/webinar-failures-section";
-import { TransformationSection } from "@/components/trasnformation-section";
+import { WhatYouWillLearnSection } from "@/components/what-you-will-learn-section"; // Dodany import
+// import { TransformationSection } from "@/components/trasnformation-section";
 import { TeachingBioSection } from "@/components/teaching-bio-section";
 import { ProofSection } from "@/components/proof-section";
 import { IsThisForYouSection } from "@/components/is-this-for-you-section";
@@ -27,6 +28,10 @@ export default function Home() {
       />
       {/* <ScriptIsTheBusinessSection /> */}
       <WebinarFailuresSection />
+      
+      {/* Nowa dodana sekcja */}
+      <WhatYouWillLearnSection /> 
+      
       {/* <TransformationSection /> */}
       <TeachingBioSection />
       <ProofSection />

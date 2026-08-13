@@ -1,3 +1,5 @@
+"use client";
+
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Section } from "@/components/ui/section";
 
@@ -5,7 +7,6 @@ interface ProofPerson {
   name: string;
   highlight: string;
   caption: string;
-  /** Omit if no real photo has been supplied yet — falls back to a placeholder. */
   photo?: string;
 }
 
@@ -70,7 +71,7 @@ const PROOF: ProofPerson[] = [
   },
   {
     name: "Dawid",
-    highlight: "Zespół trenerów w kameralnej siłowni",
+    highlight: "Zespół trenerów w kameral siłowni",
     caption:
       "Myślał, że zarabia dużo na online — dziś prowadzi zespół i sam jest zaskoczony wynikiem.",
     photo: "https://ucarecdn.com/21138d3d-a120-43d0-b4d2-da1551695da8/dawid.png",
@@ -90,7 +91,7 @@ const PROOF: ProofPerson[] = [
   },
   {
     name: "Joanna Wójcik",
-    highlight: "66 000 zł w pierwszym miesiącu współpracy",
+    highlight: "66 000 zł w 1. miesiącu",
     caption: "Od sekundy przed bankructwem do stabilnego studia.",
     photo: "https://ucarecdn.com/361b43a2-4e52-4405-b8ab-c140b828b844/wojcik.png",
   },
@@ -98,52 +99,55 @@ const PROOF: ProofPerson[] = [
 
 export function ConfirmationProofSection() {
   return (
-    <Section width="wide">
-      <h2 className="text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        <span className="text-coral">Oni Też Nic Nie Wiedzieli{" "}</span>
-        o Prowadzeniu Studio
+    <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
+      <h2 className="mx-auto max-w-4xl text-center text-3xl font-extrabold leading-[1.15] tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
+        <span className="text-[#ef6b4a]">Oni też nic nie wiedzieli{" "}</span>
+        o prowadzeniu studio
       </h2>
 
-      <div className="mt-10 grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-3 lg:grid-cols-4">
+      <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
         {PROOF.map((person) => (
-          <figure key={person.name} className="text-center">
-            <div className="mx-auto h-20 w-20 overflow-hidden rounded-full sm:h-24 sm:w-24">
+          <figure key={person.name} className="group flex flex-col items-center text-center">
+            <div className="relative mx-auto h-24 w-24 overflow-hidden rounded-full shadow-md ring-4 ring-white transition-transform duration-300 group-hover:scale-105 sm:h-28 sm:w-28">
               {person.photo ? (
                 <img
                   src={person.photo}
                   alt={person.name}
                   className="h-full w-full object-cover"
+                  loading="lazy"
                 />
               ) : (
                 <PhotoPlaceholder aspect="aspect-square" label="Zdjęcie" rounded="rounded-full" />
               )}
             </div>
-            <figcaption className="mt-3.5">
-              <p className="text-sm font-semibold text-ink">{person.name}</p>
-              <p className="mt-1 text-body font-semibold text-coral">
+            <figcaption className="mt-5 flex flex-col items-center">
+              <p className="text-base font-bold text-gray-900">{person.name}</p>
+              <p className="mt-1.5 text-[0.7rem] font-bold uppercase tracking-wider text-[#ef6b4a] sm:text-xs">
                 {person.highlight}
               </p>
-              <p className="mt-1 text-sm text-ink-muted">{person.caption}</p>
+              <p className="mt-2.5 text-sm leading-relaxed text-gray-600">
+                {person.caption}
+              </p>
             </figcaption>
           </figure>
         ))}
       </div>
 
-      <div className="mx-auto mt-12 max-w-lg rounded-xl border border-line border-t-[3px] border-t-coral-bright p-7 text-center">
-        <p className="text-body-lg font-semibold text-ink">
+      <div className="relative mx-auto mt-16 max-w-2xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-xl sm:p-10">
+        <div className="absolute left-0 top-0 h-2 w-full bg-[#ef6b4a]" aria-hidden="true" />
+        <p className="text-xl font-black uppercase tracking-widest text-[#ef6b4a] sm:text-2xl">
           Uwaga!
         </p>
-        <p className="mt-3 text-body text-ink-muted">
+        <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
           Nagranie zostaje z Tobą{" "}
-          <strong className="font-semibold text-ink">na 5 dni</strong>.{" "}
+          <strong className="font-bold text-gray-900">na 5 dni</strong>.{" "}
           <em className="italic">
             Protokół Dochodowego Studia dostaną wyłącznie osoby, które zostają
-            na żywo do samego końca warsztatu
+            na żywo do samego końca warsztatu.
           </em>
-          . Zablokuj kalendarz na{" "}
-          <strong className="font-semibold text-ink">
-            24 sierpnia, 20:00
-          </strong>{" "}
+        </p>
+        <p className="mt-4 text-lg font-bold text-gray-900 sm:text-xl">
+          Zablokuj kalendarz na 24 sierpnia, 20:00.
         </p>
       </div>
     </Section>
