@@ -90,11 +90,11 @@ export function HeroSection() {
           Dla trenerów, którzy mają dość pracy od świtu do nocy, oraz właścicieli, dla których własne studio jest chaosem.
         </p>
 
-        <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]">
-          <span className="text-coral">Poznaj Model</span>, Który Otworzył Już{" "}
-          <span className="whitespace-nowrap">40+ Studiów</span> Zarabiających{" "}
+        <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]"> 
+          <span className="text-coral">Poznaj Model</span>, Dzięki Któremu{" "}
+          <span className="whitespace-nowrap">40+ Studiów</span> Zarabia{" "}
           <span className="relative inline-block whitespace-nowrap">
-            <span className="relative z-10">Do 600 tys. zł Rocznie</span>
+            <span className="relative z-10">Do 600 Tys. zł Rocznie</span>
             <span
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 z-0 h-[0.16em] translate-y-full bg-orange-500"
