@@ -11,12 +11,12 @@ export function ConfirmationVideoSection({
   return (
     <Section>
       <h2 className="text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        <span className="text-coral">Krótka Wiadomość</span> Ode Mnie
+        <span className="text-orange-600">Krótka Wiadomość</span> Ode Mnie
       </h2>
-      <hr className="mx-auto mt-5 w-40 border-t-2 border-dashed border-coral-bright/60" />
+      <hr className="mx-auto mt-5 w-40 border-t-2 border-dashed border-orange-600/60" />
 
       {/* Added max-w-[260px] for mobile and sm:max-w-xs (320px) for slightly larger screens to keep the 9:16 video from becoming too tall */}
-      <div className="relative mx-auto mt-9 max-w-[260px] overflow-hidden rounded-xl sm:max-w-xs shadow-lg">
+      <div className="relative mx-auto mt-9 max-w-[260px] overflow-hidden rounded-xl shadow-lg sm:max-w-xs">
         {videoEmbed ?? (
           <iframe
             src="https://player.mux.com/OM1SCoPFsNx86K4fE601c19RFqkHxu5ns38eAXEfTMsE"

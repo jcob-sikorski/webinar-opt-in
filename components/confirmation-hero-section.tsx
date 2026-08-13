@@ -34,13 +34,13 @@ export function ConfirmationHeroSection() {
         <div className="mx-auto flex w-full max-w-2xl flex-col items-center text-center">
           <span
             aria-hidden
-            className="flex h-14 w-14 items-center justify-center rounded-full bg-coral-bright"
+            className="flex h-14 w-14 items-center justify-center rounded-full bg-green-600"
           >
             <Check className="h-7 w-7 text-white" strokeWidth={3} />
           </span>
 
           <h1 className="mx-auto mt-4 max-w-[18ch] font-display text-[clamp(2rem,5.2vw,3.5rem)] font-bold italic leading-[1.08] tracking-[-0.02em] text-ink text-balance">
-            Gratulacje! <span className="text-coral">Zarezerwowaliśmy Tobie Miejsce!</span>
+            Gratulacje! <span className="text-green-600">Zarezerwowaliśmy Tobie Miejsce!</span>
           </h1>
 
           {/* Sekcja ikon kalendarzy */}
