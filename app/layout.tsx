@@ -23,7 +23,7 @@ const display = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Naucz Się Budować Studia, Zarabiające Do 600 tys. zł Rocznie Bez Ciebie na Sali",
+  title: "Poznaj Model, Dzięki Któremu 40+ Studiów Zarabia Do 600 Tys. zł Rocznie",
   description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
   keywords: [
     "studio treningu personalnego", 
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     apple: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6a3689380a683b64fe2824bd.png",
   },
   openGraph: {
-    title: "Naucz Się Budować Studia, Zarabiające Do 600 tys. zł Rocznie Bez Ciebie na Sali",
+    title: "Poznaj Model, Dzięki Któremu 40+ Studiów Zarabia Do 600 Tys. zł Rocznie",
     description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
     url: "https://dochodowestudio.com", 
     siteName: "Dochodowe Studio",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Naucz Się Budować Studia, Zarabiające Do 600 tys. zł Rocznie Bez Ciebie na Sali",
+    title: "Poznaj Model, Dzięki Któremu 40+ Studiów Zarabia Do 600 Tys. zł Rocznie",
     description: "Bezpłatny warsztat: Złoty Model Biznesowy. Poznaj 5 filarów Dochodowego Studia i przestań zamieniać swój czas na pieniądze.",
     images: ["https://ucarecdn.com/2fb844e9-c929-46c4-853d-057ef2ecad41/unnamed1.webp"],
   },

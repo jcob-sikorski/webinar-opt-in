@@ -83,14 +83,19 @@ export function HeroSection() {
         </div>
       </div>
 
-      <section className="relative px-5 py-14 sm:px-6 sm:py-20">
+{/* 1. Zmienione py-14 na pt-4 pb-14 oraz sm:py-20 na sm:pt-6 sm:pb-20 */}
+      <section className="relative px-5 pt-4 pb-14 sm:px-6 sm:pt-6 sm:pb-20">
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
 
-        <p className="mx-auto max-w-[46rem] text-[0.7rem] font-bold uppercase leading-[1.7] tracking-[0.14em] text-coral text-balance sm:text-xs">
-          Dla trenerów, którzy mają dość pracy od świtu do nocy, oraz właścicieli, dla których własne studio jest chaosem.
-        </p>
+        {/* 2. Całkowicie usunięto mt-4, żeby obrazek dotykał samej góry */}
+        <img 
+          src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/09cd3493-7d85-4c2a-8855-e34c95663611.png" 
+          alt="Logo Dochodowe Studio" 
+          className="mx-auto w-full max-w-[14rem] object-contain" 
+        />
 
-        <h1 className="mx-auto mt-7 max-w-[30ch] font-display text-[clamp(2.1rem,5.6vw,4.25rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]"> 
+        {/* 3. Zmieniono mt-7 na mt-2 (lub mt-0, jeśli chcesz jeszcze ciaśniej), żeby nagłówek był bliżej logo */}
+        <h1 className="mx-auto mt-2 max-w-[30ch] font-display text-[clamp(1.68rem,4.48vw,3.4rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]"> 
           <span className="text-coral">Poznaj Model</span>, Dzięki Któremu{" "}
           <span className="whitespace-nowrap">40+ Studiów</span> Zarabia{" "}
           <span className="relative inline-block whitespace-nowrap">
@@ -157,14 +162,6 @@ export function HeroSection() {
               </div>
 
               <div className="mt-6 text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
-                <p>
-                  Na warsztacie otrzymasz dokładny{' '}
-                  <span className="font-sans text-[0.95em] font-bold uppercase not-italic tracking-[0.06em] text-[#0a101d]">
-                    model
-                  </span>
-                  , który stoi za studiami zarabiającymi do 600 tys. zł rocznie:
-                </p>
-
                 <p className="mt-3 text-center">
                   Model, dzięki któremu studio jest poukładane i działa jak maszyna:
                 </p>
