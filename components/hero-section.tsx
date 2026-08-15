@@ -108,12 +108,12 @@ export function HeroSection() {
 <div className="mx-auto flex flex-col items-center space-y-4 text-center md:space-y-6">
             {/* Kicker / Wprowadzenie do problemu */}
             <span className="max-w-[55ch] text-balance text-sm font-bold uppercase tracking-widest text-gray-500 md:text-base">
-              Przebij Sufit Trenera
+              Chcesz Przebić Sufit Trenera?
             </span>
 
             {/* Główny nagłówek z obietnicą */}
             <h1 className="mx-auto mt-2 max-w-[35ch] text-balance font-display text-[clamp(1.68rem,4vw,3.4rem)] font-bold italic leading-[1.15] tracking-[-0.02em] text-ink sm:max-w-[40ch]">
-              I <span className="text-green-600">Otwórz Kameralne Studio Treningu:</span>{" "}
+              <span className="text-green-600">Otwórz Kameralne Studio Treningu:</span>{" "}
               <span className="underline decoration-orange-500 decoration-[0.12em] underline-offset-[0.15em]">
                 200-600 Tys. Zł Zysku Właścicielskiego
               </span>
@@ -123,23 +123,23 @@ export function HeroSection() {
           {/* PODTYTUŁ (Subtitle) */}
           <div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
             <p>
-              Bezpłatny warsztat online od praktyka, który:
+              Bezpłatny warsztat online od gościa, który:
               <span className="mt-2 block">
                 <strong className="font-semibold text-gray-900">
-                  wygenerował 38M zł+
+                  wygenerował ponad 38M zł
                 </strong>{' '}
                 sprzedając treningi personalne
               </span>
               <span className="mt-1 block">
-                i otworzył{' '}
+                i pomógł{' '} otworzyć{' '}
                 <strong className="font-semibold text-gray-900">
-                  4 placówki Sportowe Przedmieście
+                  37 studio w całej Polsce
                 </strong>.
               </span>
             </p>
 
             <p className="mt-4 text-center">
-              Nieważne, czy prowadzisz już studio, otwierasz za 3 miesiące, czy jeszcze nie wiesz kiedy —
+              Nieważne, czy prowadzisz już studio, czy planujesz je dopiero otworzyć  —
               <strong className="font-semibold text-gray-900"> wychodzisz z gotowym modelem A-Z</strong>, do wdrożenia kiedy Ty zdecydujesz.
             </p>
           </div>
@@ -187,7 +187,7 @@ export function HeroSection() {
 
               <div className="mt-6 text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
                 <p className="mt-3 text-center">
-                  Model, dzięki któremu studio jest poukładane i działa jak maszyna:
+                  Model, dzięki któremu jako właściciel mozesz wyjsc ze studio i otwierac kolejne placowki
                 </p>
 
                 <ul className="mt-2 flex flex-col items-center justify-center gap-2 text-center not-italic text-gray-900 sm:flex-row sm:gap-4">

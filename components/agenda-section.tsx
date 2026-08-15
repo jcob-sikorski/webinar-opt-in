@@ -20,7 +20,7 @@ const AGENDA: AgendaItem[] = [
   },
   {
     time: "20:15",
-    title: "Model Butikowego Studia — 3 filary",
+    title: "Model Kameralnego Studia — 3 filary",
     description:
       "Rozbiję model A-Z na 3 konkretne filary: SYSTEMY, ZARZĄDZANIE, ZESPÓŁ — z przykładami z moich 4 placówek.",
   },

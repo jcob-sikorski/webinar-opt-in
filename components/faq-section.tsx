@@ -15,7 +15,7 @@ const FAQS: FaqItem[] = [
   {
     question: "Nie mam jeszcze studio. Czy ten warsztat jest dla mnie?",
     answer:
-      "Tak. Model butikowego studio pokazuję od zera — jeśli otwierasz studio za 3 miesiące albo nie wiesz jeszcze kiedy, to wyjdziesz z planem, który wdrożysz gdy będziesz gotowy/a. Nie musisz mieć lokalu, żeby zrozumieć system.",
+      "Tak. Model kameralnego studio pokazuję od zera — jeśli otwierasz studio za 3 miesiące albo nie wiesz jeszcze kiedy, to wyjdziesz z planem, który wdrożysz gdy będziesz gotowy/a. Nie musisz mieć lokalu, żeby zrozumieć system.",
   },
   {
     question: "Prowadzę już studio od kilku lat. Czy to nie będzie zbyt podstawowe?",

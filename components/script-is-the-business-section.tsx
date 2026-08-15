@@ -61,7 +61,7 @@ export function ScriptIsTheBusinessSection() {
         </h2>
 
         <p className="mx-auto mt-7 max-w-[46ch] text-pretty text-body-lg leading-[1.6] text-ink-muted">
-          Zamiast walczyć z gigantycznym czynszem, model opiera się na kameralnym, butikowym miejscu na obrzeżach. Minimalizujesz koszty stałe, a dzięki jakości premium generujesz zyski, o których sieciówki mogą tylko pomarzyć — niezależnie od tego, czy otwierasz za miesiąc, czy za rok.
+          Zamiast walczyć z gigantycznym czynszem, model opiera się na kameralnym, kameralnym miejscu na obrzeżach. Minimalizujesz koszty stałe, a dzięki jakości premium generujesz zyski, o których sieciówki mogą tylko pomarzyć — niezależnie od tego, czy otwierasz za miesiąc, czy za rok.
         </p>
       </div>
 
@@ -69,7 +69,7 @@ export function ScriptIsTheBusinessSection() {
         <div className="mx-auto flex max-w-3xl items-center gap-5">
           <span aria-hidden className="h-px flex-1 bg-ink/10" />
           <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-ink-subtle">
-            Ich życie zmieniło się na lepsze dzięki butikowemu studio
+            Ich życie zmieniło się na lepsze dzięki kameralnemu studio
           </span>
           <span aria-hidden className="h-px flex-1 bg-ink/10" />
         </div>

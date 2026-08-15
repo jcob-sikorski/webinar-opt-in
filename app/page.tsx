@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero-section";
+import { StatsSection } from "@/components/stats-section";
 import { WhatToExpectSection } from "@/components/what-to-expect-section";
 import { WhatYouWillLearnSection } from "@/components/what-you-will-learn-section";
 import { TeachingBioSection } from "@/components/teaching-bio-section";
@@ -23,6 +24,8 @@ export default function Home() {
       {/* Hero: dodaj SeatsProgressBar zamiast statycznego "Tylko 500 miejsc!"
           — patrz components/seats-progress-bar.tsx */}
       <HeroSection />
+
+      <StatsSection />
 
       <IsThisForYouSection />
       <WhatToExpectSection />

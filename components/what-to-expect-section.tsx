@@ -23,7 +23,7 @@ export function WhatToExpectSection() {
         {/* Płynny tekst zamiast kart */}
         <div className="mt-10 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            W ciągu tej jednej godziny rozkładam model butikowego studia na
+            W ciągu tej jednej godziny rozkładam model kameralnego studia na
             czynniki pierwsze i pokazuję Ci{" "}
             <strong className="font-semibold not-italic text-gray-900">
               sześć filarów
@@ -40,7 +40,7 @@ export function WhatToExpectSection() {
             manowce i grają w zupełnie inną grę niż Ty. Potem pokazuję, jak od
             środka wygląda{" "}
             <strong className="font-semibold not-italic text-gray-900">
-              model butikowego studia
+              model kameralnego studia
             </strong>
             : czego naprawdę potrzebujesz w lokalu 40–150 m², a czego nie, i
             dlaczego mała, kameralna sala wygrywa z drogim, prestiżowym

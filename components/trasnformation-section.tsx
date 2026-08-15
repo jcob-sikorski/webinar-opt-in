@@ -20,7 +20,7 @@ const RevenueCard = () => (
         </span>
       </p>
       <p className="mt-3 text-[0.6875rem] font-semibold uppercase leading-relaxed tracking-[0.08em] text-white/55 sm:text-xs">
-        Tyle może zarabiać butikowe studio treningu personalnego
+        Tyle może zarabiać kameralne studio treningu personalnego
       </p>
     </div>
   </div>

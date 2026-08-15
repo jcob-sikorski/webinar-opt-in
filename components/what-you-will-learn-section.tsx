@@ -17,7 +17,7 @@ export function WhatYouWillLearnSection() {
           {/* Lewa kolumna: Treść */}
           <div className="flex-1 text-left">
             <p className="mb-8 text-lg font-medium leading-relaxed text-gray-900 sm:text-xl">
-              <strong>Poznaj autorski model Butikowego Studia</strong>, który sprawia, że studio zarabia stabilnie wtedy, gdy Ciebie nie ma na sali, a osiąganie zysków jest wynikiem systemu, a nie Twojej wiecznej orki.
+              <strong>Poznaj autorski model Kameralnego Studia</strong>, który sprawia, że studio zarabia stabilnie wtedy, gdy Ciebie nie ma na sali, a osiąganie zysków jest wynikiem systemu, a nie Twojej wiecznej orki.
             </p>
 
             <ul className="flex flex-col gap-6">
