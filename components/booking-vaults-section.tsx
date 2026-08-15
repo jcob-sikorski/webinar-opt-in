@@ -86,7 +86,7 @@ const VAULTS: Moduł[] = [
       "Szkolenie wdrożeniowe zespołu, szkolenie z budowania relacji, metodyka twarda i miękka.",
     ],
     proof:
-      "Boisz się, że wyszkolisz kogoś i odejdzie z klientami? U mnie to się zdarzyło, niejednokrotnie. Dlatego w Vaulcie jest też procedura zabezpieczenia klientów i danych — a jeśli ktoś w zespole przejawia przedsiębiorczość, sam proponuję mu otwarcie lokalizacji ze mną.",
+      "Boisz się, że wyszkolisz kogoś i odejdzie z klientami? U mnie to się zdarzyło, niejednokrotnie. Dlatego w module jest też procedura zabezpieczenia klientów i danych — a jeśli ktoś w zespole przejawia przedsiębiorczość, sam proponuję mu otwarcie lokalizacji ze mną.",
   },
   {
     number: "05",
