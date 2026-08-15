@@ -2,6 +2,7 @@
 
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Section } from "@/components/ui/section";
+import { RegisterCtaButton } from "@/components/register-cta-button";
 
 interface ProofPerson {
   name: string;
@@ -148,6 +149,19 @@ export function ConfirmationProofSection() {
         </p>
         <p className="mt-4 text-lg font-bold text-gray-900 sm:text-xl">
           Zablokuj kalendarz na 24 sierpnia, 20:00.
+        </p>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-16 flex w-full flex-col items-center sm:mt-24">
+        <RegisterCtaButton
+          size="lg"
+          className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
+        >
+          Tak, chcę się zapisać
+        </RegisterCtaButton>
+        <p className="mt-4 max-w-md text-center text-xs font-medium uppercase tracking-widest text-gray-500 sm:text-sm">
+          Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali.
         </p>
       </div>
     </Section>

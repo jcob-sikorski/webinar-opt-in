@@ -105,22 +105,25 @@ export function HeroSection() {
             className="mx-auto w-full max-w-[14rem] object-contain" 
           />
 
-          <h1 className="mx-auto mt-2 max-w-[30ch] font-display text-[clamp(1.68rem,4.48vw,3.4rem)] font-bold italic leading-[1.04] tracking-[-0.02em] text-ink text-balance [text-wrap:balance] sm:max-w-[28ch]"> 
-            <span className="text-green-600">Poznaj Model</span>, Dzięki Któremu{" "}
-            <span className="whitespace-nowrap">40+ Studiów</span> Zarabia{" "}
-            <span className="relative inline-block whitespace-nowrap">
-              <span className="relative z-10">Do 600 Tys. zł Rocznie</span>
-              <span
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 z-0 h-[0.16em] translate-y-full bg-orange-500"
-              />
+          <div className="mx-auto flex flex-col items-center space-y-4 text-center md:space-y-6">
+            {/* Kicker / Wprowadzenie do problemu */}
+            <span className="max-w-[55ch] text-balance text-sm font-bold uppercase tracking-widest text-gray-500 md:text-base">
+              Masz Pełny Grafik, Ale Nie Możesz Przebić Kolejnego Progu Finansowego?
             </span>
-          </h1>
+
+            {/* Główny nagłówek z obietnicą */}
+            <h1 className="mx-auto mt-2 max-w-[35ch] text-balance font-display text-[clamp(1.68rem,4vw,3.4rem)] font-bold italic leading-[1.15] tracking-[-0.02em] text-ink sm:max-w-[40ch]">
+              <span className="text-green-600">Odkryj Model Butikowego Studia</span>, Dzięki Któremu Trenerzy Personalni Budują Biznes{" "}
+              <span className="underline decoration-orange-500 decoration-[0.12em] underline-offset-[0.15em]">
+                Zarabiający Wtedy Gdy Ich Nie Ma Na Sali
+              </span>
+            </h1>
+          </div>
 
           {/* PODTYTUŁ (Subtitle) */}
           <div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
             <p>
-              1-godzinny warsztat od praktyka, który:
+              Bezpłatny warsztat online od praktyka, który:
               <span className="mt-2 block">
                 <strong className="font-semibold text-gray-900">
                   wygenerował 38M zł+
@@ -148,7 +151,7 @@ export function HeroSection() {
               onClick={openRegister}
               className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
             >
-              ZAREZERWUJ MIEJSCE — 0 zł
+              Tak, chcę się zapisać
             </Button>
 
             <p className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-gray-500">

@@ -41,8 +41,8 @@ export function ProofSection({
           <div className="mx-auto mt-4 max-w-md space-y-4 text-center text-body italic text-ink-muted">
             <p>
               Moje placówki pod marką „Sportowe Przedmieście” w miastach takich jak Poddębice, 
-              Łódź, Aleksandrów Łódzki czy Uniejów w najlepszym okresie generują prawie 
-              200 tys. zł dochodu miesięcznie. Biznes szedł tak dobrze, że – mówiąc szczerze – 
+              Łódź, Mikołów i Orzesze w najlepszym okresie generują prawie 
+              100 tys. zł dochodu miesięcznie. Biznes szedł tak dobrze, że – mówiąc szczerze – 
               zaczął być zbyt przewidywalny. Teraz robię to co mnie spełnia. Dzielę się wiedzą 
               i pomagam zrobić to samo innym.
             </p>

@@ -39,9 +39,9 @@ export function ConfirmationHeroSection() {
             <Check className="h-7 w-7 text-white" strokeWidth={3} />
           </span>
 
-          <h1 className="mx-auto mt-4 max-w-[18ch] font-display text-[clamp(2rem,5.2vw,3.5rem)] font-bold italic leading-[1.08] tracking-[-0.02em] text-ink text-balance">
-            Gratulacje! <span className="text-green-600">Zarezerwowaliśmy Tobie Miejsce!</span>
-          </h1>
+<h2 className="mx-auto mt-4 w-full font-display text-[clamp(1.6rem,4.16vw,2.8rem)] font-bold italic leading-[1.08] tracking-[-0.02em] text-ink text-center text-balance">
+  Twoje miejsce na warsztat zostało <span className="text-green-600">zarezerwowane</span>
+</h2>
 
           {/* Sekcja ikon kalendarzy */}
           <div className="mt-8 w-full max-w-md">

@@ -1,100 +1,95 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { HelpCircle } from "lucide-react";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import { Section } from "@/components/ui/section";
+import { RegisterCtaButton } from "@/components/register-cta-button";
 
 interface FaqItem {
   question: string;
-  answer: ReactNode;
+  answer: string;
 }
 
-// Emphasis helper — keeps the data array readable
-const M = ({ children }: { children: ReactNode }) => (
-  <strong className="font-bold text-gray-900">{children}</strong>
-);
-
+// Pre-handling najczęstszych obiekcji PRZED zapisem — nie po.
 const FAQS: FaqItem[] = [
   {
-    question: "Warsztat jest za darmo. W czym haczyk?",
-    answer: (
-      <>
-        Nie ma tu żadnego haczyka w sensie ukrytych opłat. Warsztat jest darmowy, bo{" "}
-        <M>tak buduję relacje z właścicielami studiów</M> — pokazuję konkretny model, a Ty sam
-        oceniasz, czy chcesz w to iść dalej. Jeśli po godzinie uznasz, że to nie dla Ciebie,{" "}
-        <M>i tak wychodzisz z gotowym planem</M>, który możesz wdrożyć samodzielnie.
-      </>
-    ),
+    question: "Nie mam jeszcze studio. Czy ten warsztat jest dla mnie?",
+    answer:
+      "Tak. Model butikowego studio pokazuję od zera — jeśli otwierasz studio za 3 miesiące albo nie wiesz jeszcze kiedy, to wyjdziesz z planem, który wdrożysz gdy będziesz gotowy/a. Nie musisz mieć lokalu, żeby zrozumieć system.",
   },
   {
-    question: "Dlaczego mam słuchać akurat Ciebie, a nie kogoś innego z branży?",
-    answer: (
-      <>
-        Bo <M>nie uczę teorii — pokazuję to, co sam wdrożyłem</M>. Cztery działające placówki
-        Sportowe Przedmieście, 38M zł wygenerowane z klientami i ponad 40 instalacji tego
-        systemu u innych właścicieli w ciągu roku.
-      </>
-    ),
+    question: "Prowadzę już studio od kilku lat. Czy to nie będzie zbyt podstawowe?",
+    answer:
+      "Najczęstszy problem doświadczonych właścicieli to nie brak wiedzy, tylko brak wdrożonego systemu. Jeśli nie jesteś w stanie w sposób skalowalny otwierać kolejnych placówek — to jest dokładnie dla Ciebie.",
   },
   {
-    question: "Byłem/byłam już na kilku takich warsztatach i zawsze kończy się na sprzedaży.",
-    answer: (
-      <>
-        Rozumiem tę czujność, różnica jest taka, że{" "}
-        <M>ta godzina to nie jest przynęta na dalszą sprzedaż</M> — tu pokażę Ci realny model, który faktycznie zarabia bez
-        właściciela. Jeśli pod koniec zechcesz porozmawiać o dalszej współpracy — świetnie.
-        Jeśli nie — <M>i tak masz z czym wyjść</M>.
-      </>
-    ),
+    question: "Czy będziecie mi coś sprzedawać podczas warsztatu?",
+    answer:
+      "Wyjdziesz z konkretnym planem. Pod koniec pokażę, jak wygląda dalsza współpraca dla osób, które chcą wdrożyć model z moim wsparciem — ale nie musisz nic kupować, żeby skorzystać z tego, co dziś pokażę.",
   },
   {
-    question: "Mam już swoją wizję. Po co mi kolejny głos w głowie?",
-    answer: (
-      <>
-        Ten warsztat nie jest po to, żeby zastąpić kogoś, z kim już pracujesz — jest po to, żeby{" "}
-        <M>dać Ci konkretny model</M>, z którym możesz skonfrontować to, co robisz teraz. Jeśli
-        Twój obecny kierunek się pokrywa — świetnie, wyjdziesz z potwierdzeniem. Jeśli nie —{" "}
-        <M>lepiej wiedzieć to teraz</M>, niż za rok.
-      </>
-    ),
+    question: "Nie mogę być na żywo w poniedziałek 20:00. Czy mam się zapisywać?",
+    answer:
+      "Tak, zapisz się mimo to. Wyślemy Ci przypomnienie i link do nagrania — zostaje ono dostępne przez 5 dni. Jedyna różnica: Protokół Dochodowego Studia (checklista wdrożenia) trafia wyłącznie do osób, które są na żywo do końca, więc jeśli możesz się urwać choćby na Q&A, warto.",
+  },
+  {
+    question: "Ile to zajmie i co mam przygotować?",
+    answer:
+      "Ok. 75 minut, bez przerwy. Przygotuj coś do notowania — warsztat ma dużo mięsa, a ludzie, którzy notują, wdrażają zdecydowanie więcej niż ci, którzy tylko oglądają.",
   },
 ];
 
+function FaqRow({ item }: { item: FaqItem }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="border-b border-gray-200 py-5">
+      <button
+        type="button"
+        onClick={() => setOpen((prev) => !prev)}
+        className="flex w-full items-center justify-between gap-4 text-left"
+        aria-expanded={open}
+      >
+        <span className="text-base font-bold text-gray-900 sm:text-lg">
+          {item.question}
+        </span>
+        <ChevronDown
+          className={`h-5 w-5 shrink-0 text-[#ef6b4a] transition-transform duration-200 ${
+            open ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+      {open && (
+        <p className="mt-3 text-base leading-relaxed text-gray-700">
+          {item.answer}
+        </p>
+      )}
+    </div>
+  );
+}
+
 export function FaqSection() {
   return (
-    <Section className="bg-white px-5 py-16 sm:px-6 sm:py-24">
-      {/* Nagłówek sekcji */}
-      <div className="mx-auto max-w-4xl text-center">
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
-          Wahasz się zapisać?
-        </p>
-        <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-extrabold leading-[1.15] text-gray-900 sm:text-4xl md:text-5xl">
-          Rozwiejmy Twoje obawy
+    <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
+      <div className="mx-auto max-w-3xl">
+        <h2 className="text-center text-3xl font-extrabold leading-[1.15] text-gray-900 sm:text-4xl">
+          Najczęstsze pytania
         </h2>
-      </div>
 
-      {/* Lista pytań i odpowiedzi (karty) */}
-      <div className="mx-auto mt-14 flex max-w-3xl flex-col gap-6">
-        {FAQS.map((faq) => (
-          <div
-            key={faq.question}
-            className="relative overflow-hidden rounded-2xl border border-gray-100 bg-[#fcfbf9] p-6 shadow-sm transition-shadow duration-300 hover:shadow-md sm:p-8"
+        <div className="mt-10">
+          {FAQS.map((item) => (
+            <FaqRow key={item.question} item={item} />
+          ))}
+        </div>
+
+        <div className="mt-12 flex w-full flex-col items-center">
+          <RegisterCtaButton
+            size="lg"
+            className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
           >
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-6">
-              <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#ef6b4a]/10">
-                <HelpCircle className="h-6 w-6 text-[#ef6b4a]" strokeWidth={2} />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold leading-snug text-gray-900 sm:text-2xl">
-                  {faq.question}
-                </h3>
-                <p className="mt-3 text-base leading-relaxed text-gray-700 sm:text-lg">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
-          </div>
-        ))}
+            Tak, chcę się zapisać
+          </RegisterCtaButton>
+        </div>
       </div>
     </Section>
   );
