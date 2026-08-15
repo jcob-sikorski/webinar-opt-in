@@ -105,17 +105,17 @@ export function HeroSection() {
             className="mx-auto w-full max-w-[14rem] object-contain" 
           />
 
-          <div className="mx-auto flex flex-col items-center space-y-4 text-center md:space-y-6">
+<div className="mx-auto flex flex-col items-center space-y-4 text-center md:space-y-6">
             {/* Kicker / Wprowadzenie do problemu */}
             <span className="max-w-[55ch] text-balance text-sm font-bold uppercase tracking-widest text-gray-500 md:text-base">
-              Masz Pełny Grafik, Ale Nie Możesz Przebić Kolejnego Progu Finansowego?
+              Przebij Sufit Trenera
             </span>
 
             {/* Główny nagłówek z obietnicą */}
             <h1 className="mx-auto mt-2 max-w-[35ch] text-balance font-display text-[clamp(1.68rem,4vw,3.4rem)] font-bold italic leading-[1.15] tracking-[-0.02em] text-ink sm:max-w-[40ch]">
-              <span className="text-green-600">Odkryj Model Butikowego Studia</span>, Dzięki Któremu Trenerzy Personalni Budują Biznes{" "}
+              I <span className="text-green-600">Otwórz Kameralne Studio Treningu:</span>{" "}
               <span className="underline decoration-orange-500 decoration-[0.12em] underline-offset-[0.15em]">
-                Zarabiający Wtedy Gdy Ich Nie Ma Na Sali
+                200-600 Tys. Zł Zysku Właścicielskiego
               </span>
             </h1>
           </div>
