@@ -40,12 +40,12 @@ export function ConfirmationHeroSection() {
           </span>
 
 <h2 className="mx-auto mt-4 w-full font-display text-[clamp(1.6rem,4.16vw,2.8rem)] font-bold italic leading-[1.08] tracking-[-0.02em] text-ink text-center text-balance">
-  Twoje miejsce na warsztat zostało <span className="text-green-600">zarezerwowane</span>
+  Udało Ci się <span className="text-green-600">zapisać</span> 💪
 </h2>
 
           {/* Sekcja ikon kalendarzy */}
           <div className="mt-8 w-full max-w-md">
-            <h2 className="mb-6 font-display text-2xl font-bold text-black text-center">DODAJ DO KALENDARZA</h2>
+            <h2 className="mb-6 font-display text-2xl font-bold text-black text-center">DODAJ WYDAERZENIE DO KALENDARZA</h2>
             
             <div className="flex flex-wrap items-center justify-center gap-6 p-4">
               <a href={CALENDAR_LINKS.apple} target="_blank" rel="noreferrer" title="Apple Calendar" className="transition-transform hover:scale-105">

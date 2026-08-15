@@ -83,11 +83,10 @@ export function ConfirmationBonusSection() {
 
         {/* Główny nagłówek */}
         <h2 className="mx-auto mt-5 max-w-[26ch] text-center text-[1.875rem] font-bold leading-tight text-gray-900 sm:text-[2.375rem]">
-          Wywiady z ludźmi, którzy <span className="text-[#ef6b4a]">otworzyli ze mną</span> pierwsze i kolejne studio
+          Posłuchaj ludzi, którzy już <span className="text-[#ef6b4a]">otworzyli ze mną</span> swoje studia.
         </h2>
 
         <p className="mx-auto mt-5 max-w-[50ch] text-center text-lg text-gray-600">
-          Posłuchaj, jak zarządzanie studiem wygląda w praktyce.
           Wywiady z właścicielami, którzy już przeszli tę drogę i uwolnili swój czas.
         </p>
 
@@ -96,19 +95,6 @@ export function ConfirmationBonusSection() {
           {CASE_STUDY_VIDEOS.map((video) => (
             <VideoRow key={video.youtubeId} video={video} />
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-16 flex w-full flex-col items-center sm:mt-24">
-          <RegisterCtaButton
-            size="lg"
-            className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
-          >
-            Tak, chcę się zapisać
-          </RegisterCtaButton>
-          <p className="mt-4 max-w-md text-center text-xs font-medium uppercase tracking-widest text-gray-500 sm:text-sm">
-            Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali.
-          </p>
         </div>
       </div>
     </Section>

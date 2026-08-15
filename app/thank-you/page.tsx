@@ -1,4 +1,6 @@
 import { ConfirmationHeroSection } from "@/components/confirmation-hero-section";
+import { ConfirmationLegitimacySection } from "@/components/confirmation-legitimacy-section";
+import { ConfirmationRealisticOutcomesSection } from "@/components/confirmation-realistic-outcomes-section";
 import { ConfirmationSurveySection } from "@/components/confirmation-survey-section";
 import { ConfirmationVideoSection } from "@/components/confirmation-video-section";
 import { ConfirmationBonusSection } from "@/components/confirmation-bonus-section";
@@ -11,6 +13,8 @@ export default function ConfirmationPage() {
       <ConfirmationHeroSection />
       {/* <ConfirmationSurveySection /> */}
       <ConfirmationVideoSection />
+      <ConfirmationLegitimacySection />
+      <ConfirmationRealisticOutcomesSection />
       <ConfirmationBonusSection />
       <ConfirmationProofSection />
       <LegalFooter />

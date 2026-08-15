@@ -133,37 +133,6 @@ export function ConfirmationProofSection() {
           </figure>
         ))}
       </div>
-
-      <div className="relative mx-auto mt-16 max-w-2xl overflow-hidden rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-xl sm:p-10">
-        <div className="absolute left-0 top-0 h-2 w-full bg-[#ef6b4a]" aria-hidden="true" />
-        <p className="text-xl font-black uppercase tracking-widest text-[#ef6b4a] sm:text-2xl">
-          Uwaga!
-        </p>
-        <p className="mt-4 text-base leading-relaxed text-gray-700 sm:text-lg">
-          Nagranie zostaje z Tobą{" "}
-          <strong className="font-bold text-gray-900">na 5 dni</strong>.{" "}
-          <em className="italic">
-            Protokół Dochodowego Studia dostaną wyłącznie osoby, które zostają
-            na żywo do samego końca warsztatu.
-          </em>
-        </p>
-        <p className="mt-4 text-lg font-bold text-gray-900 sm:text-xl">
-          Zablokuj kalendarz na 24 sierpnia, 20:00.
-        </p>
-      </div>
-
-      {/* CTA */}
-      <div className="mt-16 flex w-full flex-col items-center sm:mt-24">
-        <RegisterCtaButton
-          size="lg"
-          className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
-        >
-          Tak, chcę się zapisać
-        </RegisterCtaButton>
-        <p className="mt-4 max-w-md text-center text-xs font-medium uppercase tracking-widest text-gray-500 sm:text-sm">
-          Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali.
-        </p>
-      </div>
     </Section>
   );
 }
