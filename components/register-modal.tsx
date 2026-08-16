@@ -109,7 +109,7 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
 
       // 3. CLOSE MODAL & REDIRECT
       onOpenChange(false);
-      router.push("/thank-you"); 
+      router.push("/widzimy-sie-na-warsztacie"); 
 
     } catch (error) {
       console.error("Registration Error:", error);
