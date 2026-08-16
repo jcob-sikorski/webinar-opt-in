@@ -1,4 +1,3 @@
-import { PlayCircle } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 interface CaseStudyVideo {
@@ -10,111 +9,72 @@ interface CaseStudyVideo {
 const CASE_STUDY_VIDEOS: CaseStudyVideo[] = [
   {
     title: "Miała piękne studio i prawie je zamknęła",
-    description: "Właścicielka studia pod Krakowem o tym, co naprawdę uratowało jej biznes, gdy sam ładny lokal przestał wystarczać.",
+    description:
+      "Właścicielka studia pod Krakowem o tym, co naprawdę uratowało jej biznes, gdy sam ładny lokal przestał wystarczać.",
     youtubeId: "Faf0TBg_DpQ",
   },
   {
     title: "Studio zarabia, gdy właściciel jest w Tajlandii",
-    description: "Adrian, pół roku po otwarciu — o systemie i zespole, dzięki którym studio działa bez niego na miejscu.",
+    description:
+      "Adrian, pół roku po otwarciu — o systemie i zespole, dzięki którym studio działa bez niego na miejscu.",
     youtubeId: "PuLUm907meI",
   },
   {
     title: "Otworzył własne studio dla kobiet",
-    description: "Dlaczego na sieciówce nie da się dać tej samej jakości — i jak wyglądało przejście z trenera w przedsiębiorcę.",
+    description:
+      "Dlaczego na sieciówce nie da się dać tej samej jakości — i jak wyglądało przejście z trenera w przedsiębiorcę.",
     youtubeId: "WNcbyFyhPyQ",
   },
   {
-    title: "W miesiąc otworzyła własne studio treningowe",
-    description: "Od trenerki mobilnej bez czasu dla siebie do właścicielki Studio Balans, z zespołem i poukładanym procesem.",
-    youtubeId: "bHBhj0a1S0U",
-  },
-  {
     title: "Dziś sprzedaje pakiety za 6900 zł",
-    description: "Rok wcześniej sam by w to nie uwierzył. Jak model semipersonalny zmienił zasady gry w jego studiu.",
+    description:
+      "Rok wcześniej sam by w to nie uwierzył. Jak model semipersonalny zmienił zasady gry w jego studiu.",
     youtubeId: "c9JNecprL68",
-  },
-  {
-    title: "Otworzył studio i zbudował zespół",
-    description: "Dawid, w dniu otwarcia — o decyzjach, ofercie i mastermindach, które poukładały biznes od środka.",
-    youtubeId: "u7rk1lC03cM",
-  },
-  {
-    title: "Z 3 etatów do własnego studia",
-    description: "Jak trenerka, która czekała miesiącami na wolny termin, postawiła granice i zbudowała system zamiast chaosu.",
-    youtubeId: "_qTuIWqnVIY",
-  },
-  {
-    title: "Brał 50 zł za trening. Dziś ma klub z 7 trenerami",
-    description: "Krzysztof Mariańczyk o drodze od pojedynczych treningów z polecenia do klubu z zespołem i podniesionymi stawkami.",
-    youtubeId: "JmSl_mpfoQA",
-  },
-  {
-    title: "Zmniejszył koszty trzykrotnie przed otwarciem",
-    description: "Dlaczego zaczął planować 4 miesiące wcześniej, uniknął zakupu drogiego sprzętu premium i zmienił decyzję o lokalu aż trzy razy.",
-    youtubeId: "oy-C_Nn6aW0",
-  },
-  {
-    title: "Z etatu na kopalni do dwóch własnych studiów",
-    description: "Historia o tym, jak po wypadku w pracy zbudował zespół trenerów, rzucił etat i odzyskał czas, otwierając kolejne studio w Żorach.",
-    youtubeId: "eLsnc0_OZFY",
   },
 ];
 
 export function CallConfirmationBonusSection() {
   return (
-    <Section width="wide" className="bg-panel">
-      <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-        Zanim porozmawiamy
-      </p>
-      <h2 className="mx-auto mt-5 max-w-[26ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Poznaj Ludzi, Którzy{" "}
-        <span className="text-coral">Otworzyli z Nami Studio</span>
-      </h2>
-      <p className="mx-auto mt-5 max-w-[50ch] text-center text-body-lg text-ink-muted">
-        Zanim spotkamy się na rozmowie, zobacz jak to wygląda w
-        praktyce. Posłuchaj wywiadów z właścicielami studiów, którzy
-        przeszli tę drogę i rozwiązali problemy, z którymi mierzysz się dzisiaj.
-      </p>
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+          Zanim się usłyszymy
+        </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {CASE_STUDY_VIDEOS.map((video) => (
-          <a
-            key={video.youtubeId}
-            href={`https://youtu.be/${video.youtubeId}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex flex-col overflow-hidden rounded-lg border border-line bg-background transition-colors hover:border-coral-bright"
-          >
-            <div className="relative aspect-video overflow-hidden bg-ink">
-              <img
-                src={`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`}
-                alt={video.title}
-                className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                loading="lazy"
-              />
-              <span
-                aria-hidden
-                className="absolute inset-0 flex items-center justify-center bg-ink/10 transition-colors group-hover:bg-ink/20"
-              >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-ink/80">
-                  <PlayCircle className="h-6 w-6 text-white" strokeWidth={1.75} />
-                </span>
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col p-5">
-              <p className="text-body font-semibold text-ink">
+        <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          Zobacz, jak wygląda wdrożenie modelu{" "}
+          <span className="text-[#ef6b4a]">w praktyce</span>
+        </h2>
+
+        <div className="mx-auto mt-6 max-w-2xl text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+          <p>
+            Posłuchaj rozmów z właścicielami studiów, którzy mierzyli się z dokładnie tymi samymi wąskimi gardłami co Ty i wdrożyli ten proces u siebie:
+          </p>
+        </div>
+
+        <div className="mt-14 divide-y divide-[#d6d6d6] text-left">
+          {CASE_STUDY_VIDEOS.map((video) => (
+            <article key={video.youtubeId} className="py-10">
+              <h3 className="font-display text-xl font-bold italic text-gray-900 sm:text-2xl">
                 {video.title}
-              </p>
-              <p className="mt-2 flex-1 text-sm text-ink-muted">
+              </h3>
+
+              <div className="relative mx-auto my-6 aspect-video w-full max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-md">
+                <iframe
+                  src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                  title={video.title}
+                  className="h-full w-full border-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+
+              <p className="text-pretty font-display text-base italic leading-[1.7] text-gray-700 sm:text-lg">
                 {video.description}
               </p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-coral">
-                <PlayCircle className="h-4 w-4" />
-                Obejrzyj rozmowę
-              </span>
-            </div>
-          </a>
-        ))}
+            </article>
+          ))}
+        </div>
       </div>
     </Section>
   );
