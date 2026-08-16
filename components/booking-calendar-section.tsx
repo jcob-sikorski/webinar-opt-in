@@ -1,55 +1,56 @@
-import { CheckItem } from "@/components/ui/check-item";
 import { Section } from "@/components/ui/section";
 import { BookingCalendarEmbed } from "@/components/ui/booking-calendar-embed";
-
-const BEFORE_CALL = [
-  "Przygotuj swoje liczby: ilu masz dziś klientów, ile godzin stoisz na sali, ile zostaje na koniec miesiąca.",
-  "Zarezerwuj 45 minut w miejscu, w którym możesz spokojnie rozmawiać — nie między treningami.",
-  "Jeśli decyzję podejmujesz z partnerem, umów termin, na którym możecie być oboje.",
-];
 
 export function BookingCalendarSection() {
   return (
     <div id="kalendarz" className="scroll-mt-8">
-      <Section width="wide" className="bg-panel">
-        <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-          Zrób pierwszy krok
-        </p>
-        <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-          Wybierz Termin <span className="text-coral">Rozmowy</span>
-        </h2>
-        <p className="mx-auto mt-5 max-w-[52ch] text-center text-body-lg text-ink-muted">
-          Bezpłatnie, około 45 minut, bez presji. Jeśli po tej rozmowie okaże
-          się, że to nie jest moment dla Ciebie — powiem Ci to wprost i
-          rozejdziemy się w dobrych relacjach.
-        </p>
-
-        <div className="mt-9">
-          <BookingCalendarEmbed />
-        </div>
-
-        <div className="mx-auto mt-10 max-w-xl rounded-xl border border-line bg-background p-6 sm:p-7">
-          <p className="text-body font-semibold text-ink">
-            Zanim się połączymy — trzy rzeczy:
+      <Section className="bg-[#fcfbf9]">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+            Zrób pierwszy krok
           </p>
-          <ul className="mt-4 divide-y divide-line">
-            {BEFORE_CALL.map((item) => (
-              <CheckItem key={item} className="py-3.5">
-                <p className="text-body text-ink-muted">{item}</p>
-              </CheckItem>
-            ))}
-          </ul>
-        </div>
 
-        <div className="mx-auto mt-11 max-w-2xl text-center">
-          <p className="font-display text-lg italic leading-[1.65] text-ink-muted sm:text-xl">
-            Ja swoją drogę przeszedłem przez dwa bankructwa, magazyn w DHL-u i
-            rok, w którym straciłem dziesiątki tysięcy złotych, bo nikt mi nie
-            pokazał, jak zrobić to dobrze.{" "}
-            <strong className="font-semibold text-ink">
-              Nie musisz przechodzić tej samej drogi. Możesz przejść krótszą.
-            </strong>
+          <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+            Wybierz dogodny <span className="text-[#ef6b4a]">termin rozmowy</span>
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-pretty font-display text-lg italic leading-[1.7] text-gray-700 sm:text-xl">
+            Bezpłatnie, około 45 minut, bez presji. Sprawdzamy stan faktyczny Twojego biznesu i ustalamy, co konkretnie blokuje Cię przed wyjściem z sali.
           </p>
+
+          {/* Osadzony widget GHL */}
+          <div className="mt-10 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl">
+            <BookingCalendarEmbed />
+          </div>
+
+          <div className="mx-auto mt-14 max-w-2xl text-center">
+            <h3 className="font-display text-2xl font-bold italic text-gray-900 sm:text-3xl">
+              Zanim się połączymy:
+            </h3>
+
+            <div className="mt-6 space-y-5 text-left font-display text-base italic leading-[1.75] text-gray-700 sm:text-lg">
+              <p>
+                <strong className="font-semibold not-italic text-gray-900">
+                  Przygotuj swoje realne liczby:
+                </strong>{" "}
+                Ilu masz podopiecznych, ile płacą, ile godzin spędzasz na sali i jaki masz czynsz. Im bardziej precyzyjne dane, tym szybciej znajdziemy rozwiązanie.
+              </p>
+
+              <p>
+                <strong className="font-semibold not-italic text-gray-900">
+                  Jeśli masz wspólnika lub partnera:
+                </strong>{" "}
+                Wybierz termin, w którym możecie być oboje. Omawiamy kluczowe decyzje finansowe i organizacyjne — najlepiej odbyć tę rozmowę wspólnie.
+              </p>
+            </div>
+
+            <div className="mt-10 border-t border-[#d6d6d6] pt-8">
+              <p className="font-display text-lg italic leading-[1.6] text-gray-900 sm:text-xl">
+                Ja swoją drogę przeszedłem przez 2 bankructwa i pracę na magazynie.{" "}
+                <span className="text-[#ef6b4a]">Ty nie musisz powtarzać tych samych błędów.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </Section>
     </div>

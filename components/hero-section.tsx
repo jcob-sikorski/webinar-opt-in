@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { useRegisterModal } from "@/components/register-modal-provider";
 
-// 1. Updated the target time to August 24, 20:00 CEST (+02:00 timezone)
 const WORKSHOP_START = "2026-08-24T20:00:00+02:00";
 
 const BACKGROUND_IMAGES = [
@@ -20,20 +19,6 @@ const BACKGROUND_IMAGES = [
   "https://ucarecdn.com/fc087534-cf30-4219-b5db-fb96eaeb1758/unnamed6.webp",
   "https://ucarecdn.com/0d98b478-6d75-402d-bf66-65978394d26c/unnamed8.webp",
 ];
-
-const TESTIMONIAL = {
-  name: "Ela Ziółkowska",
-  figure: "47 000 zł / msc.",
-  photo: (
-    <img
-      src="https://ucarecdn.com/5e1654aa-f4af-4f92-9816-565479e06d64/Screenshot20260803at10920AM.png"
-      alt="Ela Ziółkowska"
-      className="aspect-[3/4] w-full rounded-md object-cover shadow-sm"
-    />
-  ),
-  description:
-    "„To jest fajne, nie zostajemy sami przez to pół roku mentoringu. Cały czas jesteśmy zaopiekowani. Gdzieś tam właśnie Bartek i jego zespół, nie mam słów, żeby po prostu to opisać. To są ludzie z prawdziwego zdarzenia i którzy, chcesz czy nie chcesz, oni ci po prostu pomogą. Czy masz te wątpliwości, czy nie masz, prędzej czy później osiągniesz sukces.”",
-};
 
 function BackgroundCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -98,20 +83,17 @@ export function HeroSection() {
 
       <section className="relative px-5 pt-4 pb-14 sm:px-6 sm:pt-6 sm:pb-20">
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
-
-          <img 
-            src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/09cd3493-7d85-4c2a-8855-e34c95663611.png" 
-            alt="Logo Dochodowe Studio" 
-            className="mx-auto w-full max-w-[14rem] object-contain" 
+          <img
+            src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/09cd3493-7d85-4c2a-8855-e34c95663611.png"
+            alt="Logo Dochodowe Studio"
+            className="mx-auto w-full max-w-[14rem] object-contain"
           />
 
-<div className="mx-auto flex flex-col items-center space-y-4 text-center md:space-y-6">
-            {/* Kicker / Wprowadzenie do problemu */}
+          <div className="mx-auto flex flex-col items-center space-y-4 text-center md:space-y-6">
             <span className="max-w-[55ch] text-balance text-sm font-bold uppercase tracking-widest text-gray-500 md:text-base">
               Chcesz Przebić Sufit Trenera?
             </span>
 
-            {/* Główny nagłówek z obietnicą */}
             <h1 className="mx-auto mt-2 max-w-[35ch] text-balance font-display text-[clamp(1.68rem,4vw,3.4rem)] font-bold italic leading-[1.15] tracking-[-0.02em] text-ink sm:max-w-[40ch]">
               <span className="text-green-600">Otwórz Kameralne Studio Treningu:</span>{" "}
               <span className="underline decoration-orange-500 decoration-[0.12em] underline-offset-[0.15em]">
@@ -120,31 +102,30 @@ export function HeroSection() {
             </h1>
           </div>
 
-          {/* PODTYTUŁ (Subtitle) */}
           <div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
             <p>
               Bezpłatny warsztat online od gościa, który:
               <span className="mt-2 block">
                 <strong className="font-semibold text-gray-900">
-                  wygenerował ponad 38M zł
-                </strong>{' '}
+                  pomógł klientom wygenerować ponad 38M zł
+                </strong>{" "}
                 sprzedając treningi personalne
               </span>
               <span className="mt-1 block">
-                i pomógł{' '} otworzyć{' '}
+                i pomógł otworzyć{" "}
                 <strong className="font-semibold text-gray-900">
                   37 studio w całej Polsce
-                </strong>.
+                </strong>
+                .
               </span>
             </p>
 
             <p className="mt-4 text-center">
-              Nieważne, czy prowadzisz już studio, czy planujesz je dopiero otworzyć  —
+              Nieważne, czy prowadzisz już studio, czy planujesz je dopiero otworzyć —
               <strong className="font-semibold text-gray-900"> wychodzisz z gotowym modelem A-Z</strong>, do wdrożenia kiedy Ty zdecydujesz.
             </p>
           </div>
 
-          {/* PRZYCISK ZAPISU */}
           <div className="mt-10 flex w-full flex-col items-center">
             <Button
               size="lg"
@@ -153,28 +134,20 @@ export function HeroSection() {
             >
               Tak, chcę się zapisać
             </Button>
-
-            <p className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-gray-500">
-              <span>Model prowadzenia studio A—Z</span>
-              <span aria-hidden className="h-1 w-1 rounded-full bg-orange-500" />
-              <span>Zbuduj biznes, który pracuje za Ciebie</span>
-            </p>
           </div>
 
-          {/* ODLICZANIE */}
           <div className="mx-auto mt-14 flex w-full max-w-2xl flex-col items-center rounded-md border border-[#d6d6d6] bg-[#f4f3ed] px-4 py-10">
             <p className="mb-6 text-center text-xl font-bold uppercase tracking-widest text-green-600 sm:text-2xl md:text-3xl">
               Warsztat zaczyna się za
             </p>
-            
+
             <CountdownTimer target={WORKSHOP_START} variant="boxes" />
-            
+
             <p className="mt-6 text-sm font-bold uppercase tracking-[0.1em] text-orange-600 sm:text-base">
               🔥 Tylko 500 miejsc!
             </p>
           </div>
 
-          {/* CEL WARSZTATU */}
           <div className="mt-14 flex w-full flex-col items-center">
             <div className="w-full max-w-xl">
               <div className="flex items-center gap-5" aria-hidden>
@@ -187,7 +160,7 @@ export function HeroSection() {
 
               <div className="mt-6 text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
                 <p className="mt-3 text-center">
-                  Model, dzięki któremu jako właściciel mozesz wyjsc ze studio i otwierac kolejne placowki
+                  Model, dzięki któremu jako właściciel możesz wyjść ze studio i otwierać kolejne placówki
                 </p>
 
                 <ul className="mt-2 flex flex-col items-center justify-center gap-2 text-center not-italic text-gray-900 sm:flex-row sm:gap-4">
@@ -207,33 +180,9 @@ export function HeroSection() {
               </div>
             </div>
           </div>
-
-          {/* TESTIMONIAL KARTA */}
-          <div className="mx-auto mt-16 w-full max-w-3xl rounded-[2rem] bg-white p-6 shadow-xl sm:p-10">
-            <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8 text-left">
-              <div className="w-32 shrink-0 sm:w-40">
-                {TESTIMONIAL.photo}
-              </div>
-              <div className="flex flex-col justify-center">
-                <p className="text-base italic leading-relaxed text-gray-700 sm:text-lg">
-                  {TESTIMONIAL.description}
-                </p>
-                <div className="mt-6">
-                  <p className="text-lg font-bold text-gray-900">
-                    ~ {TESTIMONIAL.name}
-                  </p>
-                  <p className="mt-1.5 inline-block rounded-md bg-orange-100 px-3 py-1 text-sm font-bold tracking-wide text-orange-700">
-                    Wynik: {TESTIMONIAL.figure}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
 
-      {/* MAŁY ZIELONY PASEK ODZIELAJĄCY SEKCJE */}j 
       <div className="relative z-10 flex w-full items-center justify-center bg-green-600 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.1em] text-white shadow-sm sm:text-base md:text-lg">
         Zaufało nam już ponad 40 osób w 2026!
       </div>

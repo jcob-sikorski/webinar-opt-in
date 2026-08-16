@@ -10,7 +10,7 @@ export function WhatYouWillLearnSection() {
       <div className="mx-auto max-w-6xl">
         {/* Główny, czerwony nagłówek wzorowany na screenie */}
         <h2 className="mx-auto max-w-4xl text-center text-[clamp(1.5rem,4vw,2.25rem)] font-bold italic leading-snug text-red-600">
-          Jak wyglądałoby Twoje życie, gdybyś zaczął zarabiać między 30 a 50 tys. miesięcznie ze studia, pracując stabilnie i bez bycia na sali od świtu do nocy?
+          Jak wyglądałoby Twoje życie, gdybyś zaczął zarabiać między 20 a 50 tys. miesięcznie ze studia, pracując stabilnie i bez bycia na sali od świtu do nocy?
         </h2>
 
         <div className="mt-14 flex flex-col items-center gap-12 md:flex-row md:items-start lg:gap-20">

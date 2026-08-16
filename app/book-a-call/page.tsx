@@ -31,8 +31,6 @@ export default function BookingPage() {
       <BookingVaultsSection />
       <BookingGuaranteeSection />
       <BookingResultsSection />
-      <BookingBioSection />
-      <BookingCoachingPhotoSection />
       <BookingObjectionsSection />
       <LegalFooter />
     </main>

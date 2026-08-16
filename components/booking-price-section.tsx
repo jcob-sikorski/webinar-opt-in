@@ -1,124 +1,62 @@
-import { CreditCard, Lock, Users, CalendarCheck } from "lucide-react";
-
+import { CalendarCheck } from "lucide-react";
 import { Section } from "@/components/ui/section";
-
-const PAYMENT = [
-  {
-    icon: CreditCard,
-    title: "Jednorazowo albo w ratach",
-    body: "Umowa jest elastyczna i dopasowana do Twojej sytuacji. Konkretny harmonogram rat ustalamy indywidualnie na rozmowie — nie ma jednego schematu dla wszystkich.",
-  },
-  {
-    icon: Lock,
-    title: "Rata to nie rabat",
-    body: "To sposób finansowania pełnego zobowiązania — dokładnie tak, jak uczę Cię strukturyzować płatności Twoich własnych klientów.",
-  },
-];
 
 export function BookingPriceSection() {
   return (
-    <Section>
-      <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-        Inwestycja
-      </p>
-      <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Ile <span className="text-coral">Ta Inwestycja w Siebie</span> Kosztuje?
-      </h2>
-
-      <p className="mx-auto mt-7 max-w-[52ch] text-center text-body-lg text-ink-muted">
-        Sam zapłaciłem za tę wiedzę{" "}
-        <strong className="font-semibold text-ink">
-          250 000 zł i dwa lata życia
-        </strong>
-        . Nie w reklamy — w mentorów, w kursy i przede wszystkim w błędy,
-        które kosztowały mnie dziesiątki tysięcy, zanim nauczyłem się dobrze
-        zatrudniać.
-      </p>
-
-      <div className="mt-10 rounded-xl border border-line border-t-[3px] border-t-coral-bright p-8 text-center sm:p-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-ink-subtle">
-          Ta cena to nic w porównaniu z alternatywną ścieżką wymyślania wszystkiego od zera...
-        </p>
-        <p className="mt-4 font-display text-[clamp(2.25rem,7vw,3.5rem)] font-bold leading-none text-ink">
-          21 000 zł{" "}
-          <span className="font-display text-xl font-semibold text-ink-muted">
-            netto
-          </span>
-        </p>
-        <p className="mt-5 text-body-lg text-ink-muted">
-          To jest{" "}
-          <strong className="font-semibold text-coral">116 zł dziennie</strong>{" "}
-          — mniej niż jeden semi-personal, który sam sprzedajesz swoim
-          klientom.
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl text-center">
+        <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+          Inwestycja w biznes
         </p>
 
-        <hr className="my-7 border-line" />
+        <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          Ile wynosi inwestycja w <span className="text-[#ef6b4a]">6-miesięczny program?</span>
+        </h2>
 
-        <p className="mx-auto max-w-[46ch] text-body text-ink-muted">
-          Jeden klient płacący 1 000 zł miesięcznie, który zostaje z Tobą dwa
-          lata, to{" "}
-          <strong className="font-semibold text-ink">
-            24 000 zł przychodu
-          </strong>
-          . Program kosztuje 21 000 zł.{" "}
-          <em className="italic">
-            Nie musisz zdobyć stu klientów, żeby inwestycja Ci się zwróciła — musisz zdobyć
-            jednego, który zostanie dłużej niż dwa miesiące.
-          </em>
-        </p>
-      </div>
-
-      <div className="mt-10 flex justify-center">
-        <a
-          href="#kalendarz"
-          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
-        >
-          <CalendarCheck className="h-6 w-6 shrink-0" />
-          Wybierz termin rozmowy
-        </a>
-      </div>
-
-      <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2">
-        {PAYMENT.map((item) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={item.title}
-              className="rounded-lg border border-line p-6"
-            >
-              <Icon className="h-5 w-5 text-coral" aria-hidden />
-              <p className="mt-3.5 text-body font-semibold text-ink">
-                {item.title}
-              </p>
-              <p className="mt-2 text-body text-ink-muted">{item.body}</p>
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="mt-8 rounded-xl border border-line bg-panel p-6 sm:p-8">
-        <h3 className="flex items-center gap-2.5 text-lg font-bold text-ink">
-          <Users className="h-5 w-5 text-coral" aria-hidden />
-          Dlaczego nie warto zwlekać
-        </h3>
-        <div className="mt-4 space-y-4 text-body text-ink-muted">
+        <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            <strong className="font-semibold text-ink">
-              Cena jest zamrożona na pół roku.
-            </strong>{" "}
-            To konsekwencja tego, że koszty
-            prowadzenia programu rosną: wartość jaką daję uczestnikom, mój czas, czas managerki moich studio Kornelii, liczba osób,
-            którą realnie mogę objąć uwagą na środowych sesjach.
+            Sam zapłaciłem za tę wiedzę ponad 250 000 zł i kilka lat potknięć. 
+            Nie w reklamy — w mentorów, kursy i przede wszystkim w błędy rekrutacyjne, które kosztowały mnie dziesiątki tysięcy złotych.
           </p>
+        </div>
+
+        <div className="mx-auto my-12 max-w-xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-gray-500">
+            Cena programu (zamrożona na 6 miesięcy)
+          </p>
+          <p className="mt-3 font-display text-4xl font-extrabold italic text-gray-900 sm:text-5xl md:text-6xl">
+            21 000 zł <span className="text-xl font-normal text-gray-500 sm:text-2xl">netto</span>
+          </p>
+          <p className="mt-3 font-display text-lg italic text-[#ef6b4a] sm:text-xl">
+            To 116 zł dziennie — mniej niż cena jednego treningu, który sam prowadzisz.
+          </p>
+        </div>
+
+        <div className="mx-auto max-w-2xl space-y-5 text-left font-display text-base italic leading-[1.75] text-gray-700 sm:text-lg">
           <p>
-            <strong className="font-semibold text-ink">
-              Liczba miejsc jest naturalnie ograniczona.
+            <strong className="font-semibold not-italic text-gray-900">
+              Prosta matematyka zwrotu z inwestycji:
             </strong>{" "}
-            Środowe sesje działają dlatego, że są kameralne — pracuję na żywo
-            nad Twoim konkretnym studiem, nie prowadzę wykładu do stu osób.
-            Powyżej pewnej liczby ludzi ta sesja przestaje być tym, czym ma
-            być.
+            Jeden podopieczny kupujący program transformacyjny za 1 000 zł miesięcznie, który zostaje w Twoim studio na 2 lata w modelu semi-personal, przynosi 24 000 zł przychodu. 
+            Nie musisz zdobywać setek osób — wystarczy jeden dobrze wdrożony klient, by inwestycja w program w całości się zwróciła.
           </p>
+
+          <p>
+            <strong className="font-semibold not-italic text-gray-900">
+              Elastyczne finansowanie:
+            </strong>{" "}
+            Istnieje możliwość płatności jednorazowej lub rozłożenia inwestycji na raty dopasowane do przepływów finansowych Twojego studia (ustalamy to indywidualnie podczas rozmowy).
+          </p>
+        </div>
+
+        <div className="mx-auto mt-12 max-w-2xl text-center">
+          <a
+            href="#kalendarz"
+            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
+          >
+            <CalendarCheck className="h-6 w-6 shrink-0" />
+            Wybierz termin rozmowy
+          </a>
         </div>
       </div>
     </Section>

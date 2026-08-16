@@ -1,18 +1,14 @@
 "use client";
 
-import { MapPin, ExternalLink, BadgeCheck } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Section } from "@/components/ui/section";
-import { RegisterCtaButton } from "@/components/register-cta-button";
 
 interface Studio {
   city: string;
   name: string;
   mapsUrl: string;
+  context: string;
 }
-
-// ----------------------------------------------------------------------
-// DATA
-// ----------------------------------------------------------------------
 
 const STUDIOS: Studio[] = [
   {
@@ -20,104 +16,90 @@ const STUDIOS: Studio[] = [
     name: "Sportowe Przedmieście — Studio Treningu Personalnego",
     mapsUrl:
       "https://www.google.com/maps/place/Sportowe+Przedmie%C5%9Bcie+Studio+Treningu+Personalnego+Podd%C4%99bice/@52.0195479,18.8086723,9.97z/data=!4m6!3m5!1s0x471bab7e594f3cef:0x3a93847f35ebc902!8m2!3d51.892702!4d18.9705149!16s%2Fg%2F11mfsrzzr4",
+    context:
+      "Pierwsza, flagowa placówka, w której model został przetestowany od zera i doprowadzony do pełnej powtarzalności.",
   },
   {
     city: "Łęczyca",
     name: "Sportowe Przedmieście — Studio Treningu Personalnego dla Kobiet",
     mapsUrl:
       "https://www.google.com/maps/place/Sportowe+Przedmie%C5%9Bcie+Studio+Treningu+Personalnego+dla+Kobiet+%C5%81%C4%99czyca/@52.059355,19.1967356,17z/data=!3m1!4b1!4m6!3m5!1s0x471ba5cfc686ea47:0x9702cb93592eb7ed!8m2!3d52.059355!4d19.1993105!16s%2Fg%2F11sk4rp2jq",
+    context:
+      "Format dedykowany kobietom w mniejszej miejscowości, potwierdzający, że wysoka marża nie zależy od wielkości miasta.",
   },
   {
     city: "Julianów",
     name: "Sportowe Przedmieście — Studio Treningu Personalnego",
     mapsUrl:
       "https://www.google.com/maps/place/Sportowe+Przedmie%C5%9Bcie+Studio+Treningu+Personalnego+Julian%C3%B3w/@51.8389131,19.4007471,11.94z/data=!4m6!3m5!1s0x471bcb685612e4dd:0x3f8fa117f7a7773b!8m2!3d51.8142182!4d19.4422363!16s%2Fg%2F11m776vl48",
+    context:
+      "Działające studio z autonomicznym zespołem trenerskim, generujące stały cash flow bez konieczności mojej obecności na sali.",
   },
   {
     city: "Żory",
     name: "Sportowe Przedmieście Żory — Studio Treningu Personalnego",
     mapsUrl:
       "https://www.google.com/maps/place/Sportowe+Przedmie%C5%9Bcie+%C5%BBory+-+Studio+Treningu+Personalnego/@50.0509555,18.698491,14.1z/data=!4m6!3m5!1s0x47114d004088922f:0x607c4e7952155092!8m2!3d50.0463673!4d18.6955272!16s%2Fg%2F11xtd_29tb",
+    context:
+      "Kolejna placówka wdrożona w oparciu o te same procedury operacyjne, marketingowe i skrypty konsultacyjne.",
   },
 ];
 
-// ----------------------------------------------------------------------
-// COMPONENT
-// ----------------------------------------------------------------------
-
 export function ConfirmationLegitimacySection() {
   return (
-    <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-5xl">
-        {/* Nagłówek sekcji */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
-            Odpowiadając na Twoje pytanie...
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
+        {/* Eyebrow */}
+        <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+          Wiarygodność i fakty
+        </p>
+
+        {/* Nagłówek narracyjny */}
+        <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          „Czy ten gość naprawdę wie,{" "}
+          <span className="text-[#ef6b4a]">o czym mówi?</span>”
+        </h2>
+
+        {/* Copy wprowadzające */}
+        <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+          <p>
+            Masz pełne prawo być sceptyczny. Internet jest pełen „doradców”, którzy nigdy nie prowadzili własnego lokalu,
+            nie zatrudnili trenera i nie zapłacili ani jednego czynszu z własnej kieszeni.
           </p>
-          <h2 className="mt-4 text-3xl font-extrabold leading-[1.15] text-gray-900 text-balance sm:text-4xl md:text-5xl">
-            „Czy ten gość <span className="text-[#ef6b4a]">wie o czym mówi?</span>”
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-gray-700">
-            Oto cztery studia, które faktycznie otworzyłem, których byłem właścicielem i które nadal działają. Sprawdź je sam na mapie.
+
+          <p>
+            <strong className="font-semibold not-italic text-gray-900">
+              Sportowe Przedmieście sp. z o.o. to zarejestrowana spółka (KRS: 0001189312)
+            </strong>
+            , która prowadzi fizyczne placówki.
           </p>
         </div>
 
-        {/* Firma - Dowód wiarygodności */}
-        <div className="mx-auto mt-14 flex max-w-3xl items-start gap-5 rounded-2xl border border-gray-200 bg-white p-8 shadow-xl sm:p-10">
-          <BadgeCheck
-            className="mt-1 h-8 w-8 shrink-0 text-green-600"
-            strokeWidth={2.5}
-          />
-          <div className="text-left text-base leading-relaxed text-gray-700 sm:text-lg">
-            <p>
-              <strong className="font-bold text-gray-900">
-                Sportowe Przedmieście sp. z o.o.
-              </strong>{" "}
-              to zarejestrowana spółka, którą znajdziesz w KRS. Firma prowadzi realne studia
-              treningu personalnego w kilku lokalizacjach w Polsce, widoczne
-              publicznie na Mapach Google, polecam przeczytać opinie naszych klientów.
-            </p>
-          </div>
-        </div>
-
-        {/* Grid studiów (Karty) */}
-        <div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2">
+        {/* Płynna lista placówek w stylu copy sprzedażowego */}
+        <div className="mt-14 divide-y divide-[#d6d6d6] border-t border-[#d6d6d6] text-left">
           {STUDIOS.map((studio) => (
-            <a
-              key={studio.city}
-              href={studio.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex flex-col justify-between gap-6 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#ef6b4a]/40 hover:shadow-lg sm:p-8"
-            >
-              <div className="flex items-start gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#ef6b4a]/10 transition-colors duration-300 group-hover:bg-[#ef6b4a]">
-                  <MapPin
-                    className="h-6 w-6 text-[#ef6b4a] transition-colors duration-300 group-hover:text-white"
-                    strokeWidth={2}
-                  />
-                </span>
-                <div>
-                  <p className="text-xl font-bold text-gray-900">
-                    {studio.city}
-                  </p>
-                  <p className="mt-1.5 text-sm leading-relaxed text-gray-600">
-                    {studio.name}
-                  </p>
-                </div>
+            <article key={studio.city} className="py-8 sm:py-10">
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
+                <h3 className="font-display text-xl font-bold italic text-gray-900 sm:text-2xl">
+                  {studio.city} — {studio.name}
+                </h3>
+                <a
+                  href={studio.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-display text-sm font-semibold text-[#ef6b4a] underline-offset-4 hover:underline"
+                >
+                  Sprawdź opinie na Google Maps
+                  <ExternalLink className="h-3.5 w-3.5" />
+                </a>
               </div>
-              <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide text-[#ef6b4a] opacity-80 transition-opacity group-hover:opacity-100">
-                Zobacz na mapie
-                <ExternalLink className="h-4 w-4" strokeWidth={2.5} />
-              </div>
-            </a>
+
+              <p className="mt-3 text-pretty font-display text-base italic leading-[1.7] text-gray-700 sm:text-lg">
+                {studio.context}
+              </p>
+            </article>
           ))}
         </div>
-
-        <p className="mx-auto mt-10 max-w-2xl text-center text-base italic text-gray-500">
-          Cztery ściany, sprzęt, trenerzy i klienci, którzy przychodzą co
-          tydzień — to nie są tylko obietnice na slajdzie.
-        </p>
       </div>
     </Section>
   );

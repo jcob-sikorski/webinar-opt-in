@@ -2,9 +2,6 @@
 
 import { useState } from "react";
 import { ArrowRight, Check } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
 
 interface Question {
@@ -18,26 +15,23 @@ const QUESTIONS: Question[] = [
     id: "sytuacja",
     question: "Co najlepiej opisuje Twoją sytuację dzisiaj?",
     options: [
-      "Mam pełny grafik, ale dochód ma sufit",
-      "Mam studio, ale beze mnie się zatrzymuje",
-      "Dopiero planuję otworzyć własne studio",
-      "Coś innego",
+      "Mam pełny grafik, ale mój dochód uderzył w sufit",
+      "Mam studio, ale beze mnie na sali wszystko się zatrzymuje",
+      "Dopiero planuję otworzyć własne studio od zera",
+      "Prowadzę studio i chcę otworzyć kolejną placówkę",
     ],
   },
   {
     id: "tempo",
-    question: "Jak szybko chcesz to zmienić?",
+    question: "Jak szybko chcesz wdrożyć nowy model?",
     options: [
-      "W ciągu najbliższego miesiąca",
-      "W ciągu 3–6 miesięcy",
-      "Rozglądam się na spokojnie",
+      "W ciągu najbliższego miesiąca (zależy mi na czasie)",
+      "W ciągu najbliższych 3–6 miesięcy",
+      "Na spokojnie — najpierw chcę poznać cały system",
     ],
   },
 ];
 
-// TODO: wire this to your ESP/CRM — e.g. POST to a server action or webhook,
-// keyed by the registrant's email (from the query string or session), so the
-// answers can drive segmented follow-up emails and ad copy.
 async function submitSurvey(answers: Record<string, string>) {
   console.log("survey answers", answers);
 }
@@ -60,20 +54,19 @@ export function ConfirmationSurveySection() {
 
   if (submitted) {
     return (
-      <Section>
-        <div className="rounded-xl border border-line border-t-[3px] border-t-coral-bright p-8 text-center">
+      <Section className="bg-[#fcfbf9]">
+        <div className="mx-auto max-w-2xl border-t border-[#d6d6d6] pt-12 text-center">
           <span
             aria-hidden
-            className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-coral-bright"
+            className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-sm"
           >
-            <Check className="h-6 w-6 text-white" strokeWidth={3} />
+            <Check className="h-6 w-6" strokeWidth={3} />
           </span>
-          <p className="mt-5 text-body-lg font-semibold text-ink">
-            Dzięki. Zapisałem to sobie.
-          </p>
-          <p className="mt-2 text-body text-ink-muted">
-            Dostosuję część warsztatu pod Twoją sytuację — do zobaczenia w
-            piątek.
+          <h3 className="mt-5 font-display text-2xl font-bold italic text-gray-900 sm:text-3xl">
+            Dzięki za odpowiedź. <span className="text-green-600">Zapisałem to.</span>
+          </h3>
+          <p className="mx-auto mt-4 max-w-lg font-display text-lg italic leading-[1.7] text-gray-700">
+            Dostosuję konkretne przykłady i case studies podczas warsztatu pod Twoją sytuację.
           </p>
         </div>
       </Section>
@@ -81,72 +74,86 @@ export function ConfirmationSurveySection() {
   }
 
   return (
-    <Section>
-      <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-        Zajmie Ci to 20 sekund
-      </p>
-      <h2 className="mx-auto mt-5 max-w-[26ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Zanim Zaczniemy, Powiedz Mi{" "}
-        <span className="text-coral">Jedną Rzecz</span>
-      </h2>
-      <p className="mx-auto mt-5 max-w-[46ch] text-center text-body-lg text-ink-muted">
-        Im lepiej rozumiem, z czym mierzysz się dzisiaj, tym bardziej trafi w
-        Ciebie sam warsztat.
-      </p>
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
+        <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+          Zajmie Ci to 20 sekund
+        </p>
 
-      <div className="mt-10 flex flex-col gap-9">
-        {QUESTIONS.map((q) => (
-          <div key={q.id}>
-            <p className="text-body-lg font-semibold text-ink">
-              {q.question}
-            </p>
-            <div className="mt-4 flex flex-col gap-2.5">
-              {q.options.map((option) => {
-                const selected = answers[q.id] === option;
-                return (
-                  <button
-                    key={option}
-                    type="button"
-                    onClick={() => handleSelect(q.id, option)}
-                    className={cn(
-                      "flex items-center gap-3 rounded-md border px-4 py-3.5 text-left text-body transition-colors duration-150",
-                      selected
-                        ? "border-coral bg-coral/5 text-ink"
-                        : "border-line text-ink-muted hover:border-ink/20"
-                    )}
-                  >
-                    <span
-                      aria-hidden
-                      className={cn(
-                        "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2",
+        <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          Zanim się połączymy, pozwól mi lepiej zrozumieć{" "}
+          <span className="text-[#ef6b4a]">Twoją sytuację</span>
+        </h2>
+
+        {/* Pytania i opcje */}
+        <div className="mx-auto mt-12 flex max-w-2xl flex-col gap-10 text-left">
+          {QUESTIONS.map((q, qIndex) => (
+            <div key={q.id}>
+              <div className="flex items-center gap-3">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#ef6b4a]/10 text-xs font-black text-[#ef6b4a]">
+                  0{qIndex + 1}
+                </span>
+                <p className="font-display text-xl font-bold italic text-gray-900 sm:text-2xl">
+                  {q.question}
+                </p>
+              </div>
+
+              <div className="mt-5 flex flex-col gap-3">
+                {q.options.map((option) => {
+                  const selected = answers[q.id] === option;
+                  return (
+                    <button
+                      key={option}
+                      type="button"
+                      onClick={() => handleSelect(q.id, option)}
+                      className={`group flex items-start gap-4 rounded-xl border p-4 text-left transition-all duration-200 ${
                         selected
-                          ? "border-coral-bright bg-coral-bright"
-                          : "border-line"
-                      )}
+                          ? "border-[#ef6b4a] bg-white shadow-md ring-1 ring-[#ef6b4a]"
+                          : "border-gray-200 bg-white/70 hover:border-gray-300 hover:bg-white"
+                      }`}
                     >
-                      {selected && (
-                        <Check className="h-3 w-3 text-white" strokeWidth={3.5} />
-                      )}
-                    </span>
-                    {option}
-                  </button>
-                );
-              })}
+                      <span
+                        aria-hidden
+                        className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
+                          selected
+                            ? "border-[#ef6b4a] bg-[#ef6b4a] text-white"
+                            : "border-gray-300 group-hover:border-gray-400"
+                        }`}
+                      >
+                        {selected && <Check className="h-3 w-3" strokeWidth={3.5} />}
+                      </span>
+                      <span
+                        className={`text-base leading-relaxed ${
+                          selected
+                            ? "font-semibold text-gray-900"
+                            : "font-normal text-gray-700"
+                        }`}
+                      >
+                        {option}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className="mt-9 flex justify-center">
-        <Button
-          size="lg"
-          disabled={!allAnswered}
-          onClick={handleSubmit}
-          className="w-full max-w-xs"
-        >
-          Wyślij
-          <ArrowRight className="h-5 w-5" />
-        </Button>
+        {/* CTA */}
+        <div className="mt-12 flex flex-col items-center">
+          <button
+            type="button"
+            disabled={!allAnswered}
+            onClick={handleSubmit}
+            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] disabled:cursor-not-allowed disabled:opacity-40 sm:text-2xl"
+          >
+            Zapisz moją odpowiedź
+            <ArrowRight className="h-6 w-6 shrink-0" />
+          </button>
+          <p className="mt-4 max-w-md text-center text-xs font-medium uppercase tracking-widest text-gray-500">
+            Dostosujemy treść transmisji pod Twoją sytuację
+          </p>
+        </div>
       </div>
     </Section>
   );

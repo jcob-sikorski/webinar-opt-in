@@ -1,127 +1,101 @@
 "use client";
 
 import { Section } from "@/components/ui/section";
-import { RegisterCtaButton } from "@/components/register-cta-button";
 
 interface OutcomeTier {
   share: string;
   label: string;
   range: string;
   description: string;
-  accent: "muted" | "primary" | "strong";
 }
-
-// ----------------------------------------------------------------------
-// DATA
-// ----------------------------------------------------------------------
 
 const TIERS: OutcomeTier[] = [
   {
-    share: "~15%",
-    label: "Nie wdrażają",
-    range: "0 zł",
+    share: "~15% uczestników",
+    label: "Brak wdrożenia",
+    range: "0 zł / mc",
     description:
-      "Kupują dostęp, ale nie robią pierwszego kroku — nie szukają lokalu, nie dzwonią, nie działają. Bez wdrożenia żaden model nic nie zmieni.",
-    accent: "muted",
+      "Osoby, które przychodzą po wiedzę, ale nie wykonują pracy: nie szukają lokalu, nie prowadzą rekrutacji i nie wdrażają procedur. Żaden model ani system nie przyniesie zysku, jeśli zostaje tylko teorią w notatniku.",
   },
   {
-    share: "~60%",
-    label: "Typowy wynik",
-    range: "5 000–20 000 zł / mc",
+    share: "~60% uczestników",
+    label: "Typowy, stabilny rezultat",
+    range: "5 000 – 20 000 zł / mc",
     description:
-      "Otwierają studio, budują bazę klientów i zespół 1–2 trenerów. Zysk właścicielski rośnie stopniowo w pierwszych 3–6 miesiącach.",
-    accent: "primary",
+      "Wdrożenie modelu 1:1 oraz semi w kameralnym lokalu (50–100 m²), zatrudnienie pierwszych 1–2 trenerów i ustabilizowanie rentowności. Właściciel stopniowo schodzi z godzin na sali, a studio generuje powtarzalny zysk.",
   },
   {
-    share: "~25%",
-    label: "Najlepsi wykonawcy",
-    range: "20 000–50 000+ zł / mc",
+    share: "~25% uczestników",
+    label: "Pełna skala i liderzy rynku",
+    range: "20 000 – 50 000+ zł / mc",
     description:
-      "Skalują do 2–4 trenerów, drugiej lokalizacji albo modelu semipersonalnego. To osoby, które trzymają się procesu i szybko iterują.",
-    accent: "strong",
+      "Zbudowanie zespołu 3–7 trenerów, maksymalne obłożenie grafiku pakietami transformacyjnymi lub otwarcie drugiej i trzeciej placówki. Właściciel całkowicie wychodzi z prowadzenia treningów i zarządza biznesem w oparciu o wskaźniki.",
   },
 ];
 
-const ACCENT_STYLES: Record<
-  OutcomeTier["accent"],
-  { border: string; badge: string; range: string }
-> = {
-  muted: {
-    border: "border-gray-200",
-    badge: "bg-gray-100 text-gray-600",
-    range: "text-gray-500",
-  },
-  primary: {
-    border: "border-[#ef6b4a]",
-    badge: "bg-[#ef6b4a]/10 text-[#ef6b4a]",
-    range: "text-gray-900",
-  },
-  strong: {
-    border: "border-green-600",
-    badge: "bg-green-600/10 text-green-700",
-    range: "text-green-700",
-  },
-};
-
-// ----------------------------------------------------------------------
-// COMPONENT
-// ----------------------------------------------------------------------
-
 export function ConfirmationRealisticOutcomesSection() {
   return (
-    <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-5xl">
-        {/* Pre-header */}
-        <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-[#ef6b4a]">
-          Jeśli jesteś ciekawy liczb...
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
+        {/* Eyebrow */}
+        <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+          Transparentność i twarde liczby
         </p>
 
-        <h2 className="mx-auto mt-5 max-w-[34ch] text-center text-[1.875rem] font-bold leading-tight text-gray-900 sm:text-[2.375rem]">
-          Jaki wynik jest{" "}
-          <span className="text-[#ef6b4a]">realistyczny</span>?
+        {/* Nagłówek w tonie długiego copy */}
+        <h2 className="mx-auto mt-4 max-w-[26ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          Jaki wynik jest <span className="text-[#ef6b4a]">naprawdę realistyczny</span>?
         </h2>
 
-        <p className="mx-auto mt-5 max-w-[60ch] text-center text-lg text-gray-600">
-          Oto jak orientacyjnie rozkładają się wyniki uczestników
-          — łącznie z tymi, którzy nie osiągają nic, bo nic nie wdrażają.
-        </p>
+        {/* Wprowadzenie narracyjne */}
+        <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+          <p>
+            Nie obiecuję milionów z dnia na dzień. W biznesie fitness nie ma dróg na skróty — jest powtarzalny proces,
+            matematyka lokalu i konsekwencja we wdrażaniu standardów.
+          </p>
 
-        {/* Tiers */}
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
-          {TIERS.map((tier) => {
-            const styles = ACCENT_STYLES[tier.accent];
-            return (
-              <div
-                key={tier.label}
-                className={`flex flex-col rounded-2xl border-2 bg-white p-6 sm:p-7 ${styles.border}`}
-              >
-                <span
-                  className={`inline-flex w-fit items-center rounded-full px-3 py-1 text-xs font-bold uppercase tracking-wide ${styles.badge}`}
-                >
-                  {tier.share} uczestników
-                </span>
-                <p className="mt-4 text-base font-bold text-gray-900 sm:text-lg">
-                  {tier.label}
-                </p>
-                <p
-                  className={`mt-2 text-2xl font-extrabold leading-tight sm:text-3xl ${styles.range}`}
-                >
-                  {tier.range}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-gray-600">
-                  {tier.description}
-                </p>
-              </div>
-            );
-          })}
+          <p>
+            <strong className="font-semibold not-italic text-gray-900">
+              Oto jak w praktyce rozkładają się wyniki
+            </strong>{" "}
+            właścicieli studiów, którzy wdrożyli ten model — bez ubarwiania i z pełną uczciwością wobec tych, którzy nie osiągają nic:
+          </p>
         </div>
 
-        <p className="mx-auto mt-8 max-w-[62ch] text-center text-sm leading-relaxed text-gray-500">
-          To orientacyjny rozkład oparty na doświadczeniach dotychczasowych
-          uczestników, nie gwarancja wyniku. Twój rezultat
-          zależy od zaangażowania, rynku i tego, czy faktycznie wdrożysz to,
-          czego się nauczysz.
-        </p>
+        {/* Płynna lista progów w stylu czystego copy sprzedażowego */}
+        <div className="mt-14 divide-y divide-[#d6d6d6] border-t border-[#d6d6d6] text-left">
+          {TIERS.map((tier) => (
+            <article key={tier.label} className="py-8 sm:py-10">
+              <div className="flex flex-wrap items-baseline gap-3">
+                <span className="font-display text-xs font-bold uppercase tracking-[0.18em] text-[#ef6b4a]">
+                  {tier.share}
+                </span>
+                <span aria-hidden className="h-1 w-1 rounded-full bg-gray-300" />
+                <span className="font-display text-sm font-semibold text-gray-500">
+                  {tier.label}
+                </span>
+              </div>
+
+              <h3 className="mt-2 font-display text-2xl font-bold italic text-gray-900 sm:text-3xl">
+                {tier.range}
+              </h3>
+
+              <p className="mt-3 text-pretty font-display text-base italic leading-[1.7] text-gray-700 sm:text-lg">
+                {tier.description}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        {/* Podsumowanie sekcji */}
+        <div className="mx-auto mt-6 max-w-2xl border-t border-[#d6d6d6] pt-10 text-center">
+          <p className="font-display text-base italic leading-[1.7] text-gray-600 sm:text-lg">
+            Różnica między zerem a 50 000 zł zysku nie leży w wielkości miasta ani znajomościach.{" "}
+            <strong className="font-semibold not-italic text-gray-900">
+              Leży w tym, czy traktujesz studio jak pasję z wieczną pracą na sali, czy jak poukładany biznes oparty na systemie.
+            </strong>
+          </p>
+        </div>
       </div>
     </Section>
   );

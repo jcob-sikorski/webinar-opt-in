@@ -9,43 +9,34 @@ export function ConfirmationVideoSection({
   videoEmbed,
 }: ConfirmationVideoSectionProps) {
   return (
-    <Section>
-      <h2 className="text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        <span className="text-orange-600">Krótka Wiadomość</span> Ode Mnie
-      </h2>
-      <hr className="mx-auto mt-5 w-40 border-t-2 border-dashed border-orange-600/60" />
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl text-center">
+        {/* Nagłówek w narracyjnym stylu strony */}
+        <h2 className="mx-auto max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          Czego się <span className="text-[#ef6b4a]">spodziewać?</span>
+        </h2>
 
-      {/* Added max-w-[260px] for mobile and sm:max-w-xs (320px) for slightly larger screens to keep the 9:16 video from becoming too tall */}
-      <div className="relative mx-auto mt-9 max-w-[260px] overflow-hidden rounded-xl shadow-lg sm:max-w-xs">
-        {videoEmbed ?? (
-          <iframe
-            src="https://player.mux.com/OM1SCoPFsNx86K4fE601c19RFqkHxu5ns38eAXEfTMsE"
-            style={{ width: "100%", border: "none", aspectRatio: "9/16" }}
-            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
-            allowFullScreen
-          />
-        )}
-      </div>
+        {/* Lead sprzedażowy przed wideo */}
+        <div className="mx-auto mt-6 max-w-2xl text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+          <p>
+            Doceniam, że jesteś —{" "}
+            <strong className="font-semibold not-italic text-gray-900">
+              to pokazuje, że poważnie myślisz o przejściu z pracy na sali do budowy stabilnego biznesu.
+            </strong>
+          </p>
+        </div>
 
-      <div className="mt-8 space-y-5 text-body-lg text-ink-muted">
-        <p>
-          Cześć, tu Bartek. Dzięki, że zarezerwowałeś miejsce —{" "}
-          <strong className="font-semibold text-ink">
-            naprawdę się cieszę, że tu jesteś
-          </strong>
-          .
-        </p>
-        <p>
-          Jedna rzecz, o którą proszę już teraz:{" "}
-          <strong className="font-semibold text-ink">
-            zablokuj sobie 24 sierpnia, 20:00
-          </strong>{" "}
-          na żywo. Samo nagranie zostaje z Tobą na 5 dni —{" "}
-          <em className="italic">
-            ale Protokół Dochodowego Studia trafia tylko do osób, które
-            zostaną na żywo do samego końca!
-          </em>
-        </p>
+        {/* Wideo w pionowym kadrze 9:16 */}
+        <div className="relative mx-auto mt-10 max-w-[260px] overflow-hidden rounded-2xl shadow-xl ring-4 ring-white sm:max-w-[300px]">
+          {videoEmbed ?? (
+            <iframe
+              src="https://player.mux.com/OM1SCoPFsNx86K4fE601c19RFqkHxu5ns38eAXEfTMsE"
+              style={{ width: "100%", border: "none", aspectRatio: "9/16" }}
+              allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+              allowFullScreen
+            />
+          )}
+        </div>
       </div>
     </Section>
   );

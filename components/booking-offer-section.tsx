@@ -1,101 +1,77 @@
 import { CalendarCheck } from "lucide-react";
-import { CheckItem } from "@/components/ui/check-item";
 import { Section } from "@/components/ui/section";
 
-interface CoreItem {
-  title: string;
-  description: string;
-}
-
-const CORE: CoreItem[] = [
+const PILLARS = [
   {
-    title: "Środy, 12:00–14:00 — dwie godziny ze mną na żywo",
+    title: "Środowe sesje 1:1 na żywo (12:00 – 14:00)",
     description:
-      "Zawsze. Nawet w Wigilię — w zeszłym roku też była sesja. To nie jest nagranie sprzed roku. Siadamy nad Twoim konkretnym studiem, Twoim lokalem, Twoimi liczbami.",
+      "Co tydzień siadamy nad Twoim lokalem, Twoją ofertą i Twoimi pracownikami. Żadnych nagranych slajdów sprzed roku — pracujemy na żywym organizmie Twojej firmy.",
   },
   {
-    title: "Czwartki, 12:00–14:00 — płatny marketing z Kornelią",
+    title: "Czwartkowe sesje płatnego marketingu z Kornelią",
     description:
-      "Nie teoria o reklamach. Klikamy kampanie na żywo, w Twoim koncie, na Twoim budżecie. Wychodzisz z tego umiejąc puścić reklamę sam — i nie płacisz już agencji pięciu tysięcy miesięcznie za coś, co ogarniasz w czterdzieści minut.",
+      "Klikamy kampanie reklamowe bezpośrednio w Twoim Menadżerze Reklam Meta. Uczysz się pozyskiwać leady samodzielnie, zamiast co miesiąc płacić agencji prowizję za puste zapytania.",
   },
   {
-    title: "Nielimitowane wsparcie na Telegramie, poniedziałek–piątek",
+    title: "Bezpośredni kontakt na Telegramie (Pn–Pt 8:00–20:00)",
     description:
-      "Utknąłeś w środę wieczorem? Piszesz. Odpowiadamy. Nie czekasz tygodnia na następną sesję.",
+      "Jeśli utkniesz przy rozmowie rekrutacyjnej, negocjacji czynszu czy trudnym kliencie — piszesz i dostajesz natychmiastową odpowiedź oraz gotowy skrypt.",
   },
   {
-    title: "Sześć miesięcy dostępu do platformy Skool",
+    title: "Platforma Skool i Roczny Mastermind Stacjonarny",
     description:
-      "Wszystkie moduły, nagrania, dokumenty i kalendarz spotkań w jednym miejscu.",
-  },
-  {
-    title: "Mastermind raz w roku",
-    description:
-      "Pełna analiza Twojego biznesu na żywo, od A do Z — plus dostęp do pokoju pełnego innych właścicieli studiów, którzy przechodzą dokładnie to samo co Ty.",
+      "Baza wszystkich procedur, nagrań, kalkulatorów i dokumentów w jednym miejscu oraz coroczny zjazd właścicieli studiów w celu wymiany doświadczeń.",
   },
 ];
 
 export function BookingOfferSection() {
   return (
-    <Section>
-      <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-        Rdzeń programu
-      </p>
-      <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Przedstawiam Ci z Ogromną Przyjemnością <span className="text-coral">Dochodowe Studio</span>
-      </h2>
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
+        <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+          Rdzeń programu
+        </p>
 
-      <p className="mx-auto mt-7 max-w-[52ch] text-center text-body-lg text-ink-muted">
-        Sześć miesięcy pracy ze mną i moim zespołem.{" "}
-        <strong className="font-semibold text-ink">
-          Nie kurs, który obejrzysz i odłożysz.
-        </strong>{" "}
-        Sześć miesięcy, w których budujesz swoje studio krok po kroku, a ja
-        jestem obok, kiedy coś się sypie.
-      </p>
+        <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          6 miesięcy pracy: <span className="text-[#ef6b4a]">Instalacja Systemu Dochodowe Studio</span>
+        </h2>
 
-      <div className="mt-9 rounded-xl border border-line border-t-[3px] border-t-coral-bright p-6 sm:p-8">
-        <ul className="divide-y divide-line">
-          {CORE.map((item) => (
-            <CheckItem key={item.title} shape="square" className="py-5">
-              <p className="text-body text-ink-muted">
-                <strong className="font-semibold text-ink">
-                  {item.title}
-                </strong>{" "}
-                — {item.description}
+        <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+          <p>
+            To nie jest kolejny kurs, który kupujesz, oglądasz przez weekend i odkładasz na półkę. 
+            To pół roku ścisłej współpracy wdrożeniowej ze mną i moim zespołem.
+          </p>
+
+          <p>
+            <strong className="font-semibold not-italic text-gray-900">
+              Robimy to z Tobą, a nie za Ciebie.
+            </strong>{" "}
+            Celem programu jest uczynienie z Ciebie kompletnego przedsiębiorcy, który po 6 miesiącach potrafi sam policzyć studio, wdrożyć trenera i wygenerować klientów.
+          </p>
+        </div>
+
+        <div className="mt-14 divide-y divide-[#d6d6d6] border-t border-[#d6d6d6] text-left">
+          {PILLARS.map((pillar) => (
+            <article key={pillar.title} className="py-8 sm:py-9">
+              <h3 className="font-display text-xl font-bold italic text-gray-900 sm:text-2xl">
+                {pillar.title}
+              </h3>
+              <p className="mt-3 text-pretty font-display text-base italic leading-[1.7] text-gray-700 sm:text-lg">
+                {pillar.description}
               </p>
-            </CheckItem>
+            </article>
           ))}
-        </ul>
-      </div>
+        </div>
 
-      <div className="mt-8 rounded-xl border border-line bg-panel p-6 sm:p-8">
-        <p className="text-center font-display text-lg font-bold italic text-ink sm:text-xl">
-          Jedna zasada, którą powtarzam na każdej rozmowie
-        </p>
-        <p className="mt-4 text-body text-ink-muted">
-          <strong className="font-semibold text-ink">
-            Robimy to z Tobą, a nie za Ciebie.
-          </strong>{" "}
-          Nie chcę, żebyś po sześciu miesiącach nadal potrzebował agencji do
-          pozyskiwania klientów, handlowca do każdej sprzedaży, pośrednika do
-          rekrutacji ani mnie do prowadzenia Twojej firmy.{" "}
-          <em className="italic">
-            Uczę Cię być kompletnym przedsiębiorcą
-          </em>{" "}
-          — masz sam potrafić znaleźć problem, policzyć go, wdrożyć
-          rozwiązanie i zarządzić ludźmi.
-        </p>
-      </div>
-      
-      <div className="mt-12 flex justify-center">
-        <a
-          href="#kalendarz"
-          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
-        >
-          <CalendarCheck className="h-6 w-6 shrink-0" />
-          Wybierz termin rozmowy
-        </a>
+        <div className="mx-auto mt-12 max-w-2xl border-t border-[#d6d6d6] pt-10 text-center">
+          <a
+            href="#kalendarz"
+            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
+          >
+            <CalendarCheck className="h-6 w-6 shrink-0" />
+            Wybierz termin rozmowy
+          </a>
+        </div>
       </div>
     </Section>
   );

@@ -2,95 +2,65 @@ import { CalendarCheck } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 const CREDENTIALS = [
-  "4 własne studia treningowe, prowadzone do dziś",
-  "80+ przedsiębiorców, z którymi pracowałem",
-  "250 000 zł zainwestowane we własną naukę — mentorzy, kursy, błędy",
-  "2 bankructwa i magazyn w DHL-u po drodze",
+  "4 własne placówki Sportowe Przedmieście",
+  "80+ przedsiębiorców poprowadzonych w mentoringu",
+  "250 000 zł zainwestowane we własną edukację",
+  "2 bankructwa i praca na magazynie po drodze",
 ];
 
 export function BookingBioSection() {
   return (
-    <Section width="wide">
-      <p className="text-center text-[0.65rem] font-bold uppercase tracking-[0.22em] text-coral">
-        Kto to prowadzi
-      </p>
-      <h2 className="mx-auto mt-5 max-w-[24ch] text-center text-[1.875rem] font-bold leading-tight sm:text-[2.375rem]">
-        Moja <span className="text-coral">Historia</span>
-      </h2>
+    <Section className="bg-[#fcfbf9]">
+      <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
+        <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+          Twój mentor
+        </p>
 
-      <div className="mt-10 grid grid-cols-1 gap-9 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-11">
-        <div className="mx-auto w-full max-w-xs overflow-hidden rounded-xl lg:mx-0 lg:max-w-none">
+        <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
+          Nazywam się <span className="text-[#ef6b4a]">Bartek Sikorski</span>
+        </h2>
+
+        <div className="mx-auto mt-8 h-48 w-48 overflow-hidden rounded-full ring-4 ring-white shadow-xl sm:h-56 sm:w-56">
           <img
             src="https://ucarecdn.com/ba6c76cb-c90e-4605-94b8-d46909c23c8a/Screenshot20260804at90228PM.png"
             alt="Bartek Sikorski"
-            className="aspect-[4/5] w-full object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
 
-        <div>
-          <h3 className="font-display text-2xl font-bold text-ink">
-            Bartek Sikorski
-          </h3>
-          <div className="mt-5 space-y-4 text-body leading-[1.7] text-ink-muted">
-            <p>
-              Zacząłem od{" "}
-              <strong className="font-semibold text-ink">
-                dwóch bankructw i pracy w magazynie DHL-u
-              </strong>
-              . W 2022 roku straciłem dziesiątki tysięcy złotych, bo nikt nie
-              pokazał mi, jak dobrze zatrudniać — wyszkoliłem ludzi, ustawiłem
-              złe rozliczenia, zostałem z groszami, a klienci nie zostali.
-            </p>
-            <p>
-              Dziś prowadzę cztery własne studia treningowe. Procesy, CRM-y,
-              skrypty i dokumenty, które dostajesz w programie, to nie są
-              materiały napisane pod kurs —{" "}
-              <em className="italic">
-                to te same pliki, które działają w moich studiach codziennie,
-                od lat
-              </em>{" "}
-              i które pozwalają mi wyjeżdżać dziesięć razy w roku.
-            </p>
-            <p>
-              Mój przełom nie polegał na przejściu z{" "}
-              <strong className="font-semibold text-ink">Rzemieślnika</strong>{" "}
-              na <strong className="font-semibold text-ink">Architekta</strong>
-              . Dochód Rzemieślnika ma sufit ustalony przez liczbę godzin w dobie. Architekt projektuje system,
-              który zarabia także wtedy, gdy on jest na wakacjach.
-            </p>
-            <p>
-              Uczę w tym programie tego, czego sam musiałem nauczyć się przez kilka lat metodą
-              prób i błędów.
-            </p>
-          </div>
+        <div className="mx-auto mt-8 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+          <p>
+            W 2016 roku zaliczyłem pierwsze bankructwo. W 2020 r. straciłem studio po raz drugi i trafiłem na magazyn DHL-u, pakując paczki po 10 godzin dziennie.
+          </p>
 
-          <ul className="mt-7 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-            {CREDENTIALS.map((item) => (
-              <li
-                key={item}
-                className="rounded-md border border-line px-4 py-3 text-sm text-ink-muted"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
+          <p>
+            Mój przełom nastąpił wtedy, gdy zrozumiałem różnicę między{" "}
+            <strong className="font-semibold not-italic text-gray-900">Rzemieślnikiem</strong> (który wymienia czas na pieniądze) a{" "}
+            <strong className="font-semibold not-italic text-gray-900">Architektem</strong> (który projektuje powtarzalny system).
+          </p>
 
-          <p className="mt-6 text-body text-ink-muted">
-            Na czwartkowych sesjach marketingowych pracuje z Tobą{" "}
-            <strong className="font-semibold text-ink">Kornelia</strong> czyli
-            managerka kilku studio Sportowe Przedmieście — klikacie kampanie na żywo, w Twoim koncie i na Twoim budżecie.
+          <p>
+            Dziś prowadzę 4 rentowne placówki, a procedury, które otrzymujesz w programie, to te same narzędzia, które codziennie pracują w moich firmach.
           </p>
         </div>
-      </div>
 
-      <div className="mt-12 flex justify-center">
-        <a
-          href="#kalendarz"
-          className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-coral bg-coral-bright px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-coral-dark hover:bg-coral-dark sm:text-2xl"
-        >
-          <CalendarCheck className="h-6 w-6 shrink-0" />
-          Wybierz termin rozmowy
-        </a>
+        <div className="mx-auto mt-10 grid max-w-xl grid-cols-1 gap-3 sm:grid-cols-2 text-left">
+          {CREDENTIALS.map((item) => (
+            <div key={item} className="border-l-2 border-[#ef6b4a] pl-3 py-1 font-display text-sm font-semibold italic text-gray-800">
+              {item}
+            </div>
+          ))}
+        </div>
+
+        <div className="mx-auto mt-12 max-w-2xl border-t border-[#d6d6d6] pt-10 text-center">
+          <a
+            href="#kalendarz"
+            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
+          >
+            <CalendarCheck className="h-6 w-6 shrink-0" />
+            Wybierz termin rozmowy
+          </a>
+        </div>
       </div>
     </Section>
   );
