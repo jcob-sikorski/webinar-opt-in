@@ -144,7 +144,7 @@ export function HeroSection() {
             <CountdownTimer target={WORKSHOP_START} variant="boxes" />
 
             <p className="mt-6 text-sm font-bold uppercase tracking-[0.1em] text-orange-600 sm:text-base">
-              🔥 Tylko 500 miejsc!
+              🔥 Limit pokoju: max 500 miejsc (decyduje kolejność wejścia)
             </p>
           </div>
 

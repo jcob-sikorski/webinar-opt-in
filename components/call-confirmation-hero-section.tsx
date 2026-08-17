@@ -15,8 +15,12 @@ export function ApplicationConfirmationHeroSection() {
             Twoje zgłoszenie zostało <span className="text-[#ef6b4a]">przyjęte.</span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-xl text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
-            Dziękujemy za wypełnienie ankiety. Twój profil trafił do weryfikacji.
+          <p className="mt-4 text-xs font-bold uppercase tracking-[0.15em] text-red-600 sm:text-sm">
+            ⚠️ Limit wdrożeniowy: Przyjmujemy maksymalnie 20 nowych osób w miesiącu
+          </p>
+
+          <p className="mx-auto mt-4 max-w-xl text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
+            Dziękujemy za wypełnienie ankiety. Twój profil trafił właśnie do weryfikacji.
           </p>
 
           {/* KROK: Czekaj na telefon */}
@@ -34,9 +38,9 @@ export function ApplicationConfirmationHeroSection() {
                 <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#ef6b4a]" />
                 <p>
                   <strong className="font-semibold not-italic text-gray-900">
-                    Weryfikacja danych:
+                    Weryfikacja zgłoszenia:
                   </strong>{" "}
-                  Nasz konsultant analizuje Twoje odpowiedzi i sprawdza, czy Twój model biznesowy kwalifikuje się do programu.
+                  Pracujemy 1:1, dlatego przyjmujemy tylko 20 osób miesięcznie. Sprawdzamy, czy Twój obecny etap pozwala na pełne wdrożenie modelu.
                 </p>
               </div>
 
@@ -46,7 +50,7 @@ export function ApplicationConfirmationHeroSection() {
                   <strong className="font-semibold not-italic text-gray-900">
                     Krótki telefon (ok. 5 minut):
                   </strong>{" "}
-                  Odezwiemy się do Ciebie telefonicznie, aby szybko sprawdzić Twoją gotowość do wdrożenia i doprecyzować liczby.
+                  Odezwiemy się do Ciebie telefonicznie, aby szybko potwierdzić dane z ankiety i sprawdzić gotowość do startu.
                 </p>
               </div>
 
@@ -54,16 +58,16 @@ export function ApplicationConfirmationHeroSection() {
                 <Clock className="mt-1 h-5 w-5 shrink-0 text-[#ef6b4a]" />
                 <p>
                   <strong className="font-semibold not-italic text-gray-900">
-                    Rezerwacja terminu:
+                    Rezerwacja miejsca:
                   </strong>{" "}
-                  Jeśli wszystko się zgadza — od razu podczas rozmowy ustalimy dogodny termin na pełną, bezpłatną 45-minutową sesję strategiczną 1:1.
+                  Jeśli zostaniesz zakwalifikowany — bezpośrednio na rozmowie zablokujemy dla Ciebie bezpłatną, 45-minutową sesję strategiczną.
                 </p>
               </div>
             </div>
 
             <div className="mt-8 border-t border-gray-100 pt-6 text-center">
               <p className="text-sm font-semibold text-gray-600">
-                Miej telefon pod ręką — dzwonimy zazwyczaj w ciągu{" "}
+                Miej telefon pod ręką — decyduje kolejność zgłoszeń. Dzwonimy w ciągu{" "}
                 <span className="text-[#ef6b4a]">24-48 godzin</span> (w dni robocze).
               </p>
             </div>
