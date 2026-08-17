@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 const VAULTS = [
@@ -154,6 +154,18 @@ export function ApplicationVaultsSection() {
             </article>
           ))}
         </div>
+
+        {/* Dodany przycisk CTA kierujący do formularza aplikacji */}
+        <div className="mx-auto mt-10 max-w-2xl text-center">
+          <a
+            href="#aplikacja"
+            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
+          >
+            Wypełnij aplikację
+            <ArrowRight className="h-6 w-6 shrink-0" />
+          </a>
+        </div>
+
       </div>
     </Section>
   );

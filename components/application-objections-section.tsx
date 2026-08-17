@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 interface Objection {
@@ -44,7 +45,7 @@ export function ApplicationObjectionsSection() {
         </p>
 
         <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-          Pytania przed <span className="text-[#ef6b4a]">rozmową kwalifikacyjną</span>
+          Masz pytania przed <span className="text-[#ef6b4a]">rozmową kwalifikacyjną?</span>
         </h2>
 
         <div className="mt-14 divide-y divide-[#d6d6d6] text-left">
@@ -58,6 +59,17 @@ export function ApplicationObjectionsSection() {
               </p>
             </article>
           ))}
+        </div>
+
+        {/* Dodany przycisk kierujący do sekcji aplikacji */}
+        <div className="mx-auto mt-10 max-w-2xl text-center">
+          <a
+            href="#aplikacja"
+            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
+          >
+            Wypełnij aplikację
+            <ArrowRight className="h-6 w-6 shrink-0" />
+          </a>
         </div>
       </div>
     </Section>

@@ -1,12 +1,17 @@
 import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Section } from "@/components/ui/section";
 import { RegisterCtaButton } from "@/components/register-cta-button";
-import { CalendarCheck } from "lucide-react";
+import { CalendarCheck, ArrowRight } from "lucide-react";
 
 interface ProofPerson {
   name: string;
   sentence: string;
   photo?: string;
+}
+
+interface ConfirmationProofSectionProps {
+  showCta?: boolean;
+  wypelnijAplikacje?: boolean;
 }
 
 const PROOF: ProofPerson[] = [
@@ -94,7 +99,7 @@ const PROOF: ProofPerson[] = [
   },
 ];
 
-export function ConfirmationProofSection() {
+export function ConfirmationProofSection({ showCta = true, wypelnijAplikacje = false }: ConfirmationProofSectionProps) {
   return (
     <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-2xl">
@@ -138,19 +143,34 @@ export function ConfirmationProofSection() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 flex flex-col items-center">
-          <RegisterCtaButton
-            size="lg"
-            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 active:scale-[0.99] sm:text-2xl"
-          >
-            <CalendarCheck className="h-6 w-6 shrink-0" />
-            Tak, chcę się zapisać
-          </RegisterCtaButton>
-          <p className="mt-4 max-w-md text-center text-xs font-bold uppercase tracking-widest text-gray-500 sm:text-sm">
-            Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali
-          </p>
-        </div>
+        {/* CTA warunkowe: Zapisz się na warsztat */}
+        {showCta && (
+          <div className="mt-12 flex flex-col items-center">
+            <RegisterCtaButton
+              size="lg"
+              className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 active:scale-[0.99] sm:text-2xl"
+            >
+              <CalendarCheck className="h-6 w-6 shrink-0" />
+              Tak, chcę się zapisać
+            </RegisterCtaButton>
+            <p className="mt-4 max-w-md text-center text-xs font-bold uppercase tracking-widest text-gray-500 sm:text-sm">
+              Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali
+            </p>
+          </div>
+        )}
+
+        {/* CTA warunkowe: Wypełnij aplikację (niezależne od showCta) */}
+        {wypelnijAplikacje && (
+          <div className="mx-auto mt-12 max-w-2xl text-center">
+            <a
+              href="#aplikacja"
+              className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
+            >
+              Wypełnij aplikację
+              <ArrowRight className="h-6 w-6 shrink-0" />
+            </a>
+          </div>
+        )}
       </div>
     </Section>
   );

@@ -1,6 +1,6 @@
 "use client";
 
-import { PlayCircle, CalendarCheck } from "lucide-react";
+import { PlayCircle, CalendarCheck, ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { RegisterCtaButton } from "@/components/register-cta-button";
 
@@ -12,6 +12,7 @@ interface CaseStudyVideo {
 
 interface CaseStudyYTVidsSectionProps {
   showCta?: boolean;
+  wypelnijAplikacje?: boolean; 
 }
 
 // ----------------------------------------------------------------------
@@ -75,7 +76,7 @@ const CASE_STUDY_VIDEOS: CaseStudyVideo[] = [
 // COMPONENTS
 // ----------------------------------------------------------------------
 
-export function CaseStudyYTVidsSection({ showCta = true }: CaseStudyYTVidsSectionProps) {
+export function CaseStudyYTVidsSection({ showCta = true, wypelnijAplikacje = false }: CaseStudyYTVidsSectionProps) {
   return (
     <Section className="bg-white px-5 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-7xl">
@@ -100,7 +101,7 @@ export function CaseStudyYTVidsSection({ showCta = true }: CaseStudyYTVidsSectio
           ))}
         </div>
 
-        {/* CTA warunkowe */}
+        {/* CTA warunkowe: Zapisz się na warsztat */}
         {showCta && (
           <div className="mt-12 flex flex-col items-center">
             <RegisterCtaButton
@@ -113,6 +114,19 @@ export function CaseStudyYTVidsSection({ showCta = true }: CaseStudyYTVidsSectio
             <p className="mt-4 max-w-md text-center text-xs font-bold uppercase tracking-widest text-gray-500 sm:text-sm">
               Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali
             </p>
+          </div>
+        )}
+
+        {/* CTA warunkowe: Wypełnij aplikację (niezależne od showCta) */}
+        {wypelnijAplikacje && (
+          <div className="mx-auto mt-12 max-w-2xl text-center">
+            <a
+              href="#aplikacja"
+              className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
+            >
+              Wypełnij aplikację
+              <ArrowRight className="h-6 w-6 shrink-0" />
+            </a>
           </div>
         )}
       </div>

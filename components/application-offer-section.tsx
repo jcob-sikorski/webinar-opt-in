@@ -1,4 +1,4 @@
-import { CalendarCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 const PILLARS = [
@@ -55,13 +55,13 @@ export function ApplicationOfferSection() {
           ))}
         </div>
 
-        <div className="mx-auto mt-12 max-w-2xl border-t border-[#d6d6d6] pt-10 text-center">
+        <div className="mx-auto mt-10 max-w-2xl text-center">
           <a
-            href="#kalendarz"
+            href="#aplikacja"
             className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
           >
-            <CalendarCheck className="h-6 w-6 shrink-0" />
-            Wybierz termin rozmowy
+            Wypełnij aplikację
+            <ArrowRight className="h-6 w-6 shrink-0" />
           </a>
         </div>
       </div>
