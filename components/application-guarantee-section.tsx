@@ -1,7 +1,7 @@
 import { CalendarCheck } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
-export function BookingGuaranteeSection() {
+export function ApplicationGuaranteeSection() {
   return (
     <Section className="bg-[#fcfbf9]">
       <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">

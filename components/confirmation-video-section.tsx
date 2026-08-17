@@ -11,17 +11,17 @@ export function ConfirmationVideoSection({
   return (
     <Section className="bg-[#fcfbf9]">
       <div className="mx-auto max-w-3xl text-center">
-        {/* Nagłówek w narracyjnym stylu strony */}
+        {/* Nagłówek skupiony na korzyści i kolejnym kroku */}
         <h2 className="mx-auto max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-          Czego się <span className="text-[#ef6b4a]">spodziewać?</span>
+          Zobacz, jak zrobimy ten <span className="text-[#ef6b4a]">krok naprzód</span>
         </h2>
 
-        {/* Lead sprzedażowy przed wideo */}
+        {/* Dynamiczny, naturalny lead budujący zaangażowanie */}
         <div className="mx-auto mt-6 max-w-2xl text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            Doceniam, że jesteś —{" "}
+            Cieszę się, że tu jesteś.{" "}
             <strong className="font-semibold not-italic text-gray-900">
-              to pokazuje, że poważnie myślisz o przejściu z pracy na sali do budowy stabilnego biznesu.
+              To znak, że naprawdę chcesz zamienić godziny spędzone na sali w przewidywalny, dochodowy biznes online.
             </strong>
           </p>
         </div>

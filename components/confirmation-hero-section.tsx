@@ -16,14 +16,9 @@ export function ConfirmationHeroSection() {
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
           {/* Główny nagłówek */}
           <h1 className="mx-auto max-w-[22ch] font-display text-[clamp(2rem,5vw,3.5rem)] font-bold italic leading-[1.08] tracking-[-0.02em] text-ink text-balance">
-            Twoje miejsce na warsztat jest{" "}
-            <span className="text-[#ef6b4a]">potwierdzone.</span>
+            Jesteś zapisany!{" "}
+            <span className="text-[#ef6b4a]">To nie koniec...</span>
           </h1>
-
-          {/* Fraza przejścia */}
-          <p className="mt-6 font-display text-xl font-semibold italic text-gray-900 sm:text-2xl">
-            Teraz zrób te <span className="text-[#ef6b4a]">dwa kroki</span>:
-          </p>
 
           {/* KROK 1: Płynna sekcja kalendarza */}
           <div className="mx-auto mt-10 w-full max-w-2xl border-t border-[#d6d6d6] pt-10 text-center">

@@ -11,25 +11,25 @@ interface OutcomeTier {
 
 const TIERS: OutcomeTier[] = [
   {
-    share: "~15% uczestników",
+    share: "~15% osób",
     label: "Brak wdrożenia",
     range: "0 zł / mc",
     description:
-      "Osoby, które przychodzą po wiedzę, ale nie wykonują pracy: nie szukają lokalu, nie prowadzą rekrutacji i nie wdrażają procedur. Żaden model ani system nie przyniesie zysku, jeśli zostaje tylko teorią w notatniku.",
+      "Osoby, które zbierają wiedzę, ale nie robią kolejnego kroku: nie szukają lokalu, nie zatrudniają trenerów i nie wprowadzają nowych zasad. Nawet najlepszy model nie zarobi ani złotówki, jeśli zostanie tylko notatką w zeszycie.",
   },
   {
-    share: "~60% uczestników",
-    label: "Typowy, stabilny rezultat",
+    share: "~60% osób",
+    label: "Standardowy, stabilny wynik",
     range: "5 000 – 20 000 zł / mc",
     description:
-      "Wdrożenie modelu 1:1 oraz semi w kameralnym lokalu (50–100 m²), zatrudnienie pierwszych 1–2 trenerów i ustabilizowanie rentowności. Właściciel stopniowo schodzi z godzin na sali, a studio generuje powtarzalny zysk.",
+      "Wprowadzenie treningów personalnych i w małych grupach w lokalu 50–100 m², zatrudnienie 1–2 sprawdzonych trenerów i wyjście na stały plus. Właściciel prowadzi coraz mniej treningów, a studio co miesiąc przynosi przewidywalny zysk.",
   },
   {
-    share: "~25% uczestników",
-    label: "Pełna skala i liderzy rynku",
+    share: "~25% osób",
+    label: "Pełna skala i liderzy w regionie",
     range: "20 000 – 50 000+ zł / mc",
     description:
-      "Zbudowanie zespołu 3–7 trenerów, maksymalne obłożenie grafiku pakietami transformacyjnymi lub otwarcie drugiej i trzeciej placówki. Właściciel całkowicie wychodzi z prowadzenia treningów i zarządza biznesem w oparciu o wskaźniki.",
+      "Zgrana ekipa 3–7 trenerów, pełne grupy na kompleksowych programach lub otwarcie 2. i 3. lokalu. Właściciel całkowicie schodzi z sali, nie musi prowadzić treningów i skupia się wyłącznie na rozwoju biznesu.",
   },
 ];
 
@@ -39,30 +39,23 @@ export function ConfirmationRealisticOutcomesSection() {
       <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
         {/* Eyebrow */}
         <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
-          Transparentność i twarde liczby
+          Szczere liczby, bez owijania w bawełnę
         </p>
 
-        {/* Nagłówek w tonie długiego copy */}
+        {/* Nagłówek */}
         <h2 className="mx-auto mt-4 max-w-[26ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-          Jaki wynik jest <span className="text-[#ef6b4a]">naprawdę realistyczny</span>?
+          Jakich wyników możesz się <span className="text-[#ef6b4a]">naprawdę spodziewać</span>?
         </h2>
 
-        {/* Wprowadzenie narracyjne */}
+        {/* Wprowadzenie */}
         <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            Nie obiecuję milionów z dnia na dzień. W biznesie fitness nie ma dróg na skróty — jest powtarzalny proces,
-            matematyka lokalu i konsekwencja we wdrażaniu standardów.
-          </p>
-
-          <p>
-            <strong className="font-semibold not-italic text-gray-900">
-              Oto jak w praktyce rozkładają się wyniki
-            </strong>{" "}
-            właścicieli studiów, którzy wdrożyli ten model — bez ubarwiania i z pełną uczciwością wobec tych, którzy nie osiągają nic:
+            Nie obiecuję złotych gór w tydzień. W tym biznesie nie ma magii — liczy się prosta matematyka kosztów,
+            dobre dopasowanie oferty i konsekwencja we wdrażaniu sprawdzonych zasad.
           </p>
         </div>
 
-        {/* Płynna lista progów w stylu czystego copy sprzedażowego */}
+        {/* Lista progów */}
         <div className="mt-14 divide-y divide-[#d6d6d6] border-t border-[#d6d6d6] text-left">
           {TIERS.map((tier) => (
             <article key={tier.label} className="py-8 sm:py-10">
@@ -87,12 +80,12 @@ export function ConfirmationRealisticOutcomesSection() {
           ))}
         </div>
 
-        {/* Podsumowanie sekcji */}
+        {/* Podsumowanie */}
         <div className="mx-auto mt-6 max-w-2xl border-t border-[#d6d6d6] pt-10 text-center">
           <p className="font-display text-base italic leading-[1.7] text-gray-600 sm:text-lg">
-            Różnica między zerem a 50 000 zł zysku nie leży w wielkości miasta ani znajomościach.{" "}
+            Różnica między 0 zł a 50 000 zł zysku nie zależy od wielkości miasta ani szczęścia.{" "}
             <strong className="font-semibold not-italic text-gray-900">
-              Leży w tym, czy traktujesz studio jak pasję z wieczną pracą na sali, czy jak poukładany biznes oparty na systemie.
+              Zależy od tego, czy traktujesz studio jak wieczną harówkę na sali, czy jak poukładany biznes, który ma pracować na Ciebie.
             </strong>
           </p>
         </div>

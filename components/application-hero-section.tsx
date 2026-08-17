@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CalendarCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const BACKGROUND_IMAGES = [
   "https://ucarecdn.com/2fb844e9-c929-46c4-853d-057ef2ecad41/unnamed1.webp",
@@ -42,7 +42,7 @@ function BackgroundCarousel() {
   );
 }
 
-export function BookingHeroSection() {
+export function ApplicationHeroSection() {
   return (
     <div className="relative bg-[#fcfbf9]">
       <BackgroundCarousel />
@@ -51,59 +51,38 @@ export function BookingHeroSection() {
       <section className="relative px-5 py-14 sm:px-6 sm:py-20">
         <div className="mx-auto flex w-full max-w-3xl flex-col items-center text-center">
           <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
-            Rozmowa kwalifikacyjna 1:1
+            Weryfikacja zgłoszeń
           </p>
 
           <h1 className="mx-auto mt-4 max-w-[22ch] font-display text-[clamp(2rem,5vw,3.5rem)] font-bold italic leading-[1.08] tracking-[-0.02em] text-ink text-balance">
-            Sprawdź, czy program{" "}
-            <span className="text-[#ef6b4a]">Dochodowe Studio</span> pasuje do Twojej sytuacji
+            Aplikuj do programu <span className="text-[#ef6b4a]">Dochodowe Studio</span>
           </h1>
 
-          <div className="mx-auto mt-7 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+          <div className="mx-auto mt-6 max-w-xl text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
             <p>
-              Widziałeś już cały model na warsztacie.{" "}
-              <strong className="font-semibold not-italic text-gray-900">
-                Teraz nie musisz podejmować decyzji na podstawie ogólnych przykładów.
-              </strong>{" "}
-              Ta rozmowa służy temu, by przełożyć cały proces na Twoje miasto, Twój budżet i Twoją obecną sytuację.
-            </p>
-
-            <p>
-              Pracujemy z trenerami, którzy mają pełny grafik i doszli do momentu, w którym{" "}
-              <em className="text-[#ef6b4a]">kolejne godziny na sali nie rozwiązują już problemu</em>, oraz z właścicielami studiów, którzy wciąż są jedynym trybikiem zamykającym każdą sprzedaż.
-            </p>
-
-            <p>
-              Przez około 45 minut zdiagnozujemy Twoje wąskie gardło. Jeśli zobaczę, że możemy Ci pomóc — pokażę plan działania. Jeśli nie —{" "}
-              <strong className="font-semibold not-italic text-gray-900">
-                powiem Ci to wprost, bez wciskania czegokolwiek na siłę.
-              </strong>
+              Pomagamy trenerom i właścicielom, którzy utknęli w bieżączce pierwszego studia. Wypełnij krótką ankietę — jeśli zakwalifikujesz się do programu, odezwiemy się, by umówić bezpłatną sesję 1:1.
             </p>
           </div>
 
-          <div className="mt-10 border-y border-[#d6d6d6] py-6 text-center">
-            <p className="font-display text-base font-semibold italic text-gray-900 sm:text-lg">
-              Model powstał na bazie <span className="text-[#ef6b4a]">6 miesięcy mentoringu</span>, procesów z{" "}
-              <span className="text-[#ef6b4a]">4 własnych placówek</span> oraz ponad{" "}
-              <span className="text-[#ef6b4a]">40 wdrożeń</span> w całej Polsce.
+          <div className="mt-8 border-y border-[#d6d6d6] py-4 text-center">
+            <p className="font-display text-base font-semibold italic text-gray-900">
+              System oparty na doświadczeniu z <span className="text-[#ef6b4a]">4 własnych placówek</span> i ponad <span className="text-[#ef6b4a]">40 wdrożeń</span> w Polsce.
             </p>
           </div>
 
-          <div className="mt-10 flex w-full flex-col items-center">
+          <div className="mt-8 flex w-full flex-col items-center">
             <a
-              href="#kalendarz"
+              href="#aplikacja"
               className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
             >
-              <CalendarCheck className="h-6 w-6 shrink-0" />
-              Wybierz termin rozmowy
+              Wypełnij aplikację
+              <ArrowRight className="h-6 w-6 shrink-0" />
             </a>
 
             <p className="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1.5 text-xs font-bold uppercase tracking-[0.14em] text-gray-500">
-              <span>Rozmowa bezpłatna</span>
+              <span>Czas: 1 minuta</span>
               <span aria-hidden className="h-1 w-1 rounded-full bg-[#ef6b4a]" />
-              <span>Ok. 45 minut</span>
-              <span aria-hidden className="h-1 w-1 rounded-full bg-[#ef6b4a]" />
-              <span>Zero presji</span>
+              <span>Ograniczona liczba miejsc</span>
             </p>
           </div>
         </div>

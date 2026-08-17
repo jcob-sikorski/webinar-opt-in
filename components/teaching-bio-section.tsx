@@ -15,36 +15,33 @@ const PERSONAS: Persona[] = [
     title: "Jesteś trenerem z pełnym grafikiem",
     content: (
       <>
-        Pracujesz od rana do wieczora. Klienci przychodzą, płacą, wracają — ale
-        Twój grafik nie ma już miejsca na kolejną osobę.{" "}
-        <em className="italic text-[#ef6b4a]">Urlop kosztuje Cię pieniądze, nie tylko czas.</em>{" "}
+        Pracujesz od świtu do nocy. Klienci płacą i wracają, ale Twój grafik pęka
+        w szwach i nie wciśniesz już ani jednej osoby.{" "}
+        <em className="italic text-[#ef6b4a]">Każdy dzień wolnego oznacza brak wypłaty.</em>{" "}
         <strong className="mt-2 block font-bold text-gray-900">
-          Chcesz w końcu przestać być jedynym trybikiem własnego biznesu.
+          Chcesz w końcu przestać być jedynym silnikiem, który napędza ten biznes.
         </strong>
       </>
     ),
   },
   {
     number: "02",
-    title: "Jesteś właścicielem studio i stoisz na sali",
+    title: "Masz już studio, ale wciąż nie schodzisz z sali",
     content: (
       <>
         <strong className="font-bold text-gray-900">
-          Prowadzisz większość treningów, Ty odpisujesz na wiadomości, Ty
-          zamykasz każdą sprzedaż.
+          Prowadzisz większość treningów, sam odpisujesz na wiadomości i sam zamykasz każdą sprzedaż.
         </strong>{" "}
-        Kiedy wyjeżdżasz, <em className="italic text-[#ef6b4a]">przychód leci w dół</em>.
-        Marża jest cienka, a trenerzy robią wszystko po swojemu.{" "}
+        Wystarczy, że wyjedziesz na weekend, a <em className="italic text-[#ef6b4a]">przychody od razu spadają</em>.
+        Marża topnieje, a zatrudnieni trenerzy robią wszystko po swojemu.{" "}
         <strong className="mt-2 block font-bold text-gray-900">
-          Chcesz w końcu wyjść z sali i poukładać model, zanim pomyślisz o
-          kolejnej placówce.
+          Chcesz wreszcie poukładać studio w sprawnie działający system, zanim pomyślisz o kolejnej lokalizacji.
         </strong>
       </>
     ),
   },
 ];
 
-// Zmieniony wygląd karty - teraz wygląda jak moduł premium
 function PersonaCard({ number, title, content }: Persona) {
   return (
     <article className="relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-xl sm:p-10">
@@ -68,7 +65,7 @@ export function IsThisForYouSection() {
     <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
       {/* Nagłówek */}
       <h2 className="mx-auto max-w-3xl text-center text-3xl font-extrabold leading-[1.15] tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
-        Ten warsztat jest <span className="text-[#ef6b4a]">dla Ciebie</span>, jeśli...
+        To spotkanie jest <span className="text-[#ef6b4a]">dla Ciebie</span>, jeśli...
       </h2>
 
       {/* Grid z personami */}
@@ -78,16 +75,16 @@ export function IsThisForYouSection() {
         ))}
       </div>
 
-      {/* Zgrupowane podsumowanie w wyróżnionej ramce */}
+      {/* Podsumowanie */}
       <div className="mx-auto mt-14 flex max-w-4xl flex-col items-center text-center">
         <div className="w-full rounded-xl border border-[#d6d6d6] bg-[#f4f3ed] p-6 shadow-sm sm:p-8">
           <p className="mx-auto max-w-prose text-lg font-extrabold italic leading-snug text-gray-900 sm:text-2xl">
-            To może być najważniejsza godzina w Twoim kalendarzu.
+            To może być najlepiej zainwestowana godzina w Twoim roku.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-gray-700 sm:text-lg">
             <strong className="font-bold text-gray-900">
-              Studio samo w sobie nie rozwiązuje problemów, jakie masz obecnie. 
-              Ono je tylko powiększa, jeśli wejdziesz w to bez gotowego systemu.
+              Otwarcie studia nie rozwiąże Twoich problemów z brakiem czasu. 
+              Tylko je spotęguje — chyba że od pierwszego dnia oprzesz je na powtarzalnym systemie.
             </strong>
           </p>
         </div>
@@ -98,10 +95,10 @@ export function IsThisForYouSection() {
             size="lg"
             className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
           >
-            Zajmij slot bezpłatnie
+            Zapisz się bezpłatnie
           </RegisterCtaButton>
           <p className="mt-4 max-w-md text-center text-xs font-medium uppercase tracking-widest text-gray-500 sm:text-sm">
-            Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali.
+            Bezpłatny warsztat na żywo: jak zbudować studio, które zarabia bez Twojej ciągłej obecności.
           </p>
         </div>
       </div>
@@ -113,133 +110,125 @@ export function TeachingBioSection() {
   return (
     <section className="relative overflow-hidden bg-[#fcfbf9] px-5 py-20 sm:px-6 sm:py-32">
       <div className="mx-auto max-w-6xl">
-        {/* Nagłówek główny w kolorach brandu */}
         <h2 className="mb-16 text-center font-display text-4xl font-extrabold uppercase tracking-widest text-ink sm:mb-24 sm:text-5xl">
-          Kim Jestem?
+          Kim jestem?
         </h2>
 
-        {/* --- BLOK 1: Tekst po lewej, Zdjęcia po prawej --- */}
+        {/* BLOK 1 */}
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-start lg:gap-20">
-          
-          {/* Tekst - Lewa strona */}
           <div className="flex-1 text-base leading-relaxed text-gray-700 sm:text-lg">
             <h3 className="mb-6 text-xl font-bold leading-snug text-[#ef6b4a] sm:text-2xl">
-              Zanim zbudowałem biznes z 4 studiami,<br />
+              Zanim zbudowałem sieć 4 rentownych studiów treningowych,<br />
               musiałem zbankrutować. Dwa razy.
             </h3>
 
             <p className="mb-6 font-bold text-gray-900">
-              Poświęciłem lata, by zrozumieć jedno:<br />
-              Dlaczego moja pasja i bycie cholernie dobrym trenerem nie miały żadnego znaczenia, a ja ciągle wracałem do punktu wyjścia?
+              Lata zajęło mi zrozumienie bolesnej prawdy:<br />
+              Sama pasja i bycie świetnym trenerem nie wystarczą, by zbudować stabilny biznes.
             </p>
 
             <p className="mb-6">
-              Mój brak solidnych fundamentów i zderzenie ze ścianą sprawiły, że:
+              Brak poukładanych procesów i zderzenie z rzeczywistością kosztowały mnie bardzo dużo:
             </p>
 
-            <ol className="mb-6 list-decimal space-y-2 pl-5 font-bold text-gray-900">
+            <ol className="mb-6 list-decimal space-y-3 pl-5 font-medium text-gray-900">
               <li>
-                W 2016 r. zaliczyłem pierwsze bankructwo i pracowałem za 11 zł/h.
+                <strong>2016 rok:</strong> pierwsze bankructwo i praca na etacie za 11 zł za godzinę.
               </li>
               <li>
-                Gdy uderzył COVID, straciłem wszystko po raz drugi i trafiłem na magazyn DHL-u, pakując paczki po 10 godzin dziennie.
+                <strong>Lockdown podczas pandemii:</strong> tracę wszystko po raz drugi i ląduję na magazynie kurierskim, pakując paczki po 10 godzin dziennie.
               </li>
               <li>
-                W nocy reanimowałem biznes online, czując, że zawiodłem jako facet.
+                <strong>Po nocach:</strong> próby ratowania biznesu online z poczuciem, że całkowicie zawiodłem najbliższych.
               </li>
               <li>
-                Czułem się jak świetny rzemieślnik, któremu ktoś zabrał wszystkie narzędzia i zamknął warsztat.
+                Czułem się jak wybitny rzemieślnik, któremu ktoś zamknął warsztat i zabrał narzędzia do pracy.
               </li>
             </ol>
 
             <p className="font-bold text-gray-900">
-              I każdego dnia, nawet gdy zacząłem zarabiać 15k miesięcznie, czułem się jak "ZOMBIE" — niewolnik we własnej, złotej klatce.
+              Nawet gdy dochody w końcu wzrosły do kilkunastu tysięcy miesięcznie, byłem wycieńczony — stałem się niewolnikiem we własnej, złotej klatce.
             </p>
           </div>
 
-          {/* Kolaż Zdjęć - Prawa strona */}
+          {/* Kolaż Zdjęć 1 */}
           <div className="relative mt-8 h-[22rem] w-full max-w-md shrink-0 sm:h-[28rem] lg:mt-0 lg:w-1/2">
-            {/* Zdjęcie 1 - tył lewo */}
             <img
               src="https://ucarecdn.com/42f57602-1700-4199-a61c-1deda3aab974/IMG_9119.PNG"
-              alt="Historia"
+              alt="Początki drogi"
               className="absolute left-0 top-4 z-10 w-3/5 -rotate-6 border-[6px] border-white object-cover shadow-xl aspect-[3/4]"
             />
-            {/* Zdjęcie 2 - środek (na wierzchu) */}
             <img
               src="https://ucarecdn.com/ad26fef9-43dd-4808-a347-62d79b0bc105/IMG_6812.jpg"
-              alt="Historia 2"
+              alt="Bartłomiej Sikorski na sali"
               className="absolute left-[20%] top-0 z-30 w-3/5 rotate-2 border-[6px] border-white object-cover shadow-xl aspect-[3/4]"
             />
-            {/* Zdjęcie 3 - tył prawo */}
             <img
               src="https://ucarecdn.com/b1521761-d1ce-4a93-ba76-a411434ea846/IMG_7615.PNG"
-              alt="Historia 3"
+              alt="Historia rozwoju"
               className="absolute right-0 top-8 z-20 w-3/5 rotate-6 border-[6px] border-white object-cover shadow-xl aspect-[3/4]"
             />
           </div>
         </div>
 
-        {/* --- Sekcja CTA na dole TeachingBioSection --- */}
+        {/* Środkowe CTA */}
         <div className="mt-16 flex w-full flex-col items-center sm:mt-24">
           <RegisterCtaButton
             size="lg"
             className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
           >
-            Tak, chcę się zapisać
+            Dołączam do warsztatu
           </RegisterCtaButton>
           <p className="mt-4 max-w-md text-center text-xs font-medium uppercase tracking-widest text-gray-500 sm:text-sm">
-            Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali.
+            Bezpłatny warsztat na żywo: jak poukładać studio, by pracowało na Ciebie.
           </p>
         </div>
 
-        {/* --- BLOK 2: Zdjęcia po lewej, Tekst po prawej --- */}
+        {/* BLOK 2 */}
         <div className="mt-20 flex flex-col-reverse items-center gap-12 lg:mt-32 lg:flex-row lg:items-start lg:gap-20">
-          
-          {/* Kolaż Zdjęć - Lewa strona */}
+          {/* Kolaż Zdjęć 2 */}
           <div className="relative mt-8 h-[20rem] w-full max-w-md shrink-0 sm:h-[26rem] lg:mt-0 lg:w-1/2">
-            {/* Zdjęcie 4 - tył lewo */}
             <img
               src="https://ucarecdn.com/8468d36c-9fed-42ef-89b0-73c5f2a8ee28/IMG_6908.jpeg"
-              alt="Budowa studia"
+              alt="Budowa studia treningowego"
               className="absolute left-4 top-8 z-10 w-3/5 -rotate-6 border-[6px] border-white object-cover shadow-xl aspect-[3/4]"
             />
-            {/* Zdjęcie 5 - przód prawo */}
             <img
               src="https://ucarecdn.com/93cd06ce-4786-4952-8f94-be394dae6d0f/Screenshot20260804at92101PM.png"
-              alt="Budowa studia 2"
+              alt="Wyniki i rozwój sieci"
               className="absolute right-4 top-0 z-20 w-3/5 rotate-3 border-[6px] border-white object-cover shadow-xl aspect-[3/4]"
             />
           </div>
 
-          {/* Tekst - Prawa strona */}
+          {/* Tekst prawy */}
           <div className="flex-1 text-base leading-relaxed text-gray-700 sm:text-lg">
             <p className="mb-6">
-              Wiedziałem, że jeśli czegoś fundamentalnie nie zmienię w swoim myśleniu, zawsze będę o krok od kolejnej katastrofy. Aż przyszedł moment "AHA!".
+              Wiedziałem, że jeśli natychmiast nie zmienię sposobu myślenia, każda kolejna przeszkoda znów mnie zmiecie.
             </p>
 
             <p className="mb-6 font-bold text-gray-900">
-              Dopiero odkrycie, że zostanę ojcem, podniosło mnie z dna. <span className="font-normal text-gray-700">Koniec wymówek. Koniec czekania na "idealny moment". Wyrzuciłem plany B i C. Zrozumiałem, że muszę przestać być "najlepszym trenerem w mieście", a zacząć być jej prawdziwym WŁAŚCICIELEM.</span>
+              Przełom przyszedł, gdy dowiedziałem się, że zostanę ojcem.{" "}
+              <span className="font-normal text-gray-700">
+                Skończyły się wymówki i czekanie na lepszy moment. Przestałem chcieć być „najbardziej zapracowanym trenerem w mieście”, a zacząłem uczyć się, jak być prawdziwym przedsiębiorcą i liderem.
+              </span>
             </p>
 
             <p className="mb-6">
-              Przestałem wierzyć w bzdury "guru od marketingu", którzy wmawiają, że wystarczy odpalić magiczną kampanię. Zrozumiałem, że to zaledwie 5% sukcesu, a stół chwieje się bez trzech pozostałych nóg: <strong className="text-gray-900">twardych SYSTEMÓW, skutecznego ZARZĄDZANIA i świetnego ZESPOŁU.</strong>
+              Odrzuciłem obietnice internetowych doradców o „magicznych kampaniach reklamowych”. Zrozumiałem, że sam marketing to zaledwie wierzchołek góry lodowej — bez <strong className="text-gray-900">powtarzalnych procesów, zgranego zespołu i przejrzystego zarządzania</strong> studio prędzej czy później utonie.
             </p>
 
             <p className="mb-6 font-bold text-[#ef6b4a]">
-              W 2023 i 2024 r. zainwestowałem ponad 250 tys. zł w wiedzę.{" "}
+              Zainwestowałem ponad 250 tys. zł w mentoring i praktyczną wiedzę biznesową.{" "}
               <span className="font-normal text-gray-700">
-                Jak być przedsiębiorcą high-performance, jak sprzedawać pakiety na lata. Zmieniłem myślenie z Rzemieślnika na Architekta. Rzemieślnik wymienia czas na pieniądze, Architekt projektuje powtarzalny system.
+                Przestawiłem myślenie z roli rzemieślnika na rolę architekta. Rzemieślnik wymienia swój czas na każdą złotówkę — architekt projektuje mechanizm, który działa i generuje zysk bez jego nieustannej kontroli.
               </span>
             </p>
 
             <p className="font-bold text-[#ef6b4a]">
-              Okazało się, że mogę więcej niż kiedykolwiek przypuszczałem.<br />
-              A system może pracować i dowozić jakość, nawet gdy ja śpię.
+              Dziś ten system dba o jakość treningów i wyniki finansowe codziennie — nawet wtedy, gdy odpoczywam z rodziną.
             </p>
           </div>
         </div>
-        
       </div>
     </section>
   );

@@ -42,7 +42,7 @@ const PROOF: ProofPerson[] = [
   },
 ];
 
-export function BookingResultsSection() {
+export function ApplicationResultsSection() {
   return (
     <Section className="bg-[#fcfbf9]">
       <div className="mx-auto max-w-3xl text-center">

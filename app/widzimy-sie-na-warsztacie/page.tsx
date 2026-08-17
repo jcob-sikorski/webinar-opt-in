@@ -6,7 +6,7 @@ import { ConfirmationAgendaSection } from "@/components/confirmation-agenda-sect
 import { ConfirmationProtocolBonusSection } from "@/components/confirmation-protocol-bonus-section";
 import { ConfirmationLegitimacySection } from "@/components/confirmation-legitimacy-section";
 import { ConfirmationRealisticOutcomesSection } from "@/components/confirmation-realistic-outcomes-section";
-import { ConfirmationBonusSection } from "@/components/confirmation-bonus-section";
+import { CaseStudyYTVidsSection } from "@/components/case-study-yt-vids-section";
 import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
 import { ConfirmationFaqSection } from "@/components/confirmation-faq-section";
 import { LegalFooter } from "@/components/legal-footer";
@@ -18,7 +18,7 @@ export default function ConfirmationPage() {
       <ConfirmationHeroSection />
 
       {/* 2. Szybka 20-sekundowa ankieta kwalifikacji i zaangażowania */}
-      <ConfirmationSurveySection />
+      {/* <ConfirmationSurveySection /> */}
 
       {/* 3. Krótkie 60-sekundowe wideo orientacyjne od Bartka */}
       <ConfirmationVideoSection />
@@ -39,7 +39,7 @@ export default function ConfirmationPage() {
       <ConfirmationRealisticOutcomesSection />
 
       {/* 10. Wideo case studies z YouTube */}
-      <ConfirmationBonusSection />
+      <CaseStudyYTVidsSection showCta={false} />
 
       {/* 11. Galerie wdrożeń i historie właścicieli */}
       <ConfirmationProofSection />

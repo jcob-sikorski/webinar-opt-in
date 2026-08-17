@@ -5,26 +5,26 @@ const PILLARS = [
   {
     title: "Środowe sesje 1:1 na żywo (12:00 – 14:00)",
     description:
-      "Co tydzień siadamy nad Twoim lokalem, Twoją ofertą i Twoimi pracownikami. Żadnych nagranych slajdów sprzed roku — pracujemy na żywym organizmie Twojej firmy.",
+      "Jeśli masz jakiekolwiek pytanie do mnie lub do innego właściciela studio, pytasz a my odpowiadamy.",
   },
   {
     title: "Czwartkowe sesje płatnego marketingu z Kornelią",
     description:
-      "Klikamy kampanie reklamowe bezpośrednio w Twoim Menadżerze Reklam Meta. Uczysz się pozyskiwać leady samodzielnie, zamiast co miesiąc płacić agencji prowizję za puste zapytania.",
+      "Zapełniamy na początku Twoje studio pierwszymi klientami, jeśli tego potrzebujesz. Potem uczysz się pozyskiwać leady samodzielnie, żeby nigdy więcej już nie płacić agencji.",
   },
   {
     title: "Bezpośredni kontakt na Telegramie (Pn–Pt 8:00–20:00)",
     description:
-      "Jeśli utkniesz przy rozmowie rekrutacyjnej, negocjacji czynszu czy trudnym kliencie — piszesz i dostajesz natychmiastową odpowiedź oraz gotowy skrypt.",
+      "Jeśli gdziekolwiek podczas wdrożenia modelu Dochodowego Studio, lokal, sprzęt, trener, manager - jeśli gdziekolwiek zostaniesz przyblokowany napisz do mnie na Telegramie i doradzę Ci jak rozwiązać ten problem.",
   },
   {
     title: "Platforma Skool i Roczny Mastermind Stacjonarny",
     description:
-      "Baza wszystkich procedur, nagrań, kalkulatorów i dokumentów w jednym miejscu oraz coroczny zjazd właścicieli studiów w celu wymiany doświadczeń.",
+      "Baza wszystkich dokumentów, szkoleń, systemów, które potrzebujesz Ty, Twoje studio i trenerzy, aby działać na autopilocie i serwować pakiety premium + coroczny zjazd właścicieli studiów w celu wymiany doświadczeń.",
   },
 ];
 
-export function BookingOfferSection() {
+export function ApplicationOfferSection() {
   return (
     <Section className="bg-[#fcfbf9]">
       <div className="mx-auto max-w-3xl border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
@@ -38,15 +38,7 @@ export function BookingOfferSection() {
 
         <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            To nie jest kolejny kurs, który kupujesz, oglądasz przez weekend i odkładasz na półkę. 
-            To pół roku ścisłej współpracy wdrożeniowej ze mną i moim zespołem.
-          </p>
-
-          <p>
-            <strong className="font-semibold not-italic text-gray-900">
-              Robimy to z Tobą, a nie za Ciebie.
-            </strong>{" "}
-            Celem programu jest uczynienie z Ciebie kompletnego przedsiębiorcy, który po 6 miesiącach potrafi sam policzyć studio, wdrożyć trenera i wygenerować klientów.
+            Pół roku współpracy wdrożeniowej. Celem programu jest uczynienie z Ciebie kompletnego przedsiębiorcy, który po 6 miesiącach jest gotowy na wyjście z sali, a studio pracuje na niego.
           </p>
         </div>
 

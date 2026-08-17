@@ -4,38 +4,38 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { RegisterCtaButton } from "@/components/register-cta-button";
+import { CalendarCheck } from "lucide-react";
 
 interface FaqItem {
   question: string;
   answer: string;
 }
 
-// Pre-handling najczęstszych obiekcji PRZED zapisem — nie po.
 const FAQS: FaqItem[] = [
   {
-    question: "Nie mam jeszcze studio. Czy ten warsztat jest dla mnie?",
+    question: "Nie mam jeszcze własnego studia. Czy ten warsztat mi się przyda?",
     answer:
-      "Tak. Model kameralnego studio pokazuję od zera — jeśli otwierasz studio za 3 miesiące albo nie wiesz jeszcze kiedy, to wyjdziesz z planem, który wdrożysz gdy będziesz gotowy/a. Nie musisz mieć lokalu, żeby zrozumieć system.",
+      "Zdecydowanie tak. Pokażę Ci cały model od podstaw — od wyboru lokalu, przez koszty, aż po cennik. Niezależnie od tego, czy planujesz start za 3 miesiące, czy dopiero układasz plan w głowie, wyjdziesz świadomy i będziesz mógł uniknąć błędów, które kosztują dziesiątki tysięcy złotych.",
   },
   {
-    question: "Prowadzę już studio od kilku lat. Czy to nie będzie zbyt podstawowe?",
+    question: "Prowadzę już studio od lat. Czy to nie będą zbyt podstawowe rzeczy?",
     answer:
-      "Najczęstszy problem doświadczonych właścicieli to nie brak wiedzy, tylko brak wdrożonego systemu. Jeśli nie jesteś w stanie w sposób skalowalny otwierać kolejnych placówek — to jest dokładnie dla Ciebie.",
+      "Doświadczeni właściciele rzadko mają problem z brakiem wiedzy trenerskiej — ich problemem jest brak procesów. Jeśli wciąż musisz osobiście dopinać każdy detal, nie możesz wyjechać na urlop bez spadku przychodów lub nie wiesz, jak otworzyć kolejną lokalizację bez podwajania chaosu, ten warsztat jest w 100% dla Ciebie.",
   },
   {
-    question: "Czy będziecie mi coś sprzedawać podczas warsztatu?",
+    question: "Czy podczas warsztatu będziecie coś sprzedawać?",
     answer:
-      "Wyjdziesz z konkretnym planem. Pod koniec pokażę, jak wygląda dalsza współpraca dla osób, które chcą wdrożyć model z moim wsparciem — ale nie musisz nic kupować, żeby skorzystać z tego, co dziś pokażę.",
+      "Głównym celem jest pokazanie Ci co Cię czeka przy budowaniu takiego studio oraz plan działania. Pod koniec krótko opowiem o możliwości dołączenia do programu mentoringowego dla osób, które chcą wdrożyć ten model krok po kroku z moim osobistym wsparciem. Udział w warsztacie jest całkowicie bezpłatny i nikt do niczego Cię nie zobowiązuje.",
   },
   {
-    question: "Nie mogę być na żywo w poniedziałek 20:00. Czy mam się zapisywać?",
+    question: "Nie dam rady być na żywo w poniedziałek o 20:00. Czy dostanę powtórkę?",
     answer:
-      "Tak, zapisz się mimo to. Wyślemy Ci przypomnienie i link do nagrania — zostaje ono dostępne przez 5 dni. Jedyna różnica: Protokół Dochodowego Studia (checklista wdrożenia) trafia wyłącznie do osób, które są na żywo do końca, więc jeśli możesz się urwać choćby na Q&A, warto.",
+      "Tak, zapisz się tak czy inaczej. Po spotkaniu wyślemy Ci powtórkę wideo, która będzie aktywna przez 5 dni. Pamiętaj jednak, że pełny Protokół Dochodowego Studia (praktyczną checklistę wdrożeniową) oraz sesję pytań i odpowiedzi udostępniamy na żywo, więc jeśli możesz wygospodarować choć fragment wieczoru — naprawdę warto.",
   },
   {
-    question: "Ile to zajmie i co mam przygotować?",
+    question: "Ile potrwa spotkanie i jak mam się przygotować?",
     answer:
-      "Ok. 75 minut, bez przerwy. Przygotuj coś do notowania — warsztat ma dużo mięsa, a ludzie, którzy notują, wdrażają zdecydowanie więcej niż ci, którzy tylko oglądają.",
+      "Przeznacz około 75 minut. Przygotuj notes i coś do pisania — osoby, które notują kluczowe wnioski, wdrażają zmiany znacznie szybciej niż bierni słuchacze.",
   },
 ];
 
@@ -73,7 +73,7 @@ export function FaqSection() {
     <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-center text-3xl font-extrabold leading-[1.15] text-gray-900 sm:text-4xl">
-          Najczęstsze pytania
+          Najczęściej zadawane pytania
         </h2>
 
         <div className="mt-10">
@@ -82,13 +82,18 @@ export function FaqSection() {
           ))}
         </div>
 
-        <div className="mt-12 flex w-full flex-col items-center">
+        {/* CTA */}
+        <div className="mt-12 flex flex-col items-center">
           <RegisterCtaButton
             size="lg"
-            className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
+            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 active:scale-[0.99] sm:text-2xl"
           >
+            <CalendarCheck className="h-6 w-6 shrink-0" />
             Tak, chcę się zapisać
           </RegisterCtaButton>
+          <p className="mt-4 max-w-md text-center text-xs font-bold uppercase tracking-widest text-gray-500 sm:text-sm">
+            Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali
+          </p>
         </div>
       </div>
     </Section>

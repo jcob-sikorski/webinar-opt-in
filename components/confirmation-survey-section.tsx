@@ -63,7 +63,7 @@ export function ConfirmationSurveySection() {
             <Check className="h-6 w-6" strokeWidth={3} />
           </span>
           <h3 className="mt-5 font-display text-2xl font-bold italic text-gray-900 sm:text-3xl">
-            Dzięki za odpowiedź. <span className="text-green-600">Zapisałem to.</span>
+            Dzięki za odpowiedź. <span className="text-green-600">Zapisałem to</span>
           </h3>
           <p className="mx-auto mt-4 max-w-lg font-display text-lg italic leading-[1.7] text-gray-700">
             Dostosuję konkretne przykłady i case studies podczas warsztatu pod Twoją sytuację.

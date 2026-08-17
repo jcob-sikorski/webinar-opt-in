@@ -35,7 +35,7 @@ const OBJECTIONS: Objection[] = [
   },
 ];
 
-export function BookingObjectionsSection() {
+export function ApplicationObjectionsSection() {
   return (
     <Section className="bg-[#fcfbf9]">
       <div className="mx-auto max-w-3xl text-center">

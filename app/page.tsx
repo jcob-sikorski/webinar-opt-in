@@ -7,7 +7,7 @@ import { WhatToExpectSection } from "@/components/what-to-expect-section";
 import { WhatYouWillLearnSection } from "@/components/what-you-will-learn-section";
 import { TeachingBioSection } from "@/components/teaching-bio-section";
 import { FaqSection } from "@/components/faq-section";
-import { ConfirmationBonusSection } from "@/components/confirmation-bonus-section";
+import { CaseStudyYTVidsSection } from "@/components/case-study-yt-vids-section";
 import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
 import { LegalFooter } from "@/components/legal-footer";
 
@@ -30,7 +30,7 @@ export default function Home() {
 
       <TeachingBioSection />
 
-      <ConfirmationBonusSection />
+      <CaseStudyYTVidsSection />
       <ConfirmationProofSection />
 
       <FaqSection />

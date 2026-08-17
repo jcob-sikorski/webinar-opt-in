@@ -11,7 +11,7 @@ interface BreakoutVideo {
 
 const BREAKOUT_VIDEOS: BreakoutVideo[] = [
   {
-    title: "Obiekcja #1: Lokalizacja",
+    title: "Pytanie #1: Lokalizacja",
     question: "„Czy to zadziała w moim małym mieście / gminie 15 tys. mieszkańców?”",
     duration: "3:40 min",
     description:
@@ -19,7 +19,7 @@ const BREAKOUT_VIDEOS: BreakoutVideo[] = [
     videoSrc: "https://player.mux.com/OM1SCoPFsNx86K4fE601c19RFqkHxu5ns38eAXEfTMsE",
   },
   {
-    title: "Obiekcja #2: Budżet i Ryzyko",
+    title: "Pytanie #2: Budżet i Ryzyko",
     question: "„Ile realnie muszę mieć na start lokalu i co jeśli nie wypali?”",
     duration: "4:15 min",
     description:
@@ -27,7 +27,7 @@ const BREAKOUT_VIDEOS: BreakoutVideo[] = [
     videoSrc: "https://player.mux.com/OM1SCoPFsNx86K4fE601c19RFqkHxu5ns38eAXEfTMsE",
   },
   {
-    title: "Obiekcja #3: Utrata Klientów",
+    title: "Pytanie #3: Utrata Klientów",
     question: "„Co jeśli wyszkolę trenera, a on odejdzie z moimi ludźmi?”",
     duration: "3:10 min",
     description:
@@ -65,14 +65,14 @@ export function ConfirmationBreakoutsSection() {
                 {item.question}
               </h3>
 
-              <div className="relative mx-auto my-6 aspect-video w-full max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-md">
+              {/* <div className="relative mx-auto my-6 aspect-video w-full max-w-xl overflow-hidden rounded-xl bg-gray-900 shadow-md">
                 <iframe
                   src={item.videoSrc}
                   className="h-full w-full border-none"
                   allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
                   allowFullScreen
                 />
-              </div>
+              </div> */}
 
               <p className="text-pretty font-display text-base italic leading-[1.7] text-gray-700 sm:text-lg">
                 {item.description}

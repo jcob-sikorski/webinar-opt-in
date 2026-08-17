@@ -52,8 +52,7 @@ export function WhatToExpectSection() {
             Czego dokładnie <span className="text-[#ef6b4a]">się dowiesz</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl font-display text-lg italic leading-[1.7] text-gray-700 sm:text-xl">
-            W ciągu tej jednej godziny rozkładam model kameralnego studia na czynniki pierwsze.
-            Zero ogólników — przechodzimy przez 6 filarów, które decydują o rentowności.
+            W ciągu 1 godziny wyjaśnię na czym polega model kameralnego studia.
           </p>
         </div>
 

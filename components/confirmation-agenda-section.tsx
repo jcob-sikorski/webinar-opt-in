@@ -4,37 +4,37 @@ const AGENDA_BLOCKS = [
   {
     number: "01",
     time: "20:00 - 20:15",
-    title: "Pułapka Rzemieślnika i sufit trenerski",
+    title: "Szklany sufit trenera i pułapka wiecznej pracy",
     description:
-      "Dlaczego praca po 12 godzin na sali dziennie i podnoszenie pojedynczych stawek to najkrótsza droga do wypalenia. Pokażę Ci moment, w którym rzemiosło musi ustąpić miejsca architekturze systemu.",
+      "Dlaczego prowadzenie treningów po 12 godzin na dobę i ciągłe podnoszenie stawek za godzinę to prosta droga do wypalenia. Pokażę Ci, w którym momencie musisz przestać być jedynym pracownikiem, a zacząć budować biznes.",
   },
   {
     number: "02",
     time: "20:15 - 20:40",
-    title: "Model Kameralnego Studia (50–120 m²)",
+    title: "Matematyka Kameralnego Studia (50–120 m²)",
     description:
-      "Zamiast wielkiej siłowni i gigantycznego czynszu — lokal na obrzeżach za 1500–5000 zł miesięcznie. Dokładne wyliczenia, jak przy 40–50 stałych klientach generować 20–50 tys. zł czystego zysku właścicielskiego.",
+      "Zamiast drogiego lokalu w centrum — mniejsza przestrzeń z niskim czynszem. Przeanalizujemy konkretne liczby i pokażę Ci, jak przy 40–50 stałych podopiecznych wyciągać 20–50 tys. zł czystego zysku co miesiąc.",
   },
   {
     number: "03",
     time: "20:40 - 21:00",
-    title: "Pakiety Transformacyjne zamiast pojedynczych wejściówek",
+    title: "Pakiety metamorfoz zamiast pojedynczych wejść",
     description:
-      "Mechanizm konstruowania i sprzedaży ofert transformacyjnych za 5 000–12 000 zł. Jak sprawić, by klient nie porównywał Cię ze stawką godzinową sieciówki i zostawał w studio na lata.",
+      "Jak tworzyć i sprzedawać kompleksowe programy za 5 000–12 000 zł. Sprawisz, że klienci przestaną porównywać Cię z tanimi karnetami na siłowni i zostaną u Ciebie na wiele miesięcy.",
   },
   {
     number: "04",
     time: "21:00 - 21:15",
-    title: "Zespół trenerów pracujący według Twoich standardów",
+    title: "Zaufany zespół trenerów, który nie odejdzie z klientami",
     description:
-      "Jak rekrutować, wdrażać i rozliczać trenerów, żeby to studio było marką, a nie pojedynczy trener. Procedury chroniące biznes przed odejściem pracownika z Twoimi klientami.",
+      "Jak rekrutować, szkolić i rozliczać trenerów, by prowadzili zajęcia w Twoim standardzie. Wdrożysz proste zasady, które budują silną markę studia i zabezpieczają Twoją bazę klientów.",
   },
   {
     number: "05",
     time: "21:15 - 21:30",
-    title: "Q&A na żywo oraz Protokół Dochodowego Studia",
+    title: "Pytania na żywo + Protokół Dochodowego Studia",
     description:
-      "Odpowiedzi na żywo na konkretne wyzwania uczestników oraz przekazanie kompletnego Protokołu — checklisty wdrożenia modelu A-Z.",
+      "Odpowiem na Twoje konkretne wątpliwości i przekażę gotową checklistę wdrożeniową krok po kroku, którą możesz zacząć realizować od razu po spotkaniu.",
   },
 ];
 
@@ -47,30 +47,30 @@ export function ConfirmationAgendaSection() {
           Dokładny plan spotkania
         </p>
 
-        {/* Nagłówek w tonie długiej strony sprzedażowej */}
+        {/* Nagłówek */}
         <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-          Czego dokładnie dowiesz się{" "}
-          <span className="text-[#ef6b4a]">podczas tych 75 minut</span>?
+          Czego konkretnie dowiesz się{" "}
+          <span className="text-[#ef6b4a]">w trakcie tych 75 minut</span>?
         </h2>
 
         {/* Wprowadzenie narracyjne */}
         <div className="mx-auto mt-6 max-w-2xl text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            Nie zamierzam marnować Twojego czasu na lanie wody i motywacyjne hasła.{" "}
+            Szanuję Twój czas — zero lania wody, slajdów o niczym i pustej motywacji.{" "}
             <strong className="font-semibold not-italic text-gray-900">
-              Rozłożymy model kameralnego studia na czynniki pierwsze
+              Przejdziemy przez cały schemat krok po kroku
             </strong>
-            , krok po kroku — od wyboru lokalu, przez pakiety, po budowę zespołu.
+            : od znalezienia odpowiedniego lokalu i wyliczenia rentowności, po ofertę i budowę samodzielnego zespołu.
           </p>
         </div>
 
-        {/* Płynna lista modułów agendy */}
+        {/* Lista modułów */}
         <div className="mt-14 divide-y divide-[#d6d6d6] border-t border-[#d6d6d6] text-left">
           {AGENDA_BLOCKS.map((block) => (
             <article key={block.number} className="py-8 sm:py-10">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="font-display text-sm font-bold uppercase tracking-[0.16em] text-[#ef6b4a]">
-                  Moduł {block.number}
+                  Część {block.number}
                 </span>
                 <span aria-hidden className="h-1 w-1 rounded-full bg-gray-300" />
                 <span className="font-mono text-xs font-semibold text-gray-500 sm:text-sm">
