@@ -5,7 +5,7 @@ import { ConfirmationBreakoutsSection } from "@/components/confirmation-breakout
 import { ConfirmationAgendaSection } from "@/components/confirmation-agenda-section";
 import { ConfirmationProtocolBonusSection } from "@/components/confirmation-protocol-bonus-section";
 import { ConfirmationLegitimacySection } from "@/components/confirmation-legitimacy-section";
-import { ConfirmationRealisticOutcomesSection } from "@/components/confirmation-realistic-outcomes-section";
+// import { ConfirmationRealisticOutcomesSection } from "@/components/confirmation-realistic-outcomes-section";
 import { CaseStudyYTVidsSection } from "@/components/case-study-yt-vids-section";
 import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
 import { ConfirmationFaqSection } from "@/components/confirmation-faq-section";
@@ -36,7 +36,7 @@ export default function ConfirmationPage() {
       <ConfirmationLegitimacySection />
 
       {/* 9. Realistyczne oczekiwania: Rozkład 15% (brak wdrożenia) / 60% / 25% */}
-      <ConfirmationRealisticOutcomesSection />
+      {/* <ConfirmationRealisticOutcomesSection /> */}
 
       {/* 10. Wideo case studies z YouTube */}
       <CaseStudyYTVidsSection showCta={false} />
