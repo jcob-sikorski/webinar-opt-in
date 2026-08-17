@@ -18,7 +18,7 @@ export default function ConfirmationPage() {
       <ConfirmationHeroSection />
 
       {/* 2. Szybka 20-sekundowa ankieta kwalifikacji i zaangażowania */}
-      {/* <ConfirmationSurveySection /> */}
+      <ConfirmationSurveySection />
 
       {/* 3. Krótkie 60-sekundowe wideo orientacyjne od Bartka */}
       <ConfirmationVideoSection />

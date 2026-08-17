@@ -1,8 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, ArrowDown } from "lucide-react";
 import { Section } from "@/components/ui/section";
+import { createClient } from "@supabase/supabase-js";
+
+// Initialize Supabase client using the new Publishable Key
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!
+);
 
 interface Question {
   id: string;
@@ -26,15 +33,11 @@ const QUESTIONS: Question[] = [
     question: "Jak szybko chcesz wdrożyć nowy model?",
     options: [
       "W ciągu najbliższego miesiąca (zależy mi na czasie)",
-      "W ciągu najbliższych 3–6 miesięcy",
-      "Na spokojnie — najpierw chcę poznać cały system",
+      "W ciągu najbliższych 3-6 miesięcy",
+      "Na spokojnie – najpierw chcę poznać cały system",
     ],
   },
 ];
-
-async function submitSurvey(answers: Record<string, string>) {
-  console.log("survey answers", answers);
-}
 
 export function ConfirmationSurveySection() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -42,32 +45,54 @@ export function ConfirmationSurveySection() {
 
   const allAnswered = QUESTIONS.every((q) => answers[q.id]);
 
-  function handleSelect(questionId: string, option: string) {
+  async function handleSelect(questionId: string, option: string) {
+    // 1. Update UI immediately
     setAnswers((prev) => ({ ...prev, [questionId]: option }));
+
+    // 2. Insert into Supabase silently in the background
+    const { error } = await supabase
+      .from("survey_answers")
+      .insert([
+        { question_id: questionId, answer: option }
+      ]);
+
+    if (error) {
+      console.error("Error saving to Supabase:", error);
+    }
   }
 
   function handleSubmit() {
     if (!allAnswered) return;
-    submitSurvey(answers);
     setSubmitted(true);
   }
 
   if (submitted) {
     return (
       <Section className="bg-[#fcfbf9]">
-        <div className="mx-auto max-w-2xl border-t border-[#d6d6d6] pt-12 text-center">
+        {/* Set a min-height to prevent the layout from shrinking abruptly */}
+        <div className="mx-auto flex min-h-[650px] max-w-2xl flex-col items-center justify-center border-t border-[#d6d6d6] pt-12 text-center sm:pt-16">
           <span
             aria-hidden
-            className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-600 text-white shadow-sm"
+            className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-green-600 text-white shadow-sm"
           >
-            <Check className="h-6 w-6" strokeWidth={3} />
+            <Check className="h-8 w-8" strokeWidth={3} />
           </span>
-          <h3 className="mt-5 font-display text-2xl font-bold italic text-gray-900 sm:text-3xl">
+          <h3 className="mt-6 font-display text-3xl font-bold italic text-gray-900 sm:text-4xl">
             Dzięki za odpowiedź. <span className="text-green-600">Zapisałem to</span>
           </h3>
           <p className="mx-auto mt-4 max-w-lg font-display text-lg italic leading-[1.7] text-gray-700">
             Dostosuję konkretne przykłady i case studies podczas warsztatu pod Twoją sytuację.
           </p>
+
+          <div className="mx-auto mt-12 max-w-xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-8">
+            <p className="font-display text-lg font-semibold italic text-gray-900 sm:text-xl">
+              Zjedź niżej, aby dowiedzieć się więcej o warsztacie, sprawdzić <span className="text-[#ef6b4a]">bonus za obecność na żywo</span> i zweryfikować to co robię.
+            </p>
+          </div>
+
+          <div className="mt-16 animate-bounce text-[#ef6b4a]">
+            <ArrowDown className="h-12 w-12" />
+          </div>
         </div>
       </Section>
     );
@@ -79,9 +104,8 @@ export function ConfirmationSurveySection() {
         <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
           Zajmie Ci to 20 sekund
         </p>
-
         <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-          Zanim się połączymy, pozwól mi lepiej zrozumieć{" "}
+          Zanim skończymy, pozwól mi lepiej zrozumieć{" "}
           <span className="text-[#ef6b4a]">Twoją sytuację</span>
         </h2>
 
@@ -97,7 +121,6 @@ export function ConfirmationSurveySection() {
                   {q.question}
                 </p>
               </div>
-
               <div className="mt-5 flex flex-col gap-3">
                 {q.options.map((option) => {
                   const selected = answers[q.id] === option;
