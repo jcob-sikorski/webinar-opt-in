@@ -14,6 +14,8 @@ import { LegalFooter } from "@/components/legal-footer";
 import { CaseStudyYTVidsSection } from "@/components/case-study-yt-vids-section";
 import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
 
+import { CuratedEducationalContentSection } from "@/components/curated-educational-content-section";
+
 export const metadata: Metadata = {
   title: "Umów rozmowę | Dochodowe Studio",
   description:
@@ -37,6 +39,8 @@ export default function ApplicationPage() {
       {/* Dodane obszerne galerie i wideo case studies */}
       <ConfirmationProofSection showCta={false} wypelnijAplikacje={true} />
       <CaseStudyYTVidsSection showCta={false} wypelnijAplikacje={true}/>
+
+      <CuratedEducationalContentSection />
       
       <ApplicationObjectionsSection />
       <LegalFooter />
