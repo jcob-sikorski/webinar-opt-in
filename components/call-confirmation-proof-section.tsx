@@ -14,7 +14,7 @@ const PROOF: ProofPerson[] = [
     caption:
       "Dziś ma menedżera i poukładane procesy operacyjne zamiast robienia wszystkiego samemu na sali.",
     photo:
-      "https://ucarecdn.com/981f513f-8226-4a54-bdc3-9512e21acea3/mekitow.png",
+      "https://ucarecdn.com/8c2d0059-15c4-4bbb-83d5-3b603e9ce523/mekitow.png",
   },
   {
     name: "Adam Stołowski",
