@@ -21,6 +21,7 @@ export async function sendToMetaCAPI(formData: {
   clientCategory: string;
   sourceUrl: string;
   eventId: string;
+  eventName?: string; // <-- Add this
   attribution?: {
     utm_source?: string;
     utm_medium?: string;
@@ -43,7 +44,7 @@ export async function sendToMetaCAPI(formData: {
   const payload: Record<string, unknown> = {
     data: [
       {
-        event_name: "Lead",
+        event_name: formData.eventName || "Lead", // <-- Fallback to Lead
         event_time: Math.floor(Date.now() / 1000),
         action_source: "website",
         event_source_url: formData.sourceUrl,

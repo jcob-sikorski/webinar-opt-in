@@ -2,10 +2,14 @@ import { ApplicationConfirmationHeroSection } from "@/components/call-confirmati
 import { CallConfirmationProofSection } from "@/components/call-confirmation-proof-section";
 import { CallConfirmationBonusSection } from "@/components/call-confirmation-bonus-section";
 import { LegalFooter } from "@/components/legal-footer";
+import { ApplicationSubmitPixel } from "@/components/application-submit-pixel";
 
 export default function CallConfirmationPage() {
   return (
     <main>
+      {/* Fires the SubmitApplication event immediately on load */}
+      <ApplicationSubmitPixel />
+
       {/* FAZA 1: LOGISTYKA I ZASADY GRY */}
       {/* 1. Potwierdzenie terminu rozmowy 1:1 + Kalendarze + Twarde zasady.
              Użytkownik musi wiedzieć, że to profesjonalne spotkanie biznesowe, 
