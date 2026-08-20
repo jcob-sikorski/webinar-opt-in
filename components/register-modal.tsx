@@ -56,10 +56,10 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
           country: "pl",
           external_id: email.toLowerCase().trim(),
         });
-
+        
         window.fbq(
           "track",
-          "Schedule",
+          "Lead",
           {
             content_name: "Warsztat: Zloty Model Biznesowy",
             content_category: clientCategory,
@@ -105,7 +105,7 @@ export function RegisterModal({ open, onOpenChange }: RegisterModalProps) {
     } finally {
       setIsSubmitting(false);
     }
-  }
+    }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
