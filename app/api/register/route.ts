@@ -189,7 +189,7 @@ async function sendSmsApiNotification(phone: string | undefined, firstName: stri
 
   // Clean the phone number to ensure compatibility
   const cleanPhone = phone.replace(/\D/g, "");
-  const message = `Hej ${firstName}! "Dochodowe Studio" już niedługo. Zapisz: 24 Sierpnia, Poniedziałek 20:00. Pokażę Ci, jak wyjść z sali bez tracenia przychodu. Do zobaczenia – Bartek`;
+  const message = `Cześć ${firstName}! Tu Bartek. Łap swój bilet. Zapisz: 24 Sierpnia, Poniedziałek 20:00. Pokażę Ci, jak zejść z sali i zbudować studio, które zarabia bez Ciebie. Do zobaczenia`;
 
   const params = new URLSearchParams({
     to: cleanPhone,
