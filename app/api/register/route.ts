@@ -90,6 +90,7 @@ export async function POST(request: Request) {
     // 3. RESPOND TO CLIENT
     // ============================================================================
     return NextResponse.json({ success: true, joinLink: uniqueJoinLink });
+
   } catch (error) {
     console.error("Orchestrator Error:", error);
     return NextResponse.json(
@@ -142,13 +143,38 @@ async function upsertGhlContact({
     `https://services.leadconnectorhq.com/contacts/search?locationId=${process.env.GHL_LOCATION_ID}&query=${encodeURIComponent(email)}`,
     { headers }
   );
+  
   const searchData = await searchRes.json();
   const existing = searchData?.contacts?.find(
     (c: any) => c.email?.toLowerCase() === email.toLowerCase()
   );
+  
   if (existing) existingTags = existing.tags ?? [];
 
-  const tags = Array.from(new Set([...existingTags, "webinar-24sie", clientCategory].filter(Boolean)));
+  // ============================================================================
+  // OBLICZANIE CZASU I PRZYPISANIE TAGU ROUTE
+  // ============================================================================
+  const WORKSHOP_START = "2026-08-24T20:00:00+02:00";
+  const targetDateMs = new Date(WORKSHOP_START).getTime();
+  const currentMs = Date.now();
+  
+  // Oblicz różnicę w godzinach
+  const hoursToStart = (targetDateMs - currentMs) / (1000 * 60 * 60);
+
+  let routeTag = "";
+  if (hoursToStart > 36) {
+    routeTag = "A";
+  } else if (hoursToStart >= 12 && hoursToStart <= 36) {
+    routeTag = "B";
+  } else if (hoursToStart >= 4 && hoursToStart < 12) {
+    routeTag = "C";
+  } else {
+    // Wszystko poniżej 4 godzin (oraz po starcie webinaru)
+    routeTag = "D";
+  }
+
+  // Budowa tablicy tagów z uwzględnieniem routera
+  const tags = Array.from(new Set([...existingTags, "webinar-24sie", clientCategory, routeTag].filter(Boolean)));
 
   const customFields = [
     { id: process.env.GHL_CAPITAL_FIELD_ID, field_value: capitalSelected },
@@ -180,7 +206,7 @@ async function upsertGhlContact({
     console.error("GHL upsert failed:", upsertData);
     throw new Error("GHL contact upsert failed.");
   }
-
+  
   return upsertData.contact;
 }
 
@@ -211,6 +237,6 @@ async function sendSmsApiNotification(phone: string | undefined, firstName: stri
     const errorData = await res.text();
     throw new Error(`SMSAPI failed: ${errorData}`);
   }
-
+  
   return res.json();
 }
