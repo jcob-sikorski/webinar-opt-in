@@ -47,6 +47,27 @@ export async function POST(request: Request) {
     const uniqueJoinLink = wjData.user.live_room_url;
 
     // ============================================================================
+    // OBLICZANIE CZASU I PRZYPISANIE KATEGORII ROUTE (A, B, C, D)
+    // Logika wyciągnięta tutaj, aby przekazać ten sam wynik do GHL i MailerLite
+    // ============================================================================
+    const WORKSHOP_START = "2026-08-24T20:00:00+02:00";
+    const targetDateMs = new Date(WORKSHOP_START).getTime();
+    const currentMs = Date.now();
+    
+    const hoursToStart = (targetDateMs - currentMs) / (1000 * 60 * 60);
+
+    let routeTag = "";
+    if (hoursToStart > 36) {
+      routeTag = "A";
+    } else if (hoursToStart >= 12 && hoursToStart <= 36) {
+      routeTag = "B";
+    } else if (hoursToStart >= 4 && hoursToStart < 12) {
+      routeTag = "C";
+    } else {
+      routeTag = "D";
+    }
+
+    // ============================================================================
     // 2. FAN OUT: Send data to GoHighLevel, MailerLite, and SMSAPI concurrently
     // ============================================================================
     const results = await Promise.allSettled([
@@ -59,6 +80,7 @@ export async function POST(request: Request) {
         joinLink: uniqueJoinLink,
         capitalSelected,
         clientCategory,
+        routeTag, // Przekazanie tagu do GHL
         attribution: safeAttribution,
       }),
 
@@ -72,7 +94,13 @@ export async function POST(request: Request) {
         },
         body: JSON.stringify({
           email,
-          fields: { name: firstName, last_name: lastName, phone, webinar_link: uniqueJoinLink },
+          fields: { 
+            name: firstName, 
+            last_name: lastName, 
+            phone, 
+            webinar_link: uniqueJoinLink,
+            route: routeTag // Przekazanie jako custom field do MailerLite
+          },
           groups: [process.env.MAILERLITE_GROUP_ID],
         }),
       }),
@@ -112,6 +140,7 @@ async function upsertGhlContact({
   joinLink,
   capitalSelected,
   clientCategory,
+  routeTag,
   attribution,
 }: {
   firstName: string;
@@ -121,6 +150,7 @@ async function upsertGhlContact({
   joinLink: string;
   capitalSelected?: string;
   clientCategory?: string;
+  routeTag: string;
   attribution: {
     utm_source?: string;
     utm_medium?: string;
@@ -151,29 +181,7 @@ async function upsertGhlContact({
   
   if (existing) existingTags = existing.tags ?? [];
 
-  // ============================================================================
-  // OBLICZANIE CZASU I PRZYPISANIE TAGU ROUTE
-  // ============================================================================
-  const WORKSHOP_START = "2026-08-24T20:00:00+02:00";
-  const targetDateMs = new Date(WORKSHOP_START).getTime();
-  const currentMs = Date.now();
-  
-  // Oblicz różnicę w godzinach
-  const hoursToStart = (targetDateMs - currentMs) / (1000 * 60 * 60);
-
-  let routeTag = "";
-  if (hoursToStart > 36) {
-    routeTag = "A";
-  } else if (hoursToStart >= 12 && hoursToStart <= 36) {
-    routeTag = "B";
-  } else if (hoursToStart >= 4 && hoursToStart < 12) {
-    routeTag = "C";
-  } else {
-    // Wszystko poniżej 4 godzin (oraz po starcie webinaru)
-    routeTag = "D";
-  }
-
-  // Budowa tablicy tagów z uwzględnieniem routera
+  // Budowa tablicy tagów z uwzględnieniem przekazanego routera
   const tags = Array.from(new Set([...existingTags, "webinar-24sie", clientCategory, routeTag].filter(Boolean)));
 
   const customFields = [
