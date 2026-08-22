@@ -6,7 +6,8 @@ import { buildFbcFromClickId } from "@/lib/attribution";
 
 const ACCESS_TOKEN = process.env.META_CAPI_ACCESS_TOKEN!;
 const PIXEL_ID = "965293539900334";
-const TEST_CODE = process.env.META_CAPI_TEST_EVENT_CODE;
+// Zakomentowane dla środowiska produkcyjnego:
+// const TEST_CODE = process.env.META_CAPI_TEST_EVENT_CODE;
 
 function hashData(data: string) {
   if (!data) return "";
@@ -74,7 +75,8 @@ export async function sendToMetaCAPI(formData: {
     ],
   };
 
-  if (TEST_CODE) payload.test_event_code = TEST_CODE;
+  // Zakomentowane dla środowiska produkcyjnego:
+  // if (TEST_CODE) payload.test_event_code = TEST_CODE;
 
   try {
     const res = await fetch(
