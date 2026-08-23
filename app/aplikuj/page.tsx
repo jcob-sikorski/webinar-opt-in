@@ -4,7 +4,7 @@ import { ApplicationCallAgendaSection } from "@/components/application-call-agen
 import { ApplicationOfferSection } from "@/components/application-offer-section";
 import { ApplicationPriceSection } from "@/components/application-price-section";
 import { ApplicationVaultsSection } from "@/components/application-vaults-section";
-// import { ApplicationGuaranteeSection } from "@/components/application-guarantee-section";
+import { ApplicationGuaranteeSection } from "@/components/application-guarantee-section";
 import { ApplicationResultsSection } from "@/components/application-results-section";
 import { ApplicationObjectionsSection } from "@/components/application-objections-section";
 import { ApplicationSurveySection } from "@/components/application-survey-section";
@@ -27,6 +27,7 @@ export default function ApplicationPage() {
     <main>
       <ApplicationHeroSection />
       <ApplicationSurveySection />
+      <ApplicationGuaranteeSection />
       <ApplicationCallAgendaSection />
       <ApplicationOfferSection />
       
@@ -34,7 +35,6 @@ export default function ApplicationPage() {
       {/* <ApplicationPriceSection /> */}
       
       <ApplicationVaultsSection />
-      {/* <ApplicationGuaranteeSection /> */}
       
       {/* Dodane obszerne galerie i wideo case studies */}
       <ConfirmationProofSection showCta={false} wypelnijAplikacje={true} />

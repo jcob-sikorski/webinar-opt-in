@@ -10,26 +10,24 @@ export function ApplicationGuaranteeSection() {
         </p>
 
         <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-          Gwarancja oparta na <span className="text-[#ef6b4a]">Karcie Prawdy</span>
+          Gwarancja oparta na <span className="text-[#ef6b4a]">wyniku</span>
         </h2>
 
         <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            Wiem, że część osób myśli:{" "}
+            Dołączasz do programu i zostajesz w nim ze mną tak długo, aż osiągniesz minimum{" "}
             <strong className="font-semibold not-italic text-gray-900">
-              „A co, jeśli zainwestuję, przejdę przez program i to u mnie nie zadziała?”
-            </strong>{" "}
-            To uczciwe pytanie i zasługuje na przejrzystą odpowiedź.
+              20 000 złotych zysku właścicielskiego miesięcznie
+            </strong>.
           </p>
 
           <p>
-            Współpracę opieramy o tzw. <strong className="font-semibold not-italic text-gray-900">Kartę Prawdy</strong>. 
-            Punkt po punkcie odhaczasz w niej, co faktycznie wdrożyłeś: lokal, ogłoszenie rekrutacyjne, kampanie reklamowe i skrypty konsultacji.
+            Liczy się wynik.
           </p>
 
           <p>
-            Dokładne warunki gwarancji omawiamy na rozmowie i wpisujemy wprost do umowy przed jej podpisaniem. 
-            Z doświadczenia mojego i ponad 80 przedsiębiorców wiem, że osoby realizujące wytyczne punkt po punkcie zawsze widzą rezultat.
+            Dopóki go nie osiągniesz — pracujemy dalej,{" "}
+            <strong className="font-semibold not-italic text-gray-900">bez dodatkowych opłat</strong>.
           </p>
         </div>
 
