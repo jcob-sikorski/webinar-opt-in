@@ -1,14 +1,17 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { Section } from "@/components/ui/section";
 import { ApplicationSurveyEmbed } from "@/components/ui/booking-calendar-embed";
 import { CountdownTimer } from "@/components/countdown-timer";
 
-// Data wygaśnięcia: 24 sierpnia 22:00 + 48 godzin
-const DEADLINE = "2026-08-26T22:00:00+02:00"; 
+// Domyślna data wygaśnięcia: 24 sierpnia 22:00 + 48 godzin
+const DEFAULT_DEADLINE = "2026-08-26T22:00:00+02:00";
 
-export function ApplicationSurveySection() {
+interface ApplicationSurveySectionProps {
+  deadline?: string;
+}
+
+export function ApplicationSurveySection({ deadline = DEFAULT_DEADLINE }: ApplicationSurveySectionProps) {
   const [isExpired, setIsExpired] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -17,18 +20,18 @@ export function ApplicationSurveySection() {
     
     // Funkcja sprawdzająca, czy termin upłynął
     const checkExpiration = () => {
-      if (Date.now() >= new Date(DEADLINE).getTime()) {
+      if (Date.now() >= new Date(deadline).getTime()) {
         setIsExpired(true);
       }
     };
 
     checkExpiration(); // Pierwsze sprawdzenie od razu po załadowaniu
     
-    // Interwał sprawdzający czas co sekundę, aby zamknąć formularz w czasie rzeczywistym
-    const interval = setInterval(checkExpiration, 1000); 
+    // Interwał sprawdzający czas co sekundę
+    const interval = setInterval(checkExpiration, 1000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [deadline]);
 
   return (
     <div id="aplikacja" className="scroll-mt-8">
@@ -41,14 +44,13 @@ export function ApplicationSurveySection() {
             Wypełnij krótką aplikację
           </h2>
 
-          {/* Zabezpieczenie przed błędem hydratacji - nie renderujemy logiki czasu na serwerze */}
           {!mounted ? null : isExpired ? (
             <div className="mx-auto mt-12 max-w-xl rounded-2xl border-2 border-red-100 bg-red-50 p-8 shadow-sm">
               <h3 className="text-xl font-bold italic text-red-600 sm:text-2xl">
                 Formularz został zamknięty
               </h3>
               <p className="mt-3 text-base leading-relaxed text-red-500">
-                Czas na przesłanie aplikacji minął. Zgłoszeń już nie przyjmujemy.
+                Czas na przesłanie aplikacji minął. Zgłoszeń nie przyjmujemy.
               </p>
             </div>
           ) : (
@@ -61,7 +63,7 @@ export function ApplicationSurveySection() {
                 <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#ef6b4a]">
                   Czas na aplikację mija za:
                 </p>
-                <CountdownTimer target={DEADLINE} variant="boxes" />
+                <CountdownTimer target={deadline} variant="boxes" />
               </div>
 
               <div className="mt-10 w-full">

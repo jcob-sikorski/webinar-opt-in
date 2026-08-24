@@ -23,7 +23,7 @@ export default function ReplayPage() {
       <ReplayHeroSection />
       
       {/* Reszta strony to idealna kopia /aplikuj */}
-      <ApplicationSurveySection />
+      <ApplicationSurveySection deadline="2026-08-29T23:59:59+02:00" />
       <ApplicationCallAgendaSection />
       <ApplicationOfferSection />
       <ApplicationVaultsSection />
