@@ -51,7 +51,7 @@ export function ApplicationPriceSection() {
 
         <div className="mx-auto mt-12 max-w-2xl text-center">
           <a
-            href="#kalendarz"
+            href="#aplikacja"
             className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:scale-[0.99] sm:text-2xl"
           >
             <CalendarCheck className="h-6 w-6 shrink-0" />
