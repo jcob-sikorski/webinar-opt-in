@@ -16,7 +16,7 @@ export function ApplicationConfirmationHeroSection() {
           </h1>
 
           <p className="mt-4 text-xs font-bold uppercase tracking-[0.15em] text-red-600 sm:text-sm">
-            ⚠️ Limit wdrożeniowy: Przyjmujemy maksymalnie 20 nowych osób w miesiącu
+            ⚠️ Limit wdrożeniowy: Przyjmujemy maksymalnie 8 nowych osób
           </p>
 
           <p className="mx-auto mt-4 max-w-xl text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
@@ -40,7 +40,7 @@ export function ApplicationConfirmationHeroSection() {
                   <strong className="font-semibold not-italic text-gray-900">
                     Weryfikacja zgłoszenia:
                   </strong>{" "}
-                  Pracujemy 1:1, dlatego przyjmujemy tylko 20 osób miesięcznie. Sprawdzamy, czy Twój obecny etap pozwala na pełne wdrożenie modelu.
+                  Pracujemy 1:1, dlatego przyjmujemy tylko 8 osób. Sprawdzamy, czy Twój obecny etap pozwala na pełne wdrożenie modelu.
                 </p>
               </div>
 

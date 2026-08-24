@@ -18,7 +18,7 @@ const AGENDA_STEPS = [
     number: "03",
     title: "Plan wdrożenia",
     description:
-      "Jeśli widzimy pełne dopasowanie — pokazujemy ścieżkę na najbliższe 6 miesięcy, żeby zdjąć Ciebie z sali i zwiększyć zysk właścicielski do 20-70 tys. zł miesięcznie.",
+      "Jeśli widzimy pełne dopasowanie — pokazujemy ścieżkę na najbliższe 6 miesięcy, żeby zdjąć Ciebie z sali i zwiększyć zysk właścicielski do 20-50 tys. zł miesięcznie.",
   },
 ];
 

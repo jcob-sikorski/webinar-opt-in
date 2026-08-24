@@ -7,7 +7,7 @@ import { useRegisterModal } from "@/components/register-modal-provider";
 const JOANNA_TESTIMONIAL = {
   name: "Joanna",
   business: "Właścicielka Silna Studio Kraków",
-  figure: "70 000 zł przychodu / msc.",
+  figure: "54 000 zł przychodu / msc.",
   photo:
     "https://ucarecdn.com/07716a95-25c5-4593-9fa3-f9c67a271b81/Screenshot20260816at84156AM.png",
 };
@@ -49,7 +49,7 @@ export function JoannaProofSection() {
         {/* Nagłówek */}
         <h2 className="mx-auto mt-4 max-w-[24ch] text-center text-3xl font-extrabold leading-[1.15] tracking-tight text-gray-900 sm:text-4xl md:text-5xl">
           Od myśli o zamknięciu lokalu do{" "}
-          <span className="text-[#ef6b4a]">70 000 zł przychodu</span> miesięcznie
+          <span className="text-[#ef6b4a]">54 000 zł przychodu</span> miesięcznie
         </h2>
 
         {/* Profil Joanny */}
@@ -74,7 +74,7 @@ export function JoannaProofSection() {
           </p>
 
           <p className="mx-auto mt-6 max-w-2xl font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
-            „Byłam o krok od rezygnacji z bycia trenerem. Dziś studio generuje 70 000 zł miesięcznie, zespół przejmuje grafik, a ja prowadzę treningi tylko wtedy, kiedy mam na to ochotę.”
+            „Byłam o krok od rezygnacji z bycia trenerem. Dziś studio generuje 54 000 zł miesięcznie, zespół przejmuje grafik, a ja prowadzę treningi tylko wtedy, kiedy mam na to ochotę.”
           </p>
         </div>
 
