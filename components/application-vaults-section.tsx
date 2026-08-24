@@ -1,4 +1,4 @@
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { FileText, CheckCircle2, ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
 
 const VAULTS = [
@@ -100,6 +100,26 @@ const VAULTS = [
   },
 ];
 
+const PLAYBOOK_URL = "https://drive.google.com/file/d/1HfpuFoPEpsr2ijQ5ZVWE297gUL7SBnoD/view?usp=sharing";
+
+const PLAYBOOK_HIGHLIGHTS = [
+  <>
+    <strong className="font-bold text-gray-900">Kalkulator wyboru lokalu:</strong> Jak uniknąć toksycznej umowy i utrzymać bezpieczny czynsz (zawsze poniżej 20% przychodu).
+  </>,
+  <>
+    <strong className="font-bold text-gray-900">Architektura oferty premium:</strong> Jak przestać sprzedawać tanie "wejściówki" i zacząć sprzedawać pakiety transformacji.
+  </>,
+  <>
+    <strong className="font-bold text-gray-900">System rekrutacji:</strong> 6-tygodniowy proces wdrażania trenera, który odciąży Cię z grafiku i zostanie z Tobą na lata.
+  </>,
+  <>
+    <strong className="font-bold text-gray-900">Metodyka Miejsca:</strong> Twarde i miękkie standardy, dzięki którym klient ufa marce Twojego studia, a nie tylko Tobie.
+  </>,
+  <>
+    <strong className="font-bold text-gray-900">21 brutalnych prawd biznesu fitness:</strong> Fundamenty, które musisz znać, zanim zainwestujesz pierwszą złotówkę.
+  </>,
+];
+
 export function ApplicationVaultsSection() {
   return (
     <Section className="bg-[#fcfbf9]">
@@ -164,6 +184,56 @@ export function ApplicationVaultsSection() {
             Wypełnij aplikację
             <ArrowRight className="h-6 w-6 shrink-0" />
           </a>
+        </div>
+
+        {/* SEKCJA PLAYBOOKA */}
+        <div className="mt-24 border-t border-[#d6d6d6] pt-16 pb-12 text-center">
+          <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[#ef6b4a]">
+            Materiały dodatkowe
+          </p>
+          <h3 className="mx-auto mt-4 max-w-[24ch] font-display text-2xl font-bold italic text-gray-900 sm:text-3xl text-balance">
+            Dochodowe Studio: Playbook Kompletny 2026
+          </h3>
+          
+          <p className="mx-auto mt-6 max-w-2xl text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
+            To nie jest kolejny teoretyczny e-book, który przekartkujesz w kilka minut. To twardy, 18-rozdziałowy zapis procedur, kalkulatorów i standardów wyciągniętych prosto z naszych placówek.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs font-bold uppercase tracking-widest text-gray-500 sm:text-sm">
+            <span>18 Rozdziałów</span>
+            <span aria-hidden className="h-1 w-1 rounded-full bg-[#ef6b4a]" />
+            <span>5 Systemów</span>
+            <span aria-hidden className="h-1 w-1 rounded-full bg-[#ef6b4a]" />
+            <span>21 Narzędzi</span>
+          </div>
+
+          <p className="mx-auto mt-8 max-w-2xl text-pretty font-display text-base italic leading-[1.7] text-gray-700 sm:text-lg">
+            Przestudiuj go przed rozmową, aby zrozumieć, jak działamy od kuchni:
+          </p>
+          
+          {/* Lista - wyśrodkowany blok, tekst do lewej */}
+          <div className="mx-auto mt-8 max-w-xl text-left">
+            <ul className="space-y-4">
+              {PLAYBOOK_HIGHLIGHTS.map((highlight, idx) => (
+                <li key={idx} className="flex items-start gap-3 font-display text-base italic leading-[1.7] text-gray-700 sm:text-lg">
+                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#ef6b4a]" />
+                  <span className="leading-relaxed">{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="mt-12 flex flex-col items-center">
+            <a
+              href={PLAYBOOK_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-[#ef6b4a] bg-[#ef6b4a] px-8 py-5 text-center text-lg font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:bg-[#de5c3c] active:scale-[0.99] sm:text-xl"
+            >
+              <FileText className="h-6 w-6 shrink-0" />
+              Pobierz Playbook (PDF)
+            </a>
+          </div>
         </div>
 
       </div>
