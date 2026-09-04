@@ -5,7 +5,7 @@ import { BookingWidgetEmbed } from "@/components/ui/booking-calendar-embed";
 import { CountdownTimer } from "@/components/countdown-timer";
 
 // Domyślna data wygaśnięcia: 24 sierpnia 22:00 + 48 godzin
-const DEFAULT_DEADLINE = "2026-09-07T22:00:00+02:00";
+const DEFAULT_DEADLINE = "2026-09-06T22:00:00+02:00";
 
 interface ApplicationSurveySectionProps {
   deadline?: string;
