@@ -14,7 +14,7 @@ interface AgendaItem {
 // "wyjdziesz z wizją", pokazujemy DOKŁADNIE co jest omawiane i kiedy.
 const AGENDA: AgendaItem[] = [
   {
-    time: "20:00",
+    time: "19:00",
     title: "Dlaczego Twój obecny model ma sufit",
     description:
       "Pokażę Ci, dlaczego bycie najlepszym trenerem w mieście nie wystarczy i gdzie dokładnie tracisz pieniądze przy pełnym grafiku.",

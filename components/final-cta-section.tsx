@@ -40,7 +40,7 @@ export function FinalCtaSection() {
         </div>
 
         <p className="mt-6 max-w-md text-sm leading-relaxed text-white/50">
-          Nie możesz być na żywo 24 sierpnia o 20:00? Zapisz się mimo to —
+          Nie możesz być na żywo 4 Września o 19:00? Zapisz się mimo to —
           wyślemy Ci link do nagrania, dostępny przez 5 dni.
         </p>
       </div>

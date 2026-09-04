@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/section";
 const AGENDA_BLOCKS = [
   {
     number: "01",
-    time: "20:00 - 20:15",
+    time: "19:00 - 20:15",
     title: "Szklany sufit trenera i pułapka wiecznej pracy",
     description:
       "Dlaczego prowadzenie treningów po 12 godzin na dobę i ciągłe podnoszenie stawek za godzinę to prosta droga do wypalenia. Pokażę Ci, w którym momencie musisz przestać być jedynym pracownikiem, a zacząć budować biznes.",

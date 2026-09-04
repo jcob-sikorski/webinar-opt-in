@@ -28,7 +28,7 @@ const FAQS: FaqItem[] = [
       "Głównym celem jest pokazanie Ci co Cię czeka przy budowaniu takiego studio oraz plan działania. Pod koniec krótko opowiem o możliwości dołączenia do programu mentoringowego dla osób, które chcą wdrożyć ten model krok po kroku z moim osobistym wsparciem. Udział w warsztacie jest całkowicie bezpłatny i nikt do niczego Cię nie zobowiązuje.",
   },
   {
-    question: "Nie dam rady być na żywo w poniedziałek o 20:00. Czy dostanę powtórkę?",
+    question: "Nie dam rady być na żywo w Piątek o 19:00. Czy dostanę powtórkę?",
     answer:
       "Tak, zapisz się tak czy inaczej. Po spotkaniu wyślemy Ci powtórkę wideo, która będzie aktywna przez 5 dni. Pamiętaj jednak, że pełny Protokół Dochodowego Studia (praktyczną checklistę wdrożeniową) oraz sesję pytań i odpowiedzi udostępniamy na żywo, więc jeśli możesz wygospodarować choć fragment wieczoru — naprawdę warto.",
   },

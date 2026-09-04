@@ -88,7 +88,7 @@ export function ConfirmationProtocolBonusSection() {
         {/* Copy wprowadzające */}
         <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">
           <p>
-            Większość osób po webinarach zostaje z chaotycznymi notatkami i nie wie, jak przełożyć wiedzę na realne działania w poniedziałek rano.
+            Większość osób po webinarach zostaje z chaotycznymi notatkami i nie wie, jak przełożyć wiedzę na realne działania w Piątek rano.
           </p>
 
           <p>

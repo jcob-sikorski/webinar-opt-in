@@ -26,7 +26,7 @@ interface CountdownTimerProps {
 const ZERO_PARTS = { dni: 0, godzin: 0, minut: 0, sekund: 0 };
 
 export function CountdownTimer({ 
-  target = "2026-08-24T20:00:00+02:00", // Default set to Aug 24, 20:00 CEST
+  target = "2026-09-04T19:00:00+02:00", // Default set to Aug 24, 19:00 CEST
   variant 
 }: CountdownTimerProps) {
   // Start from a fixed, server-safe value. Deriving this from Date.now()

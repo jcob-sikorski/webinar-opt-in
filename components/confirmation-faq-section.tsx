@@ -11,7 +11,7 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    question: "Co jeśli nie mogę być na żywo 24 sierpnia o 20:00?",
+    question: "Co jeśli nie mogę być na żywo 4 Września o 19:00?",
     answer:
       "Wyślemy Ci link do powtórki na podany e-mail, ale nagranie będzie aktywne tylko przez 5 dni. Pamiętaj jednak, że 'Protokół Dochodowego Studia' oraz sesja Q&A są dostępne wyłącznie dla uczestników obecnych na żywo.",
   },

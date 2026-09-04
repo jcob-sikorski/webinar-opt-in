@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     // OBLICZANIE CZASU I PRZYPISANIE KATEGORII ROUTE (A, B, C, D)
     // Logika wyciągnięta tutaj, aby przekazać ten sam wynik do GHL i MailerLite
     // ============================================================================
-    const WORKSHOP_START = "2026-08-24T20:00:00+02:00";
+    const WORKSHOP_START = "2026-09-04T19:00:00+02:00";
     const targetDateMs = new Date(WORKSHOP_START).getTime();
     const currentMs = Date.now();
     
@@ -223,7 +223,7 @@ async function sendSmsApiNotification(phone: string | undefined, firstName: stri
 
   // Clean the phone number to ensure compatibility
   const cleanPhone = phone.replace(/\D/g, "");
-  const message = `Cześć ${firstName}! Tu Bartek. Łap swój bilet. Zapisz: 24 Sierpnia, Poniedziałek 20:00. Pokażę Ci, jak zejść z sali i zbudować studio, które zarabia bez Ciebie. Do zobaczenia`;
+  const message = `Cześć ${firstName}! Tu Bartek. Łap swój bilet. Zapisz: 4 Września, Piątek 19:00. Pokażę Ci, jak zejść z sali i zbudować studio, które zarabia bez Ciebie. Do zobaczenia`;
 
   const params = new URLSearchParams({
     to: cleanPhone,

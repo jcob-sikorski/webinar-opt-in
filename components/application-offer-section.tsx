@@ -13,7 +13,7 @@ const PILLARS = [
       "Zapełniamy na początku Twoje studio pierwszymi klientami, jeśli tego potrzebujesz. Potem uczysz się pozyskiwać leady samodzielnie, żeby nigdy więcej już nie płacić agencji.",
   },
   {
-    title: "Bezpośredni kontakt na Telegramie (Pn–Pt 8:00–20:00)",
+    title: "Bezpośredni kontakt na Telegramie (Pn–Pt 8:00–19:00)",
     description:
       "Jeśli gdziekolwiek podczas wdrożenia modelu Dochodowego Studio, lokal, sprzęt, trener, manager - jeśli gdziekolwiek zostaniesz przyblokowany napisz do mnie na Telegramie i doradzę Ci jak rozwiązać ten problem.",
   },
