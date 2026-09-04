@@ -1,11 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Section } from "@/components/ui/section";
-import { ApplicationSurveyEmbed } from "@/components/ui/booking-calendar-embed";
+import { BookingWidgetEmbed } from "@/components/ui/booking-calendar-embed";
 import { CountdownTimer } from "@/components/countdown-timer";
 
 // Domyślna data wygaśnięcia: 24 sierpnia 22:00 + 48 godzin
-const DEFAULT_DEADLINE = "2026-08-26T22:00:00+02:00";
+const DEFAULT_DEADLINE = "2026-09-07T22:00:00+02:00";
 
 interface ApplicationSurveySectionProps {
   deadline?: string;
@@ -18,16 +18,13 @@ export function ApplicationSurveySection({ deadline = DEFAULT_DEADLINE }: Applic
   useEffect(() => {
     setMounted(true);
     
-    // Funkcja sprawdzająca, czy termin upłynął
     const checkExpiration = () => {
       if (Date.now() >= new Date(deadline).getTime()) {
         setIsExpired(true);
       }
     };
 
-    checkExpiration(); // Pierwsze sprawdzenie od razu po załadowaniu
-    
-    // Interwał sprawdzający czas co sekundę
+    checkExpiration();
     const interval = setInterval(checkExpiration, 1000);
     
     return () => clearInterval(interval);
@@ -41,7 +38,7 @@ export function ApplicationSurveySection({ deadline = DEFAULT_DEADLINE }: Applic
             Krok 1: Weryfikacja zgłoszenia
           </p>
           <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-            Wypełnij krótką aplikację
+            Umów konsultację
           </h2>
 
           {!mounted ? null : isExpired ? (
@@ -67,7 +64,7 @@ export function ApplicationSurveySection({ deadline = DEFAULT_DEADLINE }: Applic
               </div>
 
               <div className="mt-10 w-full">
-                <ApplicationSurveyEmbed />
+                <BookingWidgetEmbed />
               </div>
             </>
           )}

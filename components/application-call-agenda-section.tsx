@@ -4,21 +4,9 @@ import { Section } from "@/components/ui/section";
 const AGENDA_STEPS = [
   {
     number: "01",
-    title: "Wstępna weryfikacja (telefon)",
+    title: "Rozmowa diagnostyczno-decyzyjna",
     description:
-      "Nasz konsultant dzwoni, by potwierdzić czy kwalifikujesz się do rozmowy strategicznej.",
-  },
-  {
-    number: "02",
-    title: "Diagnoza z konsultantem",
-    description:
-      "Na bezpłatnej rozmowie strategicznej zlokalizujemy, czego Ci brakuje, żeby być właścicielem studio, który może wyjść z sali.",
-  },
-  {
-    number: "03",
-    title: "Plan wdrożenia",
-    description:
-      "Jeśli widzimy pełne dopasowanie — pokazujemy ścieżkę na najbliższe 6 miesięcy, żeby zdjąć Ciebie z sali i zwiększyć zysk właścicielski do 20-50 tys. zł miesięcznie.",
+      "Najpierw sprawdzamy, co blokuje Cię przed wyjściem z sali trenerskiej. Następnie pokazujemy plan działania na kolejne 6 miesięcy i podejmujemy decyzję o wdrożeniu, by wygenerować 20–50 tys. zł zysku miesięcznie.",
   },
 ];
 

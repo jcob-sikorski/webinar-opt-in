@@ -10,7 +10,7 @@ export function ApplicationGuaranteeSection() {
         </p>
 
         <h2 className="mx-auto mt-4 max-w-[24ch] font-display text-[clamp(1.85rem,4.5vw,3rem)] font-bold italic leading-[1.12] tracking-[-0.02em] text-ink text-balance">
-          Gwarancja oparta na <span className="text-[#ef6b4a]">wyniku</span>
+          Gwarancja oparta na <span className="text-[#ef6b4a]">min. 20 tys. zł</span>
         </h2>
 
         <div className="mx-auto mt-6 max-w-2xl space-y-5 text-pretty font-display text-lg italic leading-[1.75] text-gray-700 sm:text-xl">

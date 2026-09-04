@@ -2,10 +2,10 @@
 
 import { useEffect } from "react";
 
-const SURVEY_ID = "QF9ob7LMxJtTlCf8MKKd";
+const BOOKING_ID = "zD1dHf8S7ZFYiY0HzIqY_1788522650977";
 const EMBED_SCRIPT_SRC = "https://link.msgsndr.com/js/form_embed.js";
 
-export function ApplicationSurveyEmbed() {
+export function BookingWidgetEmbed() {
   useEffect(() => {
     if (document.querySelector(`script[src="${EMBED_SCRIPT_SRC}"]`)) {
       return;
@@ -20,11 +20,12 @@ export function ApplicationSurveyEmbed() {
 
   return (
     <iframe
-      src={`https://api.leadconnectorhq.com/widget/survey/${SURVEY_ID}`}
+      src="https://api.leadconnectorhq.com/widget/booking/zD1dHf8S7ZFYiY0HzIqY"
+      allow="payment"
       scrolling="no"
-      id={SURVEY_ID}
-      title="Formularz kwalifikacyjny"
-      style={{ width: "100%", border: "none" }}
+      id={BOOKING_ID}
+      title="Booking Widget"
+      style={{ width: "100%", border: "none", overflow: "hidden" }}
       className="w-full"
     />
   );
