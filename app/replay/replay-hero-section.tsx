@@ -5,8 +5,8 @@ import { ArrowRight, Clock, PlayCircle } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 
 export function ReplayHeroSection() {
-  const EXPIRATION_DATE = "2026-09-06T23:59:59+02:00"; 
-  const REPLAY_URL = "https://event.webinarjam.com/5n8o79/go/replay/93gk7qb7imiwi7";
+  const EXPIRATION_DATE = "2026-09-08T23:59:59+02:00"; 
+  const REPLAY_URL = "https://event.webinarjam.com/5n8o79/go/replay/4o8073izamara6";
 
   const [isExpired, setIsExpired] = useState(false);
   const [mounted, setMounted] = useState(false);
