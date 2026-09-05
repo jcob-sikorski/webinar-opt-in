@@ -6,7 +6,7 @@ import { CountdownTimer } from "@/components/countdown-timer";
 
 export function ReplayHeroSection() {
   const EXPIRATION_DATE = "2026-09-08T23:59:59+02:00"; 
-  const REPLAY_URL = "https://event.webinarjam.com/5n8o79/go/replay/4o8073izamara6";
+  const REPLAY_URL = "https://event.webinarjam.com/5n8o79/replay/llo8q6uxa6a1a8w";
 
   const [isExpired, setIsExpired] = useState(false);
   const [mounted, setMounted] = useState(false);
