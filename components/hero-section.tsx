@@ -29,11 +29,11 @@ export function HeroSection() {
 
         {/* Main Headline */}
         <h1 className="mx-auto mt-4 w-full text-center text-[2.05rem] min-[390px]:text-[2.25rem] sm:text-[3.1rem] md:text-[3.6rem] font-extrabold leading-[1.12] tracking-[-0.015em] text-black">
-          <span className="block">Copy My $20M+</span>
-          <span className="block">Webinar Strategy <span className="text-[#1665f5]">To</span></span>
-          <span className="block text-[#1665f5]">Add An Extra</span>
-          <span className="block"><span className="text-[#1665f5]">100k/Mo</span> Showing Up</span>
-          <span className="block">Just 1 Hour Per Week</span>
+          <span className="block whitespace-nowrap">Copy My $20M+</span>
+          <span className="block whitespace-nowrap">Webinar Strategy <span className="text-[#1665f5]">To</span></span>
+          <span className="block whitespace-nowrap text-[#1665f5]">Add An Extra</span>
+          <span className="block whitespace-nowrap"><span className="text-[#1665f5]">100k/Mo</span> Showing Up</span>
+          <span className="block whitespace-nowrap">Just 1 Hour Per Week</span>
         </h1>
 
         {/* Subheadline */}
