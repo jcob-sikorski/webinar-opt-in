@@ -42,18 +42,7 @@ export function HeroSection() {
           Quality Clients &amp; <span className="font-bold text-black">Only Show Up 1 Hour/Week</span>
         </p>
 
-        {/* Video Preview Box */}
-        <div className="mx-auto mt-3.5 w-full max-w-[23rem] sm:max-w-[28rem]">
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[4px] border-[4px] sm:border-[5px] border-[#1665f5] bg-black shadow-[0_4px_25px_rgba(0,0,0,0.14)]">
-            <img
-              src="https://ucarecdn.com/3cb95e08-818a-470b-b52a-a9e5d9d37d8d/unnamed9.webp"
-              alt="Workshop Preview"
-              className="h-full w-full object-cover"
-            />
-          </div>
-        </div>
-
-        {/* Countdown Section - Tight gap to video & timer */}
+        {/* Countdown Section */}
         <div className="mt-4 flex w-full flex-col items-center">
           <h2 className="mb-2 text-center text-[1.15rem] sm:text-[1.35rem] font-black uppercase tracking-[0.04em] text-[#1665f5]">
             MASTERCLASS STARTS IN
@@ -81,6 +70,52 @@ export function HeroSection() {
           <p className="mt-2.5 text-center text-[0.92rem] min-[390px]:text-[0.98rem] font-black text-black tracking-tight">
             Lifetime Replay + Webinar Mastery Vault
           </p>
+
+          {/* Social Proof Badges */}
+          <div className="mt-3 flex flex-col items-center gap-1.5">
+            {/* 100+ Star Rating Badge */}
+            <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 px-3 py-1 shadow-xs">
+              <div className="flex items-center gap-0.5 text-[#f59e0b]">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-3.5 w-3.5 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <span className="text-[0.78rem] font-bold tracking-tight text-neutral-800">
+                Over 100+ 5 Star Ratings
+              </span>
+            </div>
+
+            {/* Student Revenue + Avatar Stack Badge */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-neutral-50/80 py-1 pl-1.5 pr-3 shadow-xs">
+              <div className="flex -space-x-1.5 overflow-hidden">
+                <img
+                  className="inline-block h-5 w-5 rounded-full object-cover ring-1.5 ring-white"
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=face"
+                  alt="Student avatar"
+                />
+                <img
+                  className="inline-block h-5 w-5 rounded-full object-cover ring-1.5 ring-white"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
+                  alt="Student avatar"
+                />
+                <img
+                  className="inline-block h-5 w-5 rounded-full object-cover ring-1.5 ring-white"
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face"
+                  alt="Student avatar"
+                />
+                <img
+                  className="inline-block h-5 w-5 rounded-full object-cover ring-1.5 ring-white"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face"
+                  alt="Student avatar"
+                />
+              </div>
+              <span className="text-[0.78rem] font-bold tracking-tight text-neutral-800">
+                $38M in Student Revenue
+              </span>
+            </div>
+          </div>
         </div>
 
       </div>
