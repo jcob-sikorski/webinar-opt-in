@@ -10,8 +10,8 @@ export function HeroSection() {
   const { openRegister } = useRegisterModal();
 
   return (
-    <div className="relative min-h-screen bg-white font-sans selection:bg-blue-200 flex flex-col items-center overflow-x-hidden">
-      <div className="mx-auto flex w-full max-w-[25rem] sm:max-w-[32rem] md:max-w-[38rem] flex-col items-center px-3.5 pt-2.5 pb-8 sm:pt-4">
+    <div className="relative w-full bg-white font-sans selection:bg-blue-200 flex flex-col items-center overflow-x-hidden">
+      <div className="mx-auto flex w-full max-w-[25rem] sm:max-w-[32rem] md:max-w-[38rem] flex-col items-center px-3.5 pt-2.5 pb-4 sm:pt-4 sm:pb-6">
         
         {/* Top Badge */}
         <div className="mx-auto flex w-full max-w-[21.5rem] sm:max-w-[23.5rem] flex-col items-center justify-center rounded-2xl border-[1.5px] border-[#2563eb] bg-[#edf4ff] py-1.5 px-3 text-center shadow-xs">
