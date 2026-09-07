@@ -10,30 +10,14 @@ import { FaqSection } from "@/components/faq-section";
 import { CaseStudyYTVidsSection } from "@/components/case-study-yt-vids-section";
 import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
 import { LegalFooter } from "@/components/legal-footer";
+import { PillarsSection } from "@/components/pillars-section";
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
 
-      <StatsSection />
-
-      {/* Dowody wdrożenia modelu (Case Studies) */}
-      <AdrianProofSection />
-
-      <IsThisForYouSection />
-      <WhatToExpectSection />
-
-      <JoannaProofSection />
-
-      <WhatYouWillLearnSection />
-
-      <TeachingBioSection />
-
-      <CaseStudyYTVidsSection />
-      <ConfirmationProofSection />
-
-      <FaqSection />
+      <PillarsSection />      
 
       <LegalFooter />
     </main>
