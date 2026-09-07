@@ -11,13 +11,16 @@ import { CaseStudyYTVidsSection } from "@/components/case-study-yt-vids-section"
 import { ConfirmationProofSection } from "@/components/confirmation-proof-section";
 import { LegalFooter } from "@/components/legal-footer";
 import { PillarsSection } from "@/components/pillars-section";
+import { WhatsIncludedSection } from "@/components/whats-included-section";
 
 export default function Home() {
   return (
     <main>
       <HeroSection />
 
-      <PillarsSection />      
+      <PillarsSection />   
+
+      <WhatsIncludedSection />   
 
       <LegalFooter />
     </main>
