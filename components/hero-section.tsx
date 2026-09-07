@@ -1,190 +1,87 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import { Button } from "@/components/ui/button";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { useRegisterModal } from "@/components/register-modal-provider";
 
 const WORKSHOP_START = "2026-09-04T19:00:00+02:00";
 
-const BACKGROUND_IMAGES = [
-  "https://ucarecdn.com/2fb844e9-c929-46c4-853d-057ef2ecad41/unnamed1.webp",
-  "https://ucarecdn.com/809a2b47-1cc5-4904-98da-3be762c84c3d/unnamed4.webp",
-  "https://ucarecdn.com/83b0cced-5d3d-49b3-a72f-8e3b84dd238d/hero3B0SDYn41.png",
-  "https://ucarecdn.com/d0fdea78-79d5-4473-9904-135f9a631a28/unnamed5.webp",
-  "https://ucarecdn.com/0bdbaba7-4a0b-4307-806e-c0798ed138d2/unnamed6.webp",
-  "https://ucarecdn.com/3cb95e08-818a-470b-b52a-a9e5d9d37d8d/unnamed9.webp",
-  "https://ucarecdn.com/66e40260-afc8-4537-af34-23fd5b7b061a/unnamed7.webp",
-  "https://ucarecdn.com/fc087534-cf30-4219-b5db-fb96eaeb1758/unnamed6.webp",
-  "https://ucarecdn.com/0d98b478-6d75-402d-bf66-65978394d26c/unnamed8.webp",
-];
-
-function BackgroundCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % BACKGROUND_IMAGES.length);
-    }, 3000);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <div className="absolute inset-0 overflow-hidden">
-      {BACKGROUND_IMAGES.map((src, i) => (
-        <div
-          key={src}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out"
-          style={{
-            backgroundImage: `url('${src}')`,
-            opacity: i === activeIndex ? 1 : 0,
-          }}
-          aria-hidden
-        />
-      ))}
-    </div>
-  );
-}
-
 export function HeroSection() {
   const { openRegister } = useRegisterModal();
 
   return (
-    <div className="relative bg-[#fcfbf9]">
-      <BackgroundCarousel />
-      <div className="absolute inset-0 bg-[#fcfbf9]/85" aria-hidden />
+    <div className="relative min-h-screen bg-white font-sans selection:bg-blue-200 flex flex-col items-center overflow-x-hidden">
+      <div className="mx-auto flex w-full max-w-[25rem] sm:max-w-[32rem] md:max-w-[38rem] flex-col items-center px-3.5 pt-2.5 pb-8 sm:pt-4">
+        
+        {/* Top Badge */}
+        <div className="mx-auto flex w-full max-w-[21.5rem] sm:max-w-[23.5rem] flex-col items-center justify-center rounded-2xl border-[1.5px] border-[#2563eb] bg-[#edf4ff] py-1.5 px-3 text-center shadow-xs">
+          <div className="flex items-center gap-2 text-[0.78rem] sm:text-[0.85rem] font-extrabold text-[#0f2864] tracking-tight">
+            <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f87171] opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ef4444]" />
+            </span>
+            LIVE WORKSHOP: Wednesday 7PM EDT
+          </div>
+          <div className="text-[0.72rem] sm:text-[0.78rem] font-bold text-[#1665f5] leading-tight">
+            For Coaches, Consultants &amp; Course Creators
+          </div>
+        </div>
 
-      <div className="relative border-b-2 border-orange-500 bg-black">
-        <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-1 px-5 py-3 text-center text-xs sm:flex-row sm:gap-3 sm:text-sm">
-          <span className="flex items-center gap-2 text-white/90">
-            <span
-              aria-hidden
-              className="h-1.5 w-1.5 shrink-0 rounded-full bg-green-500"
+        {/* Main Headline */}
+        <h1 className="mx-auto mt-4 w-full text-center text-[2.05rem] min-[390px]:text-[2.25rem] sm:text-[3.1rem] md:text-[3.6rem] font-extrabold leading-[1.12] tracking-[-0.015em] text-black">
+          <span className="block">Copy My $20M+</span>
+          <span className="block">Webinar Strategy <span className="text-[#1665f5]">To</span></span>
+          <span className="block text-[#1665f5]">Add An Extra</span>
+          <span className="block"><span className="text-[#1665f5]">100k/Mo</span> Showing Up</span>
+          <span className="block">Just 1 Hour Per Week</span>
+        </h1>
+
+        {/* Subheadline */}
+        <p className="mx-auto mt-3 w-full text-center text-[0.875rem] min-[390px]:text-[0.95rem] sm:text-[1.1rem] font-light leading-[1.38] tracking-normal text-black">
+          Scale Further With Less Sales Calls, Higher<br />
+          Quality Clients &amp; <span className="font-bold text-black">Only Show Up 1 Hour/Week</span>
+        </p>
+
+        {/* Video Preview Box */}
+        <div className="mx-auto mt-3.5 w-full max-w-[23rem] sm:max-w-[28rem]">
+          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[4px] border-[4px] sm:border-[5px] border-[#1665f5] bg-black shadow-[0_4px_25px_rgba(0,0,0,0.14)]">
+            <img
+              src="https://ucarecdn.com/3cb95e08-818a-470b-b52a-a9e5d9d37d8d/unnamed9.webp"
+              alt="Workshop Preview"
+              className="h-full w-full object-cover"
             />
-            <span>
-              <span className="font-semibold uppercase tracking-[0.06em] text-orange-400">
-                Data warsztatu:
-              </span>{" "}
-              Piątek, 4 Września @ 19:00
-            </span>
-          </span>
-          <span aria-hidden className="hidden text-white/25 sm:inline">
-            |
-          </span>
-          <span className="text-white/90">
-            <span className="font-semibold uppercase tracking-[0.06em] text-white">
-              Zaczyna się za:
-            </span>{" "}
-            <CountdownTimer target={WORKSHOP_START} variant="topbar" />
-          </span>
-        </div>
-      </div>
-
-      <section className="relative px-5 pt-4 pb-14 sm:px-6 sm:pt-6 sm:pb-20">
-        <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
-          <img
-            src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/09cd3493-7d85-4c2a-8855-e34c95663611.png"
-            alt="Logo Dochodowe Studio"
-            className="mx-auto w-full max-w-[14rem] object-contain"
-          />
-
-          <div className="mx-auto flex flex-col items-center space-y-4 text-center md:space-y-6">
-            <span className="max-w-[55ch] text-balance text-sm font-bold uppercase tracking-widest text-gray-500 md:text-base">
-              Chcesz Przebić Sufit Trenera?
-            </span>
-
-            <h1 className="mx-auto mt-2 max-w-[35ch] text-balance font-display text-[clamp(1.68rem,4vw,3.4rem)] font-bold italic leading-[1.15] tracking-[-0.02em] text-ink sm:max-w-[40ch]">
-              <span className="text-green-600">Otwórz Kameralne Studio Treningu:</span>{" "}
-              <span className="underline decoration-orange-500 decoration-[0.12em] underline-offset-[0.15em]">
-                200-600 Tys. Zł Zysku Właścicielskiego
-              </span>
-            </h1>
-          </div>
-
-          <div className="mx-auto mt-7 max-w-[38rem] text-pretty font-display text-[1.0625rem] italic leading-[1.65] text-gray-700 sm:text-lg">
-            <p>
-              Bezpłatny warsztat online od gościa, który:
-              <span className="mt-2 block">
-                <strong className="font-semibold text-gray-900">
-                  pomógł klientom wygenerować ponad 38M zł
-                </strong>{" "}
-                sprzedając treningi personalne
-              </span>
-              <span className="mt-1 block">
-                i pomógł otworzyć{" "}
-                <strong className="font-semibold text-gray-900">
-                  37 studio w całej Polsce
-                </strong>
-                .
-              </span>
-            </p>
-
-            <p className="mt-4 text-center">
-              Nieważne, czy prowadzisz już studio, czy planujesz je dopiero otworzyć —
-              <strong className="font-semibold text-gray-900"> wychodzisz z gotowym modelem A-Z</strong>, do wdrożenia kiedy Ty zdecydujesz.
-            </p>
-          </div>
-
-          <div className="mt-10 flex w-full flex-col items-center">
-            <Button
-              size="lg"
-              onClick={openRegister}
-              className="inline-flex w-full max-w-md items-center justify-center rounded-md border border-green-600 bg-green-600 px-8 py-5 text-xl font-bold uppercase tracking-wide text-white transition-colors duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 sm:text-2xl"
-            >
-              Tak, chcę się zapisać
-            </Button>
-          </div>
-
-          <div className="mx-auto mt-14 flex w-full max-w-2xl flex-col items-center rounded-md border border-[#d6d6d6] bg-[#f4f3ed] px-4 py-10">
-            <p className="mb-6 text-center text-xl font-bold uppercase tracking-widest text-green-600 sm:text-2xl md:text-3xl">
-              Warsztat zaczyna się za
-            </p>
-
-            <CountdownTimer target={WORKSHOP_START} variant="boxes" />
-
-            <p className="mt-6 text-sm font-bold uppercase tracking-[0.1em] text-orange-600 sm:text-base">
-              🔥 Limit pokoju: max 500 miejsc (decyduje kolejność wejścia)
-            </p>
-          </div>
-
-          <div className="mt-14 flex w-full flex-col items-center">
-            <div className="w-full max-w-xl">
-              <div className="flex items-center gap-5" aria-hidden>
-                <span className="h-px flex-1 bg-[#0a101d]/10" />
-                <span className="text-[0.65rem] font-bold uppercase tracking-[0.22em] text-gray-400">
-                  Cel warsztatu
-                </span>
-                <span className="h-px flex-1 bg-[#0a101d]/10" />
-              </div>
-
-              <div className="mt-6 text-pretty font-display text-lg italic leading-[1.6] text-gray-700 sm:text-xl">
-                <p className="mt-3 text-center">
-                  Model, dzięki któremu jako właściciel możesz wyjść ze studio i otwierać kolejne placówki
-                </p>
-
-                <ul className="mt-2 flex flex-col items-center justify-center gap-2 text-center not-italic text-gray-900 sm:flex-row sm:gap-4">
-                  <li className="flex items-center gap-1.5">
-                    <span className="text-green-600">✓</span>
-                    <strong className="font-semibold">Twój zespół dokładnie wie, co ma robić</strong>
-                  </li>
-                  <li className="flex items-center gap-1.5">
-                    <span className="text-green-600">✓</span>
-                    <strong className="font-semibold">Studio działa sprawnie</strong>
-                  </li>
-                  <li className="flex items-center gap-1.5">
-                    <span className="text-green-600">✓</span>
-                    <strong className="font-semibold">Ty wypełniasz raporty w weekend</strong>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
-      </section>
 
-      <div className="relative z-10 flex w-full items-center justify-center bg-green-600 px-4 py-3 text-center text-sm font-bold uppercase tracking-[0.1em] text-white shadow-sm sm:text-base md:text-lg">
-        Zaufało nam już ponad 40 osób w 2026!
+        {/* Countdown Section - Tight gap to video & timer */}
+        <div className="mt-4 flex w-full flex-col items-center">
+          <h2 className="mb-2 text-center text-[1.15rem] sm:text-[1.35rem] font-black uppercase tracking-[0.04em] text-[#1665f5]">
+            MASTERCLASS STARTS IN
+          </h2>
+          <div className="w-full max-w-[21.5rem] sm:max-w-[23.5rem]">
+            <CountdownTimer target={WORKSHOP_START} />
+          </div>
+        </div>
+
+        {/* CTA Button & Bottom Replay Text */}
+        <div className="mt-3.5 flex w-full flex-col items-center">
+          <Button
+            onClick={openRegister}
+            className="flex h-auto w-full max-w-[23rem] sm:max-w-[25.5rem] flex-col items-center justify-center rounded-[14px] !border-none !bg-[#1665f5] py-3 px-4 !normal-case !tracking-normal shadow-sm transition-transform hover:!bg-[#1354cc] active:scale-[0.98]"
+          >
+            <span className="text-[1.45rem] min-[390px]:text-[1.6rem] sm:text-[1.75rem] font-black leading-tight text-white tracking-tight">
+              Claim Your Ticket - $27
+            </span>
+            <span className="mt-0.5 text-[0.78rem] min-[390px]:text-[0.84rem] font-semibold leading-tight text-white/95">
+              +Get $7,830 Worth Of Bonuses
+            </span>
+          </Button>
+
+          <p className="mt-2.5 text-center text-[0.92rem] min-[390px]:text-[0.98rem] font-black text-black tracking-tight">
+            Lifetime Replay + Webinar Mastery Vault
+          </p>
+        </div>
+
       </div>
     </div>
   );
