@@ -8,7 +8,7 @@ export function AboutPresenterSection() {
   const { openRegister } = useRegisterModal();
 
   return (
-    <section className="w-full bg-white pt-4 pb-12 px-4 sm:px-6">
+    <section className="w-full bg-white pt-4 pb-3 px-4 sm:px-6">
       <div className="mx-auto flex w-full max-w-[22.5rem] sm:max-w-[25.5rem] flex-col items-center">
         
         {/* Main Card Container */}
@@ -131,17 +131,17 @@ export function AboutPresenterSection() {
 
         {/* CTA Button - Increased clearance from the card above */}
         <div className="mt-6 sm:mt-7 w-full flex justify-center">
-        <Button
+          <Button
             onClick={openRegister}
-            className="flex h-auto w-full max-w-[22.5rem] sm:max-w-[25.5rem] flex-col items-center justify-center rounded-[14px] !border-none !bg-[#1665f5] py-2.5 px-4 !normal-case !tracking-normal shadow-[0_4px_14px_rgba(0,0,0,0.16)] transition-all hover:!bg-[#1354cc] active:scale-[0.98]"
-        >
-            <span className="text-[1.35rem] min-[390px]:text-[1.48rem] sm:text-[1.65rem] font-bold leading-tight text-white tracking-tight">
-            Claim Your Ticket - $27
+            className="flex !h-auto w-full max-w-[28rem] flex-col items-center justify-center rounded-[14px] !border-none !bg-[#1665f5] !px-8 !py-2.5 !normal-case shadow-[0_4px_14px_rgba(0,0,0,0.22)] transition-all hover:!bg-[#1354cc] active:scale-[0.98]"
+          >
+            <span className="text-[1.9rem] min-[390px]:text-[2.15rem] font-bold leading-none text-white tracking-tight whitespace-nowrap">
+                Claim Your Ticket - $27
             </span>
-            <span className="mt-0.5 text-[0.74rem] min-[390px]:text-[0.8rem] font-normal leading-tight text-white/90 tracking-normal">
-            +Get $7,830 Worth Of Bonuses
+            <span className="mt-1 text-[0.95rem] min-[390px]:text-[1.05rem] font-bold leading-none text-[#b8d2fe] tracking-tight whitespace-nowrap">
+                +Get $7,830 Worth Of Bonuses
             </span>
-        </Button>
+          </Button>
         </div>
 
       </div>

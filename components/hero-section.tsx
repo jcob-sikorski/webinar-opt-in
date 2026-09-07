@@ -67,12 +67,13 @@ export function HeroSection() {
         <div className="mt-3.5 flex w-full flex-col items-center">
           <Button
             onClick={openRegister}
-            className="flex h-auto w-full max-w-[23rem] sm:max-w-[25.5rem] flex-col items-center justify-center rounded-[14px] !border-none !bg-[#1665f5] py-3 px-4 !normal-case !tracking-normal shadow-sm transition-transform hover:!bg-[#1354cc] active:scale-[0.98]"
+            className="flex !h-auto w-full max-w-[22rem] sm:max-w-[24rem] flex-col items-center justify-center rounded-[12px] !border-none !bg-[#1665f5] !py-2 !px-2.5 !normal-case shadow-[0_4px_14px_rgba(0,0,0,0.22)] transition-all hover:!bg-[#1354cc] active:scale-[0.98]"
+            style={{ paddingTop: "8px", paddingBottom: "8px", minHeight: "unset" }}
           >
-            <span className="text-[1.45rem] min-[390px]:text-[1.6rem] sm:text-[1.75rem] font-black leading-tight text-white tracking-tight">
+            <span className="text-[1.65rem] min-[390px]:text-[1.78rem] font-bold leading-none text-white tracking-normal whitespace-nowrap">
               Claim Your Ticket - $27
             </span>
-            <span className="mt-0.5 text-[0.78rem] min-[390px]:text-[0.84rem] font-semibold leading-tight text-white/95">
+            <span className="mt-1 text-[0.82rem] min-[390px]:text-[0.88rem] font-bold leading-none text-[#b8d2fe] tracking-normal whitespace-nowrap">
               +Get $7,830 Worth Of Bonuses
             </span>
           </Button>
