@@ -1,101 +1,182 @@
 "use client";
 
-import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-import { Section } from "@/components/ui/section";
-import { RegisterCtaButton } from "@/components/register-cta-button";
-import { CalendarCheck } from "lucide-react";
+import React, { useState } from "react";
 
-interface FaqItem {
+interface FaqVideo {
+  id: string;
   question: string;
-  answer: string;
+  duration: string;
+  progressPercent: number;
+  videoUrl?: string;
 }
 
-const FAQS: FaqItem[] = [
+const FAQ_VIDEOS: FaqVideo[] = [
   {
-    question: "Nie mam jeszcze własnego studia. Czy ten warsztat mi się przyda?",
-    answer:
-      "Zdecydowanie tak. Pokażę Ci cały model od podstaw — od wyboru lokalu, przez koszty, aż po cennik. Niezależnie od tego, czy planujesz start za 3 miesiące, czy dopiero układasz plan w głowie, wyjdziesz świadomy i będziesz mógł uniknąć błędów, które kosztują dziesiątki tysięcy złotych.",
+    id: "live",
+    question: "Is this workshop Live?",
+    duration: "1:22",
+    progressPercent: 35,
+    videoUrl: "",
   },
   {
-    question: "Prowadzę już studio od lat. Czy to nie będą zbyt podstawowe rzeczy?",
-    answer:
-      "Doświadczeni właściciele rzadko mają problem z brakiem wiedzy trenerskiej — ich problemem jest brak procesów. Jeśli wciąż musisz osobiście dopinać każdy detal, nie możesz wyjechać na urlop bez spadku przychodów lub nie wiesz, jak otworzyć kolejną lokalizację bez podwajania chaosu, ten warsztat jest w 100% dla Ciebie.",
+    id: "cant-make-it",
+    question: "What if I can't make the workshop?",
+    duration: "1:41",
+    progressPercent: 55,
+    videoUrl: "",
   },
   {
-    question: "Czy podczas warsztatu będziecie coś sprzedawać?",
-    answer:
-      "Głównym celem jest pokazanie Ci co Cię czeka przy budowaniu takiego studio oraz plan działania. Pod koniec krótko opowiem o możliwości dołączenia do programu mentoringowego dla osób, które chcą wdrożyć ten model krok po kroku z moim osobistym wsparciem. Udział w warsztacie jest całkowicie bezpłatny i nikt do niczego Cię nie zobowiązuje.",
+    id: "burned-before",
+    question: "I got burned before... will this work?",
+    duration: "1:48",
+    progressPercent: 20,
+    videoUrl: "",
   },
   {
-    question: "Nie dam rady być na żywo w Piątek o 19:00. Czy dostanę powtórkę?",
-    answer:
-      "Tak, zapisz się tak czy inaczej. Po spotkaniu wyślemy Ci powtórkę wideo, która będzie aktywna przez 5 dni. Pamiętaj jednak, że pełny Protokół Dochodowego Studia (praktyczną checklistę wdrożeniową) oraz sesję pytań i odpowiedzi udostępniamy na żywo, więc jeśli możesz wygospodarować choć fragment wieczoru — naprawdę warto.",
+    id: "selling",
+    question: "Will you try to sell me something?",
+    duration: "2:14",
+    progressPercent: 60,
+    videoUrl: "",
   },
   {
-    question: "Ile potrwa spotkanie i jak mam się przygotować?",
-    answer:
-      "Przeznacz około 75 minut. Przygotuj notes i coś do pisania — osoby, które notują kluczowe wnioski, wdrażają zmiany znacznie szybciej niż bierni słuchacze.",
+    id: "experience",
+    question: "Do I need an existing audience or offer?",
+    duration: "1:55",
+    progressPercent: 40,
+    videoUrl: "",
+  },
+  {
+    id: "bonuses",
+    question: "Where and when do I get my bonuses?",
+    duration: "1:15",
+    progressPercent: 75,
+    videoUrl: "",
   },
 ];
 
-function FaqRow({ item }: { item: FaqItem }) {
-  const [open, setOpen] = useState(false);
+export function FaqVideosSection() {
+  const [selectedVideo, setSelectedVideo] = useState<FaqVideo | null>(null);
 
   return (
-    <div className="border-b border-gray-200 py-5">
-      <button
-        type="button"
-        onClick={() => setOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between gap-4 text-left"
-        aria-expanded={open}
-      >
-        <span className="text-base font-bold text-gray-900 sm:text-lg">
-          {item.question}
-        </span>
-        <ChevronDown
-          className={`h-5 w-5 shrink-0 text-[#ef6b4a] transition-transform duration-200 ${
-            open ? "rotate-180" : ""
-          }`}
-        />
-      </button>
-      {open && (
-        <p className="mt-3 text-base leading-relaxed text-gray-700">
-          {item.answer}
-        </p>
-      )}
-    </div>
-  );
-}
+    <section className="relative w-full bg-white font-sans selection:bg-blue-200 flex flex-col items-center overflow-x-hidden pt-4 pb-14 px-4 sm:px-6">
+      <div className="mx-auto flex w-full max-w-[22.5rem] sm:max-w-[25.5rem] flex-col items-center">
+        
+        {/* Step Badge */}
+        <div className="inline-flex items-center justify-center rounded-full border border-[#dbeafe] bg-[#f0f6fe] px-3.5 py-0.5 shadow-2xs">
+          <span className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#1665f5]">
+            STEP 3
+          </span>
+        </div>
 
-export function FaqSection() {
-  return (
-    <Section className="bg-[#fcfbf9] px-5 py-16 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-3xl">
-        <h2 className="text-center text-3xl font-extrabold leading-[1.15] text-gray-900 sm:text-4xl">
-          Najczęściej zadawane pytania
+        {/* Section Heading */}
+        <h2 className="mt-2.5 text-center text-[1.25rem] min-[390px]:text-[1.38rem] sm:text-[1.58rem] font-black leading-tight tracking-tight text-[#0c1e38]">
+          Get Your Burning Questions <br />
+          <span className="text-[#1665f5]">Answered Before The Workshop</span>
         </h2>
 
-        <div className="mt-10">
-          {FAQS.map((item) => (
-            <FaqRow key={item.question} item={item} />
+        {/* Subtitle */}
+        <p className="mt-2 text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.88rem] font-normal leading-[1.38] text-[#64748b]">
+          Tap any question below to watch a quick 60–90 second answer from Scott.
+        </p>
+
+        {/* Single Column Stack (1 per row) */}
+        <div className="mt-5 flex w-full flex-col gap-3.5">
+          {FAQ_VIDEOS.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setSelectedVideo(item)}
+              type="button"
+              className="group relative flex aspect-[1.85/1] sm:aspect-[2/1] w-full flex-col justify-between overflow-hidden rounded-[1.35rem] border border-[#1b3459]/50 bg-[#040b17] bg-[radial-gradient(ellipse_at_top_left,_#163769_0%,_#09172e_45%,_#040a15_100%)] p-4 text-left shadow-md transition-all duration-200 hover:border-[#1665f5] hover:shadow-[0_4px_24px_rgba(22,101,245,0.24)] active:scale-[0.98]"
+            >
+              {/* Top Bar: Play Icon */}
+              <div className="flex w-full justify-end">
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-xs transition-colors group-hover:bg-[#1665f5]">
+                  <svg
+                    className="ml-0.5 h-3.5 w-3.5 fill-current"
+                    viewBox="0 0 24 24"
+                  >
+                    <polygon points="6 3 20 12 6 21 6 3" />
+                  </svg>
+                </div>
+              </div>
+
+              {/* Question Text */}
+              <div className="my-auto px-2 text-center">
+                <h3 className="text-[1.05rem] min-[390px]:text-[1.12rem] sm:text-[1.2rem] font-extrabold leading-[1.25] tracking-tight text-white transition-colors group-hover:text-[#b8d2fe]">
+                  {item.question}
+                </h3>
+              </div>
+
+              {/* Bottom Video Progress Scrub Bar */}
+              <div className="flex w-full items-center gap-2 pt-1">
+                <span className="shrink-0 text-[0.68rem] font-medium text-[#8ea4c8]">
+                  {item.duration}
+                </span>
+                <div className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-white/15">
+                  <div
+                    className="h-full bg-[#1665f5] transition-all group-hover:bg-[#3b82f6]"
+                    style={{ width: `${item.progressPercent}%` }}
+                  />
+                </div>
+                <div className="flex items-center gap-[2px] text-[#8ea4c8]">
+                  <span className="h-0.5 w-0.5 rounded-full bg-current" />
+                  <span className="h-0.5 w-0.5 rounded-full bg-current" />
+                  <span className="h-0.5 w-0.5 rounded-full bg-current" />
+                </div>
+              </div>
+            </button>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12 flex flex-col items-center">
-          <RegisterCtaButton
-            size="lg"
-            className="inline-flex w-full max-w-md items-center justify-center gap-2 rounded-md border border-green-600 bg-green-600 px-8 py-5 text-center text-xl font-bold uppercase tracking-wide text-white shadow-md transition-all duration-200 hover:border-green-700 hover:bg-green-700 active:border-green-700 active:bg-green-700 active:scale-[0.99] sm:text-2xl"
-          >
-            <CalendarCheck className="h-6 w-6 shrink-0" />
-            Tak, chcę się zapisać
-          </RegisterCtaButton>
-          <p className="mt-4 max-w-md text-center text-xs font-bold uppercase tracking-widest text-gray-500 sm:text-sm">
-            Warsztat na żywo o tym, jak zbudować studio, które zarabia bez Ciebie na sali
-          </p>
-        </div>
       </div>
-    </Section>
+
+      {/* Video Modal Player */}
+      {selectedVideo && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          onClick={() => setSelectedVideo(null)}
+        >
+          <div
+            className="relative w-full max-w-lg overflow-hidden rounded-[1.35rem] border border-[#1b3459] bg-[#040b17] shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+              <h4 className="text-[0.88rem] sm:text-[0.95rem] font-bold text-white">
+                {selectedVideo.question}
+              </h4>
+              <button
+                type="button"
+                onClick={() => setSelectedVideo(null)}
+                className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="relative aspect-video w-full bg-black">
+              {selectedVideo.videoUrl ? (
+                <iframe
+                  src={selectedVideo.videoUrl}
+                  title={selectedVideo.question}
+                  className="h-full w-full border-none"
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-[#8ea4c8]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#1665f5] text-white shadow-lg">
+                    <svg className="ml-0.5 h-6 w-6 fill-current" viewBox="0 0 24 24">
+                      <polygon points="6 3 20 12 6 21 6 3" />
+                    </svg>
+                  </div>
+                  <span className="text-[0.82rem]">Insert video embed for &quot;{selectedVideo.id}&quot;</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
   );
 }
