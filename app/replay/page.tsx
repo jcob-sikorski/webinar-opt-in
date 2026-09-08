@@ -8,7 +8,7 @@ import { LegalFooter } from "@/components/legal-footer";
 export default function ReplayPage() {
   // Configuration variables
   const wistiaMediaId = ""; // Insert your Wistia ID here, e.g., "abc123xyz"
-  const expirationDate = "2026-09-15T23:59:59+02:00";
+  const expirationDate = "2026-09-18T23:59:59+02:00";
   const expirationLabel = "Limited Broadcast Replay Available";
   const ctaHref = "/special-offer";
   const ctaText = "Claim The Special Offer";

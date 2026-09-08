@@ -14,7 +14,7 @@ export function AboutPresenterSection() {
           {/* Host Image with Live Badge */}
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] bg-stone-900 shadow-xs">
             <img
-              src="https://ucarecdn.com/13c19e59-a5e2-4f36-8a03-7cb73f1d431c/unnamed10.webp"
+              src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa03cdb360a619b9fcc6119.jpeg"
               alt="Jakub Siekiera"
               className="h-full w-full object-cover"
             />

@@ -76,7 +76,7 @@ export async function POST(request: Request) {
     const uniqueJoinLink = wjData.user.live_room_url;
 
     // Obliczanie czasu i segmentu trasy
-    const WORKSHOP_START = "2026-09-04T19:00:00+02:00";
+    const WORKSHOP_START = "2026-09-16T20:00:00+02:00";
     const targetDateMs = new Date(WORKSHOP_START).getTime();
     const currentMs = Date.now();
     const hoursToStart = (targetDateMs - currentMs) / (1000 * 60 * 60);

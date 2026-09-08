@@ -4,7 +4,7 @@ import React from "react";
 import { CountdownTimer } from "./countdown-timer";
 
 export function SpecialOfferHero() {
-  const EXPIRATION_DATE = "2026-09-15T23:59:59+02:00"; 
+  const EXPIRATION_DATE = "2026-09-18T23:59:59+02:00"; 
 
   return (
     <section className="relative w-full bg-white pt-4 pb-10 px-4 sm:px-6 flex flex-col items-center overflow-x-hidden selection:bg-orange-200">

@@ -5,7 +5,7 @@ import { CountdownTimer } from "./countdown-timer";
 import { LegalFooter } from "./legal-footer";
 
 export function SpecialOfferGuarantee() {
-  const EXPIRATION_DATE = "2026-09-15T23:59:59+02:00"; 
+  const EXPIRATION_DATE = "2026-09-18T23:59:59+02:00"; 
 
   return (
     <>
