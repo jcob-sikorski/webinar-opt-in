@@ -3,6 +3,7 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { sendToMetaCAPI } from "@/app/actions";
 
 const PIXEL_ID = "965293539900334";
 
@@ -12,9 +13,20 @@ export function FacebookPixel() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Whenever the route changes, fire a PageView event
+    // Whenever the route changes, fire a deduplicated PageView event via Browser and CAPI
     if (isLoaded && typeof window !== "undefined" && window.fbq) {
-      window.fbq("track", "PageView");
+      // 1. Generate a unique ID for this specific page view
+      const eventId = `pv_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+
+      // 2. Fire the Browser Event WITH the deduplication ID
+      window.fbq("track", "PageView", {}, { eventID: eventId });
+
+      // 3. Fire the Server Event (CAPI) silently in the background
+      sendToMetaCAPI({
+        eventId: eventId,
+        eventName: "PageView",
+        sourceUrl: window.location.href,
+      }).catch((err) => console.error("PageView CAPI Error:", err));
     }
   }, [pathname, searchParams, isLoaded]);
 
@@ -34,7 +46,8 @@ export function FacebookPixel() {
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '${PIXEL_ID}');
-          fbq('track', 'PageView');
+          // Note: fbq('track', 'PageView') has been removed from here. 
+          // It is now handled exclusively by the useEffect block above to ensure deduplication.
         `,
       }}
     />
