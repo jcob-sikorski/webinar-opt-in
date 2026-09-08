@@ -19,7 +19,7 @@ export function CountdownTimer({ target }: CountdownTimerProps) {
     const targetTimestamp = Date.parse(target);
 
     if (isNaN(targetTimestamp)) {
-      console.error("Invalid target date passed to CountdownTimer:", target);
+      console.error("Nieprawidłowa data przekazana do CountdownTimer:", target);
       return;
     }
 
@@ -51,10 +51,10 @@ export function CountdownTimer({ target }: CountdownTimerProps) {
   }, [target]);
 
   const units = [
-    { label: "DAYS", value: timeLeft.days },
-    { label: "HRS", value: timeLeft.hours },
-    { label: "MINS", value: timeLeft.minutes },
-    { label: "SECS", value: timeLeft.seconds },
+    { label: "DNI", value: timeLeft.days },
+    { label: "GODZ", value: timeLeft.hours },
+    { label: "MIN", value: timeLeft.minutes },
+    { label: "SEK", value: timeLeft.seconds },
   ];
 
   return (

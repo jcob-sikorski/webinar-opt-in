@@ -22,26 +22,31 @@ export function HeroSection() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f87171] opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ef4444]" />
                 </span>
-                LIVE WORKSHOP: Wednesday 7PM EDT
+                SZKOLENIE NA ŻYWO: ŚRODA, 16 WRZ
               </div>
               <div className="text-[0.72rem] font-bold leading-tight text-[#1665f5] sm:text-[0.78rem]">
-                For Coaches, Consultants &amp; Course Creators
+                Dla Właścicieli Studiów PT, Butikowych Siłowni i Boxów
               </div>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="mt-3 w-full text-[1.95rem] font-extrabold leading-[1.12] tracking-[-0.015em] text-black min-[390px]:text-[2.15rem] sm:text-[2.9rem] lg:text-[3.2rem]">
-              <span className="block">Copy My $20M+</span>
-              <span className="block">Webinar Strategy <span className="text-[#1665f5]">To</span></span>
-              <span className="block text-[#1665f5]">Add An Extra</span>
-              <span className="block"><span className="text-[#1665f5]">100k/Mo</span> Showing Up</span>
-              <span className="block">Just 1 Hour Per Week</span>
+{/* Main Headline */}
+            <h1 className="mt-3 w-full text-[1.15rem] font-extrabold leading-[1.3] tracking-tight text-black min-[390px]:text-[1.3rem] sm:text-[1.65rem] lg:text-[1.95rem]">
+              <span className="block text-black">
+                Pułapka Trenera-Właściciela:
+              </span>
+              <span className="mt-1 block text-neutral-900">
+                Dlaczego im więcej godzin trenujesz osobiście,{" "}
+                <span className="text-[#1665f5]">tym mniej zarabiasz</span>{" "}
+                <span className="whitespace-nowrap font-bold text-neutral-600">
+                  (i jak to odwrócić)
+                </span>
+              </span>
             </h1>
 
             {/* Subheadline */}
-            <p className="mt-2.5 w-full text-[0.875rem] font-light leading-[1.38] tracking-normal text-black min-[390px]:text-[0.95rem] sm:text-[1.05rem]">
-              Scale Further With Less Sales Calls, Higher Quality Clients &amp;{" "}
-              <span className="font-bold text-black">Only Show Up 1 Hour/Week</span>
+            <p className="mt-2.5 w-full text-[0.875rem] font-light leading-[1.38] tracking-normal text-neutral-800 min-[390px]:text-[0.95rem] sm:text-[1.05rem]">
+              Jak poukładać procesy, zespół i marżę w studiu treningu personalnego, aby bezpiecznie zejść z sali i{" "}
+              <span className="font-bold text-black">przestać pracować po 60h tygodniowo.</span>
             </p>
 
             {/* Social Proof: Revenue + Ratings (Below Subheadline) */}
@@ -71,7 +76,7 @@ export function HeroSection() {
                   />
                 </div>
                 <span className="text-[0.78rem] font-bold tracking-tight text-neutral-800">
-                  $38M in Student Revenue
+                  +38 mln zł przychodu uczestników
                 </span>
               </div>
 
@@ -84,14 +89,14 @@ export function HeroSection() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-[0.75rem] font-bold text-neutral-800">Over 100+ 5 Star Ratings</span>
+                <span className="text-[0.75rem] font-bold text-neutral-800">Ponad 100 opinii 5/5</span>
               </div>
             </div>
 
             {/* Countdown Section */}
             <div className="mt-4 flex w-full flex-col items-center lg:items-start">
               <h2 className="mb-1.5 text-center text-[1.05rem] font-black uppercase tracking-[0.04em] text-[#1665f5] sm:text-[1.2rem] lg:text-left">
-                MASTERCLASS STARTS IN
+                SZKOLENIE STARTUJE ZA
               </h2>
               <div className="w-full max-w-[21.5rem] sm:max-w-[23.5rem]">
                 <CountdownTimer target={WORKSHOP_START} />
