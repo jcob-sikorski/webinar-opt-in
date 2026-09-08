@@ -3,7 +3,26 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { firstName, lastName, email, phone, capitalSelected, clientCategory, attribution } = body;
+    const {
+      fullName,
+      email,
+      phone,
+      capitalSelected,
+      clientCategory,
+      attribution,
+    } = body;
+
+    // Obsługa pojedynczego pola "Pełne imię" z fallbackiem na firstName/lastName
+    let firstName = body.firstName?.trim();
+    let lastName = body.lastName?.trim() ?? "";
+
+    if (!firstName && fullName) {
+      const nameParts = fullName.trim().split(/\s+/);
+      firstName = nameParts[0] || "";
+      lastName = nameParts.slice(1).join(" ") || "";
+    }
+
+    const resolvedFullName = (fullName?.trim() || `${firstName} ${lastName}`).trim();
 
     function sanitizeAttrField(val: unknown, maxLen = 255): string | undefined {
       if (typeof val !== "string") return undefined;
@@ -34,8 +53,8 @@ export async function POST(request: Request) {
       api_key: process.env.WEBINARJAM_API_KEY!,
       webinar_id: process.env.WEBINARJAM_WEBINAR_ID!,
       schedule: process.env.WEBINARJAM_SCHEDULE_ID!,
-      first_name: firstName,
-      last_name: lastName ?? "",
+      first_name: firstName || resolvedFullName,
+      last_name: lastName,
       email: email,
       phone_country_code: "+48",
       phone: nationalPhone,
@@ -77,7 +96,8 @@ export async function POST(request: Request) {
     const results = await Promise.allSettled([
       // A. GoHighLevel
       upsertGhlContact({
-        firstName,
+        fullName: resolvedFullName,
+        firstName: firstName || resolvedFullName,
         lastName,
         email,
         phone: e164WithPlus,
@@ -99,7 +119,7 @@ export async function POST(request: Request) {
         body: JSON.stringify({
           email,
           fields: {
-            name: firstName,
+            name: resolvedFullName,
             last_name: lastName,
             phone: e164WithPlus,
             webinar_link: uniqueJoinLink,
@@ -109,8 +129,8 @@ export async function POST(request: Request) {
         }),
       }),
 
-      // C. SMSAPI
-      sendSmsApiNotification(e164Plain, firstName),
+      // C. SMSAPI (używa samego imienia do bezpośredniego powitania)
+      sendSmsApiNotification(e164Plain, firstName || resolvedFullName),
     ]);
 
     results.forEach((r, i) => {
@@ -128,6 +148,7 @@ export async function POST(request: Request) {
 }
 
 async function upsertGhlContact({
+  fullName,
   firstName,
   lastName,
   email,
@@ -138,6 +159,7 @@ async function upsertGhlContact({
   routeTag,
   attribution,
 }: {
+  fullName?: string;
   firstName: string;
   lastName?: string;
   email: string;
@@ -192,6 +214,7 @@ async function upsertGhlContact({
     headers,
     body: JSON.stringify({
       locationId: process.env.GHL_LOCATION_ID,
+      name: fullName,
       firstName,
       lastName,
       email,

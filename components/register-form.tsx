@@ -21,8 +21,7 @@ interface RegisterFormProps {
 export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
   const router = useRouter();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [capital, setCapital] = useState("");
@@ -48,6 +47,10 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     }
 
     setIsSubmitting(true);
+
+    const nameParts = fullName.trim().split(/\s+/);
+    const firstName = nameParts[0] || "";
+    const lastName = nameParts.slice(1).join(" ") || "";
 
     const nationalPhone = cleanPolishPhone(phone); // 9 cyfr np. 500123456
     const e164Digits = `48${nationalPhone}`; // 11 cyfr np. 48500123456 dla Meta
@@ -101,6 +104,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          fullName,
           firstName,
           lastName,
           email,
@@ -129,28 +133,16 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     >
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
-          <div className="grid grid-cols-2 gap-2">
-            <input
-              required
-              type="text"
-              autoComplete="given-name"
-              placeholder="Imię"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              disabled={isSubmitting}
-              className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
-            />
-            <input
-              required
-              type="text"
-              autoComplete="family-name"
-              placeholder="Nazwisko"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              disabled={isSubmitting}
-              className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
-            />
-          </div>
+          <input
+            required
+            type="text"
+            autoComplete="name"
+            placeholder="Pełne imię"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            disabled={isSubmitting}
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+          />
 
           <input
             required
