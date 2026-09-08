@@ -15,14 +15,14 @@ export function AboutPresenterSection() {
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] bg-stone-900 shadow-xs">
             <img
               src="https://ucarecdn.com/13c19e59-a5e2-4f36-8a03-7cb73f1d431c/unnamed10.webp"
-              alt="Scott Kelly"
+              alt="Jakub Siekiera"
               className="h-full w-full object-cover"
             />
             {/* Live Indicator Pill */}
             <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-black/65 px-3 py-1 backdrop-blur-xs">
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
               <span className="text-[0.62rem] sm:text-[0.68rem] font-bold uppercase tracking-[0.14em] text-white">
-                LIVE THIS WEDNESDAY
+                NA ŻYWO W ŚRODĘ
               </span>
             </div>
           </div>
@@ -87,40 +87,40 @@ export function AboutPresenterSection() {
             {/* Stat 1 */}
             <div className="flex flex-col items-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                $20M<span className="text-[#ea580c]">+</span>
+                38M<span className="text-[#ea580c]">+</span> zł
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                Cash collected for clients
+                Wygenerowane przez studentów
               </span>
             </div>
 
             {/* Stat 2 */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center text-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                14
+                50<span className="text-[#ea580c]">+</span>
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                Offers past $100K/month
+                Studiów z 20–60 tys. zł zysku / mc
               </span>
             </div>
 
             {/* Stat 3 */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center text-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                2
+                4
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                Offers past $1M/month
+                Studia Sportowe Przedmieście
               </span>
             </div>
 
             {/* Stat 4 */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center text-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                $200K/<span className="text-[#ea580c]">mo</span>
+                80<span className="text-[#ea580c]">%</span>
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                My own agency
+                Marży ze studia
               </span>
             </div>
           </div>
