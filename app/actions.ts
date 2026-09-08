@@ -1,13 +1,11 @@
 "use server";
 
 import crypto from "crypto";
-import { headers } from "next/headers";
+import { headers, cookies } from "next/headers";
 import { buildFbcFromClickId } from "@/lib/attribution";
 
 const ACCESS_TOKEN = process.env.META_CAPI_ACCESS_TOKEN!;
 const PIXEL_ID = "965293539900334";
-// Zakomentowane dla środowiska produkcyjnego:
-// const TEST_CODE = process.env.META_CAPI_TEST_EVENT_CODE;
 
 function hashData(data: string) {
   if (!data) return "";
@@ -22,7 +20,7 @@ export async function sendToMetaCAPI(formData: {
   clientCategory: string;
   sourceUrl: string;
   eventId: string;
-  eventName?: string; // <-- Add this
+  eventName?: string;
   attribution?: {
     utm_source?: string;
     utm_medium?: string;
@@ -34,32 +32,45 @@ export async function sendToMetaCAPI(formData: {
   };
 }) {
   const headersList = headers();
-  const clientIp = headersList.get("x-forwarded-for") || headersList.get("x-real-ip") || "";
+  const cookieStore = cookies();
+
+  // Oczyszczenie adresu IP - bierzemy wyłącznie pierwszy IP przed przecinkiem
+  const rawIp = headersList.get("x-forwarded-for") || headersList.get("x-real-ip") || "";
+  const clientIp = rawIp.split(",")[0].trim();
   const clientUserAgent = headersList.get("user-agent") || "";
 
-  const attr = formData.attribution || {};
+  // Pobranie ciasteczka _fbp dla maksymalnego Event Quality Score
+  const fbp = cookieStore.get("_fbp")?.value;
 
-  // Construct Meta's fbc parameter mathematically if fbclid exists
-  const fbc = attr.fbclid ? buildFbcFromClickId(attr.fbclid, attr.captured_at) : undefined;
+  const attr = formData.attribution || {};
+  const fbc = attr.fbclid
+    ? buildFbcFromClickId(attr.fbclid, attr.captured_at)
+    : cookieStore.get("_fbc")?.value;
+
+  // Upewniamy się, że numer ma kod kraju 48
+  let cleanPhone = formData.phone.replace(/\D/g, "");
+  if (cleanPhone.length === 9) {
+    cleanPhone = `48${cleanPhone}`;
+  }
 
   const payload: Record<string, unknown> = {
     data: [
       {
-        event_name: formData.eventName || "Lead", // <-- Fallback to Lead
+        event_name: formData.eventName || "Lead",
         event_time: Math.floor(Date.now() / 1000),
         action_source: "website",
         event_source_url: formData.sourceUrl,
         event_id: formData.eventId,
         user_data: {
           em: [hashData(formData.email)],
-          ph: [hashData(formData.phone.replace(/\D/g, ""))],
+          ph: [hashData(cleanPhone)],
           fn: [hashData(formData.firstName)],
           ln: [hashData(formData.lastName)],
           country: [hashData("pl")],
           external_id: [hashData(formData.email)],
           client_ip_address: clientIp,
           client_user_agent: clientUserAgent,
-          // Inject the constructed click ID directly
+          ...(fbp ? { fbp } : {}),
           ...(fbc ? { fbc } : {}),
         },
         custom_data: {
@@ -75,9 +86,6 @@ export async function sendToMetaCAPI(formData: {
     ],
   };
 
-  // Zakomentowane dla środowiska produkcyjnego:
-  // if (TEST_CODE) payload.test_event_code = TEST_CODE;
-
   try {
     const res = await fetch(
       `https://graph.facebook.com/v19.0/${PIXEL_ID}/events?access_token=${ACCESS_TOKEN}`,
@@ -89,7 +97,6 @@ export async function sendToMetaCAPI(formData: {
     );
 
     const data = await res.json();
-    console.log("CAPI Response:", data);
     return { success: true, data };
   } catch (error) {
     console.error("CAPI Error:", error);

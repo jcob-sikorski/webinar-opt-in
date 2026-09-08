@@ -1,0 +1,251 @@
+"use client";
+
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+
+import { Button } from "@/components/ui/button";
+import { sendToMetaCAPI } from "@/app/actions";
+import { resolveAttribution } from "@/lib/attribution";
+
+declare global {
+  interface Window {
+    fbq: any;
+  }
+}
+
+interface RegisterFormProps {
+  className?: string;
+  onSuccess?: () => void;
+}
+
+export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
+  const router = useRouter();
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [capital, setCapital] = useState("");
+  const [showCapitalError, setShowCapitalError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Funkcja normalizująca numer telefonu dla Polski
+  function cleanPolishPhone(rawPhone: string) {
+    let digits = rawPhone.replace(/\D/g, "");
+    if (digits.startsWith("0048")) digits = digits.slice(4);
+    if (digits.length === 11 && digits.startsWith("48")) digits = digits.slice(2);
+    return digits; // Zwraca czyste 9 cyfr
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+
+    if (isSubmitting) return;
+
+    if (!capital) {
+      setShowCapitalError(true);
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const nationalPhone = cleanPolishPhone(phone); // 9 cyfr np. 500123456
+    const e164Digits = `48${nationalPhone}`; // 11 cyfr np. 48500123456 dla Meta
+    const clientCategory = capital === "Tak" ? "Idealny ICP" : "Brokie - Odcięcie";
+    const attribution = resolveAttribution();
+
+    // 1. Meta Pixel & Meta CAPI (tylko dla zakwalifikowanych)
+    if (capital === "Tak") {
+      const eventId = `evt_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+
+      if (typeof window !== "undefined" && window.fbq) {
+        window.fbq("init", "965293539900334", {
+          em: email.toLowerCase().trim(),
+          ph: e164Digits,
+          fn: firstName.toLowerCase().trim(),
+          ln: lastName.toLowerCase().trim(),
+          country: "pl",
+          external_id: email.toLowerCase().trim(),
+        });
+
+        window.fbq(
+          "track",
+          "Lead",
+          {
+            content_name: "Warsztat: Zloty Model Biznesowy",
+            content_category: clientCategory,
+          },
+          { eventID: eventId }
+        );
+      }
+
+      try {
+        await sendToMetaCAPI({
+          email,
+          phone: e164Digits,
+          firstName,
+          lastName,
+          clientCategory,
+          sourceUrl: window.location.href,
+          eventId,
+          attribution,
+        });
+      } catch (capiErr) {
+        console.error("Non-blocking CAPI Error:", capiErr);
+      }
+    }
+
+    // 2. Wysłanie danych do rejestratora (WebinarJam, GHL, MailerLite, SMS)
+    try {
+      const res = await fetch("/api/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          phone: nationalPhone, // Wysyłamy znormalizowane 9 cyfr
+          capitalSelected: capital,
+          clientCategory,
+          attribution,
+        }),
+      });
+
+      if (!res.ok) throw new Error("API Route Failed");
+
+      if (onSuccess) onSuccess();
+      router.push("/widzimy-sie-na-warsztacie");
+    } catch (error) {
+      console.error("Registration Error:", error);
+      alert("Coś poszło nie tak. Spróbuj ponownie.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  return (
+    <div
+      className={`w-full max-w-[22rem] sm:max-w-[24rem] rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] ${className}`}
+    >
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-2 gap-2">
+            <input
+              required
+              type="text"
+              autoComplete="given-name"
+              placeholder="Imię"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              disabled={isSubmitting}
+              className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+            />
+            <input
+              required
+              type="text"
+              autoComplete="family-name"
+              placeholder="Nazwisko"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              disabled={isSubmitting}
+              className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+            />
+          </div>
+
+          <input
+            required
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            placeholder="Adres e-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={isSubmitting}
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+          />
+
+          <input
+            required
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="Numer telefonu"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            disabled={isSubmitting}
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+          />
+        </div>
+
+        <div className="pt-0.5">
+          <p className="mb-1.5 text-center text-[0.74rem] font-semibold leading-tight text-neutral-600 sm:text-[0.78rem]">
+            Czy w ciągu 14 dni możesz zainwestować kilkanaście tys. zł w swój rozwój?
+          </p>
+
+          <div
+            className={`grid grid-cols-2 gap-1 rounded-xl bg-neutral-100 p-1 transition ${
+              showCapitalError && !capital ? "ring-2 ring-red-500/50" : ""
+            }`}
+          >
+            <button
+              type="button"
+              onClick={() => {
+                setCapital("Tak");
+                setShowCapitalError(false);
+              }}
+              className={`h-9 rounded-lg text-xs font-bold transition-all ${
+                capital === "Tak"
+                  ? "bg-white text-[#1665f5] shadow-xs"
+                  : "text-neutral-600 hover:text-neutral-900"
+              }`}
+            >
+              Tak
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                setCapital("Nie");
+                setShowCapitalError(false);
+              }}
+              className={`h-9 rounded-lg text-xs font-bold transition-all ${
+                capital === "Nie"
+                  ? "bg-white text-neutral-900 shadow-xs"
+                  : "text-neutral-600 hover:text-neutral-900"
+              }`}
+            >
+              Nie
+            </button>
+          </div>
+
+          {showCapitalError && !capital && (
+            <span className="mt-1 block text-center text-[10px] font-semibold text-red-500">
+              Wybierz jedną z opcji, aby przejść dalej
+            </span>
+          )}
+        </div>
+
+        <div className="pt-0.5">
+          <Button
+            type="submit"
+            disabled={isSubmitting}
+            className="flex !h-auto w-full flex-col items-center justify-center rounded-xl !border-none !bg-[#1665f5] !py-2.5 !px-3 shadow-[0_4px_16px_rgba(22,101,245,0.3)] transition-all hover:!bg-[#1354cc] active:scale-[0.98]"
+          >
+            <span className="text-[1.35rem] font-black leading-tight text-white tracking-tight sm:text-[1.45rem]">
+              {isSubmitting ? "ZAPISYWANIE..." : "ZAPISZ SIĘ NA WARSZTAT"}
+            </span>
+            <span className="text-[0.78rem] font-bold leading-none text-[#b8d2fe]">
+              100% Darmowy Dostęp Live
+            </span>
+          </Button>
+
+          <div className="mt-2 flex items-center justify-center gap-1.5 text-[11px] font-medium text-neutral-400">
+            <svg className="h-3.5 w-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7z" />
+            </svg>
+            Twoje dane są w 100% bezpieczne.
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+}

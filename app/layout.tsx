@@ -1,8 +1,7 @@
 import React, { type ReactNode, Suspense } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
-import { RegisterModalProvider } from "@/components/register-modal-provider";
 import { FacebookPixel } from "@/components/facebook-pixel";
 import { AttributionCapture } from "@/components/attribution-capture";
 import { Analytics } from "@vercel/analytics/next";
@@ -21,6 +20,13 @@ const display = Poppins({
   display: "swap",
   variable: "--font-display",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  interactiveWidget: "resizes-content",
+};
 
 export const metadata: Metadata = {
   title: "Poznaj Model, Dzięki Któremu 40+ Studiów Zarabia Do 600 Tys. zł Rocznie",
@@ -101,7 +107,7 @@ export default function RootLayout({
           <FacebookPixel />
         </Suspense>
         
-        <RegisterModalProvider>{children}</RegisterModalProvider>
+        {children}
 
         {/* VERCEL ANALYTICS */}
         <Analytics />

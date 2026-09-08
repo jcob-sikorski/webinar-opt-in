@@ -8,23 +8,41 @@ interface CountdownTimerProps {
 
 export function CountdownTimer({ target }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState({
-    days: "05",
-    hours: "03",
-    minutes: "12",
-    seconds: "42",
+    days: "00",
+    hours: "00",
+    minutes: "00",
+    seconds: "00",
   });
 
   useEffect(() => {
+    // Bezpieczne parsowanie daty z offsetem strefy (np. +02:00)
+    const targetTimestamp = Date.parse(target);
+
+    if (isNaN(targetTimestamp)) {
+      console.error("Invalid target date passed to CountdownTimer:", target);
+      return;
+    }
+
     const calculateTime = () => {
-      const difference = +new Date(target) - +new Date();
-      if (difference > 0) {
+      const now = Date.now();
+      const difference = targetTimestamp - now;
+
+      if (difference <= 0) {
         setTimeLeft({
-          days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0"),
-          hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0"),
-          minutes: String(Math.floor((difference / 1000 / 60) % 60)).padStart(2, "0"),
-          seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
+          days: "00",
+          hours: "00",
+          minutes: "00",
+          seconds: "00",
         });
+        return;
       }
+
+      setTimeLeft({
+        days: String(Math.floor(difference / (1000 * 60 * 60 * 24))).padStart(2, "0"),
+        hours: String(Math.floor((difference / (1000 * 60 * 60)) % 24)).padStart(2, "0"),
+        minutes: String(Math.floor((difference / (1000 * 60)) % 60)).padStart(2, "0"),
+        seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
+      });
     };
 
     calculateTime();
@@ -43,7 +61,6 @@ export function CountdownTimer({ target }: CountdownTimerProps) {
     <div className="flex items-center justify-center gap-1.5 sm:gap-2 select-none">
       {units.map((unit, index) => (
         <div key={unit.label} className="flex items-center">
-          {/* Card: Height slashed to match left/right padding */}
           <div className="flex h-[3.85rem] w-[4.15rem] min-[390px]:h-[4.2rem] min-[390px]:w-[4.55rem] sm:h-[4.5rem] sm:w-[4.85rem] flex-col items-center justify-center rounded-2xl border border-[#bfdbfe]/85 bg-gradient-to-b from-[#f6f9fe] to-[#edf4fe] px-1 shadow-[0_2px_8px_rgba(37,99,235,0.05)]">
             <span className="text-[1.85rem] min-[390px]:text-[2.05rem] sm:text-[2.2rem] font-extrabold leading-none text-[#103264] tracking-[-0.02em] tabular-nums">
               {unit.value}
@@ -53,7 +70,6 @@ export function CountdownTimer({ target }: CountdownTimerProps) {
             </span>
           </div>
 
-          {/* Separator Colons: Vertically centered & dialed-in spacing */}
           {index < units.length - 1 && (
             <div className="flex flex-col items-center justify-center gap-1.5 px-1 min-[390px]:px-1.5">
               <span className="h-[3.5px] w-[3.5px] rounded-full bg-[#5ba2f8]" />

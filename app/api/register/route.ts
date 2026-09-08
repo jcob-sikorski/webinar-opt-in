@@ -20,6 +20,16 @@ export async function POST(request: Request) {
       fbclid: sanitizeAttrField(attribution?.fbclid, 512),
     };
 
+    // Sanityzacja telefonu dla poszczególnych API:
+    let rawDigits = (phone ?? "").replace(/\D/g, "");
+    if (rawDigits.startsWith("0048")) rawDigits = rawDigits.slice(4);
+    if (rawDigits.length === 11 && rawDigits.startsWith("48")) rawDigits = rawDigits.slice(2);
+
+    const nationalPhone = rawDigits; // Dokładnie 9 cyfr np. 500123456
+    const e164WithPlus = `+48${nationalPhone}`; // +48500123456 (dla GHL)
+    const e164Plain = `48${nationalPhone}`; // 48500123456 (dla SMSAPI)
+
+    // 1. Rejestracja w WebinarJam (wymaga 9 cyfr, bo kod kraju przekazujemy w osobnym polu)
     const wjParams = new URLSearchParams({
       api_key: process.env.WEBINARJAM_API_KEY!,
       webinar_id: process.env.WEBINARJAM_WEBINAR_ID!,
@@ -28,7 +38,7 @@ export async function POST(request: Request) {
       last_name: lastName ?? "",
       email: email,
       phone_country_code: "+48",
-      phone: phone ?? "",
+      phone: nationalPhone,
     });
 
     const wjResponse = await fetch("https://api.webinarjam.com/webinarjam/register", {
@@ -46,14 +56,10 @@ export async function POST(request: Request) {
 
     const uniqueJoinLink = wjData.user.live_room_url;
 
-    // ============================================================================
-    // OBLICZANIE CZASU I PRZYPISANIE KATEGORII ROUTE (A, B, C, D)
-    // Logika wyciągnięta tutaj, aby przekazać ten sam wynik do GHL i MailerLite
-    // ============================================================================
+    // Obliczanie czasu i segmentu trasy
     const WORKSHOP_START = "2026-09-04T19:00:00+02:00";
     const targetDateMs = new Date(WORKSHOP_START).getTime();
     const currentMs = Date.now();
-    
     const hoursToStart = (targetDateMs - currentMs) / (1000 * 60 * 60);
 
     let routeTag = "";
@@ -67,58 +73,51 @@ export async function POST(request: Request) {
       routeTag = "D";
     }
 
-    // ============================================================================
-    // 2. FAN OUT: Send data to GoHighLevel, MailerLite, and SMSAPI concurrently
-    // ============================================================================
+    // 2. FAN-OUT: Równoległa wysyłka do GHL, MailerLite i SMSAPI
     const results = await Promise.allSettled([
-      // --- A. GOHIGHLEVEL ---
+      // A. GoHighLevel
       upsertGhlContact({
         firstName,
         lastName,
         email,
-        phone,
+        phone: e164WithPlus,
         joinLink: uniqueJoinLink,
         capitalSelected,
         clientCategory,
-        routeTag, // Przekazanie tagu do GHL
+        routeTag,
         attribution: safeAttribution,
       }),
 
-      // --- B. MAILERLITE ---
+      // B. MailerLite
       fetch("https://connect.mailerlite.com/api/subscribers", {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${process.env.MAILERLITE_API_KEY}`,
+          Authorization: `Bearer ${process.env.MAILERLITE_API_KEY}`,
           "Content-Type": "application/json",
-          "Accept": "application/json",
+          Accept: "application/json",
         },
         body: JSON.stringify({
           email,
-          fields: { 
-            name: firstName, 
-            last_name: lastName, 
-            phone, 
+          fields: {
+            name: firstName,
+            last_name: lastName,
+            phone: e164WithPlus,
             webinar_link: uniqueJoinLink,
-            route: routeTag // Przekazanie jako custom field do MailerLite
+            route: routeTag,
           },
           groups: [process.env.MAILERLITE_GROUP_ID],
         }),
       }),
 
-      // --- C. SMSAPI ---
-      sendSmsApiNotification(phone, firstName),
+      // C. SMSAPI
+      sendSmsApiNotification(e164Plain, firstName),
     ]);
 
-    // Log any silent failures from the fan-out instead of swallowing them
     results.forEach((r, i) => {
       if (r.status === "rejected") console.error(`Fan-out call ${i} failed:`, r.reason);
     });
 
-    // ============================================================================
-    // 3. RESPOND TO CLIENT
-    // ============================================================================
     return NextResponse.json({ success: true, joinLink: uniqueJoinLink });
-
   } catch (error) {
     console.error("Orchestrator Error:", error);
     return NextResponse.json(
@@ -127,10 +126,6 @@ export async function POST(request: Request) {
     );
   }
 }
-
-// ============================================================================
-// HELPER FUNCTIONS
-// ============================================================================
 
 async function upsertGhlContact({
   firstName,
@@ -161,27 +156,24 @@ async function upsertGhlContact({
   };
 }) {
   const headers = {
-    "Authorization": `Bearer ${process.env.GHL_API_KEY}`,
-    "Version": "2021-07-28",
+    Authorization: `Bearer ${process.env.GHL_API_KEY}`,
+    Version: "2021-07-28",
     "Content-Type": "application/json",
   };
 
-  // Upsert REPLACES tags rather than merging them, so look the contact
-  // up first and preserve whatever tags they already have.
   let existingTags: string[] = [];
   const searchRes = await fetch(
     `https://services.leadconnectorhq.com/contacts/search?locationId=${process.env.GHL_LOCATION_ID}&query=${encodeURIComponent(email)}`,
     { headers }
   );
-  
+
   const searchData = await searchRes.json();
   const existing = searchData?.contacts?.find(
     (c: any) => c.email?.toLowerCase() === email.toLowerCase()
   );
-  
+
   if (existing) existingTags = existing.tags ?? [];
 
-  // Budowa tablicy tagów z uwzględnieniem przekazanego routera
   const tags = Array.from(new Set([...existingTags, "webinar-24sie", clientCategory, routeTag].filter(Boolean)));
 
   const customFields = [
@@ -214,19 +206,17 @@ async function upsertGhlContact({
     console.error("GHL upsert failed:", upsertData);
     throw new Error("GHL contact upsert failed.");
   }
-  
+
   return upsertData.contact;
 }
 
-async function sendSmsApiNotification(phone: string | undefined, firstName: string) {
+async function sendSmsApiNotification(phone: string, firstName: string) {
   if (!phone) return;
 
-  // Clean the phone number to ensure compatibility
-  const cleanPhone = phone.replace(/\D/g, "");
   const message = `Cześć ${firstName}! Tu Bartek. Łap swój bilet. Zapisz: 4 Września, Piątek 19:00. Pokażę Ci, jak zejść z sali i zbudować studio, które zarabia bez Ciebie. Do zobaczenia`;
 
   const params = new URLSearchParams({
-    to: cleanPhone,
+    to: phone,
     message: message,
     format: "json",
     encoding: "utf-8",
@@ -235,7 +225,7 @@ async function sendSmsApiNotification(phone: string | undefined, firstName: stri
   const res = await fetch("https://api.smsapi.pl/sms.do", {
     method: "POST",
     headers: {
-      "Authorization": `Bearer ${process.env.SMSAPI_TOKEN}`,
+      Authorization: `Bearer ${process.env.SMSAPI_TOKEN}`,
       "Content-Type": "application/x-www-form-urlencoded",
     },
     body: params.toString(),
@@ -245,6 +235,6 @@ async function sendSmsApiNotification(phone: string | undefined, firstName: stri
     const errorData = await res.text();
     throw new Error(`SMSAPI failed: ${errorData}`);
   }
-  
+
   return res.json();
 }
