@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { LegalFooter } from "@/components/legal-footer";
 
@@ -21,12 +22,11 @@ export default function ReplayPage({
 }: ReplayPageProps) {
   return (
     <div className="flex min-h-screen w-full flex-col justify-between bg-white font-sans selection:bg-blue-200">
-      {/* Main Replay Stage */}
       <main className="relative flex w-full flex-1 flex-col items-center overflow-x-hidden px-4 pt-5 pb-16 sm:px-6 sm:pt-8 sm:pb-20">
         <div className="mx-auto flex w-full max-w-[24rem] sm:max-w-[34rem] md:max-w-[44rem] lg:max-w-[48rem] flex-col items-center">
           
           {/* Expiration Scarcity Pill */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#2563eb]/30 bg-[#edf4ff] px-3.5 py-1.5 shadow-2xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#2563eb]/30 bg-[#edf4ff] px-3.5 py-1.5 shadow-xs">
             <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f87171] opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ef4444]" />
@@ -49,24 +49,22 @@ export default function ReplayPage({
           <div className="mt-5 w-full">
             <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[16px] sm:rounded-[22px] border-[3.5px] sm:border-[4.5px] border-[#1665f5] bg-black shadow-[0_8px_32px_rgba(22,101,245,0.16)]">
               {wistiaMediaId ? (
-                /* Wistia Responsive Video Embed */
                 <iframe
                   src={`https://fast.wistia.net/embed/iframe/${wistiaMediaId}?videoFoam=true`}
                   title="Webinar Replay Video"
                   allow="autoplay; fullscreen"
-                  allowTransparency
                   className="h-full w-full border-none"
                 />
               ) : (
-                /* High-Converting Placeholder Frame */
                 <div className="relative flex h-full w-full select-none flex-col justify-between bg-[#040b17] bg-[radial-gradient(ellipse_at_top_left,_#163769_0%,_#09172e_40%,_#040a15_100%)] p-4 text-white sm:p-7">
                   <div className="flex items-start justify-between">
-                    {/* Speaker Avatar & Info */}
                     <div className="flex items-center gap-2.5 sm:gap-3">
                       <div className="relative flex h-11 w-11 sm:h-14 sm:w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl sm:rounded-2xl border border-[#dbeafe]/30 bg-white/10 backdrop-blur-xs">
-                        <img
+                        <Image
                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face"
                           alt="Jason Fladlien"
+                          width={56}
+                          height={56}
                           className="h-full w-full object-cover"
                         />
                       </div>
@@ -80,14 +78,12 @@ export default function ReplayPage({
                       </div>
                     </div>
 
-                    {/* Live Replay Indicator */}
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-2.5 py-1 text-[0.58rem] sm:text-[0.65rem] font-extrabold uppercase tracking-wider text-[#00df8f] backdrop-blur-xs">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#00df8f]" />
                       BROADCAST REPLAY
                     </span>
                   </div>
 
-                  {/* Main Slide Replay Headline */}
                   <div className="my-auto py-2">
                     <h2 className="text-[1.18rem] min-[390px]:text-[1.38rem] sm:text-[1.95rem] md:text-[2.25rem] font-black leading-[1.12] tracking-tight">
                       How to profit from <br />
@@ -103,7 +99,6 @@ export default function ReplayPage({
                     </p>
                   </div>
 
-                  {/* Scrub Progress Bar */}
                   <div className="w-full">
                     <div className="relative h-1 w-full overflow-hidden rounded-full bg-white/15 sm:h-1.5">
                       <div className="h-full w-1/3 bg-[#1665f5]" />
@@ -144,7 +139,6 @@ export default function ReplayPage({
         </div>
       </main>
 
-      {/* Unified Full-Width Legal Footer */}
       <LegalFooter />
     </div>
   );
