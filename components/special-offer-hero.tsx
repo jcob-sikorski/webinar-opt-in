@@ -17,7 +17,7 @@ export function SpecialOfferHero() {
             <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ef4444]" />
           </span>
           <span className="text-[0.68rem] sm:text-[0.74rem] font-black uppercase tracking-[0.12em] text-red-700">
-            TYLKO 70 DOSTĘPNYCH MIEJSC
+            TYLKO 2 DOSTĘPNE MIEJSCA
           </span>
         </div>
 
