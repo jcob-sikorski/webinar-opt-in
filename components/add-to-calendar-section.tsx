@@ -24,13 +24,13 @@ export function AddToCalendarSection() {
         {/* Step Pill: Amber border & light cream backing */}
         <div className="inline-flex items-center justify-center rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3 py-0.5 shadow-2xs">
           <span className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#ea580c]">
-            STEP 2
+            NIE SKOŃCZYŁEŚ!
           </span>
         </div>
 
         {/* Headline */}
         <h2 className="mt-2.5 text-center text-[1.25rem] min-[390px]:text-[1.38rem] sm:text-[1.55rem] font-black leading-tight tracking-tight text-neutral-900">
-          Add The Event To <span className="text-[#ea580c]">Your Calendar</span>
+          Dodaj To Wydarzenie Do <span className="text-[#ea580c]">Swojego Kalendarza</span>
         </h2>
 
         {/* Calendar Icon Card: Peach container with high-contrast action orange icon */}
@@ -88,10 +88,9 @@ export function AddToCalendarSection() {
           ))}
         </div>
 
-        {/* Subtext */}
         <p className="mt-3.5 text-center text-[0.76rem] font-normal leading-[1.38] text-neutral-500">
-          We&apos;ve sent your access link via email. Add this to your calendar{" "}
-          <span className="font-extrabold text-neutral-900">NOW</span> so you don&apos;t miss the live room opening.
+          Link z dostępem wyślemy na Twój e-mail. Dodaj wydarzenie do kalendarza{" "}
+          <span className="font-extrabold text-neutral-900">TERAZ</span>, aby nie przegapić startu transmisji.
         </p>
 
       </div>

@@ -13,42 +13,42 @@ interface FaqVideo {
 const FAQ_VIDEOS: FaqVideo[] = [
   {
     id: "live",
-    question: "Is this workshop Live?",
+    question: "Czy to szkolenie jest na żywo?",
     duration: "1:22",
     progressPercent: 35,
     videoUrl: "",
   },
   {
     id: "cant-make-it",
-    question: "What if I can't make the workshop?",
+    question: "Co jeśli nie mogę pojawić się na szkoleniu?",
     duration: "1:41",
     progressPercent: 55,
     videoUrl: "",
   },
   {
     id: "burned-before",
-    question: "I got burned before... will this work?",
+    question: "Już wcześniej się sparzyłem... czy to zadziała?",
     duration: "1:48",
     progressPercent: 20,
     videoUrl: "",
   },
   {
     id: "selling",
-    question: "Will you try to sell me something?",
+    question: "Czy będziesz próbował mi coś sprzedać?",
     duration: "2:14",
     progressPercent: 60,
     videoUrl: "",
   },
   {
     id: "experience",
-    question: "Do I need an existing audience or offer?",
+    question: "Czy muszę mieć już własną społeczność lub ofertę?",
     duration: "1:55",
     progressPercent: 40,
     videoUrl: "",
   },
   {
     id: "bonuses",
-    question: "Where and when do I get my bonuses?",
+    question: "Gdzie i kiedy otrzymam swoje bonusy?",
     duration: "1:15",
     progressPercent: 75,
     videoUrl: "",
@@ -65,19 +65,18 @@ export function FaqVideosSection() {
         {/* Step Badge */}
         <div className="inline-flex items-center justify-center rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3.5 py-0.5 shadow-2xs">
           <span className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#ea580c]">
-            STEP 3
+            NASTĘPNY KROK
           </span>
         </div>
 
-        {/* Section Heading */}
+        {/* Opcja z „warsztatami” i „nurtującymi pytaniami” */}
         <h2 className="mt-2.5 text-center text-[1.25rem] min-[390px]:text-[1.38rem] sm:text-[1.58rem] font-black leading-tight tracking-tight text-neutral-900">
-          Get Your Burning Questions <br />
-          <span className="text-[#ea580c]">Answered Before The Workshop</span>
+          Odpowiedzi na najbardziej <br />
+          <span className="text-[#ea580c]">palące pytania</span>
         </h2>
 
-        {/* Subtitle */}
         <p className="mt-2 text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.88rem] font-normal leading-[1.38] text-neutral-600">
-          Tap any question below to watch a quick 60–90 second answer from Scott.
+          Kliknij dowolne pytanie poniżej, aby obejrzeć krótką odpowiedź Jakuba.
         </p>
 
         {/* Single Column Stack */}

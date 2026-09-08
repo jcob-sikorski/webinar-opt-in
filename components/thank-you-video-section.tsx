@@ -9,7 +9,7 @@ interface ThankYouVideoSectionProps {
 }
 
 export function ThankYouVideoSection({
-  workshopDateTime = "WEDNESDAY, AUGUST 12TH @ 8:00 PM ET",
+  workshopDateTime = "ŚRODA, 16 WRZEŚNIA o 20:00",
   thumbnailUrl = "https://ucarecdn.com/3cb95e08-818a-470b-b52a-a9e5d9d37d8d/unnamed9.webp",
   videoUrl,
 }: ThankYouVideoSectionProps) {
@@ -34,15 +34,15 @@ export function ThankYouVideoSection({
 
         {/* Headline */}
         <h1 className="mx-auto w-full text-center text-[1.12rem] min-[390px]:text-[1.25rem] sm:text-[1.45rem] font-black uppercase leading-[1.2] tracking-tight text-neutral-900">
-          Congrats, You&apos;re Registered For<br />
+          Gratki, Widzimy Się Na Szkoleniu!<br />
           <span className="text-[#ea580c]">{workshopDateTime}</span>
         </h1>
 
-        {/* Subheadline */}
-        <p className="mx-auto mt-2.5 w-full text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.92rem] font-normal leading-[1.35] tracking-tight text-neutral-800">
-          Watch The Video Below To Confirm Your Registration &amp;{" "}
-          <span className="font-bold text-black">Scroll Down On This Page</span>
-        </p>
+      {/* Subheadline */}
+      <p className="mx-auto mt-2.5 w-full text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.92rem] font-normal leading-[1.35] tracking-tight text-neutral-800">
+        Krótka wiadomość ode mnie przed szkoleniem{" "}
+        <span className="font-bold text-black">następnie przewiń stronę w dół</span>
+      </p>
 
         {/* Video Preview Box: High-tension orange border */}
         <div className="mx-auto mt-4 sm:mt-5 w-full">

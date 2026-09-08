@@ -7,50 +7,50 @@ export function RealTransparencySection() {
     <section className="relative w-full bg-white font-sans selection:bg-orange-200 flex flex-col items-center overflow-x-hidden pt-4 pb-14 px-4 sm:px-6">
       <div className="mx-auto flex w-full max-w-[22.5rem] sm:max-w-[25.5rem] flex-col items-center">
         
-        {/* Step / Topic Tag: Amber border with subtle peach fill */}
+        {/* Step / Topic Tag */}
         <div className="inline-flex items-center justify-center rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3.5 py-0.5 shadow-2xs">
           <span className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#ea580c]">
-            UNFILTERED DATA
+            DANE HISTORYCZNE Z PLACÓWEK
           </span>
         </div>
 
         {/* Section Heading */}
         <h2 className="mt-2.5 text-center text-[1.28rem] min-[390px]:text-[1.42rem] sm:text-[1.65rem] font-black leading-tight tracking-tight text-neutral-900">
-          The Outcome Spectrum: <br />
-          <span className="text-[#ea580c]">Averages, Worst-Cases &amp; Hard Stats</span>
+          Ekonomia studia treningowego: <br />
+          <span className="text-[#ea580c]">Marże, czas wdrożenia i twarde realia</span>
         </h2>
 
         {/* Subtitle */}
         <p className="mt-2 text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.88rem] font-normal leading-[1.38] text-neutral-600">
-          Most marketers only show the top 1% $500K dashboard. Here is what actually happens across all tiers of operators.
+          Zamiast pustych obietnic o &bdquo;milionach w 2 tygodnie&rdquo; – oto jak wygląda realne poukładanie studia treningu personalnego na podstawie 50 placówek.
         </p>
 
         {/* 3 Real Data Counter Badges */}
         <div className="mt-5 grid w-full grid-cols-3 gap-2">
-          <div className="flex flex-col items-center justify-center rounded-xl border border-neutral-200/90 bg-[#fffcf8] py-2.5 px-1 text-center shadow-2xs">
-            <span className="text-[1.05rem] sm:text-[1.15rem] font-black text-neutral-900 tracking-tight">
-              &lt; 0.08%
-            </span>
-            <span className="mt-0.5 text-[0.62rem] font-semibold text-neutral-500 leading-tight">
-              Stripe Dispute Rate
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center justify-center rounded-xl border border-neutral-200/90 bg-[#fffcf8] py-2.5 px-1 text-center shadow-2xs">
-            <span className="text-[1.05rem] sm:text-[1.15rem] font-black text-neutral-900 tracking-tight">
-              1.4%
-            </span>
-            <span className="mt-0.5 text-[0.62rem] font-semibold text-neutral-500 leading-tight">
-              Refund Request Rate
-            </span>
-          </div>
-
           <div className="flex flex-col items-center justify-center rounded-xl border border-[#fed7aa] bg-[#fff7ed]/60 py-2.5 px-1 text-center shadow-2xs">
             <span className="text-[1.05rem] sm:text-[1.15rem] font-black text-[#ea580c] tracking-tight">
-              2.4X
+              50–80%
             </span>
             <span className="mt-0.5 text-[0.62rem] font-semibold text-neutral-600 leading-tight">
-              Median 60-Day ROAS
+              Marża operacyjna
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center justify-center rounded-xl border border-neutral-200/90 bg-[#fffcf8] py-2.5 px-1 text-center shadow-2xs">
+            <span className="text-[1.05rem] sm:text-[1.15rem] font-black text-neutral-900 tracking-tight">
+              7 dni–6 msc
+            </span>
+            <span className="mt-0.5 text-[0.62rem] font-semibold text-neutral-500 leading-tight">
+              Pełne wdrożenie
+            </span>
+          </div>
+
+          <div className="flex flex-col items-center justify-center rounded-xl border border-neutral-200/90 bg-[#fffcf8] py-2.5 px-1 text-center shadow-2xs">
+            <span className="text-[1.05rem] sm:text-[1.15rem] font-black text-neutral-900 tracking-tight">
+              ~5h / tyg.
+            </span>
+            <span className="mt-0.5 text-[0.62rem] font-semibold text-neutral-500 leading-tight">
+              Praca właściciela
             </span>
           </div>
         </div>
@@ -58,63 +58,63 @@ export function RealTransparencySection() {
         {/* Outcome Breakdown Cards */}
         <div className="mt-5 flex w-full flex-col gap-3">
           
-          {/* Card 1: Realistic Average / Mid-Level Win (Warm Primary) */}
+          {/* Card 1: Standard Success Model */}
           <div className="w-full rounded-[1.25rem] border border-[#fed7aa] bg-[#fffaf5] p-4 shadow-2xs">
             <div className="flex items-center justify-between">
               <span className="text-[0.66rem] font-black uppercase tracking-[0.14em] text-[#ea580c]">
-                THE TYPICAL OPERATOR (MIDDLE 70%)
+                STANDARDOWE WDROŻENIE (WIĘKSZOŚĆ STUDIÓW)
               </span>
               <span className="rounded-md bg-[#ffedd5] px-1.5 py-0.5 text-[0.62rem] font-bold text-[#c2410c]">
-                +$8k–$25k/Mo
+                50–80% marży
               </span>
             </div>
 
             <h3 className="mt-2 text-[0.92rem] font-extrabold text-neutral-900 leading-snug">
-              Consistent Cash Flow &amp; Less Sales Call Burnout
+              Zejście z sali treningowej i ~5 godzin pracy właścicielskiej
             </h3>
 
             <p className="mt-1.5 text-[0.77rem] text-neutral-700 leading-[1.42]">
-              They aren&apos;t hitting $1M/month, and they don&apos;t need to. They invest $1,500–$3,000 in monthly ad spend, fill a weekly room with 40–80 targeted attendees, and close 2–4 high-ticket clients like clockwork while cutting out 15 hours of manual outreach.
+              W ciągu <strong>6–7 miesięcy</strong> systematycznego wdrażania procedur właściciel przestaje prowadzić 30–40 treningów tygodniowo. Treningi przejmuje zatrudniony zespół trenerów, a studio generuje <strong>50–80% czystej marży</strong>. Rola właściciela ogranicza się do ok. 5 godzin tygodniowo na nadzór wskaźników, marketing i zarządzanie.
             </p>
           </div>
 
-          {/* Card 2: The Worst-Case / Less Than Ideal (Subtle Ochre/Amber) */}
+          {/* Card 2: Slower Adaptation */}
           <div className="w-full rounded-[1.25rem] border border-amber-200/80 bg-[#fffcf6] p-4 shadow-2xs">
             <div className="flex items-center justify-between">
               <span className="text-[0.66rem] font-black uppercase tracking-[0.14em] text-amber-700">
-                WORST-CASE SCENARIO (BOTTOM 10–15%)
+                WOLNIEJSZA ADAPTACJA (10–15%)
               </span>
               <span className="rounded-md bg-amber-100/70 px-1.5 py-0.5 text-[0.62rem] font-bold text-amber-800">
-                Barely Broke Even
+                Wydłużony czas
               </span>
             </div>
 
             <h3 className="mt-2 text-[0.92rem] font-extrabold text-neutral-900 leading-snug">
-              Launch #1 Flatlines or Barely Covers Ad Spend
+              Trudność z delegowaniem i dłuższa rekrutacja trenerów
             </h3>
 
             <p className="mt-1.5 text-[0.77rem] text-neutral-700 leading-[1.42]">
-              Example: Spend $1,200 on cold ads, generate 1 single sale ($1,500) on the replay. Why does this happen? Usually an untested offer, bad audio/video delivery, or an audience mismatch. The upside? They don&apos;t lose money, they retain every lead in their CRM, and they fix the hook on run #2.
+              Zamiast 6–7 miesięcy proces trwa 8–10 miesięcy. Z czego to wynika? Najczęściej z bariery psychicznej właściciela przed oddaniem swoich wieloletnich podopiecznych nowym trenerom lub z wolniejszego procesu rekrutacji. Studio pozostaje zyskowne, ale zejście z sali zajmuje po prostu więcej czasu.
             </p>
           </div>
 
-          {/* Card 3: The 10% Who Fail Completely (Crisp Red Alert) */}
+          {/* Card 3: When Things Fail / Refunds */}
           <div className="w-full rounded-[1.25rem] border border-red-200/80 bg-[#fffafa] p-4 shadow-2xs">
             <div className="flex items-center justify-between">
               <span className="text-[0.66rem] font-black uppercase tracking-[0.14em] text-red-600">
-                WHO DOES NOT SUCCEED
+                KIEDY POJAWIAJĄ SIĘ ZWROTY
               </span>
               <span className="rounded-md bg-red-100 px-1.5 py-0.5 text-[0.62rem] font-bold text-red-700">
-                Zero Traction
+                Sytuacje losowe
               </span>
             </div>
 
             <h3 className="mt-2 text-[0.92rem] font-extrabold text-neutral-900 leading-snug">
-              No Market Demand + Giving Up Before The 2nd Webinar
+              Nagłe wypadki losowe lub całkowita rezygnacja ze studia
             </h3>
 
             <p className="mt-1.5 text-[0.77rem] text-neutral-700 leading-[1.42]">
-              Webinars amplify market resonance; they do not create desire out of thin air. People who quit after spending $150 with zero sales and refuse to adjust their pitch or offer angle do not win with this model.
+              Jedyny powód, dla którego ktoś u nas nie osiąga wyników, to <strong>nagłe sytuacje życiowe, przez które właściciel całkowicie rezygnuje z prowadzenia studia</strong> (np. ciężkie problemy zdrowotne, przeprowadzka czy zamknięcie lokalu). Żaden system ani know-how nie zadziała, jeśli fizycznie porzucisz biznes. W takich nagłych przypadkach zachowujemy się w 100% fair i zwracamy środki.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export function RealTransparencySection() {
             i
           </span>
           <p className="text-[0.74rem] text-neutral-600 leading-tight">
-            If you want unrealistic &quot;overnight push-button riches&quot;, this room is not for you. If you want engineered economics, you will thrive.
+            Jeśli szukasz magicznego przycisku i nie chcesz zatrudniać trenerów – to nie zadziała. Jeśli chcesz poukładać studio z 50–80% marży i pracować 5h w tygodniu jako przedsiębiorca – to jedyna sprawdzona droga.
           </p>
         </div>
 
