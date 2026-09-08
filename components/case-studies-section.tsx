@@ -50,10 +50,10 @@ export function CaseStudiesSection() {
         
         {/* Top Highlighter Header */}
         <div className="inline-block bg-[#faea75] px-5 min-[390px]:px-6 py-1 text-center">
-          <h2 className="text-[1.2rem] min-[390px]:text-[1.35rem] sm:text-[1.5rem] font-bold leading-tight tracking-tight text-neutral-950">
-            Some casual{" "}
-            <span className="underline decoration-neutral-950 decoration-[2px] underline-offset-[2px]">
-              results below..
+          <h2 className="text-[1.2rem] min-[390px]:text-[1.35rem] sm:text-[1.5rem] font-bold leading-tight tracking-tight text-black">
+            Takie tam{" "}
+            <span className="underline decoration-black decoration-[2px] underline-offset-[2px]">
+              rezultaty poniżej..
             </span>
           </h2>
         </div>
@@ -160,9 +160,9 @@ export function CaseStudiesSection() {
         <div className="mt-8 sm:mt-10 flex w-full justify-center">
           <div className="w-[90%] sm:w-[85%] bg-[#faea75] py-1 sm:py-1.5 text-center">
             <h3 className="text-[1.18rem] min-[390px]:text-[1.32rem] sm:text-[1.48rem] font-bold leading-tight tracking-tight text-neutral-950">
-              And{" "}
+              I{" "}
               <span className="underline decoration-neutral-950 decoration-[1.8px] sm:decoration-[2px] underline-offset-[3px] [text-decoration-skip-ink:none]">
-                Many Many More...
+                  wiele, wiele więcej...
               </span>
             </h3>
           </div>

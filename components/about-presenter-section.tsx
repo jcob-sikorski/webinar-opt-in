@@ -31,16 +31,17 @@ export function AboutPresenterSection() {
           <div className="mt-5 flex flex-col items-center text-center">
             <div className="inline-flex items-center justify-center rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3 py-0.5">
               <span className="text-[0.65rem] sm:text-[0.7rem] font-bold uppercase tracking-[0.16em] text-[#ea580c]">
-                YOUR HOST
+                TWÓJ PREZENTER
               </span>
             </div>
 
             <h3 className="mt-2 text-[1.65rem] sm:text-[1.85rem] font-extrabold tracking-tight text-neutral-900">
-              Scott Kelly
+              Jakub Siekiera
             </h3>
 
+            {/* Opcja 2: Czysta, profesjonalna wersja (dla właścicieli, nie „studiów”) */}
             <p className="mt-1 text-[0.82rem] sm:text-[0.875rem] font-normal leading-snug text-neutral-500">
-              Founder of <span className="font-bold text-neutral-900">Infopros</span> — webinar marketing for<br />high-ticket offers
+              Partner w <span className="font-bold text-neutral-900">Dochodowe Studio</span> — mentoring biznesowy dla właścicieli studiów treningowych
             </p>
           </div>
 
@@ -50,30 +51,30 @@ export function AboutPresenterSection() {
           {/* Narrative Body Copy */}
           <div className="space-y-3.5 text-[0.84rem] sm:text-[0.89rem] font-normal leading-[1.46] text-neutral-700">
             <p>
-              I started Infopros in November 2024: a webinar-based marketing agency built for high-ticket offers. Since then we&apos;ve{" "}
-              <span className="font-bold text-neutral-900">collected over $20 million in cash for our clients</span> and grown my own agency past{" "}
-              <span className="font-bold text-neutral-900">$200K/month</span>.
+              Dochodowe Studio nie powstało przy biurku ani z teoretycznych książek o marketingu. Nasz założyciel, Bartek Sikorski, zbudował ten system na własnej skórze — po dwóch bolesnych bankructwach, pracy na magazynie i latach tyrania jako{" "}
+              <span className="font-bold text-neutral-900">zombie od 6:00 do 22:00</span> we własnym lokalu, zanim stworzył 4 samobieżne studia Sportowe Przedmieście.
             </p>
 
             <p>
-              I&apos;m a big believer in{" "}
+              Fundament naszej firmy: ciężka praca nie naprawi Twojego biznesu - poprawnie wdrożone procedury już tak. Pokazujemy właścicielom, jak przestać być harować na macie i stać się{" "}
               <span className="relative isolate px-0.5 font-bold text-neutral-900">
                 <span className="absolute inset-x-0 bottom-0.5 -z-10 h-[48%] rounded-[2px] bg-[#fed7aa]/70" />
-                give before you ask
+                architektem samobieżnego studia
               </span>
-              . That&apos;s exactly why I&apos;m hosting this live and handing you everything you need to print with webinars — on a silver platter.
+              : wdrażając semi-personal z wysoką marżą, powtarzalną metodykę i zespół, który dba o ludzi bez Twojego wiecznego stania nad głową.
             </p>
 
             <p>
-              It&apos;s the same system behind{" "}
-              <span className="font-bold text-neutral-900">14 offers scaled past $100K/month</span> and{" "}
-              <span className="font-bold text-neutral-900">2 past $1M/month</span>, broken all the way down.
+              To dokładnie ten sam model, na którym pracują nasi klienci:{" "}
+              <span className="font-bold text-neutral-900">Eryk przebił 50k przychodu i otwiera drugie studio</span>,{" "}
+              <span className="font-bold text-neutral-900">Joanna wyciąga 30k zysku pracując 80h w miesiącu</span>, a{" "}
+              <span className="font-bold text-neutral-900">Klaudia robi 50k na rękę</span> zarządzając zespołem z laptopa.
             </p>
 
             {/* Accent Quote Callout */}
             <div className="border-l-[3.5px] border-[#ea580c] py-0.5 pl-3">
               <p className="text-[0.98rem] sm:text-[1.04rem] font-bold text-neutral-900 tracking-tight">
-                And I do <span className="italic font-normal">not</span> hold back.
+                Teoria? Skąd! <span className="italic font-normal">Wdrażamy wyłącznie systemy przetestowane już na 50 obiektach.</span>
               </p>
             </div>
           </div>

@@ -8,8 +8,8 @@ interface InclusionItem {
 
 const INCLUSIONS: InclusionItem[] = [
   {
-    title: "Full replay access",
-    description: "Rewatch every session on your own schedule.",
+    title: "Dostęp do pełnego nagrania warsztatu",
+    description: "Obejrzysz na spokojnie między treningami i wrócisz do materiałów w trakcie wdrażania.",
     icon: (
       <svg
         className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
@@ -26,8 +26,8 @@ const INCLUSIONS: InclusionItem[] = [
     ),
   },
   {
-    title: "Our internal 17-step launch checklist",
-    description: "The exact sequence we follow for every webinar.",
+    title: "Checklista gotowości i audyt studia",
+    description: "Punkt po punkcie sprawdzisz, gdzie ucieka marża, co blokuje Cię przed zejściem z sali i od czego zacząć.",
     icon: (
       <svg
         className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
@@ -44,8 +44,8 @@ const INCLUSIONS: InclusionItem[] = [
     ),
   },
   {
-    title: "12 best-performing webinar funnels",
-    description: "Proven layouts you can model in minutes.",
+    title: "Kalkulatory rentowności i matryca semi-personal",
+    description: "Gotowe wzory wyliczeń: czynsz, stawki dla trenerów i marża, dzięki którym wiesz dokładnie, ile wyciągasz z każdej godziny.",
     icon: (
       <svg
         className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
@@ -63,8 +63,8 @@ const INCLUSIONS: InclusionItem[] = [
     ),
   },
   {
-    title: "Swipe file of 20 winning ads",
-    description: "High-converting creative to fill your room with buyers.",
+    title: "Baza skryptów rolek i reklam pod studio",
+    description: "Gotowe formaty wideo pod kobiety 35+ i mężczyzn 40+, które zapełniają grafik ludźmi gotowymi płacić za proces.",
     icon: (
       <svg
         className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
@@ -82,8 +82,8 @@ const INCLUSIONS: InclusionItem[] = [
     ),
   },
   {
-    title: "2 full webinar recordings",
-    description: "Two six-figure webinars, start to finish.",
+    title: "Rozłożone na czynniki 4 Case Studies",
+    description: "Konkretne liczby i proces: jak trenerzy mający po 7 sesji dziennie weszli na 50 000 – 66 000 zł/mc bez tyrania na sali.",
     icon: (
       <svg
         className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
@@ -132,21 +132,22 @@ export function WhatsIncludedSection() {
               </svg>
             </div>
 
-            <div className="flex flex-col">
-              <h3 className="text-[0.92rem] min-[390px]:text-[0.97rem] font-bold text-neutral-800 leading-tight tracking-tight">
-                Then the recap — your A–Z launch<br />checklist
-              </h3>
-              <p className="mt-1 text-[0.8rem] sm:text-[0.84rem] font-normal text-neutral-600 leading-[1.35]">
-                Every task in order, from your first live webinar to an extra $50–100K/month.
-              </p>
-            </div>
+          {/* Wariant 2: Ścieżka od zera do samobieżnego studia */}
+          <div className="flex flex-col">
+            <h3 className="text-[0.92rem] min-[390px]:text-[0.97rem] font-bold text-neutral-800 leading-tight tracking-tight">
+              Nagroda? Playbook Dochodowego Studia
+            </h3>
+            <p className="mt-1 text-[0.8rem] sm:text-[0.84rem] font-normal text-neutral-600 leading-[1.35]">
+              18 rozdziałów z czystą praktyką: jak wybrać lokal, aby nie utonąć w czynszu, jak ułożyć ofertę, semi-personal, skrypt rolki reklamowej i proces bezpiecznego przekazania podopiecznych zespołowi.
+            </p>
+          </div>
           </div>
         </div>
 
         {/* Section Divider with Label */}
         <div className="mt-6 mb-3.5 flex w-full items-center gap-3">
           <span className="shrink-0 text-[0.68rem] sm:text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-[#ea580c]">
-            INCLUDED WITH YOUR TICKET
+            DOSTAJESZ RÓWNIEŻ
           </span>
           <div className="h-[1px] flex-1 bg-[#fed7aa]/80" />
         </div>
