@@ -18,25 +18,25 @@ const CALENDARS = [
 
 export function AddToCalendarSection() {
   return (
-    <section className="relative w-full bg-white font-sans selection:bg-blue-200 flex flex-col items-center overflow-x-hidden pt-2 pb-10 px-4 sm:px-6">
+    <section className="relative w-full bg-white font-sans selection:bg-orange-200 flex flex-col items-center overflow-x-hidden pt-2 pb-10 px-4 sm:px-6">
       <div className="mx-auto flex w-full max-w-[22rem] sm:max-w-[24.5rem] flex-col items-center">
         
-        {/* Step Pill */}
-        <div className="inline-flex items-center justify-center rounded-full border border-[#dbeafe] bg-[#f0f6fe] px-3 py-0.5 shadow-2xs">
-          <span className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#1665f5]">
+        {/* Step Pill: Amber border & light cream backing */}
+        <div className="inline-flex items-center justify-center rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3 py-0.5 shadow-2xs">
+          <span className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-[#ea580c]">
             STEP 2
           </span>
         </div>
 
         {/* Headline */}
-        <h2 className="mt-2.5 text-center text-[1.25rem] min-[390px]:text-[1.38rem] sm:text-[1.55rem] font-black leading-tight tracking-tight text-[#0c1e38]">
-          Add The Event To <span className="text-[#1665f5]">Your Calendar</span>
+        <h2 className="mt-2.5 text-center text-[1.25rem] min-[390px]:text-[1.38rem] sm:text-[1.55rem] font-black leading-tight tracking-tight text-neutral-900">
+          Add The Event To <span className="text-[#ea580c]">Your Calendar</span>
         </h2>
 
-        {/* Calendar Icon Card */}
-        <div className="mt-4.5 flex h-20 w-20 sm:h-22 sm:w-22 items-center justify-center rounded-[1.35rem] border border-[#d8e6fd] bg-[#edf4fe] shadow-xs">
+        {/* Calendar Icon Card: Peach container with high-contrast action orange icon */}
+        <div className="mt-4.5 flex h-20 w-20 sm:h-22 sm:w-22 items-center justify-center rounded-[1.35rem] border border-[#fed7aa] bg-[#fff7ed] shadow-xs">
           <svg
-            className="h-10 w-10 sm:h-11 sm:w-11 text-[#1665f5]"
+            className="h-10 w-10 sm:h-11 sm:w-11 text-[#ea580c]"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -57,7 +57,7 @@ export function AddToCalendarSection() {
           </svg>
         </div>
 
-        {/* Slim Button Strip (4 across on desktop/larger mobile, 2x2 on small mobile) */}
+        {/* Slim Button Strip: Warm hover states */}
         <div className="mt-3.5 grid w-full grid-cols-2 min-[390px]:grid-cols-4 gap-1.5">
           {CALENDARS.map((cal) => (
             <a
@@ -65,10 +65,10 @@ export function AddToCalendarSection() {
               href={cal.link}
               target="_blank"
               rel="noreferrer"
-              className="group flex h-9 items-center justify-center gap-1.5 rounded-xl border border-[#e2e8f0] bg-white px-2 shadow-2xs transition-all hover:border-[#1665f5] hover:bg-[#edf4ff]/60 hover:shadow-xs active:scale-[0.97]"
+              className="group flex h-9 items-center justify-center gap-1.5 rounded-xl border border-neutral-200/90 bg-white px-2 shadow-2xs transition-all hover:border-[#ea580c] hover:bg-[#fff7ed]/80 hover:shadow-xs active:scale-[0.97]"
             >
               <svg
-                className="h-3.5 w-3.5 shrink-0 text-[#64748b] transition-colors group-hover:text-[#1665f5]"
+                className="h-3.5 w-3.5 shrink-0 text-neutral-400 transition-colors group-hover:text-[#ea580c]"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -81,17 +81,17 @@ export function AddToCalendarSection() {
                 <line x1="8" y1="2" x2="8" y2="6" />
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
-              <span className="text-[0.75rem] font-bold tracking-tight text-[#0c1e38] transition-colors group-hover:text-[#1665f5]">
+              <span className="text-[0.75rem] font-bold tracking-tight text-neutral-800 transition-colors group-hover:text-[#ea580c]">
                 {cal.name}
               </span>
             </a>
           ))}
         </div>
 
-        {/* Refined Low-Profile Subtext */}
-        <p className="mt-3.5 text-center text-[0.76rem] font-normal leading-[1.38] text-[#64748b]">
+        {/* Subtext */}
+        <p className="mt-3.5 text-center text-[0.76rem] font-normal leading-[1.38] text-neutral-500">
           We&apos;ve sent your access link via email. Add this to your calendar{" "}
-          <span className="font-extrabold text-[#0c1e38]">NOW</span> so you don&apos;t miss the live room opening.
+          <span className="font-extrabold text-neutral-900">NOW</span> so you don&apos;t miss the live room opening.
         </p>
 
       </div>

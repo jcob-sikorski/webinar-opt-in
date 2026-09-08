@@ -12,7 +12,7 @@ const INCLUSIONS: InclusionItem[] = [
     description: "Rewatch every session on your own schedule.",
     icon: (
       <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#b5854b]"
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -21,7 +21,7 @@ const INCLUSIONS: InclusionItem[] = [
         strokeLinejoin="round"
       >
         <circle cx="12" cy="12" r="9" />
-        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" fillOpacity="0.25" />
+        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" fillOpacity="0.2" />
       </svg>
     ),
   },
@@ -30,7 +30,7 @@ const INCLUSIONS: InclusionItem[] = [
     description: "The exact sequence we follow for every webinar.",
     icon: (
       <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#b5854b]"
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -48,7 +48,7 @@ const INCLUSIONS: InclusionItem[] = [
     description: "Proven layouts you can model in minutes.",
     icon: (
       <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#b5854b]"
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -67,7 +67,7 @@ const INCLUSIONS: InclusionItem[] = [
     description: "High-converting creative to fill your room with buyers.",
     icon: (
       <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#b5854b]"
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -86,7 +86,7 @@ const INCLUSIONS: InclusionItem[] = [
     description: "Two six-figure webinars, start to finish.",
     icon: (
       <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#b5854b]"
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
@@ -106,11 +106,10 @@ export function WhatsIncludedSection() {
     <section className="w-full bg-white pt-2 pb-10 px-4 sm:px-6">
       <div className="mx-auto flex w-full max-w-[22.5rem] sm:max-w-[25.5rem] flex-col items-center">
         
-        {/* Top Highlight Card */}
-        <div className="relative w-full rounded-[1.35rem] border border-[#dce8fd] bg-white p-3.5 sm:p-4 shadow-xs">
-          {/* Blue accent ribbon wrapping top-left and bottom-left corners seamlessly */}
+        {/* Top Highlight Card: Warm peach accents & orange ribbon */}
+        <div className="relative w-full rounded-[1.35rem] border border-[#fed7aa]/80 bg-white p-3.5 sm:p-4 shadow-xs">
           <div
-            className="pointer-events-none absolute -inset-[1px] rounded-[1.35rem] border-[3px] border-[#1665f5]"
+            className="pointer-events-none absolute -inset-[1px] rounded-[1.35rem] border-[3px] border-[#ea580c]"
             style={{
               WebkitMaskImage: "linear-gradient(to right, #000 24px, transparent 38px)",
               maskImage: "linear-gradient(to right, #000 24px, transparent 38px)",
@@ -118,9 +117,9 @@ export function WhatsIncludedSection() {
           />
 
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-[#d8e6fd] bg-[#edf4fe]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] border border-[#fed7aa] bg-[#fff7ed]">
               <svg
-                className="h-5 w-5 text-[#1665f5]"
+                className="h-5 w-5 text-[#ea580c]"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -134,10 +133,10 @@ export function WhatsIncludedSection() {
             </div>
 
             <div className="flex flex-col">
-              <h3 className="text-[0.92rem] min-[390px]:text-[0.97rem] font-bold text-[#334155] leading-tight tracking-tight">
+              <h3 className="text-[0.92rem] min-[390px]:text-[0.97rem] font-bold text-neutral-800 leading-tight tracking-tight">
                 Then the recap — your A–Z launch<br />checklist
               </h3>
-              <p className="mt-1 text-[0.8rem] sm:text-[0.84rem] font-normal text-[#64748b] leading-[1.35]">
+              <p className="mt-1 text-[0.8rem] sm:text-[0.84rem] font-normal text-neutral-600 leading-[1.35]">
                 Every task in order, from your first live webinar to an extra $50–100K/month.
               </p>
             </div>
@@ -146,25 +145,25 @@ export function WhatsIncludedSection() {
 
         {/* Section Divider with Label */}
         <div className="mt-6 mb-3.5 flex w-full items-center gap-3">
-          <span className="shrink-0 text-[0.68rem] sm:text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-[#b5854b]">
+          <span className="shrink-0 text-[0.68rem] sm:text-[0.72rem] font-extrabold uppercase tracking-[0.14em] text-[#ea580c]">
             INCLUDED WITH YOUR TICKET
           </span>
-          <div className="h-[1px] flex-1 bg-[#eedac3]/80" />
+          <div className="h-[1px] flex-1 bg-[#fed7aa]/80" />
         </div>
 
-        {/* Inclusions Card - Squeezed row height & subtle dividers */}
-        <div className="w-full overflow-hidden rounded-[1.45rem] border border-[#eedac2] bg-white shadow-2xs divide-y divide-[#f7ede0]">
+        {/* Inclusions Card: Consistent warm border and cream item badges */}
+        <div className="w-full overflow-hidden rounded-[1.45rem] border border-[#fed7aa]/90 bg-white shadow-2xs divide-y divide-[#ffedd5]/80">
           {INCLUSIONS.map((item) => (
             <div key={item.title} className="flex items-start gap-3 py-3 px-3.5 sm:py-3.5 sm:px-4">
-              <div className="flex h-9 w-9 min-[390px]:h-10 min-[390px]:w-10 shrink-0 items-center justify-center rounded-[11px] border border-[#eddac2] bg-[#fcf8f2]">
+              <div className="flex h-9 w-9 min-[390px]:h-10 min-[390px]:w-10 shrink-0 items-center justify-center rounded-[11px] border border-[#fed7aa] bg-[#fff7ed]">
                 {item.icon}
               </div>
 
               <div className="flex flex-col justify-center">
-                <h4 className="text-[0.9rem] min-[390px]:text-[0.95rem] font-bold text-[#0c1e38] leading-tight tracking-tight">
+                <h4 className="text-[0.9rem] min-[390px]:text-[0.95rem] font-bold text-neutral-900 leading-tight tracking-tight">
                   {item.title}
                 </h4>
-                <p className="mt-0.5 text-[0.79rem] min-[390px]:text-[0.83rem] font-normal text-[#64748b] leading-[1.35]">
+                <p className="mt-0.5 text-[0.79rem] min-[390px]:text-[0.83rem] font-normal text-neutral-600 leading-[1.35]">
                   {item.description}
                 </p>
               </div>
