@@ -5,21 +5,14 @@ import Image from "next/image";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { LegalFooter } from "@/components/legal-footer";
 
-interface ReplayPageProps {
-  wistiaMediaId?: string;
-  expirationDate?: string;
-  expirationLabel?: string;
-  ctaHref?: string;
-  ctaText?: string;
-}
+export default function ReplayPage() {
+  // Configuration variables (previously passed as page props)
+  const wistiaMediaId = ""; // Insert your Wistia ID here, e.g., "abc123xyz"
+  const expirationDate = "2026-09-15T23:59:59+02:00";
+  const expirationLabel = "Limited Broadcast Replay Available";
+  const ctaHref = "/special-offer";
+  const ctaText = "Claim The Special Offer";
 
-export default function ReplayPage({
-  wistiaMediaId,
-  expirationDate = "2026-09-15T23:59:59+02:00",
-  expirationLabel = "Limited Broadcast Replay Available",
-  ctaHref = "/special-offer",
-  ctaText = "Claim The Special Offer",
-}: ReplayPageProps) {
   return (
     <div className="flex min-h-screen w-full flex-col justify-between bg-white font-sans selection:bg-blue-200">
       <main className="relative flex w-full flex-1 flex-col items-center overflow-x-hidden px-4 pt-5 pb-16 sm:px-6 sm:pt-8 sm:pb-20">
