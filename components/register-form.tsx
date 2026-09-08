@@ -84,6 +84,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
 
       try {
         await sendToMetaCAPI({
+          eventName: "Lead",
           email,
           phone: e164Digits,
           firstName,
