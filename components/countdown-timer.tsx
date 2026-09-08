@@ -15,7 +15,6 @@ export function CountdownTimer({ target }: CountdownTimerProps) {
   });
 
   useEffect(() => {
-    // Bezpieczne parsowanie daty z offsetem strefy (np. +02:00)
     const targetTimestamp = Date.parse(target);
 
     if (isNaN(targetTimestamp)) {
@@ -61,19 +60,21 @@ export function CountdownTimer({ target }: CountdownTimerProps) {
     <div className="flex items-center justify-center gap-1.5 sm:gap-2 select-none">
       {units.map((unit, index) => (
         <div key={unit.label} className="flex items-center">
-          <div className="flex h-[3.85rem] w-[4.15rem] min-[390px]:h-[4.2rem] min-[390px]:w-[4.55rem] sm:h-[4.5rem] sm:w-[4.85rem] flex-col items-center justify-center rounded-2xl border border-[#bfdbfe]/85 bg-gradient-to-b from-[#f6f9fe] to-[#edf4fe] px-1 shadow-[0_2px_8px_rgba(37,99,235,0.05)]">
-            <span className="text-[1.85rem] min-[390px]:text-[2.05rem] sm:text-[2.2rem] font-extrabold leading-none text-[#103264] tracking-[-0.02em] tabular-nums">
+          {/* Card: Subtle warm cream gradient with soft amber border */}
+          <div className="flex h-[3.85rem] w-[4.15rem] min-[390px]:h-[4.2rem] min-[390px]:w-[4.55rem] sm:h-[4.5rem] sm:w-[4.85rem] flex-col items-center justify-center rounded-2xl border border-[#fed7aa]/85 bg-gradient-to-b from-[#fffbf5] to-[#fff7ed] px-1 shadow-[0_2px_8px_rgba(234,88,12,0.06)]">
+            <span className="text-[1.85rem] min-[390px]:text-[2.05rem] sm:text-[2.2rem] font-extrabold leading-none text-[#7c2d12] tracking-[-0.02em] tabular-nums">
               {unit.value}
             </span>
-            <span className="mt-1 text-[0.62rem] min-[390px]:text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#627d98]">
+            <span className="mt-1 text-[0.62rem] min-[390px]:text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#9a3412]/80">
               {unit.label}
             </span>
           </div>
 
+          {/* Separator Dots: High-tension warm orange */}
           {index < units.length - 1 && (
             <div className="flex flex-col items-center justify-center gap-1.5 px-1 min-[390px]:px-1.5">
-              <span className="h-[3.5px] w-[3.5px] rounded-full bg-[#5ba2f8]" />
-              <span className="h-[3.5px] w-[3.5px] rounded-full bg-[#5ba2f8]" />
+              <span className="h-[3.5px] w-[3.5px] rounded-full bg-[#ea580c]" />
+              <span className="h-[3.5px] w-[3.5px] rounded-full bg-[#ea580c]" />
             </div>
           )}
         </div>

@@ -142,7 +142,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
             disabled={isSubmitting}
-            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/15 sm:text-sm"
           />
 
           <input
@@ -154,7 +154,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isSubmitting}
-            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/15 sm:text-sm"
           />
 
           <input
@@ -166,7 +166,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             disabled={isSubmitting}
-            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#1665f5] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#1665f5]/15 sm:text-sm"
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 transition placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/15 sm:text-sm"
           />
         </div>
 
@@ -185,8 +185,8 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
               }}
               className={`h-11 rounded-xl text-sm font-bold transition-all border-2 flex items-center justify-center gap-1.5 ${
                 capital === "Tak"
-                  ? "border-[#1665f5] bg-[#1665f5] text-white shadow-md shadow-[#1665f5]/25 scale-[1.01]"
-                  : "border-neutral-300 bg-white text-neutral-700 hover:border-[#1665f5]/60 hover:bg-blue-50/50"
+                  ? "border-[#ea580c] bg-[#ea580c] text-white shadow-md shadow-[#ea580c]/25 scale-[1.01]"
+                  : "border-neutral-300 bg-white text-neutral-700 hover:border-[#ea580c]/60 hover:bg-orange-50/50"
               } ${showCapitalError && !capital ? "border-red-400 bg-red-50/30" : ""}`}
             >
               {capital === "Tak" && (
@@ -225,12 +225,12 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="flex !h-auto w-full flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#1665f5] !py-3 !px-4 shadow-sm transition-colors hover:!bg-[#1253cc] active:scale-[0.99] disabled:opacity-70"
+            className="flex !h-auto w-full flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !py-3 !px-4 shadow-sm transition-colors hover:!bg-[#c2410c] active:scale-[0.99] disabled:opacity-70"
           >
             <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug">
               {isSubmitting ? "ZAPISYWANIE..." : "ZAPISZ SIĘ NA WARSZTAT"}
             </span>
-            <span className="text-xs font-medium text-blue-100 leading-none">
+            <span className="text-xs font-medium text-orange-100 leading-none">
               100% Darmowy Dostęp Live
             </span>
           </Button>
