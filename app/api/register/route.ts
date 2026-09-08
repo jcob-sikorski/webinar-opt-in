@@ -196,7 +196,7 @@ async function upsertGhlContact({
 
   if (existing) existingTags = existing.tags ?? [];
 
-  const tags = Array.from(new Set([...existingTags, "webinar-24sie", clientCategory, routeTag].filter(Boolean)));
+  const tags = Array.from(new Set([...existingTags, process.env.GHL_WEBINAR_TAG, clientCategory, routeTag].filter(Boolean)));
 
   const customFields = [
     { id: process.env.GHL_CAPITAL_FIELD_ID, field_value: capitalSelected },

@@ -118,7 +118,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
       if (!res.ok) throw new Error("API Route Failed");
 
       if (onSuccess) onSuccess();
-      router.push("/widzimy-sie-na-warsztacie");
+      router.push("/see-you");
     } catch (error) {
       console.error("Registration Error:", error);
       alert("Coś poszło nie tak. Spróbuj ponownie.");
