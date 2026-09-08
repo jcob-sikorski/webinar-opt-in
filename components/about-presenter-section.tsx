@@ -139,13 +139,13 @@ export function AboutPresenterSection() {
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }
             }}
-            className="flex !h-auto w-full max-w-[22rem] sm:max-w-[28rem] flex-col items-center justify-center rounded-[14px] !border-none !bg-[#1665f5] !px-4 sm:!px-8 !py-3 !normal-case shadow-[0_4px_16px_rgba(22,101,245,0.3)] transition-all hover:!bg-[#1354cc] active:scale-[0.98]"
+            className="flex !h-auto w-full max-w-[22rem] sm:max-w-[28rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#1665f5] !px-6 !py-3.5 shadow-sm transition-colors hover:!bg-[#1253cc] active:scale-[0.99]"
           >
-            <span className="text-[1.3rem] min-[390px]:text-[1.5rem] sm:text-[1.9rem] font-black leading-tight text-white tracking-tight text-center">
-              Claim Your Ticket - $27
+            <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug">
+              ZAPISZ SIĘ NA WARSZTAT
             </span>
-            <span className="mt-0.5 text-[0.8rem] min-[390px]:text-[0.88rem] sm:text-[0.95rem] font-bold leading-tight text-[#b8d2fe] tracking-normal text-center">
-              +Get $7,830 Worth Of Bonuses
+            <span className="text-xs font-medium text-blue-100 leading-none">
+              100% Darmowy Dostęp Live
             </span>
           </Button>
         </div>

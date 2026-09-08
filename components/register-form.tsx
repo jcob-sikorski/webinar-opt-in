@@ -169,48 +169,52 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
           />
         </div>
 
-        <div className="pt-0.5">
-          <p className="mb-1.5 text-center text-[0.74rem] font-semibold leading-tight text-neutral-600 sm:text-[0.78rem]">
+        <div className="pt-1">
+          <p className="mb-2 text-center text-[0.78rem] font-semibold leading-tight text-neutral-700 sm:text-[0.82rem]">
             Czy w ciągu 14 dni możesz zainwestować kilkanaście tys. zł w swój rozwój?
           </p>
 
-          <div
-            className={`grid grid-cols-2 gap-1 rounded-xl bg-neutral-100 p-1 transition ${
-              showCapitalError && !capital ? "ring-2 ring-red-500/50" : ""
-            }`}
-          >
+          <div className="grid grid-cols-2 gap-2.5">
+            {/* Przycisk TAK */}
             <button
               type="button"
               onClick={() => {
                 setCapital("Tak");
                 setShowCapitalError(false);
               }}
-              className={`h-9 rounded-lg text-xs font-bold transition-all ${
+              className={`h-11 rounded-xl text-sm font-bold transition-all border-2 flex items-center justify-center gap-1.5 ${
                 capital === "Tak"
-                  ? "bg-white text-[#1665f5] shadow-xs"
-                  : "text-neutral-600 hover:text-neutral-900"
-              }`}
+                  ? "border-[#1665f5] bg-[#1665f5] text-white shadow-md shadow-[#1665f5]/25 scale-[1.01]"
+                  : "border-neutral-300 bg-white text-neutral-700 hover:border-[#1665f5]/60 hover:bg-blue-50/50"
+              } ${showCapitalError && !capital ? "border-red-400 bg-red-50/30" : ""}`}
             >
+              {capital === "Tak" && (
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              )}
               Tak
             </button>
+
+            {/* Przycisk NIE */}
             <button
               type="button"
               onClick={() => {
                 setCapital("Nie");
                 setShowCapitalError(false);
               }}
-              className={`h-9 rounded-lg text-xs font-bold transition-all ${
+              className={`h-11 rounded-xl text-sm font-bold transition-all border-2 flex items-center justify-center gap-1.5 ${
                 capital === "Nie"
-                  ? "bg-white text-neutral-900 shadow-xs"
-                  : "text-neutral-600 hover:text-neutral-900"
-              }`}
+                  ? "border-neutral-800 bg-neutral-800 text-white shadow-md scale-[1.01]"
+                  : "border-neutral-300 bg-white text-neutral-700 hover:border-neutral-400 hover:bg-neutral-50"
+              } ${showCapitalError && !capital ? "border-red-400 bg-red-50/30" : ""}`}
             >
               Nie
             </button>
           </div>
 
           {showCapitalError && !capital && (
-            <span className="mt-1 block text-center text-[10px] font-semibold text-red-500">
+            <span className="mt-1.5 block text-center text-[11px] font-semibold text-red-500">
               Wybierz jedną z opcji, aby przejść dalej
             </span>
           )}
@@ -220,12 +224,12 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="flex !h-auto w-full flex-col items-center justify-center rounded-xl !border-none !bg-[#1665f5] !py-2.5 !px-3 shadow-[0_4px_16px_rgba(22,101,245,0.3)] transition-all hover:!bg-[#1354cc] active:scale-[0.98]"
+            className="flex !h-auto w-full flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#1665f5] !py-3 !px-4 shadow-sm transition-colors hover:!bg-[#1253cc] active:scale-[0.99] disabled:opacity-70"
           >
-            <span className="text-[1.35rem] font-black leading-tight text-white tracking-tight sm:text-[1.45rem]">
+            <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug">
               {isSubmitting ? "ZAPISYWANIE..." : "ZAPISZ SIĘ NA WARSZTAT"}
             </span>
-            <span className="text-[0.78rem] font-bold leading-none text-[#b8d2fe]">
+            <span className="text-xs font-medium text-blue-100 leading-none">
               100% Darmowy Dostęp Live
             </span>
           </Button>
