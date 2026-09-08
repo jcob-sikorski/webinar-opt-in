@@ -7,18 +7,18 @@ import { LegalFooter } from "@/components/legal-footer";
 
 export default function ReplayPage() {
   // Configuration variables
-  const wistiaMediaId = ""; // Insert your Wistia ID here, e.g., "abc123xyz"
+  const wistiaMediaId = ""; // Wklej tutaj ID z Wistia, np. "abc123xyz"
   const expirationDate = "2026-09-18T23:59:59+02:00";
-  const expirationLabel = "Limited Broadcast Replay Available";
+  const expirationLabel = "Powtórka dostępna przez ograniczony czas";
   const ctaHref = "/special-offer";
-  const ctaText = "Claim The Special Offer";
+  const ctaText = "Odbierz ofertę specjalną";
 
   return (
     <div className="flex min-h-screen w-full flex-col justify-between bg-white font-sans selection:bg-orange-200">
       <main className="relative flex w-full flex-1 flex-col items-center overflow-x-hidden px-4 pt-5 pb-16 sm:px-6 sm:pt-8 sm:pb-20">
         <div className="mx-auto flex w-full max-w-[24rem] sm:max-w-[34rem] md:max-w-[44rem] lg:max-w-[48rem] flex-col items-center">
           
-          {/* Expiration Scarcity Pill: Amber border with subtle peach fill */}
+          {/* Expiration Scarcity Pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3.5 py-1.5 shadow-xs">
             <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f87171] opacity-75" />
@@ -31,11 +31,11 @@ export default function ReplayPage() {
 
           {/* Heading */}
           <h1 className="mt-3 text-center text-[1.45rem] min-[390px]:text-[1.7rem] sm:text-[2.25rem] font-black leading-[1.18] tracking-tight text-neutral-900">
-            Watch The Full Broadcast <span className="text-[#ea580c]">Replay</span>
+            Obejrzyj pełne nagranie <span className="text-[#ea580c]">szkolenia</span>
           </h1>
 
           <p className="mt-2 text-center text-[0.8rem] min-[390px]:text-[0.85rem] sm:text-[0.92rem] font-normal leading-[1.4] text-neutral-600">
-            Take notes and watch before the countdown expires and the room is archived.
+            Przygotuj notatki i obejrzyj nagranie, zanim licznik dobiegnie końca, a dostęp zostanie zablokowany.
           </p>
 
           {/* Video Player Card Frame */}
@@ -44,7 +44,7 @@ export default function ReplayPage() {
               {wistiaMediaId ? (
                 <iframe
                   src={`https://fast.wistia.net/embed/iframe/${wistiaMediaId}?videoFoam=true`}
-                  title="Webinar Replay Video"
+                  title="Nagranie powtórki szkolenia"
                   allow="autoplay; fullscreen"
                   className="h-full w-full border-none"
                 />
@@ -55,7 +55,7 @@ export default function ReplayPage() {
                       <div className="relative flex h-11 w-11 sm:h-14 sm:w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl sm:rounded-2xl border border-[#fed7aa]/30 bg-white/10 backdrop-blur-xs">
                         <Image
                           src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face"
-                          alt="Jason Fladlien"
+                          alt="Prelegent"
                           width={56}
                           height={56}
                           className="h-full w-full object-cover"
@@ -63,32 +63,32 @@ export default function ReplayPage() {
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[0.88rem] sm:text-[1.12rem] font-black leading-tight text-white tracking-tight">
-                          Jason Fladlien
+                          Bartłomiej Sikorski
                         </span>
                         <span className="mt-0.5 text-[0.62rem] sm:text-[0.72rem] font-bold text-stone-400">
-                          Co-Founder, Rapid Crush Inc.
+                          Właściciel Studiów Treningu Personalnego
                         </span>
                       </div>
                     </div>
 
                     <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-2.5 py-1 text-[0.58rem] sm:text-[0.65rem] font-extrabold uppercase tracking-wider text-emerald-400 backdrop-blur-xs">
                       <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      BROADCAST REPLAY
+                      POWTÓRKA TRANSMISJI
                     </span>
                   </div>
 
                   <div className="my-auto py-2">
                     <h2 className="text-[1.18rem] min-[390px]:text-[1.38rem] sm:text-[1.95rem] md:text-[2.25rem] font-black leading-[1.12] tracking-tight">
-                      How to profit from <br />
+                      Jak poukładać studio treningu, <br />
                       <span className="underline decoration-[#ea580c] decoration-[3px] underline-offset-[3px] sm:decoration-[4px]">
-                        amazon.com
+                        odzyskać wolny czas
                       </span>
                       <br />
-                      <span className="text-[#ea580c]">Once and for all!</span>
+                      <span className="text-[#ea580c]">i przebić 20 000 zł zysku!</span>
                     </h2>
 
                     <p className="mt-2 max-w-[28rem] text-[0.66rem] sm:text-[0.76rem] font-normal leading-[1.35] text-stone-300 line-clamp-3 sm:line-clamp-none">
-                      &ldquo;There is, in my mind, at this very second no easier way on the internet to create multiple streams of income than doing Amazon the way we do it. The way our community consistently produces six, seven and eight figure Amazon Sellers.&rdquo;
+                      &bdquo;W tym materiale pokazujemy dokładny, przetestowany proces operacyjny i sprzedażowy, który pozwolił 50 placówkom zejść z sali treningowej i zbudować rentowny, przewidywalny biznes.&rdquo;
                     </p>
                   </div>
 
@@ -105,7 +105,7 @@ export default function ReplayPage() {
           {/* Countdown Block */}
           <div className="mt-7 flex w-full flex-col items-center">
             <span className="text-[0.7rem] sm:text-[0.75rem] font-extrabold uppercase tracking-[0.14em] text-[#ea580c]">
-              ACCESS EXPIRES IN
+              DOSTĘP WYGASA ZA
             </span>
             <div className="mt-2.5 w-full max-w-[21.5rem] sm:max-w-[23.5rem]">
               <CountdownTimer target={expirationDate} />
@@ -129,12 +129,12 @@ export default function ReplayPage() {
                 </span>
 
                 <span className="relative mt-0.5 text-[0.66rem] sm:text-[0.7rem] font-semibold text-orange-100/90 leading-tight">
-                  Instant Access &bull; 100% Risk-Free Guarantee
+                  Natychmiastowy dostęp &bull; 100% gwarancja satysfakcji
                 </span>
               </a>
 
               <p className="mt-2 text-center text-[0.72rem] font-medium text-neutral-500">
-                Special replay bonuses &amp; discounted pricing available for a limited time.
+                Specjalne bonusy do powtórki oraz promocyjna oferta są dostępne wyłącznie przez ograniczony czas.
               </p>
             </div>
           )}
