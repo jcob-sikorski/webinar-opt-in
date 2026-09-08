@@ -13,7 +13,7 @@ const PILLARS = [
 {
     number: "01",
     pillarLabel: "FILAR 1: Klienci na lata zamiast rotacji",
-    title: "Zatrzymaj ludzi na lata",
+    title: "Zatrzymaj klienta na lata",
     description:
       "Przestań łatać dziury w grafiku i zaczynać każdy miesiąc od zera. Wdróż model, w którym podopieczni płacą co miesiąc jak w zegarku i trenują latami bez wciskania kolejnych pakietów.",
     bullets: [
@@ -24,7 +24,7 @@ const PILLARS = [
   {
     number: "02",
     pillarLabel: "FILAR 2: Bezpieczne zejście z sali",
-    title: "Oddaj klientów swoim trenerom bez strachu, że tamci odejdą",
+    title: "Oddaj klientów swoim trenerom bez strachu",
     description:
       "Myślisz, że podopieczni trenują tylko dla Ciebie? To najdroższa pułapka. Zobacz, jak przekazać klientów trenerom tak, żeby czuli, że dostają jeszcze lepszą opiekę, a Ty żebyś wreszcie zszedł z 30 godzin na macie.",
     bullets: [
@@ -35,7 +35,7 @@ const PILLARS = [
   {
     number: "03",
     pillarLabel: "FILAR 3: Lojalny zespół bez podkradania ludzi",
-    title: "Zbuduj ekipę, która nie ucieknie z bazą",
+    title: "Zbuduj ekipę, która nie ucieknie z klientami",
     description:
       "Boisz się, że wyszkolisz trenera, a on pójdzie na swoje i zabierze Ci klientów? Zobacz, jak dobierać i rozliczać ludzi, żeby z zaangażowaniem dbali o Twoje studio, zamiast hodować konkurencję za ścianą.",
     bullets: [
