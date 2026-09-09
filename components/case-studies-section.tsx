@@ -230,7 +230,7 @@ export function CaseStudiesSection() {
               ZAPISZ SIĘ NA WARSZTAT
             </span>
             <span className="text-xs font-medium text-orange-100 leading-none text-center">
-              100% Darmowy Dostęp Live • Wewnętrzny System Operacyjny
+              100% Darmowy Dostęp Live
             </span>
           </Button>
         </div>
