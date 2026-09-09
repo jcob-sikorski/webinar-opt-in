@@ -8,8 +8,9 @@ interface InclusionItem {
 
 const INCLUSIONS: InclusionItem[] = [
   {
-    title: "Dostęp do pełnego nagrania warsztatu",
-    description: "Obejrzysz na spokojnie między treningami i wrócisz do materiałów w trakcie wdrażania.",
+    title: "00 — Ile kosztują złe decyzje",
+    description:
+      "Policzysz, ile może kosztować zły lokal, brak procesu, słaba sprzedaż albo model oparty wyłącznie na Twoich godzinach.",
     icon: (
       <svg
         className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
@@ -20,14 +21,170 @@ const INCLUSIONS: InclusionItem[] = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <circle cx="12" cy="12" r="9" />
-        <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" fillOpacity="0.2" />
+        <rect x="3" y="3" width="18" height="18" rx="4" />
+        <path d="M12 7v5l3 2" />
       </svg>
     ),
   },
   {
-    title: "Checklista gotowości i audyt studia",
-    description: "Punkt po punkcie sprawdzisz, gdzie ucieka marża, co blokuje Cię przed zejściem z sali i od czego zacząć.",
+    title: "04 — Nie sprzedajesz treningu",
+    description:
+      "Zobaczysz, jak przestać konkurować ceną za godzinę i zacząć sprzedawać konkretną zmianę, którą klient chce osiągnąć.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
+      </svg>
+    ),
+  },
+  {
+    title: "05 — Program 90 dni",
+    description:
+      "Ułożysz ofertę, w której klient kupuje konkretny proces zamiast kolejnego pakietu treningów, a po 90 dniach masz naturalną drogę do kontynuacji.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="3" y="4" width="18" height="17" rx="4" />
+        <path d="M8 2v4M16 2v4M3 9h18" />
+      </svg>
+    ),
+  },
+  {
+    title: "06 — Semi-personal to nie grupówki",
+    description:
+      "Zobaczysz, jak wykorzystać semi-personal, żeby klient został z Tobą na lata, a jedna godzina na sali zarabiała więcej.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="8" cy="8" r="3" />
+        <circle cx="16" cy="8" r="3" />
+        <path d="M3 20c.5-3.2 2.1-5 5-5s4.5 1.8 5 5" />
+        <path d="M11 20c.5-3.2 2.1-5 5-5 2.9 0 4.5 1.8 5 5" />
+      </svg>
+    ),
+  },
+  {
+    title: "11 — Konsultacja, która sprzedaje",
+    description:
+      "Dostaniesz strukturę rozmowy, treningu i domknięcia, dzięki której klient rozumie, dlaczego Twój proces jest dla niego, zanim usłyszy cenę.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M4 5h16v11H7l-3 3V5Z" />
+        <path d="M8 9h8M8 12h5" />
+      </svg>
+    ),
+  },
+  {
+    title: "12 — Pierwszy trener",
+    description:
+      "Przejdziesz przez proces wdrożenia trenera krok po kroku, żeby nie wrzucać nowej osoby od razu na głęboką wodę i później poprawiać wszystko po niej.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="8" r="3.5" />
+        <path d="M5 21c.7-4.2 3-6.5 7-6.5s6.3 2.3 7 6.5" />
+      </svg>
+    ),
+  },
+  {
+    title: "13 — Metodyka miejsca",
+    description:
+      "Ustalisz standard tego, jak wygląda trening i obsługa klienta, żeby każdy trener nie robił wszystkiego po swojemu.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="4" y="3" width="16" height="18" rx="3" />
+        <path d="M8 8h8M8 12h8M8 16h5" />
+      </svg>
+    ),
+  },
+  {
+    title: "14 — Jak oddawać klientów",
+    description:
+      "Zobaczysz, jak stopniowo przekazywać swoich podopiecznych trenerom, bez sytuacji, w której klient czuje, że został Ci zabrany.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M5 12h14" />
+        <path d="m13 6 6 6-6 6" />
+        <path d="M5 6v12" />
+      </svg>
+    ),
+  },
+  {
+    title: "16 — 21 brutalnych prawd",
+    description:
+      "Bez owijania sprawdzisz, które rzeczy właściciele studiów najczęściej robią źle i dlaczego większy lokal, więcej sprzętu czy więcej leadów nie zawsze rozwiązuje problem.",
+    icon: (
+      <svg
+        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M12 3 4 7v5c0 4.5 3.2 7.7 8 9 4.8-1.3 8-4.5 8-9V7l-8-4Z" />
+        <path d="M12 8v4M12 16h.01" />
+      </svg>
+    ),
+  },
+  {
+    title: "Quick Reference — system w pigułce",
+    description:
+      "Cały model masz w jednym miejscu: model, oferta, marketing, sprzedaż, retencja, zespół i metodyka — razem z planem działania na 90 dni.",
     icon: (
       <svg
         className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
@@ -40,62 +197,6 @@ const INCLUSIONS: InclusionItem[] = [
       >
         <rect x="3" y="3" width="18" height="18" rx="4" />
         <polyline points="8.5 12 11 14.5 15.5 9.5" />
-      </svg>
-    ),
-  },
-  {
-    title: "Kalkulatory rentowności i matryca semi-personal",
-    description: "Gotowe wzory wyliczeń: czynsz, stawki dla trenerów i marża, dzięki którym wiesz dokładnie, ile wyciągasz z każdej godziny.",
-    icon: (
-      <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="3" y="3" width="18" height="18" rx="4" />
-        <path d="m7.5 15 3-3 2.5 2.5 3.5-4.5" />
-        <polyline points="13.5 10 16.5 10 16.5 13" />
-      </svg>
-    ),
-  },
-  {
-    title: "Baza skryptów rolek i reklam pod studio",
-    description: "Gotowe formaty wideo pod kobiety 35+ i mężczyzn 40+, które zapełniają grafik ludźmi gotowymi płacić za proces.",
-    icon: (
-      <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect width="18" height="18" x="3" y="3" rx="4" />
-        <circle cx="8.5" cy="8.5" r="1.5" />
-        <path d="m21 15-5-5L5 21" />
-      </svg>
-    ),
-  },
-  {
-    title: "Rozłożone na czynniki 4 Case Studies",
-    description: "Konkretne liczby i proces: jak trenerzy mający po 7 sesji dziennie weszli na 50 000 – 66 000 zł/mc bez tyrania na sali.",
-    icon: (
-      <svg
-        className="h-[1.15rem] w-[1.15rem] text-[#ea580c]"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect width="13" height="12" x="2.5" y="6" rx="3" />
-        <path d="m15.5 10.5 5.5-3.5v10l-5.5-3.5Z" />
       </svg>
     ),
   },
