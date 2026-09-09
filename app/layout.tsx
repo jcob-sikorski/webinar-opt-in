@@ -95,8 +95,8 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="pl" className={`${body.variable} ${display.variable}`}>
-      <body className="font-sans text-body">
+    <html lang="pl" className={`${body.variable} ${display.variable} overflow-x-hidden`}>
+      <body className="font-sans text-body overflow-x-hidden">
         
         {/* WRAP THIS IN SUSPENSE TO PREVENT DE-OPTIMIZING THE WHOLE SITE TO SSR */}
         <Suspense fallback={null}>

@@ -3,7 +3,7 @@
 import { CountdownTimer } from "@/components/countdown-timer";
 import { RegisterForm } from "@/components/register-form";
 
-const WORKSHOP_START = "2026-09-16T20:00:00+02:00";
+const WORKSHOP_START = "2026-09-17T20:00:00+02:00";
 
 export function HeroSection() {
   return (

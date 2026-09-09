@@ -61,11 +61,11 @@ export function CountdownTimer({ target }: CountdownTimerProps) {
       {units.map((unit, index) => (
         <div key={unit.label} className="flex items-center">
           {/* Card: Subtle warm cream gradient with soft amber border */}
-          <div className="flex h-[3.85rem] w-[4.15rem] min-[390px]:h-[4.2rem] min-[390px]:w-[4.55rem] sm:h-[4.5rem] sm:w-[4.85rem] flex-col items-center justify-center rounded-2xl border border-[#fed7aa]/85 bg-gradient-to-b from-[#fffbf5] to-[#fff7ed] px-1 shadow-[0_2px_8px_rgba(234,88,12,0.06)]">
-            <span className="text-[1.85rem] min-[390px]:text-[2.05rem] sm:text-[2.2rem] font-extrabold leading-none text-[#7c2d12] tracking-[-0.02em] tabular-nums">
+          <div className="flex h-[3.6rem] w-[3.9rem] min-[390px]:h-[4.2rem] min-[390px]:w-[4.55rem] sm:h-[4.5rem] sm:w-[4.85rem] flex-col items-center justify-center rounded-2xl border border-[#fed7aa]/85 bg-gradient-to-b from-[#fffbf5] to-[#fff7ed] px-1 shadow-[0_2px_8px_rgba(234,88,12,0.06)]">
+            <span className="text-[1.65rem] min-[390px]:text-[2.05rem] sm:text-[2.2rem] font-extrabold leading-none text-[#7c2d12] tracking-[-0.02em] tabular-nums">
               {unit.value}
             </span>
-            <span className="mt-1 text-[0.62rem] min-[390px]:text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#9a3412]/80">
+            <span className="mt-0.5 min-[390px]:mt-1 text-[0.55rem] min-[390px]:text-[0.68rem] sm:text-[0.72rem] font-bold uppercase tracking-[0.14em] text-[#9a3412]/80">
               {unit.label}
             </span>
           </div>
