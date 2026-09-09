@@ -149,29 +149,29 @@ const DUE_DILIGENCE_DATA: DueDiligenceItem[] = [
     ],
   },
   {
-      id: "social-proof",
-      categoryNumber: "06",
-      title: "Opinie, social proof i weryfikacja",
-      subtitle: "Gdzie sprawdzić realne dowody i opinie o Bartłomieju Sikorskim.",
-      questions: [
-        {
-          q: "Gdzie mogę zobaczyć autentyczne opinie i dowody wyników?",
-          a: (
-            <>
-              Najlepszym miejscem jest Instagram: <strong>prosimy wejść na konto Bartłomieja Sikorskiego i sprawdzić wyróżnione relacje w zakładce „Rezultaty”</strong>. Znajdziesz tam setki bezpośrednich zrzutów ekranu, raportów z systemów, wiadomości od właścicieli studiów oraz oznaczenia profili konkretnych osób, które osiągnęły te wyniki.
-            </>
-          ),
-        },
-        {
-          q: "Czy te opinie nie są sfałszowane lub kupione?",
-          a: (
-            <>
-              Nie stosujemy anonimowych gwiazdek ani botów z fałszywymi komentarzami. Na profilu Bartłomieja Sikorskiego każde case study to realny człowiek z podanym z imienia i nazwiska kontem na Instagramie. Wejdź na profil Bartłomieja, kliknij w zakładkę z rezultatami i jeśli masz jakiekolwiek wątpliwości – napisz bezpośrednio do którejkolwiek z oznaczonych tam osób.
-            </>
-          ),
-        },
-      ],
-    },
+    id: "social-proof",
+    categoryNumber: "06",
+    title: "Opinie, social proof i weryfikacja",
+    subtitle: "Gdzie sprawdzić realne dowody i opinie o Bartłomieju Sikorskim.",
+    questions: [
+      {
+        q: "Gdzie mogę zobaczyć autentyczne opinie i dowody wyników?",
+        a: (
+          <>
+            Najlepszym miejscem jest Instagram: <strong>prosimy wejść na konto Bartłomieja Sikorskiego i sprawdzić wyróżnione relacje w zakładce „Rezultaty”</strong>. Znajdziesz tam setki bezpośrednich zrzutów ekranu, raportów z systemów, wiadomości od właścicieli studiów oraz oznaczenia profili konkretnych osób, które osiągnęły te wyniki.
+          </>
+        ),
+      },
+      {
+        q: "Czy te opinie nie są sfałszowane lub kupione?",
+        a: (
+          <>
+            Nie stosujemy anonimowych gwiazdek ani botów z fałszywymi komentarzami. Na profilu Bartłomieja Sikorskiego każde case study to realny człowiek z podanym z imienia i nazwiska kontem na Instagramie. Wejdź na profil Bartłomieja, kliknij w zakładkę z rezultatami i jeśli masz jakiekolwiek wątpliwości – napisz bezpośrednio do którejkolwiek z oznaczonych tam osób.
+          </>
+        ),
+      },
+    ],
+  },
 ];
 
 const MAP_LOCATIONS = [
@@ -310,7 +310,8 @@ export function DueDiligenceSection() {
                     {item.questions.map((faq, idx) => (
                       <div key={idx} className="space-y-1">
                         <p className="font-bold text-neutral-900">{faq.q}</p>
-                        <p>{faq.a}</p>
+                        {/* Changed from <p>{faq.a}</p> to <div> to avoid invalid nesting */}
+                        <div>{faq.a}</div>
                       </div>
                     ))}
 

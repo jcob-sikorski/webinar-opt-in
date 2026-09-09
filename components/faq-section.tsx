@@ -1,66 +1,50 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 interface FaqVideo {
   id: string;
   question: string;
-  duration: string;
-  progressPercent: number;
-  videoUrl?: string;
+  videoUrl: string;
 }
 
 const FAQ_VIDEOS: FaqVideo[] = [
   {
     id: "live",
     question: "Czy to szkolenie jest na żywo?",
-    duration: "1:22",
-    progressPercent: 35,
-    videoUrl: "",
+    videoUrl: "https://player.mux.com/L00VgJ9ZfPkVpXB9GTsX02DCIUT64JhtoBWouHFZ3Zr018",
   },
   {
     id: "cant-make-it",
     question: "Co jeśli nie mogę pojawić się na szkoleniu?",
-    duration: "1:41",
-    progressPercent: 55,
-    videoUrl: "",
+    videoUrl: "https://player.mux.com/iLQZInH78coFBEblAy2AZXldrqgY0291uy4BHk5AFfL8",
   },
   {
     id: "burned-before",
     question: "Już wcześniej się sparzyłem... czy to zadziała?",
-    duration: "1:48",
-    progressPercent: 20,
-    videoUrl: "",
+    videoUrl: "https://player.mux.com/WsxEHKzmzQgUqn01tDFEQkQy4FRPi3yhiaXG8j6j01q8U",
   },
   {
     id: "selling",
     question: "Czy będziesz próbował mi coś sprzedać?",
-    duration: "2:14",
-    progressPercent: 60,
-    videoUrl: "",
+    videoUrl: "https://player.mux.com/aEPKkLGHnMgKOxwOS8ZaWa7qRvrzDgQRtZMujEHK3o8",
   },
   {
     id: "experience",
     question: "Czy muszę mieć już własną społeczność lub ofertę?",
-    duration: "1:55",
-    progressPercent: 40,
-    videoUrl: "",
+    videoUrl: "https://player.mux.com/9JZP3FHPuh4mQZCUTYPebaRj67F3IKN02t5ne6SWkMX4",
   },
   {
     id: "bonuses",
     question: "Gdzie i kiedy otrzymam swoje bonusy?",
-    duration: "1:15",
-    progressPercent: 75,
-    videoUrl: "",
+    videoUrl: "https://player.mux.com/Nx02s3Qd98i01YZNX8z5S1PlCfvAe5ZunDW8Czgp9BjKs",
   },
 ];
 
 export function FaqVideosSection() {
-  const [selectedVideo, setSelectedVideo] = useState<FaqVideo | null>(null);
-
   return (
     <section className="relative w-full bg-white font-sans selection:bg-orange-200 flex flex-col items-center overflow-x-hidden pt-4 pb-14 px-4 sm:px-6">
-      <div className="mx-auto flex w-full max-w-[22.5rem] sm:max-w-[25.5rem] flex-col items-center">
+      <div className="mx-auto flex w-full max-w-[28rem] sm:max-w-xl md:max-w-2xl flex-col items-center">
         
         {/* Step Badge */}
         <div className="inline-flex items-center justify-center rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3.5 py-0.5 shadow-2xs">
@@ -69,113 +53,40 @@ export function FaqVideosSection() {
           </span>
         </div>
 
-        {/* Opcja z „warsztatami” i „nurtującymi pytaniami” */}
+        {/* Section Headline */}
         <h2 className="mt-2.5 text-center text-[1.25rem] min-[390px]:text-[1.38rem] sm:text-[1.58rem] font-black leading-tight tracking-tight text-neutral-900">
           Odpowiedzi na najbardziej <br />
           <span className="text-[#ea580c]">palące pytania</span>
         </h2>
 
         <p className="mt-2 text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.88rem] font-normal leading-[1.38] text-neutral-600">
-          Kliknij dowolne pytanie poniżej, aby obejrzeć krótką odpowiedź Jakuba.
+          Krótkie odpowiedzi Jakuba na najczęściej poruszane kwestie przed szkoleniem.
         </p>
 
-        {/* Single Column Stack */}
-        <div className="mt-5 flex w-full flex-col gap-3.5">
+        {/* Videos Stack with Titles at the Bottom */}
+        <div className="mt-7 flex w-full flex-col gap-8 sm:gap-10">
           {FAQ_VIDEOS.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setSelectedVideo(item)}
-              type="button"
-              className="group relative flex aspect-[1.85/1] sm:aspect-[2/1] w-full flex-col justify-between overflow-hidden rounded-[1.35rem] border border-orange-950/30 bg-[#0c0a09] bg-[radial-gradient(ellipse_at_top_left,_#29180c_0%,_#140e0a_45%,_#0c0a09_100%)] p-4 text-left shadow-md transition-all duration-200 hover:border-[#ea580c] hover:shadow-[0_4px_24px_rgba(234,88,12,0.24)] active:scale-[0.98]"
-            >
-              {/* Top Bar: Play Icon */}
-              <div className="flex w-full justify-end">
-                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-xs transition-colors group-hover:bg-[#ea580c]">
-                  <svg
-                    className="ml-0.5 h-3.5 w-3.5 fill-current"
-                    viewBox="0 0 24 24"
-                  >
-                    <polygon points="6 3 20 12 6 21 6 3" />
-                  </svg>
-                </div>
+            <div key={item.id} className="flex w-full flex-col items-center">
+              {/* Video Frame */}
+              <div className="relative w-full overflow-hidden rounded-2xl border-[3.5px] sm:border-[4px] border-[#ea580c] shadow-xl">
+                <iframe
+                  src={item.videoUrl}
+                  title={item.question}
+                  style={{ width: "100%", display: "block", border: "none", aspectRatio: "53/29" }}
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+                  allowFullScreen
+                />
               </div>
 
-              {/* Question Text */}
-              <div className="my-auto px-2 text-center">
-                <h3 className="text-[1.05rem] min-[390px]:text-[1.12rem] sm:text-[1.2rem] font-extrabold leading-[1.25] tracking-tight text-white transition-colors group-hover:text-[#fed7aa]">
-                  {item.question}
-                </h3>
-              </div>
-
-              {/* Bottom Video Progress Scrub Bar */}
-              <div className="flex w-full items-center gap-2 pt-1">
-                <span className="shrink-0 text-[0.68rem] font-medium text-stone-400">
-                  {item.duration}
-                </span>
-                <div className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-white/15">
-                  <div
-                    className="h-full bg-[#ea580c] transition-all group-hover:bg-orange-500"
-                    style={{ width: `${item.progressPercent}%` }}
-                  />
-                </div>
-                <div className="flex items-center gap-[2px] text-stone-400">
-                  <span className="h-0.5 w-0.5 rounded-full bg-current" />
-                  <span className="h-0.5 w-0.5 rounded-full bg-current" />
-                  <span className="h-0.5 w-0.5 rounded-full bg-current" />
-                </div>
-              </div>
-            </button>
+              {/* Title at the Bottom */}
+              <h3 className="mt-3 text-center text-[1rem] min-[390px]:text-[1.08rem] sm:text-[1.2rem] font-extrabold leading-snug tracking-tight text-neutral-900">
+                {item.question}
+              </h3>
+            </div>
           ))}
         </div>
 
       </div>
-
-      {/* Video Modal Player */}
-      {selectedVideo && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
-          onClick={() => setSelectedVideo(null)}
-        >
-          <div
-            className="relative w-full max-w-lg overflow-hidden rounded-[1.35rem] border border-neutral-800 bg-[#0c0a09] shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-              <h4 className="text-[0.88rem] sm:text-[0.95rem] font-bold text-white">
-                {selectedVideo.question}
-              </h4>
-              <button
-                type="button"
-                onClick={() => setSelectedVideo(null)}
-                className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white hover:bg-white/20"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="relative aspect-video w-full bg-black">
-              {selectedVideo.videoUrl ? (
-                <iframe
-                  src={selectedVideo.videoUrl}
-                  title={selectedVideo.question}
-                  className="h-full w-full border-none"
-                  allow="autoplay; fullscreen"
-                  allowFullScreen
-                />
-              ) : (
-                <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-stone-400">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#ea580c] text-white shadow-lg">
-                    <svg className="ml-0.5 h-6 w-6 fill-current" viewBox="0 0 24 24">
-                      <polygon points="6 3 20 12 6 21 6 3" />
-                    </svg>
-                  </div>
-                  <span className="text-[0.82rem]">Insert video embed for &quot;{selectedVideo.id}&quot;</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

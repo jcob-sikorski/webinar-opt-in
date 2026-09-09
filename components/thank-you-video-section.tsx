@@ -15,7 +15,7 @@ export function ThankYouVideoSection({
 }: ThankYouVideoSectionProps) {
   return (
     <section className="relative w-full bg-white font-sans selection:bg-orange-200 flex flex-col items-center overflow-x-hidden pt-3 pb-12 px-4 sm:px-6">
-      <div className="mx-auto flex w-full max-w-[24rem] sm:max-w-[28rem] flex-col items-center">
+      <div className="mx-auto flex w-full max-w-[28rem] sm:max-w-xl md:max-w-2xl flex-col items-center">
         
         {/* Top 72% Progress Bar: Warm peach track with punchy orange fill */}
         <div className="w-full mb-4">
@@ -38,31 +38,20 @@ export function ThankYouVideoSection({
           <span className="text-[#ea580c]">{workshopDateTime}</span>
         </h1>
 
-      {/* Subheadline */}
-      <p className="mx-auto mt-2.5 w-full text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.92rem] font-normal leading-[1.35] tracking-tight text-neutral-800">
-        Krótka wiadomość ode mnie przed szkoleniem{" "}
-        <span className="font-bold text-black">następnie przewiń stronę w dół</span>
-      </p>
+        {/* Subheadline */}
+        <p className="mx-auto mt-2.5 w-full text-center text-[0.78rem] min-[390px]:text-[0.84rem] sm:text-[0.92rem] font-normal leading-[1.35] tracking-tight text-neutral-800">
+          Krótka wiadomość ode mnie przed szkoleniem{" "}
+          <span className="font-bold text-black">następnie przewiń stronę w dół</span>
+        </p>
 
-        {/* Video Preview Box: High-tension orange border */}
-        <div className="mx-auto mt-4 sm:mt-5 w-full">
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[14px] sm:rounded-[16px] border-[3.5px] sm:border-[4px] border-[#ea580c] bg-black shadow-[0_4px_25px_rgba(0,0,0,0.12)]">
-            {videoUrl ? (
-              <iframe
-                src={videoUrl}
-                title="Workshop Confirmation Video"
-                className="h-full w-full border-none"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-              />
-            ) : (
-              <img
-                src={thumbnailUrl}
-                alt="Workshop Confirmation Preview"
-                className="h-full w-full object-cover"
-              />
-            )}
-          </div>
+        {/* Extended Video Container */}
+        <div className="relative mx-auto mt-6 w-full overflow-hidden rounded-2xl border-[3.5px] sm:border-[4px] border-[#ea580c] shadow-xl">
+          <iframe
+            src="https://player.mux.com/t6BcSjNXtsAFs01M01w9ls7kia2WZNxf4A7TZrip5RPvs"
+            style={{ width: "100%", display: "block", border: "none", aspectRatio: "53/29" }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen
+          />
         </div>
 
       </div>
