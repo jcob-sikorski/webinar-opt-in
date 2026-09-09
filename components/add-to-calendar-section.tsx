@@ -3,10 +3,10 @@
 import React from "react";
 
 const CALENDAR_LINKS = {
-  google: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Warsztat%3A%20Z%C5%82oty%20Model%20Biznesowy%20(Dochodowe%20Studio)&dates=20260824T180000Z/20260824T200000Z&details=Link%20do%20warsztatu%20na%20%C5%BCywo%3A%20sprawd%C5%BA%20skrzynk%C4%99%20e-mail%20oraz%20SMS.%20Przygotuj%20notatnik%20i%20b%C4%85d%C5%BA%205%20minut%20wcze%C5%9Bniej.`,
-  apple: `data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0ABEGIN%3AVEEVENT%0ADTSTART%3A20260824T180000Z%0ADTEND%3A20260824T200000Z%0ASUMMARY%3AWarsztat%3A%20Z%C5%82oty%20Model%20Biznesowy%20(Dochodowe%20Studio)%0ADESCRIPTION%3ALink%20do%20warsztatu%20na%20%C5%BCywo%3A%20sprawd%C5%BA%20skrzynk%C4%99%20e-mail%20oraz%20SMS.%20Przygotuj%20notatnik%20i%20b%C4%85d%C5%BA%205%20minut%20wcze%C5%9Bniej.%0AEND%3AVEEVENT%0AEND%3AVCALENDAR`,
+  google: `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Warsztat%3A%20Z%C5%82oty%20Model%20Biznesowy%20(Dochodowe%20Studio)&dates=20260917T180000Z/20260917T200000Z&details=Link%20do%20warsztatu%20na%20%C5%BCywo%3A%20sprawd%C5%BA%20skrzynk%C4%99%20e-mail%20oraz%20SMS.%20Przygotuj%20notatnik%20i%20b%C4%85d%C5%BA%205%20minut%20wcze%C5%9Bniej.`,
+  apple: `data:text/calendar;charset=utf8,BEGIN%3AVCALENDAR%0AVERSION%3A2.0%0ABEGIN%3AVEEVENT%0ADTSTART%3A20260917T180000Z%0ADTEND%3A20260917T200000Z%0ASUMMARY%3AWarsztat%3A%20Z%C5%82oty%20Model%20Biznesowy%20(Dochodowe%20Studio)%0ADESCRIPTION%3ALink%20do%20warsztatu%20na%20%C5%BCywo%3A%20sprawd%C5%BA%20skrzynk%C4%99%20e-mail%20oraz%20SMS.%20Przygotuj%20notatnik%20i%20b%C4%85d%C5%BA%205%20minut%20wcze%C5%9Bniej.%0AEND%3AVEEVENT%0AEND%3AVCALENDAR`,
   outlook: `https://outlook.office.com/calendar/0/deeplink/compose?subject=Warsztat%3A%20Z%C5%82oty%20Model%20Biznesowy%20(Dochodowe%20Studio)&startdt=2026-09-17T20:00:00%2B02:00&enddt=2026-09-17T22:00:00%2B02:00&body=Link%20do%20warsztatu%20na%20%C5%BCywo%3A%20sprawd%C5%BA%20skrzynk%C4%99%20e-mail%20oraz%20SMS.%20Przygotuj%20notatnik%20i%20b%C4%85d%C5%BA%205%20minut%20wcze%C5%9Bniej.`,
-  yahoo: `https://calendar.yahoo.com/?v=60&title=Warsztat%3A%20Z%C5%82oty%20Model%20Biznesowy%20(Dochodowe%20Studio)&st=20260824T180000Z&et=20260824T200000Z&desc=Link%20do%20warsztatu%20na%20%C5%BCywo%3A%20sprawd%C5%BA%20skrzynk%C4%99%20e-mail%20oraz%20SMS.%20Przygotuj%20notatnik%20i%20b%C4%85d%C5%BA%205%20minut%20wcze%C5%9Bniej.`,
+  yahoo: `https://calendar.yahoo.com/?v=60&title=Warsztat%3A%20Z%C5%82oty%20Model%20Biznesowy%20(Dochodowe%20Studio)&st=20260917T180000Z&et=20260917T200000Z&desc=Link%20do%20warsztatu%20na%20%C5%BCywo%3A%20sprawd%C5%BA%20skrzynk%C4%99%20e-mail%20oraz%20SMS.%20Przygotuj%20notatnik%20i%20b%C4%85d%C5%BA%205%20minut%20wcze%C5%9Bniej.`,
 };
 
 const CALENDARS = [
