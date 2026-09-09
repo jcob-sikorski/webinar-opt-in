@@ -21,7 +21,7 @@ export function HeroSection() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#f87171] opacity-75" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-[#ef4444]" />
                 </span>
-                SZKOLENIE NA ŻYWO: ŚRODA, 16 WRZ
+                SZKOLENIE NA ŻYWO: CZWARTEK, 17 WRZ
               </div>
               <div className="text-[0.72rem] font-bold leading-tight text-[#ea580c] sm:text-[0.78rem]">
                 Dla Właścicieli Studiów PT, Butikowych Siłowni i Boxów

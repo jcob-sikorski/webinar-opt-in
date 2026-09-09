@@ -9,7 +9,7 @@ interface ThankYouVideoSectionProps {
 }
 
 export function ThankYouVideoSection({
-  workshopDateTime = "ŚRODA, 16 WRZEŚNIA o 20:00",
+  workshopDateTime = "CZWARTEK, 17 WRZEŚNIA o 20:00",
   thumbnailUrl = "https://ucarecdn.com/3cb95e08-818a-470b-b52a-a9e5d9d37d8d/unnamed9.webp",
   videoUrl,
 }: ThankYouVideoSectionProps) {
