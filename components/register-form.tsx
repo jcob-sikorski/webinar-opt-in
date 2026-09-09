@@ -130,7 +130,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
 
   return (
     <div
-      className={`w-full max-w-[22rem] sm:max-w-[24rem] rounded-2xl border border-neutral-200/80 bg-white p-4 sm:p-5 shadow-[0_8px_30px_rgb(0,0,0,0.06)] ${className}`}
+      className={`w-full max-w-[22rem] sm:max-w-[24rem] rounded-2xl border-2 border-[#ea580c] ring-4 ring-[#ea580c]/10 bg-white p-4 sm:p-5 shadow-[0_12px_36px_-6px_rgba(234,88,12,0.22),0_4px_16px_rgba(0,0,0,0.04)] ${className}`}
     >
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="flex flex-col gap-2">
