@@ -136,7 +136,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
             type="tel"
             inputMode="tel"
             autoComplete="tel"
-            placeholder="Numer telefonu (do SMS z linkiem)"
+            placeholder="Numer telefonu"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             disabled={isSubmitting}
@@ -154,7 +154,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
               {isSubmitting ? "REZERWACJA..." : "REZERWUJĘ MOJE MIEJSCE"}
             </span>
             <span className="text-xs font-medium text-orange-100 leading-none">
-              Bezpłatny Dostęp Live • Czwartek, 20:00
+              Bezpłatny Dostęp Live
             </span>
           </Button>
 

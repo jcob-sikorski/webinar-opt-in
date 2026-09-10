@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { RegisterForm } from "@/components/register-form";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 const WORKSHOP_START = "2026-09-17T20:00:00+02:00";
 
@@ -47,38 +49,38 @@ export function HeroSection() {
             <div className="mt-2 flex flex-wrap items-center justify-center gap-1.5 min-[390px]:mt-2.5 sm:mt-3.5 sm:gap-2.5 lg:justify-start">
               <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 py-0.5 pl-1 pr-2.5 shadow-xs sm:gap-2 sm:py-1 sm:pl-1.5 sm:pr-3">
                 <div className="flex -space-x-1.5 overflow-hidden">
-                  <Image 
-                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=face" 
-                    alt="Student avatar" 
-                    width={24} 
-                    height={24} 
-                    priority 
-                  />
-                  <Image 
-                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" 
-                    alt="Student avatar" 
-                    width={24} 
-                    height={24} 
-                    priority 
-                  />
-                  <Image 
-                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" 
-                    alt="Student avatar" 
-                    width={24} 
-                    height={24} 
-                    priority 
-                  />
-                  <Image 
-                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face" 
-                    alt="Student avatar" 
-                    width={24} 
-                    height={24} 
-                    priority 
-                  />
+                  <Image
+                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
+                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=face"
+                     alt="Student avatar"
+                     width={24}
+                     height={24}
+                     priority
+                   />
+                  <Image
+                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
+                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
+                     alt="Student avatar"
+                     width={24}
+                     height={24}
+                     priority
+                   />
+                  <Image
+                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
+                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face"
+                     alt="Student avatar"
+                     width={24}
+                     height={24}
+                     priority
+                   />
+                  <Image
+                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
+                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face"
+                     alt="Student avatar"
+                     width={24}
+                     height={24}
+                     priority
+                   />
                 </div>
                 <span className="text-[0.72rem] font-bold tracking-tight text-neutral-800 min-[390px]:text-[0.78rem]">
                   +38 mln zł przychodu uczestników
@@ -110,19 +112,36 @@ export function HeroSection() {
 
           </div>
 
-          {/* PRAWA KOLUMNA */}
-          <div id="zapis" className="mt-2.5 flex w-full scroll-mt-4 flex-col items-center min-[390px]:mt-3 sm:mt-4 lg:col-span-5 lg:mt-0">
-            <RegisterForm className="shadow-2xl" />
+          {/* PRAWA KOLUMNA: Ukryty formularz i wyeksponowany przycisk CTA */}
+          <div id="zapis" className="mt-4 flex w-full scroll-mt-4 flex-col items-center sm:mt-6 lg:col-span-5 lg:mt-0">
             
-            {/* Countdown */}
-            <div className="mt-3 flex w-full flex-col items-center min-[390px]:mt-3.5">
-              <h2 className="mb-1 text-center text-[0.74rem] font-black uppercase tracking-[0.04em] text-[#ea580c] min-[390px]:text-[0.8rem] sm:text-[0.88rem]">
+            {/* Countdown: Urgency nad przyciskiem CTA */}
+            <div className="mb-4 flex w-full flex-col items-center sm:mb-5">
+              <h2 className="mb-1.5 text-center text-[0.74rem] font-black uppercase tracking-[0.04em] text-[#ea580c] min-[390px]:text-[0.8rem] sm:text-[0.88rem]">
                 SZKOLENIE STARTUJE ZA
               </h2>
               <div className="w-full max-w-[21.5rem] sm:max-w-[23.5rem]">
                 <CountdownTimer target={WORKSHOP_START} />
               </div>
             </div>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button className="flex !h-auto w-full max-w-[21.5rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !px-6 !py-4 shadow-xl transition-colors hover:!bg-[#c2410c] active:scale-[0.99] sm:max-w-[23.5rem]">
+                  <span className="text-[1.1rem] font-extrabold uppercase text-white sm:text-[1.2rem]">
+                    Rezerwuję Bezpłatne Miejsce
+                  </span>
+                  <span className="text-[0.8rem] font-medium text-orange-100">
+                    Zajmie to mniej niż 30 sekund
+                  </span>
+                </Button>
+              </DialogTrigger>
+              
+              <DialogContent className="sm:max-w-md border-none bg-transparent p-0 shadow-none">
+                <RegisterForm className="mx-auto w-full shadow-2xl" />
+              </DialogContent>
+            </Dialog>
+            
           </div>
 
         </div>
