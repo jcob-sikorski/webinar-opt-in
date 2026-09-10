@@ -6,11 +6,10 @@ const PILLARS = [
     description:
       "Nie chodzi o to, żeby co miesiąc gonić za kolejnymi klientami. Chodzi o to, żeby ludzie, których już masz, zostawali z Tobą na długo, a każda godzina na sali zarabiała dużo więcej.",
     bullets: [
-      "Semi-personal pozwala wyciągnąć 300–580 zł z jednej godziny na sali, bez robienia z klienta ceny zaporowej.",
-      "Abonament daje Ci przewidywalne pieniądze co miesiąc, zamiast ciągłego wciskania kolejnych pakietów.",
+      "Jeden nieoczywisty model prowadzenia zajęć, który pozwala wyciągnąć 300–580 zł z jednej godziny na macie — bez odstraszania klientów 'zaporową' ceną.",
+      "Jak uwolnić się od wiecznego wciskania pojedynczych pakietów i zabezpieczyć stały, przewidywalny przelew na konto studia pierwszego dnia każdego miesiąca.",
     ],
   },
-
   {
     number: "02",
     pillarLabel: "FILAR 2: Zejdź z sali bez rozwalenia biznesu",
@@ -18,11 +17,10 @@ const PILLARS = [
     description:
       "Jeżeli dzisiaj masz w głowie „moi klienci przychodzą tylko do mnie”, to właśnie dlatego jesteś uwiązany do sali. Pokażemy Ci, jak sprawić, żeby klient dostał dobrą opiekę również od Twojego trenera, a Ty nie musiał być obok przez 30 godzin tygodniowo.",
     bullets: [
-      "Ustalasz jeden sposób prowadzenia treningów i pracy z klientem, dzięki czemu nie ma sytuacji, że każdy trener robi wszystko po swojemu.",
-      "Proste zasady dla zespołu sprawiają, że trener wie, co ma robić, bez Twojego ciągłego stania nad nim i poprawiania każdego szczegółu.",
+      "Dokładny schemat przekazywania podopiecznych, który sprawia, że klient czuje się równie dopieszczony, a Ty odzyskujesz nawet 20 godzin tygodniowo.",
+      "Jedna zmiana w organizacji pracy, dzięki której przestajesz być darmowym 'kierownikiem sali', a zespół zaczyna dowozić wyniki bez Twojego ciągłego nadzoru.",
     ],
   },
-
   {
     number: "03",
     pillarLabel: "FILAR 3: Trenerzy, którym możesz zaufać",
@@ -30,8 +28,8 @@ const PILLARS = [
     description:
       "Pewnie choć raz miałeś z tyłu głowy: „Wyszkolę go, a za pół roku otworzy coś obok i zabierze mi klientów”. Pokażemy Ci, jak dobierać ludzi, rozliczać ich i budować zespół tak, żeby trenerowi opłacało się rozwijać Twoje studio, a nie myśleć o własnym biznesie.",
     bullets: [
-      "Prosty proces rekrutacji pozwala odsiać osoby, które dobrze wyglądają na rozmowie, ale później trzeba je ciągle pilnować.",
-      "Rozliczasz trenerów nie tylko za przeprowadzenie treningu, ale również za to, czy klient zostaje w studiu i jest dobrze zaopiekowany.",
+      "Test 'czerwonej flagi' na rozmowie kwalifikacyjnej: jak w 15 minut odsiać trenerów, którzy za pół roku staliby się Twoją bezpośrednią konkurencją.",
+      "Nietypowy system wynagradzania, który sprawia, że trenerom zależy na zatrzymaniu klienta na lata równie mocno jak Tobie.",
     ],
   },
 ];
