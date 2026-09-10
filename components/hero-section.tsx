@@ -28,8 +28,8 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="mt-1.5 w-full text-[1.12rem] font-extrabold leading-[1.25] tracking-tight text-black min-[390px]:mt-2 min-[390px]:text-[1.25rem] sm:mt-3 sm:text-[1.65rem] lg:text-[1.95rem]">
+            {/* Main Headline - Zwiększony rozmiar fontu */}
+            <h1 className="mt-2 w-full text-[1.28rem] font-extrabold leading-[1.2] tracking-tight text-black min-[390px]:mt-2.5 min-[390px]:text-[1.42rem] sm:mt-3.5 sm:text-[1.85rem] sm:leading-[1.18] lg:text-[2.25rem]">
               <span className="block text-neutral-900">
                 Otworzyłeś studio, żeby mieć wolność,{" "}
                 <span className="text-[#ea580c]">a stworzyłeś sobie najdroższy etat?</span>
