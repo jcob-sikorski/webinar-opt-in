@@ -31,18 +31,15 @@ export function HeroSection() {
             {/* Main Headline */}
             <h1 className="mt-3 w-full text-[1.15rem] font-extrabold leading-[1.3] tracking-tight text-black min-[390px]:text-[1.3rem] sm:text-[1.65rem] lg:text-[1.95rem]">
               <span className="mt-1 block text-neutral-900">
-                Dlaczego im więcej godzin trenujesz osobiście,{" "}
-                <span className="text-[#ea580c]">tym mniej zarabiasz</span>{" "}
-                <span className="whitespace-nowrap font-bold text-neutral-600">
-                  (i jak to odwrócić)
-                </span>
+                Otworzyłeś studio, żeby mieć wolność,{" "}
+                <span className="text-[#ea580c]">a stworzyłeś sobie najdroższy etat?</span>
               </span>
             </h1>
 
             {/* Subheadline */}
             <p className="mt-2.5 w-full text-[0.875rem] font-light leading-[1.38] tracking-normal text-neutral-800 min-[390px]:text-[0.95rem] sm:text-[1.05rem]">
-              Jak poukładać procesy, zespół i marżę w studiu treningu personalnego, aby bezpiecznie zejść z sali i{" "}
-              <span className="font-bold text-black">przestać pracować po 60h tygodniowo.</span>
+              Dlaczego kolejne godziny na macie i nowi klienci z reklam tylko pogłębią chaos — i jak przebudować model{" "}
+              <span className="font-bold text-black">na 20–50 tys. zł czystego zysku bez stania na sali</span>
             </p>
 
             {/* Social Proof */}
