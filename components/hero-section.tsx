@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { RegisterForm } from "@/components/register-form";
 
@@ -14,7 +15,7 @@ export function HeroSection() {
           {/* LEWA KOLUMNA */}
           <div className="flex w-full flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
             
-            {/* Top Badge: Skrócony padding pionowy */}
+            {/* Top Badge */}
             <div className="flex w-full max-w-[21.5rem] flex-col items-center justify-center rounded-xl border-[1.5px] border-[#ea580c] bg-[#fff7ed] py-0.5 px-2.5 text-center shadow-xs sm:rounded-2xl sm:py-1 sm:px-3 sm:max-w-[23.5rem] lg:mx-0">
               <div className="flex items-center gap-1.5 text-[0.72rem] font-extrabold tracking-tight text-[#7c2d12] min-[390px]:text-[0.78rem] sm:gap-2 sm:text-[0.85rem]">
                 <span className="relative flex h-2 w-2 shrink-0 items-center justify-center sm:h-2.5 sm:w-2.5">
@@ -28,7 +29,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Main Headline - Zwiększony rozmiar fontu */}
+            {/* Main Headline */}
             <h1 className="mt-2 w-full text-[1.28rem] font-extrabold leading-[1.2] tracking-tight text-black min-[390px]:mt-2.5 min-[390px]:text-[1.42rem] sm:mt-3.5 sm:text-[1.85rem] sm:leading-[1.18] lg:text-[2.25rem]">
               <span className="block text-neutral-900">
                 Otworzyłeś studio, żeby mieć wolność,{" "}
@@ -46,10 +47,38 @@ export function HeroSection() {
             <div className="mt-2 flex flex-wrap items-center justify-center gap-1.5 min-[390px]:mt-2.5 sm:mt-3.5 sm:gap-2.5 lg:justify-start">
               <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 py-0.5 pl-1 pr-2.5 shadow-xs sm:gap-2 sm:py-1 sm:pl-1.5 sm:pr-3">
                 <div className="flex -space-x-1.5 overflow-hidden">
-                  <img className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=face" alt="Student avatar" />
-                  <img className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" alt="Student avatar" />
-                  <img className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" alt="Student avatar" />
-                  <img className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face" alt="Student avatar" />
+                  <Image 
+                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=face" 
+                    alt="Student avatar" 
+                    width={24} 
+                    height={24} 
+                    priority 
+                  />
+                  <Image 
+                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face" 
+                    alt="Student avatar" 
+                    width={24} 
+                    height={24} 
+                    priority 
+                  />
+                  <Image 
+                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" 
+                    alt="Student avatar" 
+                    width={24} 
+                    height={24} 
+                    priority 
+                  />
+                  <Image 
+                    className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5" 
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face" 
+                    alt="Student avatar" 
+                    width={24} 
+                    height={24} 
+                    priority 
+                  />
                 </div>
                 <span className="text-[0.72rem] font-bold tracking-tight text-neutral-800 min-[390px]:text-[0.78rem]">
                   +38 mln zł przychodu uczestników
@@ -81,11 +110,11 @@ export function HeroSection() {
 
           </div>
 
-          {/* PRAWA KOLUMNA: Formularz bezpośrednio pod obietnicą, licznik poniżej */}
+          {/* PRAWA KOLUMNA */}
           <div id="zapis" className="mt-2.5 flex w-full scroll-mt-4 flex-col items-center min-[390px]:mt-3 sm:mt-4 lg:col-span-5 lg:mt-0">
             <RegisterForm className="shadow-2xl" />
             
-            {/* Countdown: Urgency pod przyciskiem CTA */}
+            {/* Countdown */}
             <div className="mt-3 flex w-full flex-col items-center min-[390px]:mt-3.5">
               <h2 className="mb-1 text-center text-[0.74rem] font-black uppercase tracking-[0.04em] text-[#ea580c] min-[390px]:text-[0.8rem] sm:text-[0.88rem]">
                 SZKOLENIE STARTUJE ZA

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 interface DashboardStrip {
@@ -59,16 +60,18 @@ export function CaseStudiesSection() {
           </h2>
         </div>
 
-        {/* ================= CASE STUDY 1: ERYK WITECKI ================= */}
+        {/* ================= CASE STUDY 1 ================= */}
         <div className="mt-6 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
             Eryk Witecki (Gym Clinic Józefów):<br />Z 25k na sali do 4 trenerów i czasu dla rodziny
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.1rem] border border-neutral-200/80 shadow-xs">
-            <img
+            <Image
               src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa034478de363112b5458c8.jpeg"
               alt="Eryk Witecki Gym Clinic"
+              width={800}
+              height={450}
               className="h-auto w-full block"
             />
           </div>
@@ -83,16 +86,18 @@ export function CaseStudiesSection() {
           </a>
         </div>
 
-        {/* ================= CASE STUDY 2: JOANNA WÓJCIK ================= */}
+        {/* ================= CASE STUDY 2 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
             Joanna Wójcik (Silna Studio):<br />Zajechanie na sali zamienione w 3 trenerów i drugie studio
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.1rem] border border-neutral-200/80 shadow-xs">
-            <img
+            <Image
               src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa032fa641597c752b045d3.png"
               alt="Joanna Wójcik Kraków"
+              width={800}
+              height={450}
               className="h-auto w-full block"
             />
           </div>
@@ -107,16 +112,18 @@ export function CaseStudiesSection() {
           </a>
         </div>
 
-        {/* ================= CASE STUDY 3: KAROLINA OWCZARZAK ================= */}
+        {/* ================= CASE STUDY 3 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
             Karolina Owczarzak (Suszec):<br />Z 3 etatów do własnego studia i 40k zysku/mies.
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.25rem] border border-neutral-200/80 shadow-xs">
-            <img
+            <Image
               src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/15316c21-f546-4d32-8b2e-408a797c0f10.png"
               alt="Karolina Owczarzak Trenerka K"
+              width={800}
+              height={450}
               className="h-auto w-full block"
             />
           </div>
@@ -126,16 +133,18 @@ export function CaseStudiesSection() {
           </p>
         </div>
 
-        {/* ================= CASE STUDY 4: KLAUDIA OSTROWSKA ================= */}
+        {/* ================= CASE STUDY 4 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
             Klaudia Ostrowska (Fitko Toruń):<br />40–50k na rękę, 3 trenerki w zespole i zarządzanie z podróży
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.25rem] border border-neutral-200/80 shadow-xs">
-            <img
+            <Image
               src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/ba4a3bef-891e-465e-a44f-7a2752211efd.png"
               alt="Klaudia Ostrowska Fitko Toruń"
+              width={800}
+              height={450}
               className="h-auto w-full block"
             />
           </div>
@@ -145,16 +154,18 @@ export function CaseStudiesSection() {
           </p>
         </div>
  
-        {/* ================= CASE STUDY 5: KRZYSZTOF MARIAŃCZYK ================= */}
+        {/* ================= CASE STUDY 5 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
             Krzysztof Mariańczyk (Champion Katowice):<br />Od zera do 7 trenerów – studio zarabia, kiedy śpi
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.25rem] border border-neutral-200/80 shadow-xs">
-            <img
+            <Image
               src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/cdcc5416-c085-474b-aae1-5225c2e61570.png"
               alt="Krzysztof Mariańczyk Champion Katowice"
+              width={800}
+              height={450}
               className="h-auto w-full block"
             />
           </div>
@@ -164,7 +175,7 @@ export function CaseStudiesSection() {
           </p>
         </div>
 
-        {/* ================= DASHBOARD STRIPS LIST (CASE STUDIES 6 - 10) ================= */}
+        {/* ================= DASHBOARD STRIPS LIST ================= */}
         <div className="mt-9 flex w-full flex-col gap-6">
           {DASHBOARD_STRIPS.map((strip) => (
             <a
@@ -183,11 +194,12 @@ export function CaseStudiesSection() {
                 </span>
               </h4>
 
-              {/* Strip Container: naturally expands to fit the photo without black bars */}
               <div className="relative mt-2 w-full overflow-hidden rounded-[0.85rem] border border-neutral-200/80 shadow-xs">
-                <img
+                <Image
                   src={strip.imageSrc}
                   alt={strip.alt}
+                  width={800}
+                  height={450}
                   className="h-auto w-full block transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>

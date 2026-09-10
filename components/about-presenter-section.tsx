@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export function AboutPresenterSection() {
@@ -12,10 +12,11 @@ export function AboutPresenterSection() {
         <div className="w-full overflow-hidden rounded-[1.75rem] border border-neutral-200/80 bg-white p-3.5 sm:p-4 shadow-xs">
 
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] bg-stone-900 shadow-xs">
-            <img
+            <Image
               src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa03cdb360a619b9fcc6119.jpeg"
               alt="Jakub Siekiera"
-              className="h-full w-full object-cover"
+              fill
+              className="object-cover"
             />
 
             <div className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-black/65 px-3 py-1 backdrop-blur-xs">
