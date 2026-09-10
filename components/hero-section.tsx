@@ -68,10 +68,10 @@ export function HeroSection() {
               </div>
 
               {/* Live Scarcity & No-Replay Policy */}
-              <div className="mt-2 flex w-full max-w-[21.5rem] items-center justify-center gap-1.5 text-center text-[0.67rem] font-medium text-neutral-600 min-[390px]:text-[0.72rem] sm:max-w-[23.5rem] sm:text-[0.78rem]">
-                <span className="relative flex h-1.5 w-1.5 shrink-0 items-center justify-center">
+              <div className="mt-4 flex w-full max-w-md items-center justify-center gap-2.5 text-center text-sm font-medium text-neutral-600 sm:max-w-lg sm:text-base">
+                <span className="relative flex h-3.5 w-3.5 shrink-0 items-center justify-center">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-red-500" />
+                  <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-red-500" />
                 </span>
                 <span>
                   Zostało miejsc: <strong className="font-bold text-neutral-900">11</strong>
