@@ -74,7 +74,7 @@ export function HeroSection() {
                   <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-red-500" />
                 </span>
                 <span>
-                  Zostało miejsc: <strong className="font-bold text-neutral-900">11</strong>
+                  Zostało miejsc: <strong className="font-bold text-neutral-900">9</strong>
                 </span>
               </div>
             </div>
