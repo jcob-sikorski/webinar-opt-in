@@ -64,7 +64,18 @@ export function HeroSection() {
                     </svg>
                   ))}
                 </div>
-                <span className="text-[0.7rem] font-bold text-neutral-800 min-[390px]:text-[0.75rem]">100+ opinii 5/5</span>
+                <span className="text-[0.7rem] font-bold text-neutral-800 min-[390px]:text-[0.75rem]">100+ opinii 4.8/5</span>
+              </div>
+
+              {/* Live Scarcity & No-Replay Policy */}
+              <div className="mt-2 flex w-full max-w-[21.5rem] items-center justify-center gap-1.5 text-center text-[0.67rem] font-medium text-neutral-600 min-[390px]:text-[0.72rem] sm:max-w-[23.5rem] sm:text-[0.78rem]">
+                <span className="relative flex h-1.5 w-1.5 shrink-0 items-center justify-center">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-red-500" />
+                </span>
+                <span>
+                  Zostało miejsc: <strong className="font-bold text-neutral-900">11</strong>
+                </span>
               </div>
             </div>
 
