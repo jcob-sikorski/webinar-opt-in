@@ -8,7 +8,7 @@ const WORKSHOP_START = "2026-09-17T20:00:00+02:00";
 export function HeroSection() {
   return (
     <section className="relative w-full overflow-x-hidden bg-white font-sans selection:bg-orange-200">
-      <div className="mx-auto w-full max-w-[25rem] px-3 pt-1 pb-3 min-[390px]:pt-1.5 min-[390px]:pb-4 sm:max-w-[34rem] sm:px-3.5 sm:pt-2 sm:pb-6 lg:max-w-6xl lg:px-8 lg:py-10">
+      <div className="mx-auto w-full max-w-[25rem] px-3 pt-1 pb-4 min-[390px]:pt-1.5 min-[390px]:pb-5 sm:max-w-[34rem] sm:px-3.5 sm:pt-2 sm:pb-6 lg:max-w-6xl lg:px-8 lg:py-10">
         <div className="flex flex-col items-center lg:grid lg:grid-cols-12 lg:items-start lg:gap-10">
           
           {/* LEWA KOLUMNA */}
@@ -28,7 +28,7 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Main Headline: mt-1.5 na mobile zamiast mt-3 */}
+            {/* Main Headline */}
             <h1 className="mt-1.5 w-full text-[1.12rem] font-extrabold leading-[1.25] tracking-tight text-black min-[390px]:mt-2 min-[390px]:text-[1.25rem] sm:mt-3 sm:text-[1.65rem] lg:text-[1.95rem]">
               <span className="block text-neutral-900">
                 Otworzyłeś studio, żeby mieć wolność,{" "}
@@ -36,13 +36,13 @@ export function HeroSection() {
               </span>
             </h1>
 
-            {/* Subheadline: mt-1.5 i lżejszy line-height */}
+            {/* Subheadline */}
             <p className="mt-1.5 w-full text-[0.82rem] font-light leading-[1.32] tracking-normal text-neutral-800 min-[390px]:mt-2 min-[390px]:text-[0.9rem] sm:mt-2.5 sm:text-[1.05rem]">
               Dlaczego kolejne godziny na macie i nowi klienci tylko pogłębią chaos — i jak przebudować model{" "}
               <span className="font-bold text-black">na 20–50 tys. zł zysku / mies. bez stania na sali</span>
             </p>
 
-            {/* Social Proof: Skrócone marginesy i mniejsza wysokość pigułek */}
+            {/* Social Proof */}
             <div className="mt-2 flex flex-wrap items-center justify-center gap-1.5 min-[390px]:mt-2.5 sm:mt-3.5 sm:gap-2.5 lg:justify-start">
               <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 py-0.5 pl-1 pr-2.5 shadow-xs sm:gap-2 sm:py-1 sm:pl-1.5 sm:pr-3">
                 <div className="flex -space-x-1.5 overflow-hidden">
@@ -68,21 +68,21 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Countdown: Zredukowany mt oraz mb */}
-            <div className="mt-2 flex w-full flex-col items-center min-[390px]:mt-2.5 sm:mt-4 lg:items-start">
-              <h2 className="mb-1 text-center text-[0.78rem] font-black uppercase tracking-[0.04em] text-[#ea580c] min-[390px]:text-[0.88rem] sm:mb-1.5 sm:text-[1.2rem] lg:text-left">
+          </div>
+
+          {/* PRAWA KOLUMNA: Formularz bezpośrednio pod obietnicą, licznik poniżej */}
+          <div id="zapis" className="mt-2.5 flex w-full scroll-mt-4 flex-col items-center min-[390px]:mt-3 sm:mt-4 lg:col-span-5 lg:mt-0">
+            <RegisterForm className="shadow-2xl" />
+            
+            {/* Countdown: Urgency pod przyciskiem CTA */}
+            <div className="mt-3 flex w-full flex-col items-center min-[390px]:mt-3.5">
+              <h2 className="mb-1 text-center text-[0.74rem] font-black uppercase tracking-[0.04em] text-[#ea580c] min-[390px]:text-[0.8rem] sm:text-[0.88rem]">
                 SZKOLENIE STARTUJE ZA
               </h2>
               <div className="w-full max-w-[21.5rem] sm:max-w-[23.5rem]">
                 <CountdownTimer target={WORKSHOP_START} />
               </div>
             </div>
-
-          </div>
-
-          {/* PRAWA KOLUMNA: mt-2.5 na mobile zamiast mt-4 */}
-          <div id="zapis" className="mt-2.5 flex w-full scroll-mt-4 flex-col items-center min-[390px]:mt-3 sm:mt-4 lg:col-span-5 lg:mt-0">
-            <RegisterForm className="shadow-2xl" />
           </div>
 
         </div>
