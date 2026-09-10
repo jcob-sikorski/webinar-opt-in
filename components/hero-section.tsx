@@ -38,8 +38,8 @@ export function HeroSection() {
 
             {/* Subheadline: mt-1.5 i lżejszy line-height */}
             <p className="mt-1.5 w-full text-[0.82rem] font-light leading-[1.32] tracking-normal text-neutral-800 min-[390px]:mt-2 min-[390px]:text-[0.9rem] sm:mt-2.5 sm:text-[1.05rem]">
-              Dlaczego kolejne godziny na macie i nowi klienci z reklam tylko pogłębią chaos — i jak przebudować model{" "}
-              <span className="font-bold text-black">na 20–50 tys. zł czystego zysku bez stania na sali</span>
+              Dlaczego kolejne godziny na macie i nowi klienci tylko pogłębią chaos — i jak przebudować model{" "}
+              <span className="font-bold text-black">na 20–50 tys. zł zysku / mies. bez stania na sali</span>
             </p>
 
             {/* Social Proof: Skrócone marginesy i mniejsza wysokość pigułek */}
