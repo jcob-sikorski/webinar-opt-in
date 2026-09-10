@@ -144,7 +144,7 @@ export function AboutPresenterSection() {
             className="flex !h-auto w-full max-w-[22rem] sm:max-w-[28rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !px-6 !py-3.5 shadow-sm transition-colors hover:!bg-[#c2410c] active:scale-[0.99]"
           >
             <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug">
-              ZAPISZ SIĘ NA SZKOLENIE
+              REZERWUJĘ MOJE MIEJSCE
             </span>
             <span className="text-xs font-medium text-orange-100 leading-none">
               100% darmowy dostęp na żywo
