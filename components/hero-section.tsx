@@ -30,7 +30,6 @@ export function HeroSection() {
 
             {/* Main Headline */}
             <h1 className="mt-3 w-full text-[1.15rem] font-extrabold leading-[1.3] tracking-tight text-black min-[390px]:text-[1.3rem] sm:text-[1.65rem] lg:text-[1.95rem]">
-              <span className="block text-black">Pułapka Trenera-Właściciela:</span>
               <span className="mt-1 block text-neutral-900">
                 Dlaczego im więcej godzin trenujesz osobiście,{" "}
                 <span className="text-[#ea580c]">tym mniej zarabiasz</span>{" "}
