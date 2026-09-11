@@ -236,7 +236,7 @@ async function upsertGhlContact({
 async function sendSmsApiNotification(phone: string, firstName: string) {
   if (!phone) return;
 
-  const message = `Cześć ${firstName}! Tu Bartek. Łap swój bilet. Zapisz: 4 Września, Piątek 19:00. Pokażę Ci, jak zejść z sali i zbudować studio, które zarabia bez Ciebie. Do zobaczenia`;
+  const message = `Cześć ${firstName}! Tu Bartek. Łap swój bilet. Zapisz: 17 Września, Czwartek 20:00. Pokażę Ci, jak zejść z sali i zbudować studio, które zarabia bez Ciebie. Do zobaczenia`;
 
   const params = new URLSearchParams({
     to: phone,
