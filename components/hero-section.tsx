@@ -3,8 +3,6 @@
 import Image from "next/image";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { RegisterForm } from "@/components/register-form";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
 
 const WORKSHOP_START = "2026-09-17T20:00:00+02:00";
 
@@ -113,35 +111,19 @@ export function HeroSection() {
 
           </div>
 
-          {/* PRAWA KOLUMNA: Ukryty formularz i wyeksponowany przycisk CTA */}
-          <div id="zapis" className="mt-4 flex w-full scroll-mt-4 flex-col items-center sm:mt-6 lg:col-span-5 lg:mt-0">
+          {/* PRAWA KOLUMNA */}
+          <div id="zapis" className="mt-2.5 flex w-full scroll-mt-4 flex-col items-center min-[390px]:mt-3 sm:mt-4 lg:col-span-5 lg:mt-0">
+            <RegisterForm className="shadow-2xl" />
             
-            {/* Countdown: Urgency nad przyciskiem CTA */}
-            <div className="mb-4 flex w-full flex-col items-center sm:mb-5">
-              <h2 className="mb-1.5 text-center text-[0.74rem] font-black uppercase tracking-[0.04em] text-[#ea580c] min-[390px]:text-[0.8rem] sm:text-[0.88rem]">
+            {/* Countdown */}
+            <div className="mt-3 flex w-full flex-col items-center min-[390px]:mt-3.5">
+              <h2 className="mb-1 text-center text-[0.74rem] font-black uppercase tracking-[0.04em] text-[#ea580c] min-[390px]:text-[0.8rem] sm:text-[0.88rem]">
                 SZKOLENIE STARTUJE ZA
               </h2>
               <div className="w-full max-w-[21.5rem] sm:max-w-[23.5rem]">
                 <CountdownTimer target={WORKSHOP_START} />
               </div>
             </div>
-
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button className="flex !h-auto w-full max-w-[21.5rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !px-6 !py-4 shadow-xl transition-colors hover:!bg-[#c2410c] active:scale-[0.99] sm:max-w-[23.5rem]">
-                  <span className="text-[1.1rem] font-extrabold uppercase text-white sm:text-[1.2rem]">
-                    Rezerwuję Bezpłatne Miejsce
-                  </span>
-                  <span className="text-[0.8rem] font-medium text-orange-100">
-                    Zajmie to mniej niż 30 sekund
-                  </span>
-                </Button>
-              </DialogTrigger>
-              
-              <DialogContent className="sm:max-w-md border-none bg-transparent p-0 shadow-none">
-                <RegisterForm className="mx-auto w-full shadow-2xl" />
-              </DialogContent>
-            </Dialog>
             
           </div>
 

@@ -3,8 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { RegisterForm } from "@/components/register-form";
 
 interface DashboardStrip {
   highlight: string;
@@ -228,22 +226,25 @@ export function CaseStudiesSection() {
 
         {/* CTA Button replacing onClick scroll with Dialog */}
         <div className="mt-6 flex w-full justify-center">
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="flex !h-auto w-full max-w-[22rem] sm:max-w-[28rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !px-6 !py-3.5 shadow-sm transition-colors hover:!bg-[#c2410c] active:scale-[0.99]">
-                <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug text-center">
-                  ODBIERZ DARMOWY DOSTĘP
-                </span>
-                <span className="text-xs font-medium text-orange-100 leading-none text-center">
-                  Zajmie to mniej niż 30 sekund. Zero spamu.
-                </span>
-              </Button>
-            </DialogTrigger>
-            
-            <DialogContent className="sm:max-w-md border-none bg-transparent p-0 shadow-none">
-              <RegisterForm className="mx-auto w-full shadow-2xl" />
-            </DialogContent>
-          </Dialog>
+          <Button
+            type="button"
+            onClick={() => {
+              const el = document.getElementById("zapis");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+              } else {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }
+            }}
+            className="flex !h-auto w-full max-w-[22rem] sm:max-w-[28rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !px-6 !py-3.5 shadow-sm transition-colors hover:!bg-[#c2410c] active:scale-[0.99]"
+          >
+            <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug text-center">
+              REZERWUJĘ MOJE MIEJSCE
+            </span>
+            <span className="text-xs font-medium text-orange-100 leading-none text-center">
+              100% Darmowy Dostęp Live
+            </span>
+          </Button>
         </div>
 
       </div>
