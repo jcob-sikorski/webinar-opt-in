@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Clarity from "@microsoft/clarity";
 import { Button } from "@/components/ui/button";
 
 export function AboutPresenterSection() {
@@ -136,6 +137,8 @@ export function AboutPresenterSection() {
           <Button
             type="button"
             onClick={() => {
+              Clarity.event("cta_button_clicked");
+              Clarity.setTag("cta_location", "about_presenter");
               const el = document.getElementById("zapis");
               if (el) {
                 el.scrollIntoView({ behavior: "smooth", block: "start" });

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Clarity from "@microsoft/clarity";
 import { Button } from "@/components/ui/button";
 
 interface DashboardStrip {
@@ -229,6 +230,8 @@ export function CaseStudiesSection() {
           <Button
             type="button"
             onClick={() => {
+              Clarity.event("cta_button_clicked");
+              Clarity.setTag("cta_location", "case_studies_bottom");
               const el = document.getElementById("zapis");
               if (el) {
                 el.scrollIntoView({ behavior: "smooth", block: "start" });

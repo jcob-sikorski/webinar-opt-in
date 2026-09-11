@@ -4,6 +4,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { FacebookPixel } from "@/components/facebook-pixel";
 import { AttributionCapture } from "@/components/attribution-capture";
+import { ClarityInit } from "@/components/clarity-init";
 import { Analytics } from "@vercel/analytics/next";
 
 const body = Inter({
@@ -106,6 +107,10 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <FacebookPixel />
         </Suspense>
+
+        {/* No useSearchParams here, so no Suspense boundary needed —
+            unlike the two above, this won't opt the route into dynamic rendering. */}
+        <ClarityInit />
         
         {children}
 

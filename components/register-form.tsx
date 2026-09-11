@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { sendToMetaCAPI } from "@/app/actions";
 import { resolveAttribution } from "@/lib/attribution";
+import Clarity from "@microsoft/clarity";
 
 declare global {
   interface Window {
@@ -88,6 +89,11 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     e.preventDefault();
     if (isSubmitting) return;
 
+    // Fires the moment the user hits submit, before we know the outcome —
+    // this is your "intent to register" signal, mirrored as a Clarity
+    // Smart Event so you can filter session recordings by it directly.
+    Clarity.event("register_button_clicked");
+
     setIsSubmitting(true);
     const nameParts = fullName.trim().split(/\s+/);
     const firstName = nameParts[0] || "";
@@ -96,6 +102,11 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     const e164Digits = `48${nationalPhone}`;
     const attribution = resolveAttribution();
     const eventId = `lead_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+
+    // Tag the session as soon as attribution resolves, so you can filter
+    // recordings in the Clarity dashboard by traffic source (e.g. just
+    // Instagram vs. just Facebook sessions).
+    Clarity.setTag("utm_source", attribution.utm_source ?? "direct");
 
     try {
       const res = await fetch("/api/register", {
@@ -121,10 +132,19 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
       // succeeded server-side. This is the real "Lead" moment.
       await reportLeadToMeta({ firstName, lastName, email, e164Digits, eventId, attribution });
 
+      Clarity.event("registration_succeeded");
+
       if (onSuccess) onSuccess();
       router.push("/see-you");
     } catch (error) {
       console.error("Registration Error:", error);
+
+      Clarity.event("registration_failed");
+      Clarity.setTag(
+        "registration_failure_reason",
+        error instanceof Error ? error.message : "Unknown Error"
+      );
+
       alert("Wystąpił problem z zapisem. Spróbuj ponownie.");
     } finally {
       setIsSubmitting(false);
