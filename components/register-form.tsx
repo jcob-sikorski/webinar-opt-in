@@ -31,20 +31,23 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     return digits;
   }
 
-  async function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (isSubmitting) return;
-
-    setIsSubmitting(true);
-    const nameParts = fullName.trim().split(/\s+/);
-    const firstName = nameParts[0] || "";
-    const lastName = nameParts.slice(1).join(" ") || "";
-    const nationalPhone = cleanPolishPhone(phone);
-    const e164Digits = `48${nationalPhone}`;
-    const attribution = resolveAttribution();
-    const eventId = `lead_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
-
-    // 1. Meta Pixel & CAPI dla KAŻDEGO zapisu (konieczne do nauki piksela)
+  // Fires pixel + CAPI. Only ever called AFTER /api/register has confirmed
+  // success, so a failed submission never reaches Meta as a "Lead".
+  async function reportLeadToMeta({
+    firstName,
+    lastName,
+    email,
+    e164Digits,
+    eventId,
+    attribution,
+  }: {
+    firstName: string;
+    lastName: string;
+    email: string;
+    e164Digits: string;
+    eventId: string;
+    attribution: ReturnType<typeof resolveAttribution>;
+  }) {
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq("init", "965293539900334", {
         em: email.toLowerCase().trim(),
@@ -75,10 +78,25 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
         attribution,
       });
     } catch (capiErr) {
+      // Non-blocking: a failed CAPI call shouldn't stop the user from
+      // proceeding to /see-you, but we do want it in the logs.
       console.error("Non-blocking CAPI Error:", capiErr);
     }
+  }
 
-    // 2. Rejestracja w API
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    const nameParts = fullName.trim().split(/\s+/);
+    const firstName = nameParts[0] || "";
+    const lastName = nameParts.slice(1).join(" ") || "";
+    const nationalPhone = cleanPolishPhone(phone);
+    const e164Digits = `48${nationalPhone}`;
+    const attribution = resolveAttribution();
+    const eventId = `lead_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
+
     try {
       const res = await fetch("/api/register", {
         method: "POST",
@@ -93,7 +111,16 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
         }),
       });
 
-      if (!res.ok) throw new Error("API Route Failed");
+      const data = await res.json().catch(() => null);
+
+      if (!res.ok || !data?.success) {
+        throw new Error(data?.message || "API Route Failed");
+      }
+
+      // Only reachable once WebinarJam registration + fan-out have actually
+      // succeeded server-side. This is the real "Lead" moment.
+      await reportLeadToMeta({ firstName, lastName, email, e164Digits, eventId, attribution });
+
       if (onSuccess) onSuccess();
       router.push("/see-you");
     } catch (error) {
