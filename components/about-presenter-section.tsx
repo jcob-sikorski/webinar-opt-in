@@ -14,7 +14,7 @@ export function AboutPresenterSection() {
 
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] bg-stone-900 shadow-xs">
             <Image
-              src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa03cdb360a619b9fcc6119.jpeg"
+              src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa4684bcbbb25381191a0da.png"
               alt="Jakub Siekiera"
               fill
               className="object-cover"
