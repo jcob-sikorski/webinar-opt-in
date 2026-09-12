@@ -12,6 +12,7 @@ export function AboutPresenterSection() {
 
         <div className="w-full overflow-hidden rounded-[1.75rem] border border-neutral-200/80 bg-white p-3.5 sm:p-4 shadow-xs">
 
+          {/* Zdjęcie */}
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.35rem] bg-stone-900 shadow-xs">
             <Image
               src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa4684bcbbb25381191a0da.png"
@@ -28,6 +29,7 @@ export function AboutPresenterSection() {
             </div>
           </div>
 
+          {/* Prowadzący */}
           <div className="mt-5 flex flex-col items-center text-center">
             <div className="inline-flex items-center justify-center rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3 py-0.5">
               <span className="text-[0.65rem] sm:text-[0.7rem] font-bold uppercase tracking-[0.16em] text-[#ea580c]">
@@ -40,110 +42,130 @@ export function AboutPresenterSection() {
             </h3>
 
             <p className="mt-1 text-[0.82rem] sm:text-[0.875rem] font-normal leading-snug text-neutral-500">
-              Partner w{" "}
+              Reprezentant{" "}
               <span className="font-bold text-neutral-900">
-                Dochodowe Studio
-              </span>{" "}
-              — pracuje z właścicielami studiów treningowych nad tym, żeby biznes nie wisiał na ich własnych godzinach.
+                Dochodowego Studio
+              </span>
+              {" "}— poprowadzi Cię przez model wypracowany przez
+              Bartłomieja Sikorskiego i jego zespół.
             </p>
           </div>
 
           <div className="my-5 h-[1px] w-full bg-neutral-100" />
 
+          {/* Treść */}
           <div className="space-y-3.5 text-[0.84rem] sm:text-[0.89rem] font-normal leading-[1.46] text-neutral-700">
 
             <p>
-              Jeśli prowadzisz studio, to pewnie znasz ten schemat.{" "}
-              <span className="font-bold text-neutral-900">
-                Im więcej zarabia studio, tym więcej roboty ląduje na Twojej głowie.
-              </span>{" "}
-              Treningi, trenerzy, sprzedaż, wiadomości, grafiki, problemy z klientami. I nagle okazuje się, że otworzyłeś własny biznes, a pracujesz więcej niż wcześniej.
-            </p>
-
-            <p>
-              Właśnie z tym pracujemy w{" "}
+              Za{" "}
               <span className="font-bold text-neutral-900">
                 Dochodowym Studio
-              </span>
-              . Nie uczymy właścicieli, jak jeszcze lepiej prowadzić treningi. Pokazujemy, jak poukładać studio tak, żeby{" "}
+              </span>{" "}
+              stoi jego właściciel —{" "}
               <span className="font-bold text-neutral-900">
-                trenerzy mogli prowadzić klientów bez Twojego ciągłego stania nad nimi.
+                Bartłomiej Sikorski
               </span>
+              .
             </p>
 
             <p>
-              W praktyce oznacza to prostą rzecz:{" "}
+              Jego zespół pomógł już{" "}
               <span className="font-bold text-neutral-900">
-                możesz zejść z części godzin na sali, nie zabierając ze sobą całego przychodu.
+                ponad 50 placówkom
               </span>{" "}
-              Zamiast być jedyną osobą, która potrafi dowozić klienta, budujesz sposób pracy, który może powtarzać cały zespół.
+              otworzyć, uporządkować i rozwijać studia treningowe — tak,
+              żeby właściciel nie musiał zarabiać wyłącznie własnymi
+              godzinami na sali.
+            </p>
+
+            <p>
+              To nie jest kolejny kurs o tym, jak prowadzić lepsze treningi.
+              To{" "}
+              <span className="font-bold text-neutral-900">
+                system budowania dochodowego studia
+              </span>
+              : oferta, sprzedaż, retencja, semi-personal, zespół,
+              metodyka i proces przekazywania klientów trenerom.
             </p>
 
             <div className="border-l-[3.5px] border-[#ea580c] py-0.5 pl-3">
               <p className="text-[0.98rem] sm:text-[1.04rem] font-bold text-neutral-900 tracking-tight">
-                Cel jest prosty.{" "}
+                Cel?
+                {" "}
                 <span className="italic font-normal">
-                  Studio ma zarabiać dzięki systemowi i zespołowi, a nie tylko dzięki temu, że ty jako właściciel pracujesz od rana do nocy.
+                  Studio, które zarabia dzięki systemowi i zespołowi,
+                  a nie dzięki temu, że właściciel pracuje od rana do nocy.
                 </span>
               </p>
             </div>
+
           </div>
 
           <div className="my-5 h-[1px] w-full bg-neutral-100" />
 
+          {/* Liczby */}
           <div className="grid grid-cols-2 gap-y-4 gap-x-2 pb-1 text-center">
 
             <div className="flex flex-col items-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                38M<span className="text-[#ea580c]">+</span> zł
-              </span>
-              <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                Przychodu wygenerowanego przez klientów
-              </span>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
                 50<span className="text-[#ea580c]">+</span>
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                Studiów pracujących na tym modelu
+                placówek w modelu
               </span>
             </div>
 
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center">
+              <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
+                20k<span className="text-[#ea580c]">+</span>
+              </span>
+              <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
+                zł miesięcznego zysku
+              </span>
+            </div>
+
+            <div className="flex flex-col items-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
                 4
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                Własne studia Sportowe Przedmieście
+                własne studia
               </span>
             </div>
 
-            <div className="flex flex-col items-center text-center">
+            <div className="flex flex-col items-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                20–60k
+                90 dni
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                Miesięcznego zysku w studiach klientów
+                plan działania
               </span>
             </div>
 
           </div>
+
         </div>
 
-        {/* CTA Button replacing onClick scroll with Dialog */}
+        {/* CTA */}
         <div className="mt-6 sm:mt-7 flex w-full justify-center">
           <Button
             type="button"
             onClick={() => {
               Clarity.event("cta_button_clicked");
               Clarity.setTag("cta_location", "about_presenter");
+
               const el = document.getElementById("zapis");
+
               if (el) {
-                el.scrollIntoView({ behavior: "smooth", block: "start" });
+                el.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
               } else {
-                window.scrollTo({ top: 0, behavior: "smooth" });
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                });
               }
             }}
             className="flex !h-auto w-full max-w-[22rem] sm:max-w-[28rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !px-6 !py-3.5 shadow-sm transition-colors hover:!bg-[#c2410c] active:scale-[0.99]"
@@ -151,6 +173,7 @@ export function AboutPresenterSection() {
             <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug">
               REZERWUJĘ MOJE MIEJSCE
             </span>
+
             <span className="text-xs font-medium text-orange-100 leading-none">
               100% darmowy dostęp na żywo
             </span>
