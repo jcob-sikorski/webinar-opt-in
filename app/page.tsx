@@ -10,11 +10,11 @@ export default function Home() {
     <main>
       <HeroSection />
 
-      <AboutPresenterSection />
-
       <PillarsSection />   
 
-      <WhatsIncludedSection />   
+      <WhatsIncludedSection />  
+
+      <AboutPresenterSection /> 
 
       <CaseStudiesSection />
 
