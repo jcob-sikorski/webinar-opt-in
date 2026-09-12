@@ -32,6 +32,8 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     return digits;
   }
 
+  // Fires pixel + CAPI. Only ever called AFTER /api/register has confirmed
+  // success, so a failed submission never reaches Meta as a "Lead".
   async function reportLeadToMeta({
     firstName,
     lastName,
@@ -59,7 +61,7 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
       window.fbq(
         "track",
         "Lead",
-        { content_name: "Warsztat: Zloty Model Biznesowy" },
+        { content_name: "Warsztat: Poukladane Studio" },
         { eventID: eventId }
       );
     }
@@ -77,6 +79,8 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
         attribution,
       });
     } catch (capiErr) {
+      // Non-blocking: a failed CAPI call shouldn't stop the user from
+      // proceeding to /see-you, but we do want it in the logs.
       console.error("Non-blocking CAPI Error:", capiErr);
     }
   }
@@ -85,9 +89,12 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     e.preventDefault();
     if (isSubmitting) return;
 
+    // Fires the moment the user hits submit, before we know the outcome —
+    // this is your "intent to register" signal, mirrored as a Clarity
+    // Smart Event so you can filter session recordings by it directly.
     Clarity.event("register_button_clicked");
-    setIsSubmitting(true);
 
+    setIsSubmitting(true);
     const nameParts = fullName.trim().split(/\s+/);
     const firstName = nameParts[0] || "";
     const lastName = nameParts.slice(1).join(" ") || "";
@@ -96,6 +103,9 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
     const attribution = resolveAttribution();
     const eventId = `lead_${Date.now()}_${Math.floor(Math.random() * 1000)}`;
 
+    // Tag the session as soon as attribution resolves, so you can filter
+    // recordings in the Clarity dashboard by traffic source (e.g. just
+    // Instagram vs. just Facebook sessions).
     Clarity.setTag("utm_source", attribution.utm_source ?? "direct");
 
     try {
@@ -113,23 +123,29 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
       });
 
       const data = await res.json().catch(() => null);
+
       if (!res.ok || !data?.success) {
-        throw new Error(data?.message || "Błąd zapisu na warsztat");
+        throw new Error(data?.message || "API Route Failed");
       }
 
+      // Only reachable once WebinarJam registration + fan-out have actually
+      // succeeded server-side. This is the real "Lead" moment.
       await reportLeadToMeta({ firstName, lastName, email, e164Digits, eventId, attribution });
+
       Clarity.event("registration_succeeded");
 
       if (onSuccess) onSuccess();
       router.push("/see-you");
     } catch (error) {
       console.error("Registration Error:", error);
+
       Clarity.event("registration_failed");
       Clarity.setTag(
         "registration_failure_reason",
         error instanceof Error ? error.message : "Unknown Error"
       );
-      alert("Wystąpił problem z zapisem. Upewnij się, że dane są poprawne i spróbuj ponownie.");
+
+      alert("Wystąpił problem z zapisem. Spróbuj ponownie.");
     } finally {
       setIsSubmitting(false);
     }
@@ -137,97 +153,63 @@ export function RegisterForm({ className = "", onSuccess }: RegisterFormProps) {
 
   return (
     <div
-      className={`w-full max-w-[23rem] sm:max-w-[25rem] rounded-2xl border-2 border-[#ea580c] bg-white p-5 shadow-[0_16px_40px_-8px_rgba(234,88,12,0.28)] ${className}`}
+      className={`w-full max-w-[22rem] sm:max-w-[24rem] rounded-2xl border-2 border-[#ea580c] ring-4 ring-[#ea580c]/10 bg-white p-4 sm:p-5 shadow-[0_12px_36px_-6px_rgba(234,88,12,0.22),0_4px_16px_rgba(0,0,0,0.04)] ${className}`}
     >
-      {/* Header Formularza */}
-      <div className="mb-4 text-center">
-        <span className="inline-block rounded-full bg-orange-100 px-3 py-0.5 text-[0.68rem] font-extrabold uppercase tracking-wider text-[#ea580c]">
-          KROK 1 Z 2: REZERWACJA BILETU
-        </span>
-        <h3 className="mt-1.5 text-lg font-black text-neutral-900 leading-tight">
-          Gdzie przesłać Twój bilet i materiały wdrożeniowe?
-        </h3>
-        <p className="mt-1 text-xs text-neutral-500">
-          Wstęp: <span className="line-through text-neutral-400">497 zł</span>{" "}
-          <strong className="text-emerald-600 font-bold">0 zł (Darmowy Bilet)</strong>
-        </p>
-      </div>
-
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-        <div className="flex flex-col gap-2.5">
-          <div>
-            <label className="mb-1 block text-[11px] font-bold text-neutral-700 uppercase tracking-wide">
-              Imię i Nazwisko
-            </label>
-            <input
-              required
-              type="text"
-              autoComplete="name"
-              placeholder="np. Jakub Kowalski"
-              value={fullName}
-              onChange={(e) => setFullName(e.target.value)}
-              disabled={isSubmitting}
-              className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/70 px-3.5 text-[15px] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/20"
-            />
-          </div>
-
-          <div>
-            <label className="mb-1 block text-[11px] font-bold text-neutral-700 uppercase tracking-wide">
-              Główny Adres E-mail
-            </label>
-            <input
-              required
-              type="email"
-              inputMode="email"
-              autoComplete="email"
-              placeholder="twoj.mail@domena.pl"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              disabled={isSubmitting}
-              className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/70 px-3.5 text-[15px] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/20"
-            />
-          </div>
-
-          <div>
-            <div className="flex items-center justify-between mb-1">
-              <label className="block text-[11px] font-bold text-neutral-700 uppercase tracking-wide">
-                Numer Telefonu
-              </label>
-              <span className="text-[10px] text-neutral-500 font-medium">Link w SMS</span>
-            </div>
-            <input
-              required
-              type="tel"
-              inputMode="tel"
-              autoComplete="tel"
-              placeholder="np. 500 123 456"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              disabled={isSubmitting}
-              className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/70 px-3.5 text-[15px] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/20"
-            />
-          </div>
+        <div className="flex flex-col gap-2">
+          <input
+            required
+            type="text"
+            autoComplete="name"
+            placeholder="Imię"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            disabled={isSubmitting}
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/15 sm:text-sm"
+          />
+          <input
+            required
+            type="email"
+            inputMode="email"
+            autoComplete="email"
+            placeholder="Adres e-mail"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            disabled={isSubmitting}
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/15 sm:text-sm"
+          />
+          <input
+            required
+            type="tel"
+            inputMode="tel"
+            autoComplete="tel"
+            placeholder="Numer telefonu"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            disabled={isSubmitting}
+            className="h-11 w-full rounded-xl border border-neutral-300 bg-neutral-50/50 px-3.5 text-[16px] text-neutral-900 placeholder:text-neutral-400 focus:border-[#ea580c] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]/15 sm:text-sm"
+          />
         </div>
 
-        <div className="pt-2">
+        <div className="pt-1">
           <Button
             type="submit"
             disabled={isSubmitting}
-            className="group relative flex !h-auto w-full flex-col items-center justify-center overflow-hidden rounded-xl !bg-[#ea580c] !py-3.5 !px-4 shadow-md transition-all hover:!bg-[#c2410c] hover:shadow-lg active:scale-[0.98] disabled:opacity-75"
+            className="flex !h-auto w-full flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !py-3 !px-4 shadow-sm transition-colors hover:!bg-[#c2410c] active:scale-[0.99] disabled:opacity-70"
           >
-            <span className="text-[1.02rem] sm:text-[1.08rem] font-black uppercase tracking-tight text-white leading-tight">
-              {isSubmitting ? "REZERWACJA MIEJSCA..." : "REZERWUJĘ BEZPŁATNE MIEJSCE »"}
+            <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug">
+              {isSubmitting ? "REZERWACJA..." : "REZERWUJĘ MOJE MIEJSCE"}
             </span>
-            <span className="mt-0.5 text-[11px] font-semibold text-orange-100 leading-none">
-              Natychmiastowy dostęp live + Playbook PDF
+            <span className="text-xs font-medium text-orange-100 leading-none">
+              Bezpłatny Dostęp Live
             </span>
           </Button>
 
-          <div className="mt-3 flex items-center justify-center gap-1.5 text-[11px] font-medium text-neutral-500">
-            <svg className="h-3.5 w-3.5 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7z" />
+          <div className="mt-2.5 flex items-center justify-center gap-1.5 text-[11px] font-medium text-neutral-400">
+            <svg className="h-3.5 w-3.5 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8V7z" />
             </svg>
-            <span>Brak spamu. Link do pokoju wyślemy mailem i SMS-em.</span>
+            Brak spamu. Link otrzymasz mailem i SMS-em.
           </div>
         </div>
       </form>
