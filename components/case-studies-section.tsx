@@ -16,31 +16,31 @@ interface DashboardStrip {
 const DASHBOARD_STRIPS: DashboardStrip[] = [
   {
     highlight: "2 Studia PG Power",
-    subtext: "Jak Patryk zaryzykował wdrożenie 'sztywnych' procedur i zyskał pełną niezależność od grafiku sali",
+    subtext: "Patryk Grzemski (PG Power) – wdrożenie procedur i pełna niezależność od sali",
     imageSrc: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/43d3825b-1a86-400c-943d-7e52e840e2cf.png",
     alt: "Patryk Grzemski PG Power Case Study",
   },
   {
     highlight: "20.000 zł Zysku z 40 m²",
-    subtext: "Sekret Piotra na upchnięcie 2 trenerów w mikroskopijnym lokalu i generowanie marży zadowalającej 'dużych' graczy",
+    subtext: "Piotr Smulczyk – 2 trenerów w zespole, zysk z małego lokalu i plan na kolejne studio",
     imageSrc: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/be616acc-e195-471f-a051-c329bdc6b45a.png",
     alt: "Piotr Smulczyk wywiad po 6 miesiącach",
   },
   {
     highlight: "Ucieczka z Sieciówki",
-    subtext: "Jak Igor pokonał finansowy sufit na etacie i zbudował własne, samodzielnie funkcjonujące studio",
+    subtext: "Igor Czobot (Kobiecy Portal Lublin) – z sufitu na etacie do własnego studia z zespołem",
     imageSrc: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/02059f6c-c119-4ed3-a480-01bac9d1d210.png",
     alt: "Igor Czobot wywiad z otwarcia Kobiecy Portal",
   },
   {
     highlight: "Architektura Marży od Startu",
-    subtext: "System sprzedaży Adama, który zagwarantował mu rentowność jeszcze zanim otworzył drzwi swojego studia",
+    subtext: "Adam Stołowski (STO POWER Łódź) – ułożony proces sprzedaży i wysoka marża przed otwarciem",
     imageSrc: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa03671a08d19d927525e54.png",
     alt: "Adam Stołowski STO POWER",
   },
   {
     highlight: "30.000 zł Zysku Miesięcznie",
-    subtext: "Model Adriana i Konrada na całkowite oddelegowanie studia do 7 trenerów bez utraty jakości obsługi",
+    subtext: "Adrian i Konrad (Stillmotion Tychy) – w pełni oddelegowane studio, 7 trenerów i oddana sprzedaż",
     imageSrc: "https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aa037d3641597c752b0cb8a.jpeg",
     alt: "Stillmotion Tychy Adrian i Konrad Case Study",
   },
@@ -64,7 +64,7 @@ export function CaseStudiesSection() {
         {/* ================= CASE STUDY 1 ================= */}
         <div className="mt-6 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
-            Jak Eryk przestał być „zakładnikiem” własnego studia i zautomatyzował pracę 4 trenerów, uwalniając czas dla rodziny.
+            Eryk Witecki (Gym Clinic Józefów):<br />Z 25k na sali do 4 trenerów i czasu dla rodziny
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.1rem] border border-neutral-200/80 shadow-xs">
@@ -90,7 +90,7 @@ export function CaseStudiesSection() {
         {/* ================= CASE STUDY 2 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
-            Strategia Joanny na porzucenie „zajechania” na sali i przekazanie klientów 3 trenerom bez fochów i rezygnacji.
+            Joanna Wójcik (Silna Studio):<br />Zajechanie na sali zamienione w 3 trenerów i drugie studio
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.1rem] border border-neutral-200/80 shadow-xs">
@@ -116,7 +116,7 @@ export function CaseStudiesSection() {
         {/* ================= CASE STUDY 3 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
-            Od pracy na 3 etaty do własnego lokalu – jak Karolina generuje 40 tys. zł zysku bez wydawania złotówki na płatne reklamy.
+            Karolina Owczarzak (Suszec):<br />Z 3 etatów do własnego studia i 40k zysku/mies.
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.25rem] border border-neutral-200/80 shadow-xs">
@@ -137,7 +137,7 @@ export function CaseStudiesSection() {
         {/* ================= CASE STUDY 4 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
-            Metoda Klaudii na zarządzanie studiem z poziomu laptopa (podczas podróży) i wyciąganie 40–50k „na rękę”.
+            Klaudia Ostrowska (Fitko Toruń):<br />40–50k na rękę, 3 trenerki w zespole i zarządzanie z podróży
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.25rem] border border-neutral-200/80 shadow-xs">
@@ -158,7 +158,7 @@ export function CaseStudiesSection() {
         {/* ================= CASE STUDY 5 ================= */}
         <div className="mt-7 flex w-full flex-col items-center">
           <h3 className="text-center text-[1.12rem] min-[390px]:text-[1.24rem] sm:text-[1.38rem] font-bold leading-[1.18] tracking-tight text-neutral-900">
-            Jak Krzysztof zbudował maszynę zatrudniającą 7 trenerów, która zarabia pieniądze, gdy on wyjeżdża na obozy i walki.
+            Krzysztof Mariańczyk (Champion Katowice):<br />Od zera do 7 trenerów – studio zarabia, kiedy śpi
           </h3>
 
           <div className="relative mt-2 w-full overflow-hidden rounded-[1.25rem] border border-neutral-200/80 shadow-xs">
@@ -241,13 +241,13 @@ export function CaseStudiesSection() {
             }}
             className="flex !h-auto w-full max-w-[22rem] sm:max-w-[28rem] flex-col items-center justify-center gap-1 rounded-xl !border-none !bg-[#ea580c] !px-6 !py-3.5 shadow-sm transition-colors hover:!bg-[#c2410c] active:scale-[0.99]"
           >
-            <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug text-center">
-              REZERWUJĘ MOJE MIEJSCE
-            </span>
-            <span className="text-xs font-medium text-orange-100 leading-none text-center">
-              100% Darmowy Dostęp Live
-            </span>
-          </Button>
+                <span className="text-base font-bold uppercase tracking-normal text-white sm:text-[1.1rem] leading-snug text-center">
+                  REZERWUJĘ MOJE MIEJSCE
+                </span>
+                <span className="text-xs font-medium text-orange-100 leading-none text-center">
+                  100% Darmowy Dostęp Live
+                </span>
+              </Button>
         </div>
 
       </div>
