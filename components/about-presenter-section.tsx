@@ -117,7 +117,7 @@ export function AboutPresenterSection() {
 
             <div className="flex flex-col items-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                20k<span className="text-[#ea580c]">+</span>
+                min. 20k<span className="text-[#ea580c]">+</span>
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
                 zł miesięcznego zysku
@@ -129,16 +129,16 @@ export function AboutPresenterSection() {
                 4
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                własne studia
+                studia Sportowe Przedmieście
               </span>
             </div>
 
             <div className="flex flex-col items-center">
               <span className="text-[1.45rem] sm:text-[1.65rem] font-extrabold leading-tight text-neutral-900 tracking-tight">
-                90 dni
+                5 lat
               </span>
               <span className="mt-0.5 text-[0.74rem] sm:text-[0.78rem] font-medium text-neutral-500">
-                plan działania
+                na rynku
               </span>
             </div>
 
