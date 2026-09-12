@@ -39,9 +39,8 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p className="mt-1.5 w-full text-[0.82rem] font-light leading-[1.32] tracking-normal text-neutral-800 min-[390px]:mt-2 min-[390px]:text-[0.9rem] sm:mt-2.5 sm:text-[1.05rem]">
-              Odkryj jeden nieoczywisty model pracy, który uwalnia właścicieli od prowadzenia treningów — i pozwala generować{" "}
-              <span className="font-bold text-black">20–50 tys. zł zysku / mies. bez stania na sali</span>{" "}
-              (nawet na zaledwie 40-150 m² lokalu).
+              Szkolenie o tym jak przebudować model studio treningu personalnego{" "}
+              <span className="font-bold text-black">na 20–50 tys. zł zysku / mies. bez stania na sali</span>
             </p>
 
             {/* Social Proof */}
