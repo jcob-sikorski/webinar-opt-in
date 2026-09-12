@@ -55,60 +55,6 @@ export function HeroSection() {
               <span className="font-bold text-black">na 20–50 tys. zł zysku / mies. bez stania na sali</span>
             </p>
 
-            {/* Social Proof */}
-            <div className="mt-2 flex flex-wrap items-center justify-center gap-1.5 min-[390px]:mt-2.5 sm:mt-3.5 sm:gap-2.5 lg:justify-start">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-neutral-200 bg-neutral-50/80 py-0.5 pl-1 pr-2.5 shadow-xs sm:gap-2 sm:py-1 sm:pl-1.5 sm:pr-3">
-                <div className="flex -space-x-1.5 overflow-hidden">
-                  <Image
-                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
-                     src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop&crop=face"
-                     alt="Student avatar"
-                     width={24}
-                     height={24}
-                     priority
-                   />
-                  <Image
-                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
-                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face"
-                     alt="Student avatar"
-                     width={24}
-                     height={24}
-                     priority
-                   />
-                  <Image
-                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
-                     src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face"
-                     alt="Student avatar"
-                     width={24}
-                     height={24}
-                     priority
-                   />
-                  <Image
-                     className="inline-block h-4 w-4 rounded-full object-cover ring-1 ring-white sm:h-5 sm:w-5 sm:ring-1.5"
-                     src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=64&h=64&fit=crop&crop=face"
-                     alt="Student avatar"
-                     width={24}
-                     height={24}
-                     priority
-                   />
-                </div>
-                <span className="text-[0.72rem] font-bold tracking-tight text-neutral-800 min-[390px]:text-[0.78rem]">
-                  +38 mln zł przychodu programu Dochodowe Studio
-                </span>
-              </div>
-
-              {/* Live Scarcity & No-Replay Policy */}
-              <div className="mt-4 flex w-full max-w-md items-center justify-center gap-2.5 text-center text-sm font-medium text-neutral-600 sm:max-w-lg sm:text-base">
-                <span className="relative flex h-3.5 w-3.5 shrink-0 items-center justify-center">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-75" />
-                  <span className="relative inline-flex h-3.5 w-3.5 rounded-full bg-red-500" />
-                </span>
-                <span>
-                  Zostało miejsc: <strong className="font-bold text-neutral-900">4</strong>
-                </span>
-              </div>
-            </div>
-
           </div>
 
           {/* PRAWA KOLUMNA */}
