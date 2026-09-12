@@ -29,8 +29,20 @@ export function HeroSection() {
               </div>
             </div>
 
+            {/* Logo */}
+            <div className="my-0">
+              <Image
+                src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/09cd3493-7d85-4c2a-8855-e34c95663611.png"
+                alt="Logo"
+                width={440}
+                height={110}
+                className="block h-[72px] w-auto object-contain sm:h-[88px] lg:h-24"
+                priority
+              />
+            </div>
+
             {/* Main Headline */}
-            <h1 className="mt-2 w-full text-[1.28rem] font-extrabold leading-[1.2] tracking-tight text-black min-[390px]:mt-2.5 min-[390px]:text-[1.42rem] sm:mt-3.5 sm:text-[1.85rem] sm:leading-[1.18] lg:text-[2.25rem]">
+            <h1 className="mt-0 w-full text-[1.28rem] font-extrabold leading-[1.2] tracking-tight text-black min-[390px]:text-[1.42rem] sm:text-[1.85rem] sm:leading-[1.18] lg:text-[2.25rem]">
               <span className="block text-neutral-900">
                 Otworzyłeś studio, żeby mieć wolność,{" "}
                 <span className="text-[#ea580c]">a stworzyłeś sobie najdroższy etat?</span>
@@ -81,19 +93,8 @@ export function HeroSection() {
                    />
                 </div>
                 <span className="text-[0.72rem] font-bold tracking-tight text-neutral-800 min-[390px]:text-[0.78rem]">
-                  +38 mln zł przychodu uczestników
+                  +38 mln zł przychodu programu Dochodowe Studio
                 </span>
-              </div>
-
-              <div className="inline-flex items-center gap-1 rounded-full border border-neutral-200 bg-neutral-50/80 px-2.5 py-0.5 shadow-xs sm:gap-1.5 sm:px-3 sm:py-1">
-                <div className="flex items-center text-[#f59e0b]">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="h-3 w-3 fill-current sm:h-3.5 sm:w-3.5" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="text-[0.7rem] font-bold text-neutral-800 min-[390px]:text-[0.75rem]">100+ opinii 4.8/5</span>
               </div>
 
               {/* Live Scarcity & No-Replay Policy */}
