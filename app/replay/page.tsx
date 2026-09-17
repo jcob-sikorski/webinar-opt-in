@@ -10,7 +10,7 @@ export default function ReplayPage() {
   const wistiaMediaId = ""; // Wklej tutaj ID z Wistia, np. "abc123xyz"
   const expirationDate = "2026-09-19T23:59:59+02:00";
   const expirationLabel = "Ograniczony czas transmisji";
-  const ctaHref = "/special-offer";
+  const ctaHref = "/aplikuj";
   const ctaText = "Odbierz ofertę specjalną";
 
   return (
