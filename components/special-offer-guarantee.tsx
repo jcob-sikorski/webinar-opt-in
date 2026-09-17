@@ -2,16 +2,17 @@
 
 import React from "react";
 import { CountdownTimer } from "./countdown-timer";
+import { SpecialOfferForm } from "./special-offer-form";
 import { LegalFooter } from "./legal-footer";
 
 export function SpecialOfferGuarantee() {
-  const EXPIRATION_DATE = "2026-09-19T23:59:59+02:00"; 
+  const EXPIRATION_DATE = "2026-09-19T23:59:59+02:00";
 
   return (
     <>
       <section className="relative w-full bg-[#fffcf9] border-t border-neutral-200/80 pt-8 pb-16 px-4 sm:px-6 selection:bg-orange-200">
         <div className="mx-auto flex w-full max-w-[23rem] sm:max-w-[27rem] flex-col items-center">
-          
+
           {/* Guarantee Badge */}
           <div className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-0.5 shadow-2xs">
             <span className="text-[0.66rem] font-bold uppercase tracking-[0.16em] text-emerald-800">
@@ -47,7 +48,6 @@ export function SpecialOfferGuarantee() {
           {/* Primary Action CTA */}
           <div className="mt-3.5 flex w-full justify-center">
             <a
-              id="register"
               href="#aplikacja"
               className="group relative flex w-full max-w-[20rem] min-[390px]:max-w-[22.5rem] flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-b from-[#ea580c] to-[#c2410c] px-4 py-3 text-center shadow-md shadow-orange-500/20 transition-all hover:brightness-105 active:scale-[0.98]"
             >
@@ -72,6 +72,8 @@ export function SpecialOfferGuarantee() {
 
         </div>
       </section>
+
+      <SpecialOfferForm />
 
       <LegalFooter />
     </>

@@ -4,12 +4,12 @@ import React from "react";
 import { CountdownTimer } from "./countdown-timer";
 
 export function SpecialOfferHero() {
-  const EXPIRATION_DATE = "2026-09-19T23:59:59+02:00"; 
+  const EXPIRATION_DATE = "2026-09-19T23:59:59+02:00";
 
   return (
     <section className="relative w-full bg-white pt-4 pb-10 px-4 sm:px-6 flex flex-col items-center overflow-x-hidden selection:bg-orange-200">
       <div className="mx-auto flex w-full max-w-[23rem] sm:max-w-[27rem] flex-col items-center">
-        
+
         {/* Scarcity Pill */}
         <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3.5 py-1 shadow-2xs">
           <span className="relative flex h-2 w-2 shrink-0">
@@ -51,7 +51,7 @@ export function SpecialOfferHero() {
         {/* Primary Action CTA */}
         <div className="mt-3 flex w-full justify-center">
           <a
-            href="#register"
+            href="#aplikacja"
             className="group relative flex w-full max-w-[20rem] min-[390px]:max-w-[22.5rem] flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-b from-[#ea580c] to-[#c2410c] px-4 py-3 text-center shadow-md shadow-orange-500/20 transition-all hover:brightness-105 active:scale-[0.98]"
           >
             <div className="pointer-events-none absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-white/20 to-transparent" />
@@ -161,7 +161,7 @@ export function SpecialOfferHero() {
         {/* Secondary Action CTA */}
         <div className="mt-3 flex w-full justify-center">
           <a
-            href="#register"
+            href="#aplikacja"
             className="group relative flex w-full max-w-[20rem] min-[390px]:max-w-[22.5rem] flex-col items-center justify-center overflow-hidden rounded-xl bg-gradient-to-b from-[#ea580c] to-[#c2410c] px-4 py-3 text-center shadow-md shadow-orange-500/20 transition-all hover:brightness-105 active:scale-[0.98]"
           >
             <div className="pointer-events-none absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-white/20 to-transparent" />
