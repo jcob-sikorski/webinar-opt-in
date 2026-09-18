@@ -6,7 +6,7 @@ import { SpecialOfferForm } from "./special-offer-form";
 import { LegalFooter } from "./legal-footer";
 
 export function SpecialOfferGuarantee() {
-  const EXPIRATION_DATE = "2026-09-19T23:59:59+02:00";
+  const EXPIRATION_DATE = "2026-09-20T23:59:59+02:00";
 
   return (
     <>

@@ -7,8 +7,9 @@ import { LegalFooter } from "@/components/legal-footer";
 
 export default function ReplayPage() {
   // Configuration variables
-  const wistiaMediaId = ""; // Wklej tutaj ID z Wistia, np. "abc123xyz"
-  const expirationDate = "2026-09-19T23:59:59+02:00";
+  const webinarReplayUrl =
+    "https://event.webinarjam.com/5n8o79/go/replay/5n8o79a33ayyaqhv";
+  const expirationDate = "2026-09-20T23:59:59+02:00";
   const expirationLabel = "Ograniczony czas transmisji";
   const ctaHref = "/aplikuj";
   const ctaText = "Odbierz ofertę specjalną";
@@ -17,7 +18,7 @@ export default function ReplayPage() {
     <div className="flex min-h-screen w-full flex-col justify-between bg-white font-sans selection:bg-orange-200">
       <main className="relative flex w-full flex-1 flex-col items-center overflow-x-hidden px-4 pt-5 pb-16 sm:px-6 sm:pt-8 sm:pb-20">
         <div className="mx-auto flex w-full max-w-[24rem] sm:max-w-[34rem] md:max-w-[44rem] lg:max-w-[48rem] flex-col items-center">
-          
+
           {/* Expiration Scarcity Pill */}
           <div className="inline-flex items-center gap-2 rounded-full border border-[#fed7aa] bg-[#fff7ed] px-3.5 py-1.5 shadow-xs">
             <span className="relative flex h-2.5 w-2.5 shrink-0 items-center justify-center">
@@ -38,68 +39,49 @@ export default function ReplayPage() {
             Przygotuj notatki i obejrzyj nagranie, zanim licznik dobiegnie końca, a dostęp zostanie zablokowany.
           </p>
 
-          {/* Video Player Card Frame */}
+          {/* Video Replay Card -> redirects to the WebinarJam replay in a new tab */}
           <div className="mt-5 w-full">
-            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-[16px] sm:rounded-[22px] border-[3.5px] sm:border-[4.5px] border-[#ea580c] bg-black shadow-[0_8px_32px_rgba(234,88,12,0.16)]">
-              {wistiaMediaId ? (
-                <iframe
-                  src={`https://fast.wistia.net/embed/iframe/${wistiaMediaId}?videoFoam=true`}
-                  title="Nagranie powtórki szkolenia"
-                  allow="autoplay; fullscreen"
-                  className="h-full w-full border-none"
-                />
-              ) : (
-                <div className="relative flex h-full w-full select-none flex-col justify-between bg-[#0c0a09] bg-[radial-gradient(ellipse_at_top_left,_#29180c_0%,_#140e0a_40%,_#0c0a09_100%)] p-4 text-white sm:p-7">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-2.5 sm:gap-3">
-                      <div className="relative flex h-11 w-11 sm:h-14 sm:w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl sm:rounded-2xl border border-[#fed7aa]/30 bg-white/10 backdrop-blur-xs">
-                        <Image
-                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=128&h=128&fit=crop&crop=face"
-                          alt="Prelegent"
-                          width={56}
-                          height={56}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-[0.88rem] sm:text-[1.12rem] font-black leading-tight text-white tracking-tight">
-                          Bartłomiej Sikorski
-                        </span>
-                        <span className="mt-0.5 text-[0.62rem] sm:text-[0.72rem] font-bold text-stone-400">
-                          Właściciel Studiów Treningu Personalnego
-                        </span>
-                      </div>
-                    </div>
+            <a
+              href={webinarReplayUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Otwórz nagranie szkolenia w nowej karcie"
+              className="group relative flex aspect-[16/9] w-full overflow-hidden rounded-[16px] sm:rounded-[22px] border-[3.5px] sm:border-[4.5px] border-[#ea580c] bg-black shadow-[0_8px_32px_rgba(234,88,12,0.16)] transition-transform active:scale-[0.99]"
+            >
+              {/* Thumbnail image (add assets.cdn.filesafe.space to next.config.js images.remotePatterns) */}
+              <Image
+                src="https://assets.cdn.filesafe.space/XC630scPx5PEZe31LmuL/media/6aad22e74091fa65e65ceeaa.png"
+                alt="Miniatura nagrania szkolenia"
+                fill
+                sizes="(min-width: 1024px) 48rem, 100vw"
+                className="object-cover"
+                priority
+              />
 
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-2.5 py-1 text-[0.58rem] sm:text-[0.65rem] font-extrabold uppercase tracking-wider text-emerald-400 backdrop-blur-xs">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      POWTÓRKA TRANSMISJI
-                    </span>
+              {/* Scarcity badge over the thumbnail */}
+              <span className="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/60 px-2.5 py-1 text-[0.58rem] sm:text-[0.65rem] font-extrabold uppercase tracking-wider text-emerald-400 backdrop-blur-xs">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                POWTÓRKA TRANSMISJI
+              </span>
+
+              {/* Redirect / play button overlay */}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-black/10 transition-colors group-hover:bg-black/30">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-full bg-white shadow-lg transition-transform group-hover:scale-105">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="ml-1 h-7 w-7 sm:h-9 sm:w-9 text-[#ea580c]"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
                   </div>
-
-                  <div className="my-auto py-2">
-                    <h2 className="text-[1.18rem] min-[390px]:text-[1.38rem] sm:text-[1.95rem] md:text-[2.25rem] font-black leading-[1.12] tracking-tight">
-                      Jak poukładać studio treningu, <br />
-                      <span className="underline decoration-[#ea580c] decoration-[3px] underline-offset-[3px] sm:decoration-[4px]">
-                        odzyskać wolny czas
-                      </span>
-                      <br />
-                      <span className="text-[#ea580c]">i przebić 20 000 zł zysku!</span>
-                    </h2>
-
-                    <p className="mt-2 max-w-[28rem] text-[0.66rem] sm:text-[0.76rem] font-normal leading-[1.35] text-stone-300 line-clamp-3 sm:line-clamp-none">
-                      &bdquo;W tym materiale pokazujemy dokładny, przetestowany proces operacyjny i sprzedażowy, który pozwolił 50 placówkom zejść z sali treningowej i zbudować rentowny, przewidywalny biznes.&rdquo;
-                    </p>
-                  </div>
-
-                  <div className="w-full">
-                    <div className="relative h-1 w-full overflow-hidden rounded-full bg-white/15 sm:h-1.5">
-                      <div className="h-full w-1/3 bg-[#ea580c]" />
-                    </div>
-                  </div>
+                  <span className="rounded-full bg-black/70 px-3 py-1 text-[0.65rem] sm:text-[0.72rem] font-bold uppercase tracking-wide text-white backdrop-blur-xs">
+                    Kliknij, aby obejrzeć nagranie
+                  </span>
                 </div>
-              )}
-            </div>
+              </div>
+            </a>
           </div>
 
           {/* Countdown Block */}
@@ -121,7 +103,7 @@ export default function ReplayPage() {
               >
                 {/* Subtle top reflection gloss highlight */}
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-white/20 to-transparent" />
-                
+
                 <span className="relative inline-flex items-center justify-center gap-1.5 text-[0.92rem] min-[390px]:text-[1rem] sm:text-[1.05rem] font-black uppercase tracking-tight text-white whitespace-nowrap">
                   <span>&raquo;</span>
                   <span>{ctaText}</span>
